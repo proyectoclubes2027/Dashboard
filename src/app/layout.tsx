@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CAEC - Panel de Administración",
-  description: "Dashboard de Administración de Socios - Empalme Central Tenis CAEC",
+  title: "Club Atlético Riberas del Paraná - Panel de Gestión",
+  description: "Dashboard Oficial - Riberas del Paraná Tenis",
   icons: {
-    icon: "/logo.svg",
+    icon: "/logo-club.png",
   },
 };
 

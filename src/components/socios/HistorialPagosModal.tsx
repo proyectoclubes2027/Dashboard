@@ -103,7 +103,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
             <div className="bg-[#252525] border border-[#333333] rounded-lg p-3 flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-[#FFCC00]" />
+                  <Calendar className="h-4 w-4 text-[#DC2626]" />
                   <span className="text-[#CCCCCC] text-xs font-semibold">{pagos.length} registros en total</span>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
                         ? 'bg-amber-400/10 text-amber-400'
                         : pago.tipo === 'invitado_extra'
                         ? 'bg-red-500/10 text-red-400'
-                        : 'bg-[#FFCC00]/10'
+                        : 'bg-[#DC2626]/10'
                     }`}>
                       {pago.metodoPago === 'pendiente' ? (
                         <AlertCircle className="h-4 w-4 text-red-400" />
@@ -147,7 +147,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
                       ) : pago.tipo === 'invitado_extra' ? (
                         <span className="text-base">🎾</span>
                       ) : (
-                        <CreditCard className="h-4 w-4 text-[#FFCC00]" />
+                        <CreditCard className="h-4 w-4 text-[#DC2626]" />
                       )}
                     </div>
                     <div>

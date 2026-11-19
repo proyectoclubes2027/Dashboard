@@ -36,7 +36,7 @@ const formatARS = (val: number) => {
 const tryLoadLogo = async (doc: jsPDF, x = 12, y = 11, w = 12, h = 12) => {
   try {
     const logoImg = new Image();
-    logoImg.src = '/logo-caec.png';
+    logoImg.src = '/logo-club.png';
     await new Promise((resolve) => {
       logoImg.onload = resolve;
       logoImg.onerror = resolve;
@@ -127,7 +127,7 @@ export const exportSemanaPDF = async (
 
   await tryLoadLogo(doc, 12, 10, 11, 11);
 
-  // Cabecera institucional (Fondo Negro #1A1A1A, Texto Amarillo #FFCC00)
+  // Cabecera institucional (Fondo Negro #1A1A1A, Texto Amarillo #DC2626)
   doc.setFillColor(26, 26, 26);
   doc.rect(10, 10, 190, 12, 'F');
   doc.setTextColor(255, 204, 0);
@@ -135,7 +135,7 @@ export const exportSemanaPDF = async (
   doc.setFont('helvetica', 'bold');
   doc.text('SUBCOMISIÓN DE TENIS — CLUB EMPALME CENTRAL', 105, 17.5, { align: 'center' });
 
-  // Subtítulo Comisión Directiva (Fondo Amarillo #FFCC00, Texto Negro)
+  // Subtítulo Comisión Directiva (Fondo Amarillo #DC2626, Texto Negro)
   doc.setFillColor(255, 204, 0);
   doc.rect(10, 22, 190, 8, 'F');
   doc.setTextColor(0, 0, 0);
@@ -259,10 +259,10 @@ export const exportSemanaPDF = async (
   doc.text('Aclaración:', 75, signatureY + 8);
 
   doc.line(135, signatureY, 195, signatureY);
-  doc.text('Recibido Comisión Directiva CAEC', 135, signatureY + 4);
+  doc.text('Recibido Comisión Directiva CARP', 135, signatureY + 4);
   doc.text('Fecha de Aprobación: _____/_____/2026', 135, signatureY + 8);
 
-  doc.save(`Informe_Semana_Clases_CAEC_${weekStartStr.replace(/\//g, '-')}_al_${weekEndStr.replace(/\//g, '-')}.pdf`);
+  doc.save(`Informe_Semana_Clases_CARP_${weekStartStr.replace(/\//g, '-')}_al_${weekEndStr.replace(/\//g, '-')}.pdf`);
 };
 
 // ============================================================================
@@ -409,10 +409,10 @@ export const exportMesPDF = async (
   doc.text('Aclaración:', 75, signatureY + 8);
 
   doc.line(135, signatureY, 195, signatureY);
-  doc.text('Recibido Comisión Directiva CAEC', 135, signatureY + 4);
+  doc.text('Recibido Comisión Directiva CARP', 135, signatureY + 4);
   doc.text('Fecha de Aprobación: _____/_____/2026', 135, signatureY + 8);
 
-  doc.save(`Informe_Mensual_Clases_CAEC_${mesNombre.replace(/\s+/g, '_')}.pdf`);
+  doc.save(`Informe_Mensual_Clases_CARP_${mesNombre.replace(/\s+/g, '_')}.pdf`);
 };
 
 // ============================================================================
@@ -459,7 +459,7 @@ export const exportMesExcel = (
 
   XLSX.writeFile(
     workbook,
-    `Resumen_Mensual_Semanas_CAEC_${monthStr}.xlsx`
+    `Resumen_Mensual_Semanas_CARP_${monthStr}.xlsx`
   );
 };
 
@@ -494,6 +494,6 @@ export const exportClasesExcel = (
 
   XLSX.writeFile(
     workbook,
-    `Planilla_Clases_${tipo.toUpperCase()}_CAEC_${periodoLabel.replace(/[\/\s]/g, '_')}.xlsx`
+    `Planilla_Clases_${tipo.toUpperCase()}_CARP_${periodoLabel.replace(/[\/\s]/g, '_')}.xlsx`
   );
 };

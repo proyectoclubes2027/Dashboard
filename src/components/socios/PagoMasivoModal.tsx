@@ -129,7 +129,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
       <DialogContent className="bg-[#1E1E1E] border-[#333333] sm:max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-white flex items-center gap-2">
-            <Users className="h-5 w-5 text-[#FFCC00]" />
+            <Users className="h-5 w-5 text-[#DC2626]" />
             Pago Masivo
           </DialogTitle>
           <DialogDescription className="text-[#999999]">
@@ -151,7 +151,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
                 </div>
               )}
             </div>
-            <Button onClick={() => onOpenChange(false)} className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800]">
+            <Button onClick={() => onOpenChange(false)} className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800]">
               Cerrar
             </Button>
           </div>
@@ -189,10 +189,10 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
 
             {/* Selection header */}
             <div className="flex items-center justify-between border-b border-[#333333] pb-2">
-              <Button variant="ghost" size="sm" onClick={toggleAll} className="text-[#FFCC00] hover:text-[#E6B800] text-xs h-7">
+              <Button variant="ghost" size="sm" onClick={toggleAll} className="text-[#DC2626] hover:text-[#E6B800] text-xs h-7">
                 {selectedIds.size === sociosFiltrados.length ? 'Desmarcar todos' : 'Seleccionar todos'}
               </Button>
-              <Badge variant="outline" className="border-[#FFCC00]/30 text-[#FFCC00] text-xs">
+              <Badge variant="outline" className="border-[#DC2626]/30 text-[#DC2626] text-xs">
                 {selectedIds.size} seleccionados
               </Badge>
             </div>
@@ -206,11 +206,11 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
                   <div
                     key={socio.id}
                     className={`flex items-center gap-2 px-2 py-1 rounded-md cursor-pointer transition-colors ${
-                      selectedIds.has(socio.id) ? 'bg-[#FFCC00]/10 border border-[#FFCC00]/30' : 'hover:bg-[#252525] border border-transparent'
+                      selectedIds.has(socio.id) ? 'bg-[#DC2626]/10 border border-[#DC2626]/30' : 'hover:bg-[#252525] border border-transparent'
                     }`}
                     onClick={() => toggleSocio(socio.id)}
                   >
-                    <Checkbox checked={selectedIds.has(socio.id)} className="h-3.5 w-3.5 border-[#666666] data-[state=checked]:bg-[#FFCC00] data-[state=checked]:border-[#FFCC00]" />
+                    <Checkbox checked={selectedIds.has(socio.id)} className="h-3.5 w-3.5 border-[#666666] data-[state=checked]:bg-[#DC2626] data-[state=checked]:border-[#DC2626]" />
                     <span className="text-[#CCCCCC] text-[13px] font-medium truncate">{socio.apellido}, {socio.nombre}</span>
                   </div>
                 ))
@@ -221,7 +221,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
               <Button variant="outline" onClick={() => onOpenChange(false)} disabled={submitting} className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A]">
                 Cancelar
               </Button>
-              <Button onClick={handleSubmit} disabled={submitting || selectedIds.size === 0} className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-medium">
+              <Button onClick={handleSubmit} disabled={submitting || selectedIds.size === 0} className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium">
                 {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
                 {submitting ? 'Registrando...' : `Registrar ${selectedIds.size} pagos`}
               </Button>

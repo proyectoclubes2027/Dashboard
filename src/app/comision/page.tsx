@@ -249,7 +249,7 @@ export default function ComisionDirectivaPage() {
       doc.setFont('helvetica', 'italic');
       doc.setTextColor(120, 120, 120);
       doc.text(
-        `Documento emitido el ${new Date().toLocaleDateString('es-AR')} - Subcomisión de Tenis CAEC - Página ${i} de ${pageCount}`,
+        `Documento emitido el ${new Date().toLocaleDateString('es-AR')} - Subcomisión de Tenis CARP - Página ${i} de ${pageCount}`,
         105,
         290,
         { align: 'center' }
@@ -257,7 +257,7 @@ export default function ComisionDirectivaPage() {
     }
 
     if (returnBlob) return doc.output('blob');
-    doc.save(`Balance_Mensual_CAEC_${mesSeleccionado}.pdf`);
+    doc.save(`Balance_Mensual_CARP_${mesSeleccionado}.pdf`);
   };
 
   // 2. PDF Oficial Escuela
@@ -461,7 +461,7 @@ export default function ComisionDirectivaPage() {
     });
 
     if (returnBlob) return doc.output('blob');
-    doc.save(`Padron_Socios_CAEC_${mesSeleccionado}.pdf`);
+    doc.save(`Padron_Socios_CARP_${mesSeleccionado}.pdf`);
   };
 
   // Descargar paquete ZIP con todos los PDFs y planillas
@@ -491,7 +491,7 @@ export default function ComisionDirectivaPage() {
       const downloadUrl = URL.createObjectURL(zipBlob);
       const a = document.createElement('a');
       a.href = downloadUrl;
-      a.download = `Paquete_Comision_Directiva_CAEC_${mesSeleccionado}.zip`;
+      a.download = `Paquete_Comision_Directiva_CARP_${mesSeleccionado}.zip`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -520,8 +520,8 @@ export default function ComisionDirectivaPage() {
         <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3.5">
             <img
-              src="/logo-caec.png"
-              alt="Logo CAEC"
+              src="/logo-club.png"
+              alt="Logo CARP"
               className="w-12 h-12 object-contain drop-shadow"
             />
             <div>
@@ -532,7 +532,7 @@ export default function ComisionDirectivaPage() {
                 <span className="text-[10px] text-[#777777] hidden sm:inline">• Portal Ejecutivo de Gestión</span>
               </div>
               <h1 className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-2">
-                Club Empalme Central — Subcomisión de Tenis
+                Club Riberas del Paraná — Subcomisión de Tenis
               </h1>
             </div>
           </div>
@@ -1012,7 +1012,7 @@ export default function ComisionDirectivaPage() {
                       <div>
                         <div className="flex items-center justify-between gap-2">
                           <span className="text-xs font-black uppercase text-white truncate">{ev.titulo}</span>
-                          <span className="text-xs font-mono font-black text-[#FFCC00]">
+                          <span className="text-xs font-mono font-black text-[#DC2626]">
                             {formatCurrency(ev.totalNeto || 0)}
                           </span>
                         </div>
@@ -1606,7 +1606,7 @@ export default function ComisionDirectivaPage() {
 
       {/* Pie de Página Oficial */}
       <footer className="border-t border-[#222225] py-6 text-center text-xs text-[#666666] bg-[#101012]">
-        <p>Club Empalme Central — Sistema Integral de Tenis</p>
+        <p>Club Riberas del Paraná — Sistema Integral de Tenis</p>
         <p className="text-[11px] mt-1 text-[#444444]">
           Documentación para uso exclusivo de la Comisión Directiva del Club
         </p>

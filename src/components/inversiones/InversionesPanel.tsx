@@ -157,7 +157,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
         {!readOnly && (
           <Button 
             onClick={() => { setEditingPlazo(null); setModalOpen(true); }}
-            className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold"
+            className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold"
           >
             <Plus className="h-4 w-4 mr-2" />
             Nuevo Plazo Fijo
@@ -254,7 +254,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
               </div>
               <div className="text-right">
                 <p className="text-[#999999] text-[9px] uppercase font-bold tracking-wider">En Pesos</p>
-                <p className="text-[#FFCC00] text-xs font-bold">{formatCurrency(dolaresEnPesos)}</p>
+                <p className="text-[#DC2626] text-xs font-bold">{formatCurrency(dolaresEnPesos)}</p>
               </div>
               {!readOnly && !editandoCotizacion && (
                  <Button variant="ghost" size="icon" className="h-5 w-5 text-[#999999] hover:text-white ml-1" onClick={() => {
@@ -270,11 +270,11 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
         </Card>
 
         {/* Total Pesos + Dolares */}
-        <Card className="bg-[#1A1A1A] border-[#FFCC00]/30 overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-[#FFCC00]" />
+        <Card className="bg-[#1A1A1A] border-[#DC2626]/30 overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-1 bg-[#DC2626]" />
           <CardContent className="p-4 flex items-center gap-4">
-            <div className="p-3 rounded-xl bg-[#FFCC00]/10">
-              <TrendingUp className="h-6 w-6 text-[#FFCC00]" />
+            <div className="p-3 rounded-xl bg-[#DC2626]/10">
+              <TrendingUp className="h-6 w-6 text-[#DC2626]" />
             </div>
             <div>
               <p className="text-[#999999] text-[10px] font-bold uppercase tracking-wider">Total Disp. (Pesos)</p>
@@ -321,7 +321,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                     <td className="px-4 py-3.5 text-white text-xs">
                       <div className="flex flex-col gap-0.5">
                         <span className="text-[#999999]">Desde: <span className="text-white">{p.fechaConstitucion}</span></span>
-                        <span className="text-[#999999]">Hasta: <span className="text-[#FFCC00] font-medium">{p.fechaVencimiento}</span></span>
+                        <span className="text-[#999999]">Hasta: <span className="text-[#DC2626] font-medium">{p.fechaVencimiento}</span></span>
                       </div>
                     </td>
                     <td className="px-4 py-3.5 text-right font-bold text-sm text-white">

@@ -38,7 +38,7 @@ export const exportBalanceToPDF = async (
   // Load Logo
   try {
     const logoImg = new Image();
-    logoImg.src = '/logo-caec.png';
+    logoImg.src = '/logo-club.png';
     await new Promise((resolve) => {
       logoImg.onload = resolve;
       logoImg.onerror = resolve; // Continue anyway if logo fails
@@ -53,7 +53,7 @@ export const exportBalanceToPDF = async (
   // Header Colors (Black background, Yellow text)
   doc.setFillColor(26, 26, 26);
   doc.rect(10, 10, 190, 12, 'F');
-  doc.setTextColor(255, 204, 0); // Yellow #FFCC00
+  doc.setTextColor(255, 204, 0); // Yellow #DC2626
   doc.setFontSize(14);
   doc.setFont('helvetica', 'bold');
   doc.text('SUBCOMISIÓN DE TENIS — CLUB EMPALME CENTRAL', 105, 18, { align: 'center' });

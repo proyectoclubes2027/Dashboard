@@ -173,7 +173,7 @@ export default function EventoSlideView({
       <!DOCTYPE html>
       <html>
         <head>
-          <title>${evento.titulo} - CAEC Tenis</title>
+          <title>${evento.titulo} - CARP Tenis</title>
           <meta charset="utf-8" />
           <style>
             @page {
@@ -212,7 +212,7 @@ export default function EventoSlideView({
               justify-content: space-between;
               align-items: center;
               margin: -24px -24px 24px -24px;
-              border-bottom: 4px solid #FFCC00;
+              border-bottom: 4px solid #DC2626;
             }
             .header-left {
               display: flex;
@@ -235,7 +235,7 @@ export default function EventoSlideView({
               font-weight: bold;
               text-transform: uppercase;
               letter-spacing: 2px;
-              color: #FFCC00;
+              color: #DC2626;
             }
             .header-right {
               text-align: right;
@@ -249,7 +249,7 @@ export default function EventoSlideView({
               font-size: 11px;
               text-transform: uppercase;
               font-weight: bold;
-              color: #FFCC00;
+              color: #DC2626;
               font-family: Arial, sans-serif;
               margin-top: 4px;
             }
@@ -279,7 +279,7 @@ export default function EventoSlideView({
               border-bottom: 2px solid #a1a1aa;
             }
             .table-head-yellow {
-              background-color: #FFCC00 !important;
+              background-color: #DC2626 !important;
               color: #000000 !important;
               padding: 10px 14px;
               display: flex;
@@ -325,7 +325,7 @@ export default function EventoSlideView({
               font-size: 14px;
             }
             .subtotal-yellow {
-              background-color: #FFCC00 !important;
+              background-color: #DC2626 !important;
               color: #000000 !important;
               padding: 12px 14px;
               display: flex;
@@ -373,7 +373,7 @@ export default function EventoSlideView({
               margin-top: 2px;
             }
             .total-banner-amount {
-              background-color: #FFCC00 !important;
+              background-color: #DC2626 !important;
               color: #000000 !important;
               padding: 14px 28px;
               font-family: 'Courier New', Courier, monospace;
@@ -401,7 +401,7 @@ export default function EventoSlideView({
             <div>
               <div class="header-bar">
                 <div class="header-left">
-                  <img src="${window.location.origin}/logo-caec.png" alt="CAEC" class="logo-img" />
+                  <img src="${window.location.origin}/logo-club.png" alt="CARP" class="logo-img" />
                   <div>
                     <div class="header-title">${evento.titulo} ${subtituloDiapo}</div>
                     ${evento.subtitulo ? `<div class="header-subtitle">${evento.subtitulo}</div>` : ''}
@@ -486,8 +486,8 @@ export default function EventoSlideView({
             </div>
 
             <div class="footer-bar">
-              <span>Club Atlético Empalme Central — SubComisión de Tenis</span>
-              <span style="font-family: Arial, sans-serif; font-weight: bold; font-size: 10px; text-transform: uppercase;">CAEC · Portal Oficial</span>
+              <span>Club Atlético Riberas del Paraná — SubComisión de Tenis</span>
+              <span style="font-family: Arial, sans-serif; font-weight: bold; font-size: 10px; text-transform: uppercase;">CARP · Portal Oficial</span>
             </div>
           </div>
           <script>
@@ -518,7 +518,7 @@ export default function EventoSlideView({
                 Informe Oficial para Comisión Directiva
               </DialogTitle>
               <p className="text-xs text-[#888892]">
-                Visualización estilo presentación institucional (Formato PowerPoint CAEC)
+                Visualización estilo presentación institucional (Formato PowerPoint CARP)
               </p>
             </div>
           </div>
@@ -617,11 +617,11 @@ export default function EventoSlideView({
             style={{ fontFamily: 'Georgia, serif' }}
           >
             {/* 1. ENCABEZADO INSTITUCIONAL DE LA DIAPOSITIVA */}
-            <div className="bg-black text-white p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 mb-6 border-b-4 border-[#FFCC00]">
+            <div className="bg-black text-white p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 mb-6 border-b-4 border-[#DC2626]">
               <div className="flex items-center gap-4 flex-1 min-w-0">
                 <img
-                  src="/logo-caec.png"
-                  alt="CAEC Tenis"
+                  src="/logo-club.png"
+                  alt="CARP Tenis"
                   className="h-16 w-auto object-contain bg-black rounded shrink-0"
                 />
                 <div className="min-w-0">
@@ -633,7 +633,7 @@ export default function EventoSlideView({
                     {slideActiva === 'torneo' && ' · TORNEO'}
                   </h1>
                   {evento.subtitulo && (
-                    <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#FFCC00] mt-0.5">
+                    <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#DC2626] mt-0.5">
                       {evento.subtitulo}
                     </p>
                   )}
@@ -644,7 +644,7 @@ export default function EventoSlideView({
                 <span className="text-sm sm:text-base italic font-serif text-zinc-300 block">
                   {evento.fechaTexto}
                 </span>
-                <span className="text-[11px] uppercase tracking-wider text-[#FFCC00] font-sans font-bold block mt-0.5">
+                <span className="text-[11px] uppercase tracking-wider text-[#DC2626] font-sans font-bold block mt-0.5">
                   {evento.organizador || 'SubComisión de Tenis'}
                 </span>
               </div>
@@ -686,7 +686,7 @@ export default function EventoSlideView({
                       </div>
                     </div>
 
-                    <div className="bg-[#FFCC00] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
+                    <div className="bg-[#DC2626] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
                       <span>TOTAL INGRESOS</span>
                       <span className="font-mono text-base">{formatCurrency(totalIngGeneral)}</span>
                     </div>
@@ -695,7 +695,7 @@ export default function EventoSlideView({
                   {/* TABLA TODOS LOS EGRESOS */}
                   <div className="border border-zinc-300 shadow-sm flex flex-col justify-between bg-white">
                     <div>
-                      <div className="bg-[#FFCC00] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
+                      <div className="bg-[#DC2626] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
                         <span className="font-sans font-black text-xs uppercase tracking-wider">
                           EGRESOS (TODOS LOS GASTOS)
                         </span>
@@ -740,7 +740,7 @@ export default function EventoSlideView({
                         SUPERÁVIT NETO PARA SUBCOMISIÓN DE TENIS
                       </span>
                     </div>
-                    <div className="bg-[#FFCC00] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
+                    <div className="bg-[#DC2626] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
                       {formatCurrency(totalNetoGeneral)}
                     </div>
                   </div>
@@ -777,7 +777,7 @@ export default function EventoSlideView({
                       </div>
                     </div>
 
-                    <div className="bg-[#FFCC00] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
+                    <div className="bg-[#DC2626] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
                       <span>SUB-TOTAL INGRESOS</span>
                       <span className="font-mono text-base">{formatCurrency(ingTorneo)}</span>
                     </div>
@@ -786,7 +786,7 @@ export default function EventoSlideView({
                   {/* TABLA EGRESOS TORNEO */}
                   <div className="border border-zinc-300 shadow-sm flex flex-col justify-between bg-white">
                     <div>
-                      <div className="bg-[#FFCC00] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
+                      <div className="bg-[#DC2626] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
                         <span className="font-sans font-black text-xs uppercase tracking-wider">
                           EGRESOS TORNEO
                         </span>
@@ -826,7 +826,7 @@ export default function EventoSlideView({
                         DE RECAUDACIÓN P/ SUBCOMISIÓN
                       </span>
                     </div>
-                    <div className="bg-[#FFCC00] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
+                    <div className="bg-[#DC2626] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
                       {formatCurrency(netoTorneo)}
                     </div>
                   </div>
@@ -863,7 +863,7 @@ export default function EventoSlideView({
                       </div>
                     </div>
 
-                    <div className="bg-[#FFCC00] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
+                    <div className="bg-[#DC2626] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
                       <span>SUB-TOTAL INGRESOS</span>
                       <span className="font-mono text-base">{formatCurrency(ingCantina)}</span>
                     </div>
@@ -872,7 +872,7 @@ export default function EventoSlideView({
                   {/* TABLA EGRESOS CANTINA */}
                   <div className="border border-zinc-300 shadow-sm flex flex-col justify-between bg-white">
                     <div>
-                      <div className="bg-[#FFCC00] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
+                      <div className="bg-[#DC2626] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
                         <span className="font-sans font-black text-xs uppercase tracking-wider">
                           EGRESOS - CANTINA
                         </span>
@@ -912,7 +912,7 @@ export default function EventoSlideView({
                         DE RECAUDACIÓN P/ SUBCOMISIÓN (CANTINA)
                       </span>
                     </div>
-                    <div className="bg-[#FFCC00] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
+                    <div className="bg-[#DC2626] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
                       {formatCurrency(netoCantina)}
                     </div>
                   </div>
@@ -948,7 +948,7 @@ export default function EventoSlideView({
                       </div>
                     </div>
 
-                    <div className="bg-[#FFCC00] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
+                    <div className="bg-[#DC2626] text-black px-4 py-3 flex justify-between items-center font-sans font-black text-sm border-t-2 border-zinc-400">
                       <span>SUB-TOTAL OTROS INGRESOS</span>
                       <span className="font-mono text-base">{formatCurrency(ingOtros)}</span>
                     </div>
@@ -956,7 +956,7 @@ export default function EventoSlideView({
 
                   <div className="border border-zinc-300 shadow-sm flex flex-col justify-between bg-white">
                     <div>
-                      <div className="bg-[#FFCC00] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
+                      <div className="bg-[#DC2626] text-black px-4 py-2.5 flex justify-between items-center border-b-2 border-zinc-400">
                         <span className="font-sans font-black text-xs uppercase tracking-wider">
                           EGRESOS - OTROS GASTOS
                         </span>
@@ -995,7 +995,7 @@ export default function EventoSlideView({
                         DE RECAUDACIÓN P/ SUBCOMISIÓN
                       </span>
                     </div>
-                    <div className="bg-[#FFCC00] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
+                    <div className="bg-[#DC2626] text-black px-6 py-3.5 flex items-center justify-center font-mono font-black text-2xl sm:text-3xl min-w-[180px]">
                       {formatCurrency(netoOtros)}
                     </div>
                   </div>
@@ -1005,9 +1005,9 @@ export default function EventoSlideView({
 
             {/* 3. PIE DE PÁGINA INSTITUCIONAL DE LA DIAPOSITIVA */}
             <div className="pt-8 mt-6 border-t border-zinc-300 flex items-center justify-between text-xs text-zinc-600 font-serif italic">
-              <span>Club Atlético Empalme Central — SubComisión de Tenis</span>
+              <span>Club Atlético Riberas del Paraná — SubComisión de Tenis</span>
               <span className="font-sans font-bold text-[10px] uppercase tracking-wider text-zinc-400">
-                CAEC · Portal Oficial
+                CARP · Portal Oficial
               </span>
             </div>
           </div>

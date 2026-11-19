@@ -314,7 +314,7 @@ export default function AbmSocioModal({
           <Button
             onClick={handleSubmit}
             disabled={submitting}
-            className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-medium"
+            className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium"
           >
             {submitting && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
             {submitting

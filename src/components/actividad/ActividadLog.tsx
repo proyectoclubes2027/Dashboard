@@ -88,7 +88,7 @@ export default function ActividadLog() {
     <div className="bg-[#1E1E1E] border border-[#333333] rounded-lg p-4">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <Clock className="h-5 w-5 text-[#FFCC00]" />
+          <Clock className="h-5 w-5 text-[#DC2626]" />
           <h3 className="text-white text-sm font-semibold">Actividad Reciente</h3>
         </div>
         <span className="text-[#666666] text-[10px]">{actividades.length} registros</span>

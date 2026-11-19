@@ -17,8 +17,8 @@ export default function InvitadosPage() {
             <span>Volver al Panel</span>
           </Link>
           <div className="flex items-center gap-2">
-            <img src="/logo-caec.png" alt="CAEC Tenis" className="h-7 w-7 object-contain" />
-            <h1 className="text-sm font-bold text-foreground">CAEC Tenis · Módulo de Invitados</h1>
+            <img src="/logo-club.png" alt="CARP Tenis" className="h-7 w-7 object-contain" />
+            <h1 className="text-sm font-bold text-foreground">CARP Tenis · Módulo de Invitados</h1>
           </div>
         </div>
       </header>

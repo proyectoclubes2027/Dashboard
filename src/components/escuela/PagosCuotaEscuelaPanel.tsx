@@ -636,7 +636,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
       // Cabecera institucional
       doc.setFillColor(26, 26, 26);
       doc.rect(10, 10, 190, 14, 'F');
-      doc.setTextColor(255, 204, 0); // Amarillo #FFCC00
+      doc.setTextColor(255, 204, 0); // Amarillo #DC2626
       doc.setFontSize(13);
       doc.setFont('helvetica', 'bold');
       doc.text('CLUB EMPALME CENTRAL — SUBCOMISIÓN DE TENIS', 105, 19, { align: 'center' });
@@ -716,7 +716,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
         doc.setFont('helvetica', 'italic');
         doc.setTextColor(120, 120, 120);
         doc.text(
-          `Documento emitido el ${new Date().toLocaleDateString('es-AR')} - Subcomisión de Tenis CAEC - Página ${i} de ${pageCount}`,
+          `Documento emitido el ${new Date().toLocaleDateString('es-AR')} - Subcomisión de Tenis CARP - Página ${i} de ${pageCount}`,
           105,
           290,
           { align: 'center' }

@@ -304,7 +304,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
     const win = window.open('', '_blank');
     if (!win) return;
     const isProfe = qrType === 'profe';
-    const title = isProfe ? '🎾 Planilla Diaria de Clases - CAEC Tenis' : '🎾 CAEC - Asistencia a Clases';
+    const title = isProfe ? '🎾 Planilla Diaria de Clases - CARP Tenis' : '🎾 CARP - Asistencia a Clases';
     const subtitle = isProfe
       ? 'Escaneá para cargar la cantidad de alumnos y recaudación del día'
       : 'Escaneá este código para registrar tu asistencia';
@@ -314,7 +314,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
       '<!DOCTYPE html><html><head><title>' + title + '</title>' +
       '<style>body{font-family:sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;background:#fff;}' +
       'h1{font-size:26px;margin-bottom:8px;color:#111;text-align:center;}p{color:#555;margin-bottom:24px;font-size:16px;text-align:center;}' +
-      'img{border:4px solid #FFCC00;border-radius:14px;padding:8px;}.url{margin-top:16px;font-size:14px;color:#888;word-break:break-all;font-family:monospace;}</style>' +
+      'img{border:4px solid #DC2626;border-radius:14px;padding:8px;}.url{margin-top:16px;font-size:14px;color:#888;word-break:break-all;font-family:monospace;}</style>' +
       '</head><body>' +
       '<h1>' + title + '</h1>' +
       '<p>' + subtitle + '</p>' +
@@ -588,7 +588,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
               alt="Código QR"
               width={130}
               height={130}
-              className="rounded-xl border-2 border-[#FFCC00]/60 shadow-md bg-white p-1"
+              className="rounded-xl border-2 border-[#DC2626]/60 shadow-md bg-white p-1"
             />
             <div className="flex rounded-lg bg-[#2A2A2A] p-0.5 mt-2 border border-[#383838]">
               <button
@@ -597,7 +597,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 className={cn(
                   'px-2.5 py-1 text-[11px] font-semibold rounded-md transition-all',
                   qrType === 'profe'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow'
+                    ? 'bg-[#DC2626] text-[#121212] shadow'
                     : 'text-[#999999] hover:text-white'
                 )}
               >
@@ -609,7 +609,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 className={cn(
                   'px-2.5 py-1 text-[11px] font-semibold rounded-md transition-all',
                   qrType === 'alumnos'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow'
+                    ? 'bg-[#DC2626] text-[#121212] shadow'
                     : 'text-[#999999] hover:text-white'
                 )}
               >
@@ -620,13 +620,13 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
 
           <div className="flex-1 text-center lg:text-left">
             <div className="flex items-center gap-2 justify-center lg:justify-start mb-1.5">
-              <QrCode className="h-5 w-5 text-[#FFCC00]" />
+              <QrCode className="h-5 w-5 text-[#DC2626]" />
               <h3 className="text-white text-base font-bold">
                 {qrType === 'profe' 
                   ? 'Página del Profesor · Carga Diaria de Clases' 
                   : 'Página de Alumnos · Asistencia a Clases'}
               </h3>
-              <Badge variant="outline" className="text-[10px] bg-[#FFCC00]/10 text-[#FFCC00] border-[#FFCC00]/30 font-bold uppercase">
+              <Badge variant="outline" className="text-[10px] bg-[#DC2626]/10 text-[#DC2626] border-[#DC2626]/30 font-bold uppercase">
                 Pública · Sin Login
               </Badge>
             </div>
@@ -665,7 +665,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
               <Button
                 size="sm"
                 onClick={() => window.open(currentUrl, '_blank')}
-                className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold shadow-sm"
+                className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold shadow-sm"
               >
                 <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
                 Abrir en nueva pestaña
@@ -680,21 +680,21 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
         <TabsList className="bg-[#1E1E1E] border border-[#333333] p-1 h-12 mb-4 grid grid-cols-3 w-full max-w-2xl print:hidden">
           <TabsTrigger 
             value="profe" 
-            className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
           >
             <BarChart3 className="w-4 h-4 shrink-0" />
             <span className="truncate">Planilla y Reportes</span>
           </TabsTrigger>
           <TabsTrigger 
             value="diaria" 
-            className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
           >
             <CheckCircle2 className="w-4 h-4 shrink-0" />
             <span className="truncate">Presentes Diarios</span>
           </TabsTrigger>
           <TabsTrigger 
             value="mensual"
-            className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
           >
             <Users className="w-4 h-4 shrink-0" />
             <span className="truncate">Alumnos Mensual</span>
@@ -709,7 +709,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
           <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h3 className="text-white text-base font-bold flex items-center gap-2">
-                <ClipboardList className="h-5 w-5 text-[#FFCC00]" />
+                <ClipboardList className="h-5 w-5 text-[#DC2626]" />
                 Control de Clases · Alumnos y Recaudación Diaria
               </h3>
               <p className="text-[#999999] text-xs mt-0.5">
@@ -719,7 +719,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
 
             <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
               <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                <SelectTrigger className="h-8 text-xs bg-[#2A2A2A] border-[#383838] text-white focus:ring-[#FFCC00] w-[160px]">
+                <SelectTrigger className="h-8 text-xs bg-[#2A2A2A] border-[#383838] text-white focus:ring-[#DC2626] w-[160px]">
                   <SelectValue placeholder="Seleccionar mes" />
                 </SelectTrigger>
                 <SelectContent className="bg-[#1E1E1E] border-[#333333] text-white">
@@ -736,7 +736,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 size="sm"
                 variant="outline"
                 onClick={handleExportSemanaPDF}
-                className="border-[#FFCC00]/50 text-[#FFCC00] hover:bg-[#FFCC00]/10 hover:text-white h-8 text-xs font-semibold"
+                className="border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white h-8 text-xs font-semibold"
                 title="Descargar informe semanal oficial en PDF para Comisión Directiva"
               >
                 <FileDown className="h-3.5 w-3.5 mr-1" />
@@ -748,7 +748,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 size="sm"
                 variant="outline"
                 onClick={handleExportMesPDF}
-                className="border-[#FFCC00]/50 text-[#FFCC00] hover:bg-[#FFCC00]/10 hover:text-white h-8 text-xs font-semibold"
+                className="border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white h-8 text-xs font-semibold"
                 title="Descargar informe mensual oficial en PDF para Comisión Directiva"
               >
                 <FileDown className="h-3.5 w-3.5 mr-1" />
@@ -759,7 +759,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 <Button
                   size="sm"
                   onClick={() => handleOpenCreateModal()}
-                  className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold"
+                  className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold"
                 >
                   <Plus className="h-3.5 w-3.5 mr-1" />
                   Cargar Día
@@ -785,10 +785,10 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* 1. EN EL DÍA (HOY O SELECCIONADO) */}
             <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#FFCC00]/5 rounded-bl-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#DC2626]/5 rounded-bl-full pointer-events-none" />
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs uppercase font-bold text-[#FFCC00] tracking-wider flex items-center gap-1.5">
+                  <span className="text-xs uppercase font-bold text-[#DC2626] tracking-wider flex items-center gap-1.5">
                     <CalendarIcon className="w-3.5 h-3.5" /> En el Día
                   </span>
                   <span className="text-[11px] text-[#888888] capitalize">
@@ -800,7 +800,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   <div className="space-y-1.5">
                     <div className="flex items-baseline justify-between">
                       <div className="flex items-baseline gap-1.5">
-                        <span className="text-xs font-bold text-[#FFCC00] bg-[#FFCC00]/10 px-2 py-0.5 rounded border border-[#FFCC00]/20">
+                        <span className="text-xs font-bold text-[#DC2626] bg-[#DC2626]/10 px-2 py-0.5 rounded border border-[#DC2626]/20">
                           {selectedDayRecord.cantidadClases ?? 1} {(selectedDayRecord.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'}
                         </span>
                         <span className="text-2xl font-extrabold text-white">
@@ -813,7 +813,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     </div>
                     <div className="text-[11px] text-[#888888] flex items-center justify-between pt-1 border-t border-[#2C2C2C]">
                       <span>Total de clases:</span>
-                      <span className="font-semibold text-[#FFCC00]">
+                      <span className="font-semibold text-[#DC2626]">
                         {selectedDayRecord.cantidadClases ?? 1} {(selectedDayRecord.cantidadClases ?? 1) === 1 ? 'clase dictada' : 'clases dictadas'}
                       </span>
                     </div>
@@ -825,7 +825,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                       <button
                         type="button"
                         onClick={() => handleOpenCreateModal(format(selectedDate, 'yyyy-MM-dd'))}
-                        className="text-xs text-[#FFCC00] hover:underline font-semibold"
+                        className="text-xs text-[#DC2626] hover:underline font-semibold"
                       >
                         + Cargar este día
                       </button>
@@ -929,7 +929,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#2C2C2C]">
               <div>
                 <h4 className="text-white text-sm font-bold flex items-center gap-2">
-                  <CalendarDays className="w-4 h-4 text-[#FFCC00]" />
+                  <CalendarDays className="w-4 h-4 text-[#DC2626]" />
                   Desglose Semanal por Día de la Semana
                 </h4>
                 <p className="text-[#888888] text-xs">
@@ -969,7 +969,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   variant="outline"
                   size="sm"
                   onClick={handleExportSemanaPDF}
-                  className="h-8 text-xs border-[#FFCC00]/50 text-[#FFCC00] hover:bg-[#FFCC00]/10 hover:text-white font-semibold"
+                  className="h-8 text-xs border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white font-semibold"
                   title="Descargar informe semanal para presentar en Comisión Directiva"
                 >
                   <FileDown className="w-3.5 h-3.5 mr-1" />
@@ -993,7 +993,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     className={cn(
                       'rounded-xl border p-3 flex flex-col justify-between cursor-pointer transition-all',
                       isSelected
-                        ? 'bg-[#282828] border-[#FFCC00] shadow-md ring-1 ring-[#FFCC00]/50'
+                        ? 'bg-[#282828] border-[#DC2626] shadow-md ring-1 ring-[#DC2626]/50'
                         : reg
                         ? 'bg-[#222222] border-[#383838] hover:border-[#555]'
                         : 'bg-[#181818] border-[#2A2A2A] hover:border-[#383838] opacity-70 hover:opacity-100'
@@ -1003,7 +1003,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                       <div className="flex items-center justify-between mb-1">
                         <span className={cn(
                           'text-xs font-bold uppercase',
-                          isToday ? 'text-[#FFCC00]' : 'text-[#AAAAAA]'
+                          isToday ? 'text-[#DC2626]' : 'text-[#AAAAAA]'
                         )}>
                           {format(day, 'EEE', { locale: es })}
                         </span>
@@ -1015,7 +1015,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                       {reg ? (
                         <div className="my-1.5 space-y-0.5">
                           <div className="flex items-center justify-between">
-                            <span className="text-[11px] font-bold text-[#FFCC00]">
+                            <span className="text-[11px] font-bold text-[#DC2626]">
                               {reg.cantidadClases ?? 1} {(reg.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'}
                             </span>
                             <span className="text-xs font-semibold text-white">
@@ -1045,7 +1045,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                             e.stopPropagation();
                             handleOpenCreateModal(dayKey);
                           }}
-                          className="text-[#FFCC00] hover:underline"
+                          className="text-[#DC2626] hover:underline"
                         >
                           + Cargar
                         </button>
@@ -1075,7 +1075,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
             {/* Resumen total al pie de la semana */}
             <div className="bg-[#171717] rounded-lg p-2.5 px-4 flex flex-col sm:flex-row items-center justify-between text-xs border border-[#2B2B2B] gap-2">
               <span className="text-[#888888]">
-                Total de la semana: <strong className="text-[#FFCC00]">{semanaStats.clases} clases</strong> (<strong className="text-white">{semanaStats.alumnos} alumnos</strong>) en <strong className="text-white">{semanaStats.diasConClase} días con actividad</strong>
+                Total de la semana: <strong className="text-[#DC2626]">{semanaStats.clases} clases</strong> (<strong className="text-white">{semanaStats.alumnos} alumnos</strong>) en <strong className="text-white">{semanaStats.diasConClase} días con actividad</strong>
               </span>
               <span className="text-emerald-400 font-bold text-sm">
                 Recaudación semanal: $ {semanaStats.total.toLocaleString('es-AR')}
@@ -1090,7 +1090,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
                 <h4 className="text-white text-sm font-bold flex items-center gap-2">
-                  <CalendarIcon className="w-4 h-4 text-[#FFCC00]" />
+                  <CalendarIcon className="w-4 h-4 text-[#DC2626]" />
                   Historial de Días Cargados en el Mes ({registrosProfeMensual.length})
                 </h4>
                 <span className="text-xs text-[#777777]">1 carga por día</span>
@@ -1101,7 +1101,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   variant="outline"
                   size="sm"
                   onClick={handleExportMesPDF}
-                  className="h-8 text-xs border-[#FFCC00]/50 text-[#FFCC00] hover:bg-[#FFCC00]/10 hover:text-white font-semibold"
+                  className="h-8 text-xs border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white font-semibold"
                   title="Exportar informe mensual oficial en PDF para Comisión Directiva"
                 >
                   <FileDown className="w-3.5 h-3.5 mr-1" />
@@ -1171,7 +1171,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
 
                           {/* Cantidad Alumnos */}
                           <TableCell className="text-center py-2.5">
-                            <span className="font-extrabold text-[#FFCC00] text-sm">
+                            <span className="font-extrabold text-[#DC2626] text-sm">
                               {registro.cantidadAlumnos}
                             </span>
                           </TableCell>
@@ -1230,7 +1230,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
           <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4.5 transition-all">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg bg-[#FFCC00]/15 border border-[#FFCC00]/30 flex items-center justify-center text-[#FFCC00]">
+                <div className="h-10 w-10 rounded-lg bg-[#DC2626]/15 border border-[#DC2626]/30 flex items-center justify-center text-[#DC2626]">
                   <ClipboardList className="h-5 w-5" />
                 </div>
                 <div>
@@ -1278,7 +1278,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 <Button
                   size="sm"
                   onClick={() => handleOpenCreateModal(format(selectedDate, 'yyyy-MM-dd'))}
-                  className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold"
+                  className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold"
                 >
                   <Plus className="h-3.5 w-3.5 mr-1" />
                   Cargar Planilla
@@ -1299,7 +1299,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-white text-base font-bold flex items-center gap-2">
-                  <Users className="h-4 w-4 text-[#FFCC00]" />
+                  <Users className="h-4 w-4 text-[#DC2626]" />
                   Presentes de Alumnos con DNI ({format(selectedDate, 'dd/MM/yyyy')})
                 </h3>
                 <p className="text-[#999999] text-xs mt-0.5">
@@ -1317,7 +1317,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                         !selectedDate && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon className="mr-2 h-3.5 w-3.5 text-[#FFCC00]" />
+                      <CalendarIcon className="mr-2 h-3.5 w-3.5 text-[#DC2626]" />
                       {selectedDate ? format(selectedDate, 'PPP', { locale: es }) : <span>Elegir fecha</span>}
                     </Button>
                   </PopoverTrigger>
@@ -1435,7 +1435,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
               
               <div className="flex items-center gap-2 print:hidden">
                 <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                  <SelectTrigger className="h-8 text-xs bg-[#2A2A2A] border-[#333333] text-white focus:ring-[#FFCC00] w-[160px]">
+                  <SelectTrigger className="h-8 text-xs bg-[#2A2A2A] border-[#333333] text-white focus:ring-[#DC2626] w-[160px]">
                     <SelectValue placeholder="Seleccionar mes" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#1E1E1E] border-[#333333] text-white">
@@ -1506,7 +1506,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                             {socio.dni}
                           </TableCell>
                           <TableCell className="text-center py-3">
-                            <Badge variant="outline" className="bg-[#FFCC00]/10 text-[#FFCC00] border-[#FFCC00]/20 font-bold px-3 py-0.5 print:bg-transparent print:border-none print:text-black print:p-0">
+                            <Badge variant="outline" className="bg-[#DC2626]/10 text-[#DC2626] border-[#DC2626]/20 font-bold px-3 py-0.5 print:bg-transparent print:border-none print:text-black print:p-0">
                               {totalClases} {totalClases === 1 ? 'clase' : 'clases'}
                             </Badge>
                           </TableCell>
@@ -1527,7 +1527,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
           <DialogContent className="bg-[#1E1E1E] border-[#333333] text-white sm:max-w-[440px]">
             <DialogHeader>
               <DialogTitle className="text-white font-bold text-lg flex items-center gap-2">
-                <ClipboardList className="w-5 h-5 text-[#FFCC00]" />
+                <ClipboardList className="w-5 h-5 text-[#DC2626]" />
                 {editingRegistro ? 'Editar Planilla del Día' : 'Cargar Planilla del Día'}
               </DialogTitle>
               <DialogDescription className="text-[#888888] text-xs">
@@ -1544,7 +1544,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   value={formFecha}
                   onChange={(e) => setFormFecha(e.target.value)}
                   required
-                  className="bg-[#2A2A2A] border-[#383838] text-white focus:border-[#FFCC00]"
+                  className="bg-[#2A2A2A] border-[#383838] text-white focus:border-[#DC2626]"
                 />
               </div>
 
@@ -1560,7 +1560,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     value={formClases}
                     onChange={(e) => setFormClases(e.target.value)}
                     required
-                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#FFCC00]"
+                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#DC2626]"
                   />
                 </div>
 
@@ -1574,7 +1574,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     value={formAlumnos}
                     onChange={(e) => setFormAlumnos(e.target.value)}
                     required
-                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#FFCC00]"
+                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#DC2626]"
                   />
                 </div>
 
@@ -1588,7 +1588,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     value={formPrecio}
                     onChange={(e) => setFormPrecio(e.target.value)}
                     required
-                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#FFCC00]"
+                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#DC2626]"
                   />
                 </div>
               </div>
@@ -1601,7 +1601,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   placeholder="Notas adicionales..."
                   value={formObservaciones}
                   onChange={(e) => setFormObservaciones(e.target.value)}
-                  className="bg-[#2A2A2A] border-[#383838] text-white focus:border-[#FFCC00]"
+                  className="bg-[#2A2A2A] border-[#383838] text-white focus:border-[#DC2626]"
                 />
               </div>
 
@@ -1617,7 +1617,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 <Button
                   type="submit"
                   disabled={submittingModal}
-                  className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold"
+                  className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold"
                 >
                   {submittingModal ? 'Guardando...' : editingRegistro ? 'Guardar Cambios' : 'Guardar Día'}
                 </Button>

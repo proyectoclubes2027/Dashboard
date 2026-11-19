@@ -558,7 +558,7 @@ export default function SancionesPanel({ readOnly = false }: SancionesPanelProps
     const worksheet = XLSX.utils.json_to_sheet(exportRows);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Sanciones y Reincidentes');
-    XLSX.writeFile(workbook, `CAEC_Tenis_Sanciones_${format(new Date(), 'yyyy-MM-dd')}.xlsx`);
+    XLSX.writeFile(workbook, `CARP_Tenis_Sanciones_${format(new Date(), 'yyyy-MM-dd')}.xlsx`);
 
     toast({
       title: 'Excel generado',

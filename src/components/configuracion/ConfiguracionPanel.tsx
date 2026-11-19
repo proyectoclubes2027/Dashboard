@@ -130,9 +130,9 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
       key: 'socio',
       label: 'Socio',
       icon: Tag,
-      color: 'text-[#FFCC00]',
-      bgColor: 'bg-[#FFCC00]/10',
-      borderColor: 'border-[#FFCC00]/20',
+      color: 'text-[#DC2626]',
+      bgColor: 'bg-[#DC2626]/10',
+      borderColor: 'border-[#DC2626]/20',
       valor: cuotaSocio,
       onChange: setCuotaSocio,
       descripcion: 'Miembro regular del club con acceso completo a las instalaciones.',
@@ -365,14 +365,14 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
           </p>
         </div>
         {readOnly ? (
-          <div className="px-3 py-1.5 bg-[#FFCC00]/10 border border-[#FFCC00]/30 rounded-lg">
-            <span className="text-[#FFCC00] text-xs font-bold uppercase tracking-wider">Modo Solo Lectura (Consulta)</span>
+          <div className="px-3 py-1.5 bg-[#DC2626]/10 border border-[#DC2626]/30 rounded-lg">
+            <span className="text-[#DC2626] text-xs font-bold uppercase tracking-wider">Modo Solo Lectura (Consulta)</span>
           </div>
         ) : (
           <Button
             onClick={handleSave}
             disabled={saving}
-            className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-medium"
+            className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium"
           >
             {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4 mr-1" />}
             {saving ? 'Guardando...' : 'Guardar'}

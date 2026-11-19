@@ -71,13 +71,16 @@ export default function Sidebar({ activeTab, onNavigate, isOpen, onClose, onOpen
         {/* Logo */}
         <div className="flex flex-col items-center gap-1.5 pt-5 pb-3 px-4 shrink-0">
           <img
-            src="/logo-caec.png"
-            alt="Empalme Central Tenis - CAEC"
+            src="/logo-club.png"
+            alt="Club Atlético Riberas del Paraná"
             className="w-20 h-20 object-contain drop-shadow-md"
           />
           <div className="text-center">
-            <p className="text-muted-foreground text-xs font-medium tracking-wide">
-              CAEC - Administración
+            <p className="text-white text-xs font-bold tracking-wide">
+              RIBERAS DEL PARANÁ
+            </p>
+            <p className="text-muted-foreground text-[10px] font-medium">
+              Panel de Gestión
             </p>
           </div>
         </div>
@@ -93,14 +96,14 @@ export default function Sidebar({ activeTab, onNavigate, isOpen, onClose, onOpen
               href="/secretaria"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between w-full px-3 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-amber-400/20 to-amber-500/10 border border-amber-400/40 text-amber-300 hover:from-amber-400 hover:to-amber-500 hover:text-black transition-all mb-1.5 shadow-sm group"
+              className="flex items-center justify-between w-full px-3 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-red-600/20 to-red-700/10 border border-red-600/40 text-red-400 hover:from-red-600 hover:to-red-700 hover:text-white transition-all mb-1.5 shadow-sm group"
               title="Abrir mostrador de cobro de Secretaría en nueva pestaña"
             >
               <div className="flex items-center gap-2.5">
-                <Receipt className="h-4 w-4 text-amber-400 group-hover:text-black" />
+                <Receipt className="h-4 w-4 text-red-500 group-hover:text-white" />
                 <span>Secretaría (Mostrador)</span>
               </div>
-              <ExternalLink className="h-3.5 w-3.5 opacity-60 group-hover:opacity-100 group-hover:text-black" />
+              <ExternalLink className="h-3.5 w-3.5 opacity-60 group-hover:opacity-100 group-hover:text-white" />
             </a>
           )}
 
@@ -124,14 +127,14 @@ export default function Sidebar({ activeTab, onNavigate, isOpen, onClose, onOpen
             href="/comision"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between w-full px-3 py-2 rounded-xl text-xs font-bold bg-[#18181A] border border-amber-400/30 text-amber-300 hover:bg-amber-400 hover:text-black transition-all mb-2 shadow-sm group"
+            className="flex items-center justify-between w-full px-3 py-2 rounded-xl text-xs font-bold bg-[#18181A] border border-red-500/30 text-red-400 hover:bg-red-600 hover:text-white transition-all mb-2 shadow-sm group"
             title="Abrir Portal Ejecutivo de Comisión Directiva en nueva pestaña"
           >
             <div className="flex items-center gap-2.5">
-              <Building2 className="h-4 w-4 text-amber-400 group-hover:text-black transition-transform" />
+              <Building2 className="h-4 w-4 text-red-500 group-hover:text-white transition-transform" />
               <span>Comisión Directiva</span>
             </div>
-            <ExternalLink className="h-3.5 w-3.5 opacity-40 group-hover:opacity-100 group-hover:text-black" />
+            <ExternalLink className="h-3.5 w-3.5 opacity-40 group-hover:opacity-100 group-hover:text-white" />
           </a>
           {filteredNavItems.map((item) => {
             const isActive = activeTab === item.id;
@@ -167,7 +170,7 @@ export default function Sidebar({ activeTab, onNavigate, isOpen, onClose, onOpen
             Cerrar Sesión
           </button>
           <p className="text-muted-foreground text-[10px] text-center uppercase font-bold tracking-wider">
-            © 2026 CAEC · V2.0
+            © 2026 CARP · V2.0
           </p>
         </div>
       </aside>

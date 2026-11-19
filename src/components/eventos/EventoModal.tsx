@@ -396,7 +396,7 @@ export default function EventoModal({
               <div className="h-4 w-px bg-[#2b2b35]" />
               <div className="flex items-center gap-1.5 font-bold">
                 <span className="text-amber-300">Resultado:</span>
-                <span className={`font-mono text-sm ${totalGeneralNeto >= 0 ? 'text-[#FFCC00]' : 'text-red-400'}`}>
+                <span className={`font-mono text-sm ${totalGeneralNeto >= 0 ? 'text-[#DC2626]' : 'text-red-400'}`}>
                   {formatCurrency(totalGeneralNeto)}
                 </span>
               </div>
@@ -554,7 +554,7 @@ export default function EventoModal({
               </span>
               <span className={`text-base font-black font-mono px-3 py-1 rounded-lg border ${
                 totalGeneralNeto >= 0
-                  ? 'text-[#FFCC00] bg-black/40 border-[#FFCC00]/30'
+                  ? 'text-[#DC2626] bg-black/40 border-[#DC2626]/30'
                   : 'text-red-400 bg-red-950/30 border-red-500/30'
               }`}>
                 {formatCurrency(totalGeneralNeto)}
@@ -576,7 +576,7 @@ export default function EventoModal({
                 type="submit"
                 size="sm"
                 disabled={saving}
-                className="text-xs h-9 bg-[#FFCC00] hover:bg-[#e6b800] text-black font-black gap-1.5 px-4"
+                className="text-xs h-9 bg-[#DC2626] hover:bg-[#e6b800] text-black font-black gap-1.5 px-4"
               >
                 {saving ? (
                   <>

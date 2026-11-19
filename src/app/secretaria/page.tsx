@@ -612,10 +612,10 @@ export default function SecretariaPage() {
 
     const nombreArchivo =
       modoPeriodoCaja === 'ayer'
-        ? `Cierre_Secretaria_CAEC_Ayer_${cajaFechaDesde}.xlsx`
+        ? `Cierre_Secretaria_CARP_Ayer_${cajaFechaDesde}.xlsx`
         : modoPeriodoCaja === 'mes'
-        ? `Rendicion_Secretaria_CAEC_Mes_${mesActual}.xlsx`
-        : `Cierre_Secretaria_CAEC_${cajaFechaDesde || fechaHoy || 'Hoy'}.xlsx`;
+        ? `Rendicion_Secretaria_CARP_Mes_${mesActual}.xlsx`
+        : `Cierre_Secretaria_CARP_${cajaFechaDesde || fechaHoy || 'Hoy'}.xlsx`;
 
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.json_to_sheet(rows);
@@ -661,7 +661,7 @@ export default function SecretariaPage() {
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.json_to_sheet(rows);
     XLSX.utils.book_append_sheet(wb, ws, 'Deudores Luz e Invitados');
-    XLSX.writeFile(wb, `CAEC_Deudores_Luz_Invitados_${anioActual}.xlsx`);
+    XLSX.writeFile(wb, `CARP_Deudores_Luz_Invitados_${anioActual}.xlsx`);
   };
 
   // Padrón General con filtro (Pestaña 3)
@@ -734,7 +734,7 @@ export default function SecretariaPage() {
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.json_to_sheet(rows);
     XLSX.utils.book_append_sheet(wb, ws, 'Padrón Estados Deuda');
-    XLSX.writeFile(wb, `CAEC_Padron_Estados_Deuda_${anioActual}.xlsx`);
+    XLSX.writeFile(wb, `CARP_Padron_Estados_Deuda_${anioActual}.xlsx`);
   };
 
   return (
@@ -747,7 +747,7 @@ export default function SecretariaPage() {
           </div>
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">CAEC Tenis · Secretaría</h1>
+              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">CARP Tenis · Secretaría</h1>
               <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 text-[10px] font-bold">
                 ● Mostrador Activo
               </Badge>

@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
         // Modo Demo / Administrador Total
         if (
           (credentials.username === "admin" && credentials.password === "admin123") ||
-          (credentials.username === "TenisCAECadmin" && credentials.password === "Tenis.2026")
+          (credentials.username === "TenisCARPadmin" && credentials.password === "Tenis.2026")
         ) {
           return { id: "0", name: "Administrador Demo", username: "admin", role: "admin" };
         }
@@ -23,7 +23,7 @@ export const authOptions: NextAuthOptions = {
         // Modo Demo / Visualizador Solo Lectura
         if (
           (credentials.username === "demo" && credentials.password === "1234") ||
-          (credentials.username === "TenisCAEC" && credentials.password === "1234")
+          (credentials.username === "TenisCARP" && credentials.password === "1234")
         ) {
           return { id: "1", name: "Visualizador Demo", username: "demo", role: "viewer" };
         }

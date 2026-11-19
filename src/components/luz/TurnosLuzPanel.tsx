@@ -451,7 +451,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 onClick={() => { setPeriodoTipo('dia'); setDiaFiltro('todos'); }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'dia'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -461,7 +461,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 onClick={() => { setPeriodoTipo('semana'); setDiaFiltro('todos'); }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'semana'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -471,7 +471,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 onClick={() => { setPeriodoTipo('mes'); setDiaFiltro('todos'); }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'mes'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -481,7 +481,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 onClick={() => { setPeriodoTipo('ano'); setDiaFiltro('todos'); }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'ano'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -573,14 +573,14 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
           <TabsList className="bg-[#1E1E1E] border border-[#2A2A2A] p-1">
             <TabsTrigger
               value="socios"
-              className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-[#121212] font-semibold text-xs px-4"
+              className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] font-semibold text-xs px-4"
             >
               <Users className="h-4 w-4 mr-1.5" />
               Socios ({data?.turnosSocios.length || 0})
             </TabsTrigger>
             <TabsTrigger
               value="profesor"
-              className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-[#121212] font-semibold text-xs px-4"
+              className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] font-semibold text-xs px-4"
             >
               <GraduationCap className="h-4 w-4 mr-1.5" />
               Profesor ({data?.turnosProfesor.length || 0})
@@ -623,7 +623,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                       onClick={() => setVistaSocios('acumulado')}
                       className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                         vistaSocios === 'acumulado'
-                          ? 'bg-[#FFCC00] text-[#121212]'
+                          ? 'bg-[#DC2626] text-[#121212]'
                           : 'text-[#AAAAAA] hover:text-white'
                       }`}
                     >
@@ -633,7 +633,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                       onClick={() => setVistaSocios('detalle')}
                       className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                         vistaSocios === 'detalle'
-                          ? 'bg-[#FFCC00] text-[#121212]'
+                          ? 'bg-[#DC2626] text-[#121212]'
                           : 'text-[#AAAAAA] hover:text-white'
                       }`}
                     >
@@ -1121,7 +1121,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
             <Button
               onClick={handleSaveTarifas}
               disabled={savingTarifas}
-              className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold"
+              className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold"
             >
               {savingTarifas ? (
                 <>

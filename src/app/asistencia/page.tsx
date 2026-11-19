@@ -135,7 +135,7 @@ export default function AsistenciaPage() {
     <div className="min-h-screen bg-[#121212] flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-[#FFCC00] tracking-tight mb-1">CAEC Tenis</h1>
+          <h1 className="text-3xl font-bold text-[#DC2626] tracking-tight mb-1">CARP Tenis</h1>
           <p className="text-[#999999] text-sm">Registro de Asistencia a Clases</p>
         </div>
 
@@ -152,7 +152,7 @@ export default function AsistenciaPage() {
 
           {status === 'idle' && step === 'completar_datos' && (
             <CardHeader className="text-center pb-2 bg-[#232323] border-b border-[#333333]">
-              <div className="mx-auto w-10 h-10 rounded-full bg-[#FFCC00]/10 border border-[#FFCC00]/30 flex items-center justify-center text-[#FFCC00] mb-2">
+              <div className="mx-auto w-10 h-10 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 flex items-center justify-center text-[#DC2626] mb-2">
                 <UserCheck className="w-5 h-5" />
               </div>
               <CardTitle className="text-white text-lg">Completar Datos del Alumno</CardTitle>
@@ -173,7 +173,7 @@ export default function AsistenciaPage() {
                     placeholder="Ej: 32824688"
                     value={dni}
                     onChange={(e) => setDni(e.target.value)}
-                    className="text-center text-2xl h-14 bg-[#2A2A2A] border-[#383838] text-white focus:border-[#FFCC00] focus:ring-[#FFCC00] font-mono tracking-wider"
+                    className="text-center text-2xl h-14 bg-[#2A2A2A] border-[#383838] text-white focus:border-[#DC2626] focus:ring-[#DC2626] font-mono tracking-wider"
                     required
                     autoFocus
                   />
@@ -181,7 +181,7 @@ export default function AsistenciaPage() {
                 <Button 
                   type="submit" 
                   disabled={loading || !dni}
-                  className="w-full h-12 text-base font-bold bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] transition-transform active:scale-[0.99]"
+                  className="w-full h-12 text-base font-bold bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] transition-transform active:scale-[0.99]"
                 >
                   {loading ? (
                     <>
@@ -204,7 +204,7 @@ export default function AsistenciaPage() {
                 <div className="grid grid-cols-2 gap-2.5">
                   <div className="space-y-1">
                     <Label htmlFor="nombre" className="text-xs text-[#CCCCCC] font-semibold flex items-center gap-1">
-                      <User className="w-3.5 h-3.5 text-[#FFCC00]" /> Nombre *
+                      <User className="w-3.5 h-3.5 text-[#DC2626]" /> Nombre *
                     </Label>
                     <Input
                       id="nombre"
@@ -212,7 +212,7 @@ export default function AsistenciaPage() {
                       placeholder="Ej: Juan"
                       value={nombre}
                       onChange={(e) => setNombre(e.target.value)}
-                      className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#FFCC00]"
+                      className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#DC2626]"
                       required
                       autoFocus
                     />
@@ -227,7 +227,7 @@ export default function AsistenciaPage() {
                       placeholder="Ej: Pérez"
                       value={apellido}
                       onChange={(e) => setApellido(e.target.value)}
-                      className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#FFCC00]"
+                      className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#DC2626]"
                       required
                     />
                   </div>
@@ -235,7 +235,7 @@ export default function AsistenciaPage() {
 
                 <div className="space-y-1">
                   <Label htmlFor="tel" className="text-xs text-[#CCCCCC] font-semibold flex items-center gap-1">
-                    <Phone className="w-3.5 h-3.5 text-[#FFCC00]" /> Celular / WhatsApp de contacto *
+                    <Phone className="w-3.5 h-3.5 text-[#DC2626]" /> Celular / WhatsApp de contacto *
                   </Label>
                   <Input
                     id="tel"
@@ -243,7 +243,7 @@ export default function AsistenciaPage() {
                     placeholder="Ej: 3400551122"
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
-                    className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#FFCC00]"
+                    className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#DC2626]"
                     required
                   />
                   <p className="text-[11px] text-[#777777]">
@@ -264,7 +264,7 @@ export default function AsistenciaPage() {
                   <Button 
                     type="submit" 
                     disabled={loading || !nombre.trim() || !apellido.trim() || !telefono.trim()}
-                    className="flex-1 h-11 text-sm font-bold bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] transition-colors"
+                    className="flex-1 h-11 text-sm font-bold bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] transition-colors"
                   >
                     {loading ? (
                       <>
@@ -318,7 +318,7 @@ export default function AsistenciaPage() {
         </Card>
         
         <div className="mt-8 text-center text-[#555555] text-xs">
-          Club Atlético Empalme Central · CAEC Tenis &copy; {new Date().getFullYear()}
+          Club Atlético Riberas del Paraná · CARP Tenis &copy; {new Date().getFullYear()}
         </div>
       </div>
     </div>

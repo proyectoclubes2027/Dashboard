@@ -76,7 +76,7 @@ interface SociosTableProps {
 
 function getCategoriaBadge(categoria: string) {
   switch (categoria) {
-    case 'socio': return 'bg-[#FFCC00]/15 text-[#FFCC00] border-[#FFCC00]/20';
+    case 'socio': return 'bg-[#DC2626]/15 text-[#DC2626] border-[#DC2626]/20';
     case 'alumno': return 'bg-blue-400/15 text-blue-400 border-blue-400/20';
     case 'vitalicio': return 'bg-green-400/15 text-green-400 border-green-400/20';
     default: return 'bg-gray-400/15 text-gray-400 border-gray-400/20';
@@ -254,7 +254,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
     const deuda = socio.deudaEstimada;
     const meses = socio.mesesAdeudados;
     const msg = encodeURIComponent(
-      `Hola ${socio.nombre} ${socio.apellido} 👋\n\nTe escribimos del club CAEC para recordarte que tenés ${meses} cuota${meses > 1 ? 's' : ''} pendiente${meses > 1 ? 's' : ''} por un total de $${deuda.toLocaleString('es-AR')}.\n\nPor favor acercate a la sede o comunicate con nosotros para regularizar tu situación. ¡Gracias! 🎾`
+      `Hola ${socio.nombre} ${socio.apellido} 👋\n\nTe escribimos del club CARP para recordarte que tenés ${meses} cuota${meses > 1 ? 's' : ''} pendiente${meses > 1 ? 's' : ''} por un total de $${deuda.toLocaleString('es-AR')}.\n\nPor favor acercate a la sede o comunicate con nosotros para regularizar tu situación. ¡Gracias! 🎾`
     );
     window.open(`https://wa.me/54${phone.startsWith('0') ? phone.slice(1) : phone}?text=${msg}`, '_blank');
   }
@@ -321,7 +321,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Socios");
 
-      XLSX.writeFile(workbook, `Lista_Socios_CAEC_${label}_${new Date().toISOString().split('T')[0]}.xlsx`);
+      XLSX.writeFile(workbook, `Lista_Socios_CARP_${label}_${new Date().toISOString().split('T')[0]}.xlsx`);
       
       toast({
         title: "Exportación exitosa",
@@ -406,7 +406,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
               <Button
                 size="sm"
                 onClick={onCrearSocio}
-                className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-medium text-xs h-7 px-2.5"
+                className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium text-xs h-7 px-2.5"
               >
                 <Plus className="h-3.5 w-3.5 mr-1" />
                 Nuevo
@@ -451,7 +451,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                 size="sm"
                 variant="outline"
                 onClick={onPagoMasivo}
-                className="border-[#FFCC00]/30 text-[#FFCC00] hover:bg-[#FFCC00]/10 text-xs h-7 px-2.5"
+                className="border-[#DC2626]/30 text-[#DC2626] hover:bg-[#DC2626]/10 text-xs h-7 px-2.5"
               >
                 <Users className="h-3.5 w-3.5 mr-1" />
                 Pago Masivo ({deudoresCount})
@@ -629,7 +629,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                             size="sm"
                             variant="ghost"
                             onClick={() => onRegistrarPago({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido })}
-                            className="h-7 w-7 p-0 text-[#FFCC00] hover:text-[#E6B800] hover:bg-[#FFCC00]/10"
+                            className="h-7 w-7 p-0 text-[#DC2626] hover:text-[#E6B800] hover:bg-[#DC2626]/10"
                             title="Registrar Pago"
                           >
                             <DollarSign className="h-3.5 w-3.5" />
@@ -747,7 +747,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                     <History className="h-3 w-3 mr-0.5" /> Historial
                   </Button>
                   {!readOnly && (
-                    <Button size="sm" variant="ghost" onClick={() => onRegistrarPago({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido })} className="h-7 px-2 text-[#FFCC00] hover:bg-[#FFCC00]/10 text-[10px]">
+                    <Button size="sm" variant="ghost" onClick={() => onRegistrarPago({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido })} className="h-7 px-2 text-[#DC2626] hover:bg-[#DC2626]/10 text-[10px]">
                       <DollarSign className="h-3 w-3 mr-0.5" /> Pago
                     </Button>
                   )}

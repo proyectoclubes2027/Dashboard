@@ -57,7 +57,7 @@ const formatARS = (val: number) => {
 const tryLoadLogo = async (doc: jsPDF, x = 12, y = 11, w = 12, h = 12) => {
   try {
     const logoImg = new Image();
-    logoImg.src = '/logo-caec.png';
+    logoImg.src = '/logo-club.png';
     await new Promise((resolve) => {
       logoImg.onload = resolve;
       logoImg.onerror = resolve;
@@ -111,7 +111,7 @@ export const exportInvitadosPDF = async (
   );
 
   // Barra de título del período
-  doc.setFillColor(255, 204, 0); // Amarillo CAEC
+  doc.setFillColor(255, 204, 0); // Amarillo CARP
   doc.rect(10, 26, 190, 8, 'F');
   doc.setTextColor(0, 0, 0);
   doc.setFontSize(10.5);
@@ -277,14 +277,14 @@ export const exportInvitadosPDF = async (
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(140, 140, 140);
     doc.text(
-      `CAEC Tenis · Emitido el ${format(new Date(), 'dd/MM/yyyy HH:mm')} · Página ${i} de ${pageCount}`,
+      `CARP Tenis · Emitido el ${format(new Date(), 'dd/MM/yyyy HH:mm')} · Página ${i} de ${pageCount}`,
       105,
       290,
       { align: 'center' }
     );
   }
 
-  doc.save(`CAEC_Liquidacion_Invitados_${periodoLabel.replace(/\s+/g, '_')}.pdf`);
+  doc.save(`CARP_Liquidacion_Invitados_${periodoLabel.replace(/\s+/g, '_')}.pdf`);
 };
 
 // ============================================================================
@@ -395,5 +395,5 @@ export const exportInvitadosExcel = (
   const wsDetalle = XLSX.utils.aoa_to_sheet(rowsDetalle);
   XLSX.utils.book_append_sheet(wb, wsDetalle, 'Detalle Turnos');
 
-  XLSX.writeFile(wb, `CAEC_Reporte_Invitados_${periodoLabel.replace(/\s+/g, '_')}.xlsx`);
+  XLSX.writeFile(wb, `CARP_Reporte_Invitados_${periodoLabel.replace(/\s+/g, '_')}.xlsx`);
 };

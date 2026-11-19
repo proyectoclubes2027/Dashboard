@@ -174,7 +174,7 @@ export default function RegistrarPagoModal({
           {/* Pending Months List */}
           <div className="space-y-2">
             <Label className="text-[#CCCCCC] flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-[#FFCC00]" />
+              <Calendar className="h-4 w-4 text-[#DC2626]" />
               Meses Pendientes
             </Label>
             
@@ -199,7 +199,7 @@ export default function RegistrarPagoModal({
                             variant="outline"
                             size="sm"
                             onClick={() => toggleMonth(nextUnpaidMonth)}
-                            className="bg-[#FFCC00]/10 text-[#FFCC00] border-[#FFCC00]/30 hover:bg-[#FFCC00]/20 hover:text-[#FFCC00] text-xs h-8 px-4"
+                            className="bg-[#DC2626]/10 text-[#DC2626] border-[#DC2626]/30 hover:bg-[#DC2626]/20 hover:text-[#DC2626] text-xs h-8 px-4"
                           >
                             <Calendar className="h-3.5 w-3.5 mr-1.5" />
                             Registrar mes: {MESES[parseInt(nextUnpaidMonth.split('-')[1]) - 1]} {nextUnpaidMonth.split('-')[0]}
@@ -217,12 +217,12 @@ export default function RegistrarPagoModal({
                               key={p.mesPagado}
                               onClick={() => toggleMonth(p.mesPagado)}
                               className={`w-full flex items-center justify-between p-2 rounded-md transition-colors ${
-                                isSelected ? 'bg-[#FFCC00]/10 border border-[#FFCC00]/30' : 'hover:bg-[#2A2A2A] border border-transparent'
+                                isSelected ? 'bg-[#DC2626]/10 border border-[#DC2626]/30' : 'hover:bg-[#2A2A2A] border border-transparent'
                               }`}
                             >
                               <div className="flex items-center gap-2">
                                 {isSelected ? (
-                                  <CheckSquare className="h-4 w-4 text-[#FFCC00]" />
+                                  <CheckSquare className="h-4 w-4 text-[#DC2626]" />
                                 ) : (
                                   <Square className="h-4 w-4 text-[#666666]" />
                                 )}
@@ -243,15 +243,15 @@ export default function RegistrarPagoModal({
                             <button
                               key={m}
                               onClick={() => toggleMonth(m)}
-                              className="w-full flex items-center justify-between p-2 rounded-md bg-[#FFCC00]/10 border border-[#FFCC00]/30"
+                              className="w-full flex items-center justify-between p-2 rounded-md bg-[#DC2626]/10 border border-[#DC2626]/30"
                             >
                               <div className="flex items-center gap-2">
-                                <CheckSquare className="h-4 w-4 text-[#FFCC00]" />
+                                <CheckSquare className="h-4 w-4 text-[#DC2626]" />
                                 <span className="text-xs text-white font-medium">
                                   {MESES[parseInt(month) - 1]} {year}
                                 </span>
                               </div>
-                              <Badge variant="outline" className="text-[10px] border-[#FFCC00]/20 text-[#FFCC00]/70">
+                              <Badge variant="outline" className="text-[10px] border-[#DC2626]/20 text-[#DC2626]/70">
                                 Manual
                               </Badge>
                             </button>
@@ -318,9 +318,9 @@ export default function RegistrarPagoModal({
           </div>
 
           {selectedMonths.length > 0 && (
-            <div className="p-3 bg-[#FFCC00]/5 border border-[#FFCC00]/20 rounded-lg flex items-center justify-between">
+            <div className="p-3 bg-[#DC2626]/5 border border-[#DC2626]/20 rounded-lg flex items-center justify-between">
               <span className="text-xs text-[#999999]">Total a cobrar:</span>
-              <span className="text-lg font-bold text-[#FFCC00]">${totalFinal.toLocaleString('es-AR')}</span>
+              <span className="text-lg font-bold text-[#DC2626]">${totalFinal.toLocaleString('es-AR')}</span>
             </div>
           )}
         </div>
@@ -337,7 +337,7 @@ export default function RegistrarPagoModal({
           <Button
             onClick={handleSubmit}
             disabled={submitting || selectedMonths.length === 0 || !montoManual}
-            className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold h-9 text-xs"
+            className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold h-9 text-xs"
           >
             {submitting && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
             {submitting ? 'Registrando...' : `Confirmar ${selectedMonths.length} Pago(s)`}

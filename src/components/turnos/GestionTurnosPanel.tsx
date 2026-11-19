@@ -241,7 +241,7 @@ export default function GestionTurnosPanel({ readOnly }: { readOnly?: boolean })
     } else if (clean.startsWith('54') && !clean.startsWith('549')) {
       clean = '549' + clean.slice(2);
     }
-    const msg = encodeURIComponent(`Hola ${socioNombre || ''}, te escribimos desde la Subcomisión de Tenis del CAEC.`);
+    const msg = encodeURIComponent(`Hola ${socioNombre || ''}, te escribimos desde la Subcomisión de Tenis del CARP.`);
     return `https://wa.me/${clean}?text=${msg}`;
   };
 
@@ -336,7 +336,7 @@ export default function GestionTurnosPanel({ readOnly }: { readOnly?: boolean })
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.json_to_sheet(rows);
     XLSX.utils.book_append_sheet(wb, ws, 'Turnos del Día');
-    XLSX.writeFile(wb, `Turnos_CAEC_${fechaMonitor}.xlsx`);
+    XLSX.writeFile(wb, `Turnos_CARP_${fechaMonitor}.xlsx`);
   };
 
   // --- FILTRADO DE RANKINGS MENSUALES ---

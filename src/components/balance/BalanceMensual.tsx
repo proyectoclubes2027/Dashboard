@@ -180,7 +180,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
             <ChevronLeft className="h-4 w-4" />
           </Button>
           <div className="flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] border border-[#333333] rounded-lg">
-            <CalendarIcon className="h-4 w-4 text-[#FFCC00]" />
+            <CalendarIcon className="h-4 w-4 text-[#DC2626]" />
             <span className="text-white font-semibold min-w-[140px] text-center capitalize">
               {format(currentMonth, 'MMMM yyyy', { locale: es })}
             </span>
@@ -206,7 +206,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           {!readOnly && (
             <Button 
               onClick={() => { setEditingMovimiento(null); setModalOpen(true); }}
-              className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold"
+              className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold"
             >
               <Plus className="h-4 w-4 mr-2" />
               Nuevo Movimiento
@@ -253,11 +253,11 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           </CardContent>
         </Card>
 
-        <Card className="bg-[#1A1A1A] border-[#FFCC00]/30 overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-[#FFCC00]" />
+        <Card className="bg-[#1A1A1A] border-[#DC2626]/30 overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-1 bg-[#DC2626]" />
           <CardContent className="p-4 flex items-center gap-4">
-            <div className="p-3 rounded-xl bg-[#FFCC00]/10">
-              <Search className="h-6 w-6 text-[#FFCC00]" />
+            <div className="p-3 rounded-xl bg-[#DC2626]/10">
+              <Search className="h-6 w-6 text-[#DC2626]" />
             </div>
             <div>
               <p className="text-[#999999] text-xs font-medium uppercase tracking-wider">Saldo Final</p>
@@ -310,7 +310,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
                     <td className={`px-4 py-3.5 text-right font-bold text-sm ${m.tipo === 'ingreso' ? 'text-green-500' : 'text-red-500'}`}>
                       {m.tipo === 'ingreso' ? '+' : '-'}{formatCurrency(m.monto)}
                     </td>
-                    <td className="px-4 py-3.5 text-right text-[#FFCC00] font-bold text-sm">
+                    <td className="px-4 py-3.5 text-right text-[#DC2626] font-bold text-sm">
                       {formatCurrency(m.saldoAcumulado)}
                     </td>
                     <td className="px-4 py-3.5">

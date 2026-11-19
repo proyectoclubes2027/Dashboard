@@ -427,7 +427,7 @@ export default function PorteriaPage() {
           </div>
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">CAEC Tenis · Portería</h1>
+              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">CARP Tenis · Portería</h1>
               <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 text-[11px] font-bold px-2 py-0.5 flex items-center gap-1.5 animate-pulse">
                 <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
                 Control de Canchas Activo

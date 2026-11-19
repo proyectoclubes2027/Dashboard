@@ -120,7 +120,7 @@ export default function PlazoFijoModal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="bg-[#1A1A1A] border-[#333333] text-white sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-[#FFCC00]">
+          <DialogTitle className="text-[#DC2626]">
             {plazoFijo ? 'Editar Plazo Fijo' : 'Nuevo Plazo Fijo'}
           </DialogTitle>
         </DialogHeader>
@@ -134,7 +134,7 @@ export default function PlazoFijoModal({
               required
               value={formData.banco}
               onChange={(e) => setFormData({ ...formData, banco: e.target.value })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -147,7 +147,7 @@ export default function PlazoFijoModal({
               placeholder="0,00"
               value={formData.montoInvertido}
               onChange={(e) => setFormData({ ...formData, montoInvertido: formatInputCurrency(e.target.value) })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -160,7 +160,7 @@ export default function PlazoFijoModal({
                 required
                 value={formData.fechaConstitucion}
                 onChange={(e) => setFormData({ ...formData, fechaConstitucion: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
               />
             </div>
             <div className="space-y-2">
@@ -171,7 +171,7 @@ export default function PlazoFijoModal({
                 required
                 value={formData.fechaVencimiento}
                 onChange={(e) => setFormData({ ...formData, fechaVencimiento: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
               />
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function PlazoFijoModal({
             <Button 
               type="submit" 
               disabled={loading}
-              className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold min-w-[100px]"
+              className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold min-w-[100px]"
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Guardar'}
             </Button>

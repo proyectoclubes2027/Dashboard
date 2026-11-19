@@ -117,7 +117,7 @@ export default function MovimientoModal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="bg-[#1A1A1A] border-[#333333] text-white sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-[#FFCC00]">
+          <DialogTitle className="text-[#DC2626]">
             {movimiento ? 'Editar Movimiento' : 'Registrar Nuevo Movimiento'}
           </DialogTitle>
         </DialogHeader>
@@ -132,7 +132,7 @@ export default function MovimientoModal({
                 required
                 value={formData.fecha}
                 onChange={(e) => setFormData({ ...formData, fecha: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
               />
             </div>
             <div className="space-y-2">
@@ -160,7 +160,7 @@ export default function MovimientoModal({
               required
               value={formData.descripcion}
               onChange={(e) => setFormData({ ...formData, descripcion: e.target.value })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -172,7 +172,7 @@ export default function MovimientoModal({
               required
               value={formData.responsable}
               onChange={(e) => setFormData({ ...formData, responsable: e.target.value })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -187,7 +187,7 @@ export default function MovimientoModal({
                 placeholder="0,00"
                 value={formData.monto}
                 onChange={(e) => setFormData({ ...formData, monto: formatInputCurrency(e.target.value) })}
-                className="bg-[#2A2A2A] border-[#333333] text-white pl-7 focus:border-[#FFCC00]"
+                className="bg-[#2A2A2A] border-[#333333] text-white pl-7 focus:border-[#DC2626]"
               />
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function MovimientoModal({
             <Button 
               type="submit" 
               disabled={loading}
-              className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold min-w-[100px]"
+              className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold min-w-[100px]"
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : (movimiento ? 'Actualizar' : 'Guardar')}
             </Button>

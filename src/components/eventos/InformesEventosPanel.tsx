@@ -162,7 +162,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
           {!readOnly && (
             <Button
               onClick={handleNuevo}
-              className="h-10 px-4 bg-[#FFCC00] hover:bg-[#e6b800] text-black font-black text-xs gap-2 shadow-lg shadow-amber-500/20"
+              className="h-10 px-4 bg-[#DC2626] hover:bg-[#e6b800] text-black font-black text-xs gap-2 shadow-lg shadow-amber-500/20"
             >
               <Plus className="h-4 w-4" />
               <span>Nuevo Informe de Evento</span>
@@ -234,7 +234,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
           {!readOnly && (
             <Button
               onClick={handleNuevo}
-              className="bg-[#FFCC00] hover:bg-[#e6b800] text-black font-black text-xs gap-2 px-4 h-10"
+              className="bg-[#DC2626] hover:bg-[#e6b800] text-black font-black text-xs gap-2 px-4 h-10"
             >
               <Plus className="h-4 w-4" />
               <span>Cargar Primer Evento</span>
@@ -266,7 +266,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                 className="bg-[#141418] border border-[#24242e] hover:border-[#383848] rounded-2xl p-5 flex flex-col justify-between transition-all shadow-md group relative overflow-hidden"
               >
                 {/* Franja superior amarilla decorativa */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-[#FFCC00] opacity-80" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-[#DC2626] opacity-80" />
 
                 <div className="space-y-4">
                   {/* Encabezado del Evento */}
@@ -298,7 +298,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                       <span className="text-[10px] text-[#777] font-bold uppercase tracking-wider block">
                         Superávit Total
                       </span>
-                      <span className="text-base sm:text-lg font-black font-mono text-[#FFCC00]">
+                      <span className="text-base sm:text-lg font-black font-mono text-[#DC2626]">
                         {formatCurrency(ev.totalNeto || 0)}
                       </span>
                     </div>

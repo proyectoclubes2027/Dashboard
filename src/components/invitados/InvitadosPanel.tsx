@@ -410,7 +410,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
                 onClick={() => setPeriodoTipo('mes')}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'mes'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -420,7 +420,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
                 onClick={() => setPeriodoTipo('semana')}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'semana'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -430,7 +430,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
                 onClick={() => setPeriodoTipo('dia')}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'dia'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -440,7 +440,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
                 onClick={() => setPeriodoTipo('anio')}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'anio'
-                    ? 'bg-[#FFCC00] text-[#121212] shadow-sm'
+                    ? 'bg-[#DC2626] text-[#121212] shadow-sm'
                     : 'text-[#AAAAAA] hover:text-white'
                 }`}
               >
@@ -544,7 +544,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
                   onClick={() => setVista('acumulado')}
                   className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                     vista === 'acumulado'
-                      ? 'bg-[#FFCC00] text-[#121212]'
+                      ? 'bg-[#DC2626] text-[#121212]'
                       : 'text-[#AAAAAA] hover:text-white'
                   }`}
                 >
@@ -554,7 +554,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
                   onClick={() => setVista('ranking_personas')}
                   className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all flex items-center gap-1.5 ${
                     vista === 'ranking_personas'
-                      ? 'bg-[#FFCC00] text-[#121212]'
+                      ? 'bg-[#DC2626] text-[#121212]'
                       : 'text-[#AAAAAA] hover:text-white'
                   }`}
                 >
@@ -565,7 +565,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
                   onClick={() => setVista('detalle')}
                   className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                     vista === 'detalle'
-                      ? 'bg-[#FFCC00] text-[#121212]'
+                      ? 'bg-[#DC2626] text-[#121212]'
                       : 'text-[#AAAAAA] hover:text-white'
                   }`}
                 >
@@ -1166,7 +1166,7 @@ export default function InvitadosPanel({ readOnly = false }: InvitadosPanelProps
             <Button
               onClick={handleSaveTarifas}
               disabled={savingTarifas}
-              className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] font-bold"
+              className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold"
             >
               {savingTarifas ? (
                 <>

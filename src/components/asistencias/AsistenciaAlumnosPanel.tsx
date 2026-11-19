@@ -326,7 +326,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
   function handlePrintQr() {
     const win = window.open('', '_blank');
     if (!win) return;
-    const title = '🎾 CAEC - Asistencia a Clases de Tenis';
+    const title = '🎾 CARP - Asistencia a Clases de Tenis';
     const subtitle = 'Escaneá este código QR con tu celular para registrar tu asistencia';
     const printUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(asistenciaUrl)}&margin=10`;
 
@@ -334,7 +334,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
       '<!DOCTYPE html><html><head><title>' + title + '</title>' +
       '<style>body{font-family:sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;background:#fff;}' +
       'h1{font-size:26px;margin-bottom:8px;color:#111;text-align:center;}p{color:#555;margin-bottom:24px;font-size:16px;text-align:center;}' +
-      'img{border:4px solid #FFCC00;border-radius:14px;padding:8px;}.url{margin-top:16px;font-size:14px;color:#888;word-break:break-all;font-family:monospace;}</style>' +
+      'img{border:4px solid #DC2626;border-radius:14px;padding:8px;}.url{margin-top:16px;font-size:14px;color:#888;word-break:break-all;font-family:monospace;}</style>' +
       '</head><body>' +
       '<h1>' + title + '</h1>' +
       '<p>' + subtitle + '</p>' +
@@ -558,10 +558,10 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               alt="Código QR Alumnos"
               width={130}
               height={130}
-              className="rounded-xl border-2 border-[#FFCC00]/60 shadow-md bg-white p-1"
+              className="rounded-xl border-2 border-[#DC2626]/60 shadow-md bg-white p-1"
             />
             <div className="mt-2 text-center">
-              <span className="text-[11px] font-bold text-[#FFCC00] uppercase tracking-wider">
+              <span className="text-[11px] font-bold text-[#DC2626] uppercase tracking-wider">
                 QR Asistencia
               </span>
             </div>
@@ -569,11 +569,11 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
 
           <div className="flex-1 text-center lg:text-left">
             <div className="flex items-center gap-2 justify-center lg:justify-start mb-1.5 flex-wrap">
-              <QrCode className="h-5 w-5 text-[#FFCC00]" />
+              <QrCode className="h-5 w-5 text-[#DC2626]" />
               <h3 className="text-white text-base font-bold">
                 Página de Alumnos · Asistencia a Clases
               </h3>
-              <Badge variant="outline" className="text-[10px] bg-[#FFCC00]/10 text-[#FFCC00] border-[#FFCC00]/30 font-bold uppercase">
+              <Badge variant="outline" className="text-[10px] bg-[#DC2626]/10 text-[#DC2626] border-[#DC2626]/30 font-bold uppercase">
                 Pública · Escaneo QR
               </Badge>
             </div>
@@ -617,7 +617,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               <Button
                 size="sm"
                 onClick={() => window.open(asistenciaUrl, '_blank')}
-                className="bg-[#FFCC00] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold shadow-sm"
+                className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold shadow-sm"
               >
                 <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
                 Abrir en nueva pestaña
@@ -632,14 +632,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
         <TabsList className="bg-[#1E1E1E] border border-[#333333] p-1 h-12 mb-4 grid grid-cols-2 w-full max-w-md print:hidden">
           <TabsTrigger 
             value="diaria" 
-            className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
           >
             <CheckCircle2 className="w-4 h-4 shrink-0" />
             <span>Presentes Diarios ({asistenciasDiarias.length})</span>
           </TabsTrigger>
           <TabsTrigger 
             value="mensual"
-            className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
           >
             <Users className="w-4 h-4 shrink-0" />
             <span>Alumnos Mensual</span>
@@ -654,7 +654,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-white text-base font-bold flex items-center gap-2">
-                  <Users className="h-5 w-5 text-[#FFCC00]" />
+                  <Users className="h-5 w-5 text-[#DC2626]" />
                   Presentes de Alumnos · {format(selectedDate, "EEEE dd 'de' MMMM", { locale: es })}
                 </h3>
                 <p className="text-[#999999] text-xs mt-0.5">
@@ -677,7 +677,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                         !selectedDate && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon className="mr-2 h-3.5 w-3.5 text-[#FFCC00]" />
+                      <CalendarIcon className="mr-2 h-3.5 w-3.5 text-[#DC2626]" />
                       {selectedDate ? format(selectedDate, 'PPP', { locale: es }) : <span>Elegir fecha</span>}
                     </Button>
                   </PopoverTrigger>
@@ -735,7 +735,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   placeholder="Buscar por nombre, apellido o DNI..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-9 h-8 text-xs bg-[#2A2A2A] border-[#333333] text-white focus:border-[#FFCC00]"
+                  className="pl-9 h-8 text-xs bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
                 />
               </div>
             </div>
@@ -909,7 +909,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
                   <h3 className="text-white text-base font-bold print:text-black flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#FFCC00]" />
+                    <Award className="w-5 h-5 text-[#DC2626]" />
                     <span>Reporte de Asistencias de Alumnos</span>
                   </h3>
                   <p className="text-[#999999] text-xs print:text-gray-600 mt-0.5">
@@ -926,7 +926,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onClick={() => setVistaReporte('acumulado')}
                       className={`px-2.5 py-1 text-xs font-bold rounded-md transition-all ${
                         vistaReporte === 'acumulado'
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'text-[#AAAAAA] hover:text-white'
                       }`}
                     >
@@ -937,7 +937,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onClick={() => setVistaReporte('detalle')}
                       className={`px-2.5 py-1 text-xs font-bold rounded-md transition-all ${
                         vistaReporte === 'detalle'
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'text-[#AAAAAA] hover:text-white'
                       }`}
                     >
@@ -992,7 +992,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onClick={() => setModoPeriodoReporte('dia')}
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1 ${
                         modoPeriodoReporte === 'dia'
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
                       }`}
                     >
@@ -1004,7 +1004,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onClick={() => setModoPeriodoReporte('semana')}
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'semana'
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
                       }`}
                     >
@@ -1018,7 +1018,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       }}
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'mes' && selectedMonth === format(new Date(), 'yyyy-MM')
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
                       }`}
                     >
@@ -1029,7 +1029,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onClick={() => setModoPeriodoReporte('mes')}
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'mes' && selectedMonth !== format(new Date(), 'yyyy-MM')
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
                       }`}
                     >
@@ -1040,7 +1040,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onClick={() => setModoPeriodoReporte('anio')}
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'anio'
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
                       }`}
                     >
@@ -1051,7 +1051,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onClick={() => setModoPeriodoReporte('personalizado')}
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'personalizado'
-                          ? 'bg-[#FFCC00] text-black shadow-sm'
+                          ? 'bg-[#DC2626] text-black shadow-sm'
                           : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
                       }`}
                     >
@@ -1098,7 +1098,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   <div className="pt-2 border-t border-[#262626] flex items-center gap-2">
                     <span className="text-[11px] text-[#888]">Seleccionar Mes:</span>
                     <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                      <SelectTrigger className="h-7 text-xs bg-[#242424] border-[#383838] text-white focus:ring-[#FFCC00] w-[180px]">
+                      <SelectTrigger className="h-7 text-xs bg-[#242424] border-[#383838] text-white focus:ring-[#DC2626] w-[180px]">
                         <SelectValue placeholder="Seleccionar mes" />
                       </SelectTrigger>
                       <SelectContent className="bg-[#1E1E1E] border-[#333333] text-white">
@@ -1126,7 +1126,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                           onClick={() => setReporteAnio(yr)}
                           className={`h-7 px-3 text-xs font-bold ${
                             reporteAnio === yr
-                              ? 'bg-[#FFCC00] text-black'
+                              ? 'bg-[#DC2626] text-black'
                               : 'bg-[#242424] border-[#383838] text-[#AAAAAA] hover:text-white'
                           }`}
                         >
@@ -1161,7 +1161,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       size="sm"
                       onClick={() => fetchAsistenciasPeriodo()}
                       disabled={!reporteFechaDesde || !reporteFechaHasta}
-                      className="h-7 px-3 bg-[#FFCC00] text-black hover:bg-[#E6B800] font-bold text-xs"
+                      className="h-7 px-3 bg-[#DC2626] text-black hover:bg-[#E6B800] font-bold text-xs"
                     >
                       Filtrar
                     </Button>
@@ -1178,7 +1178,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   placeholder="Buscar en el reporte por nombre, apellido, DNI..."
                   value={searchReporte}
                   onChange={(e) => setSearchReporte(e.target.value)}
-                  className="pl-9 h-8 text-xs bg-[#242424] border-[#383838] text-white focus:border-[#FFCC00]"
+                  className="pl-9 h-8 text-xs bg-[#242424] border-[#383838] text-white focus:border-[#DC2626]"
                 />
               </div>
             </div>
@@ -1293,7 +1293,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
 
                               {/* Total Asistencias (Conteo acumulado) */}
                               <TableCell className="text-center py-3">
-                                <Badge className="bg-[#FFCC00]/20 text-[#FFCC00] border border-[#FFCC00]/50 text-xs font-extrabold px-3 py-1">
+                                <Badge className="bg-[#DC2626]/20 text-[#DC2626] border border-[#DC2626]/50 text-xs font-extrabold px-3 py-1">
                                   {item.totalClases} {item.totalClases === 1 ? 'clase' : 'clases'}
                                 </Badge>
                               </TableCell>
@@ -1332,7 +1332,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                   title={isExpanded ? 'Ocultar detalle de clases' : 'Ver detalle de clases asistidas'}
                                 >
                                   {isExpanded ? (
-                                    <ChevronUp className="h-4 w-4 text-[#FFCC00]" />
+                                    <ChevronUp className="h-4 w-4 text-[#DC2626]" />
                                   ) : (
                                     <ChevronDown className="h-4 w-4" />
                                   )}
@@ -1347,11 +1347,11 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                   <div className="bg-[#121212] border border-[#2A2A2A] rounded-xl p-3.5 space-y-2.5 shadow-inner">
                                     <div className="flex items-center justify-between text-xs font-bold text-[#AAAAAA] border-b border-[#242424] pb-2">
                                       <span className="flex items-center gap-1.5 text-white">
-                                        <Award className="h-3.5 w-3.5 text-[#FFCC00]" />
+                                        <Award className="h-3.5 w-3.5 text-[#DC2626]" />
                                         Detalle de asistencias de {item.socio.nombre} {item.socio.apellido}:
                                       </span>
                                       <span className="text-[11px] text-[#888]">
-                                        Total: <strong className="text-[#FFCC00]">{item.totalClases}</strong> {item.totalClases === 1 ? 'asistencia' : 'asistencias'}
+                                        Total: <strong className="text-[#DC2626]">{item.totalClases}</strong> {item.totalClases === 1 ? 'asistencia' : 'asistencias'}
                                       </span>
                                     </div>
 
