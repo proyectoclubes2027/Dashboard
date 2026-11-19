@@ -336,26 +336,54 @@ export async function GET(request: Request) {
       .filter((t) => t.pagado)
       .reduce((acc, t) => acc + t.montoPorSocio, 0);
 
-    return NextResponse.json({
-      socio: {
-        nombre: socio.nombre,
-        apellido: socio.apellido,
-        dni: socio.dni,
-        categoria: socio.categoria,
+    return NextResponse.json(
+      {
+        socio: {
+          nombre: socio.nombre,
+          apellido: socio.apellido,
+          dni: socio.dni,
+          categoria: socio.categoria,
+        },
+        turnosLuz,
+        invitados: invitadosTodos,
+        resumen: {
+          luzPendiente: totalLuzPendiente,
+          luzPagado: totalLuzPagado,
+          invitadosPendiente: totalInvitadosPendiente,
+          invitadosPagado: totalInvitadosPagado,
+          totalPendiente: totalLuzPendiente + totalInvitadosPendiente,
+        },
       },
-      turnosLuz,
-      invitados: invitadosTodos,
-      resumen: {
-        luzPendiente: totalLuzPendiente,
-        luzPagado: totalLuzPagado,
-        invitadosPendiente: totalInvitadosPendiente,
-        invitadosPagado: totalInvitadosPagado,
-        totalPendiente: totalLuzPendiente + totalInvitadosPendiente,
-      },
-    });
+      {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        },
+      }
+    );
   } catch (err: any) {
     console.error('Error en /api/socio-cuenta:', err);
-    return NextResponse.json({ error: 'Error interno del servidor' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Error interno del servidor' },
+      {
+        status: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+      }
+    );
   }
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  });
 }
 
