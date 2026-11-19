@@ -132,7 +132,7 @@ export default function AsistenciaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-[#DC2626] tracking-tight mb-1">CARP Tenis</h1>
@@ -143,7 +143,7 @@ export default function AsistenciaPage() {
           {/* Header según el estado */}
           {status === 'idle' && step === 'dni' && (
             <CardHeader className="text-center pb-2">
-              <CardTitle className="text-white text-xl">Ingresá tu DNI</CardTitle>
+              <CardTitle className="text-slate-900 text-xl font-bold">Ingresá tu DNI</CardTitle>
               <CardDescription className="text-slate-600 text-xs">
                 Para marcar tu presente en la clase de hoy
               </CardDescription>
@@ -151,13 +151,13 @@ export default function AsistenciaPage() {
           )}
 
           {status === 'idle' && step === 'completar_datos' && (
-            <CardHeader className="text-center pb-2 bg-[#232323] border-b border-slate-200">
+            <CardHeader className="text-center pb-2 bg-slate-50 border-b border-slate-200">
               <div className="mx-auto w-10 h-10 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 flex items-center justify-center text-[#DC2626] mb-2">
                 <UserCheck className="w-5 h-5" />
               </div>
-              <CardTitle className="text-white text-lg">Completar Datos del Alumno</CardTitle>
+              <CardTitle className="text-slate-900 text-lg font-bold">Completar Datos del Alumno</CardTitle>
               <CardDescription className="text-slate-600 text-xs">
-                Es la primera vez que ingresás con el DNI <strong className="text-white">{dni}</strong>. Ingresá tus datos para que el profesor te tenga en su lista.
+                Es la primera vez que ingresás con el DNI <strong className="text-slate-900 font-bold">{dni}</strong>. Ingresá tus datos para que el profesor te tenga en su lista.
               </CardDescription>
             </CardHeader>
           )}
@@ -173,7 +173,7 @@ export default function AsistenciaPage() {
                     placeholder="Ej: 32824688"
                     value={dni}
                     onChange={(e) => setDni(e.target.value)}
-                    className="text-center text-2xl h-14 bg-slate-50 border-slate-200 text-white focus:border-[#DC2626] focus:ring-[#DC2626] font-mono tracking-wider"
+                    className="text-center text-2xl h-14 bg-white border-2 border-slate-300 text-slate-900 focus:border-[#DC2626] focus:ring-[#DC2626] font-mono tracking-wider"
                     required
                     autoFocus
                   />
@@ -181,7 +181,7 @@ export default function AsistenciaPage() {
                 <Button 
                   type="submit" 
                   disabled={loading || !dni}
-                  className="w-full h-12 text-base font-bold bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] transition-transform active:scale-[0.99]"
+                  className="w-full h-12 text-base font-bold bg-primary text-white hover:bg-red-700 shadow-md transition-transform active:scale-[0.99]"
                 >
                   {loading ? (
                     <>
@@ -212,7 +212,7 @@ export default function AsistenciaPage() {
                       placeholder="Ej: Juan"
                       value={nombre}
                       onChange={(e) => setNombre(e.target.value)}
-                      className="h-10 bg-slate-50 border-slate-200 text-white text-sm focus:border-[#DC2626]"
+                      className="h-10 bg-white border-2 border-slate-300 text-slate-900 text-sm focus:border-[#DC2626]"
                       required
                       autoFocus
                     />
@@ -227,7 +227,7 @@ export default function AsistenciaPage() {
                       placeholder="Ej: Pérez"
                       value={apellido}
                       onChange={(e) => setApellido(e.target.value)}
-                      className="h-10 bg-slate-50 border-slate-200 text-white text-sm focus:border-[#DC2626]"
+                      className="h-10 bg-white border-2 border-slate-300 text-slate-900 text-sm focus:border-[#DC2626]"
                       required
                     />
                   </div>
@@ -243,7 +243,7 @@ export default function AsistenciaPage() {
                     placeholder="Ej: 3400551122"
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
-                    className="h-10 bg-slate-50 border-slate-200 text-white text-sm focus:border-[#DC2626]"
+                    className="h-10 bg-white border-2 border-slate-300 text-slate-900 text-sm focus:border-[#DC2626]"
                     required
                   />
                   <p className="text-[11px] text-[#777777]">
@@ -264,7 +264,7 @@ export default function AsistenciaPage() {
                   <Button 
                     type="submit" 
                     disabled={loading || !nombre.trim() || !apellido.trim() || !telefono.trim()}
-                    className="flex-1 h-11 text-sm font-bold bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] transition-colors"
+                    className="flex-1 h-11 text-sm font-bold bg-primary text-white hover:bg-red-700 shadow-md transition-colors"
                   >
                     {loading ? (
                       <>

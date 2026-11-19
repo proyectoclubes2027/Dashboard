@@ -45,37 +45,37 @@
   /* Custom Club Riberas del Paraná brand colors (Rojo y Blanco) */
   --color-brand-gold: #DC2626; /* Primary CARP Red */
   --color-brand-gold-dark: #B91C1C;
-  --color-brand-dark: #F8FAFC; /* Clean light background */
+  --color-brand-dark: #F1F5F9; /* Slate 100 soft contrast background */
   --color-brand-card: #FFFFFF; /* Pure white cards */
-  --color-brand-border: #E2E8F0; /* Clean borders */
+  --color-brand-border: #CBD5E1; /* Slate 300 visible borders */
   --color-brand-success: #16A34A;
   --color-brand-danger: #DC2626;
-  --color-brand-text-secondary: #334155;
-  --color-brand-text-muted: #64748B;
+  --color-brand-text-secondary: #1E293B;
+  --color-brand-text-muted: #475569;
   --color-brand-text-dark: #0F172A;
 }
 
 /* Light theme with CARP Red and White accents */
 :root {
   --radius: 0.5rem;
-  --background: #F8FAFC; /* Clean light page background */
-  --foreground: #0F172A; /* Slate 900 */
+  --background: #F1F5F9; /* Slate 100 - Makes white cards pop clearly */
+  --foreground: #0F172A; /* Slate 900 - Sharp dark text */
   --card: #FFFFFF;       /* Pure white card */
   --card-foreground: #0F172A;
   --popover: #FFFFFF;
   --popover-foreground: #0F172A;
   --primary: #DC2626;    /* CARP Vibrant Red */
   --primary-foreground: #FFFFFF;
-  --secondary: #F1F5F9;  /* Soft light slate */
+  --secondary: #E2E8F0;  /* Slate 200 */
   --secondary-foreground: #0F172A;
-  --muted: #F1F5F9;
-  --muted-foreground: #64748B;
+  --muted: #E2E8F0;
+  --muted-foreground: #475569; /* Slate 600 - High contrast text */
   --accent: #DC2626;
   --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
+  --border: #CBD5E1;     /* Slate 300 - Clean crisp borders */
+  --input: #CBD5E1;
   --ring: #DC2626;
   --chart-1: #DC2626;
   --chart-2: #16A34A;

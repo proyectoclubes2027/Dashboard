@@ -258,15 +258,15 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
   return (
     <div className="space-y-6">
       {/* SECCIÓN: ENLACES RÁPIDOS Y ACCESOS DIRECTOS */}
-      <Card className="bg-[#18181A] border-[#2C2C32] rounded-2xl overflow-hidden shadow-xl">
-        <CardHeader className="bg-white border-b border-[#26262B] pb-3">
+      <Card className="bg-white border-slate-200 rounded-2xl overflow-hidden shadow-xl">
+        <CardHeader className="bg-white border-b border-slate-200 pb-3">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
                 <LinkIcon className="h-5 w-5" />
               </div>
               <div>
-                <CardTitle className="text-white text-base font-bold flex items-center gap-2">
+                <CardTitle className="text-slate-900 text-base font-bold flex items-center gap-2">
                   Enlaces Rápidos y Accesos Directos del Club
                   <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 text-[10px] font-bold">
                     Sin Login / Sin PIN
@@ -290,7 +290,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
               return (
                 <div
                   key={acc.key}
-                  className="rounded-xl border p-4 flex flex-col justify-between transition-all bg-[#121214] border-[#27272D] hover:border-[#383842] shadow-sm"
+                  className="rounded-xl border p-4 flex flex-col justify-between transition-all bg-slate-50 border-[#27272D] hover:border-[#383842] shadow-sm"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between gap-2">
@@ -300,7 +300,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                         </div>
                         <div>
                           <h4 className="text-sm font-black text-slate-900">{acc.label}</h4>
-                          <span className="text-[11px] font-mono text-[#777] block">{acc.path}</span>
+                          <span className="text-[11px] font-mono text-slate-500 block">{acc.path}</span>
                         </div>
                       </div>
                       <Badge variant="outline" className={`text-[10px] font-bold ${acc.bgColor} ${acc.color} ${acc.borderColor}`}>
@@ -328,7 +328,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                         className={`h-8 px-2.5 rounded-lg text-xs font-semibold gap-1.5 transition-all ${
                           isCopied
                             ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'
-                            : 'bg-[#1C1C20] border-[#303038] text-white hover:bg-[#282830]'
+                            : 'bg-slate-100 border-slate-300 text-white hover:bg-[#282830]'
                         }`}
                         title="Copiar enlace completo al portapapeles"
                       >
@@ -340,7 +340,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                         size="sm"
                         variant="outline"
                         asChild
-                        className="h-8 px-2.5 rounded-lg text-xs font-semibold bg-[#1C1C20] border-[#303038] text-white hover:bg-[#282830] gap-1"
+                        className="h-8 px-2.5 rounded-lg text-xs font-semibold bg-slate-100 border-slate-300 text-white hover:bg-[#282830] gap-1"
                         title="Abrir página en nueva pestaña"
                       >
                         <a href={acc.path} target="_blank" rel="noopener noreferrer">
@@ -359,7 +359,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
 
       <div className="flex items-center justify-between pt-2">
         <div>
-          <h3 className="text-white text-lg font-semibold">Configuración de Cuotas</h3>
+          <h3 className="text-slate-900 text-lg font-semibold">Configuración de Cuotas</h3>
           <p className="text-slate-600 text-sm mt-1">
             Definí el valor de la cuota mensual para cada categoría de socio.
           </p>
@@ -372,7 +372,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
           <Button
             onClick={handleSave}
             disabled={saving}
-            className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium"
+            className="bg-primary text-white hover:bg-red-700 shadow-sm font-medium"
           >
             {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4 mr-1" />}
             {saving ? 'Guardando...' : 'Guardar'}
@@ -391,7 +391,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                     <Icon className={`h-5 w-5 ${cat.color}`} />
                   </div>
                   <div>
-                    <CardTitle className="text-white text-base">{cat.label}</CardTitle>
+                    <CardTitle className="text-slate-900 text-base">{cat.label}</CardTitle>
                     <CardDescription className="text-[#666666] text-xs">
                       Cuota mensual
                     </CardDescription>
@@ -420,7 +420,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
       </div>
 
       <div className="mt-8 border-t border-slate-200 pt-6">
-        <h3 className="text-white text-lg font-semibold">Balance de Caja</h3>
+        <h3 className="text-slate-900 text-lg font-semibold">Balance de Caja</h3>
         <p className="text-slate-600 text-sm mt-1 mb-4">
           Configuración inicial para el sistema de balances.
         </p>
@@ -432,7 +432,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                 <Wallet className="h-5 w-5 text-blue-500" />
               </div>
               <div>
-                <CardTitle className="text-white text-base">Saldo Inicial Histórico</CardTitle>
+                <CardTitle className="text-slate-900 text-base">Saldo Inicial Histórico</CardTitle>
                 <CardDescription className="text-[#666666] text-xs">
                   Caja al 01/01/2026
                 </CardDescription>
@@ -463,7 +463,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
       <div className="mt-8 border-t border-slate-200 pt-6">
         <div className="flex items-center gap-2 mb-1">
           <Zap className="h-5 w-5 text-amber-400" />
-          <h3 className="text-white text-lg font-semibold">Tarifas de Iluminación (Turnos con Luz)</h3>
+          <h3 className="text-slate-900 text-lg font-semibold">Tarifas de Iluminación (Turnos con Luz)</h3>
         </div>
         <p className="text-slate-600 text-sm mb-4">
           Costo adicional por turno nocturno (a partir de las 19:00 hs) para socios y profesor.
@@ -499,7 +499,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   <Zap className="h-5 w-5 text-amber-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-white text-base">Turno Socios (Total)</CardTitle>
+                  <CardTitle className="text-slate-900 text-base">Turno Socios (Total)</CardTitle>
                   <CardDescription className="text-[#666666] text-xs">
                     Se divide entre los socios que juegan
                   </CardDescription>
@@ -533,7 +533,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   <GraduationCap className="h-5 w-5 text-amber-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-white text-base">Turno Profesor</CardTitle>
+                  <CardTitle className="text-slate-900 text-base">Turno Profesor</CardTitle>
                   <CardDescription className="text-[#666666] text-xs">
                     Turnos de clases nocturnos
                   </CardDescription>
@@ -565,7 +565,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
       <div className="mt-8 border-t border-slate-200 pt-6">
         <div className="flex items-center gap-2 mb-1">
           <UserPlus className="h-5 w-5 text-emerald-400" />
-          <h3 className="text-white text-lg font-semibold">Régimen de Invitados</h3>
+          <h3 className="text-slate-900 text-lg font-semibold">Régimen de Invitados</h3>
         </div>
         <p className="text-slate-600 text-sm mb-4">
           Definí el cupo de invitaciones bonificadas al año y el valor que se cobra por cada invitado adicional.
@@ -601,7 +601,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   <UserPlus className="h-5 w-5 text-emerald-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-white text-base">Costo Invitado Extra</CardTitle>
+                  <CardTitle className="text-slate-900 text-base">Costo Invitado Extra</CardTitle>
                   <CardDescription className="text-[#666666] text-xs">
                     A partir de la 5ª invitación anual
                   </CardDescription>
@@ -635,7 +635,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   <Tag className="h-5 w-5 text-emerald-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-white text-base">Cupo Bonificado Anual</CardTitle>
+                  <CardTitle className="text-slate-900 text-base">Cupo Bonificado Anual</CardTitle>
                   <CardDescription className="text-[#666666] text-xs">
                     Invitaciones gratuitas por socio/año
                   </CardDescription>

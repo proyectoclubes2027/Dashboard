@@ -582,8 +582,8 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               Los alumnos escanean este código con su celular e ingresan su número de DNI para registrar su asistencia a la clase del día.
             </p>
 
-            <div className="p-2.5 rounded-lg bg-[#2A2415] border border-amber-500/30 text-amber-300 text-xs mb-3 flex items-start gap-2">
-              <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400 mt-0.5" />
+            <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-300 text-amber-900 shadow-sm text-xs mb-3 flex items-start gap-2">
+              <AlertTriangle className="h-4 w-4 shrink-0 text-amber-600 mt-0.5" />
               <span>
                 <strong>Registro Universal:</strong> Si el DNI ingresado no existe en el padrón de socios, el sistema lo registra de todas formas como <strong>&quot;Alumno No Registrado&quot;</strong> para que secretaría pueda contactarlo y asociar su ficha.
               </span>
@@ -598,7 +598,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 size="sm"
                 variant="outline"
                 onClick={handleCopyLink}
-                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900 h-8 text-xs font-semibold"
               >
                 {copiedLink ? <Check className="h-3.5 w-3.5 mr-1.5 text-green-400" /> : <Copy className="h-3.5 w-3.5 mr-1.5" />}
                 {copiedLink ? 'Copiado!' : 'Copiar Link'}
@@ -608,7 +608,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 size="sm"
                 variant="outline"
                 onClick={handlePrintQr}
-                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900 h-8 text-xs font-semibold"
               >
                 <Printer className="h-3.5 w-3.5 mr-1.5" />
                 Imprimir QR
@@ -697,7 +697,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   variant="outline"
                   size="sm"
                   onClick={() => setSelectedDate(new Date())}
-                  className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
+                  className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900"
                 >
                   Hoy
                 </Button>
@@ -719,7 +719,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   size="sm"
                   onClick={() => fetchAsistenciasDiarias(selectedDate)}
                   disabled={loading}
-                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                  className="border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900 h-8 text-xs font-semibold"
                 >
                   <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loading ? 'animate-spin' : ''}`} />
                   Actualizar
@@ -961,7 +961,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     variant="outline"
                     size="sm"
                     onClick={() => window.print()}
-                    className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                    className="border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900 h-8 text-xs font-semibold"
                   >
                     <Printer className="h-3.5 w-3.5 mr-1.5" />
                     Imprimir
@@ -972,7 +972,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     size="sm"
                     onClick={() => fetchAsistenciasPeriodo()}
                     disabled={loading}
-                    className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                    className="border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900 h-8 text-xs font-semibold"
                   >
                     <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loading ? 'animate-spin' : ''}`} />
                     Actualizar

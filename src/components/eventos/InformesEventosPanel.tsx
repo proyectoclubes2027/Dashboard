@@ -126,7 +126,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
   return (
     <div className="space-y-6">
       {/* HEADER DEL PANEL */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#141418] border border-[#24242d] p-5 rounded-2xl shadow-xl">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white shadow-sm border border-slate-200 p-5 rounded-2xl shadow-xl">
         <div className="flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-black shadow-lg shadow-amber-500/20">
             <Trophy className="h-6 w-6" />
@@ -152,17 +152,17 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
             size="sm"
             onClick={() => fetchEventos()}
             disabled={loading}
-            className="h-10 px-3 bg-[#1b1b22] border-[#2c2c36] hover:bg-[#252530] text-xs text-slate-700 gap-1.5"
+            className="h-10 px-3 bg-white border-slate-300 hover:bg-slate-100 text-xs text-slate-700 gap-1.5"
             title="Refrescar listado"
           >
-            <RefreshCw className={`h-4 w-4 text-amber-400 ${loading ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`h-4 w-4 text-red-600 ${loading ? 'animate-spin' : ''}`} />
             <span className="hidden sm:inline">Actualizar</span>
           </Button>
 
           {!readOnly && (
             <Button
               onClick={handleNuevo}
-              className="h-10 px-4 bg-[#DC2626] hover:bg-[#e6b800] text-black font-black text-xs gap-2 shadow-lg shadow-amber-500/20"
+              className="h-10 px-4 bg-primary hover:bg-red-700 text-white shadow-sm font-black text-xs gap-2 shadow-lg shadow-amber-500/20"
             >
               <Plus className="h-4 w-4" />
               <span>Nuevo Informe de Evento</span>
@@ -172,30 +172,30 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
       </div>
 
       {/* METRIC CARD RESUMEN: SOLO EVENTOS REGISTRADOS */}
-      <div className="bg-[#141418] border border-[#24242d] p-4 rounded-xl flex items-center justify-between max-w-sm">
+      <div className="bg-white shadow-sm border border-slate-200 p-4 rounded-xl flex items-center justify-between max-w-sm">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#777]">Eventos Registrados</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600">Eventos Registrados</span>
           <p className="text-2xl font-black text-slate-900 font-mono mt-0.5">{eventos.length}</p>
         </div>
-        <div className="p-3 bg-amber-500/10 rounded-xl text-amber-400 border border-amber-500/20">
+        <div className="p-3 bg-amber-500/10 rounded-xl text-red-600 border border-amber-500/20">
           <Trophy className="h-5 w-5" />
         </div>
       </div>
 
       {/* FILTROS Y BÚSQUEDA */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#131317] border border-[#22222a] p-3 rounded-xl">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white shadow-sm border border-slate-200 p-3 rounded-xl">
         <div className="relative w-full sm:w-80">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#777]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-600" />
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Buscar por título, fecha..."
-            className="pl-9 bg-[#1a1a20] border-[#2c2c36] text-xs h-9 text-white placeholder:text-[#555]"
+            className="pl-9 bg-white border-slate-300 text-xs h-9 text-slate-900 placeholder:text-slate-400"
           />
         </div>
 
         <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <span className="text-xs text-[#777] font-bold uppercase tracking-wider mr-1">Año:</span>
+          <span className="text-xs text-slate-600 font-bold uppercase tracking-wider mr-1">Año:</span>
           {['todos', '2026', '2025'].map((anio) => (
             <Button
               key={anio}
@@ -204,8 +204,8 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
               onClick={() => setAnioFiltro(anio)}
               className={`h-8 text-xs rounded-lg px-2.5 ${
                 anioFiltro === anio
-                  ? 'bg-amber-500 text-black font-black'
-                  : 'bg-[#18181f] border-[#2b2b35] text-[#999] hover:text-white'
+                  ? 'bg-primary text-white font-black'
+                  : 'bg-slate-50 border-slate-300 text-slate-700 hover:bg-slate-100'
               }`}
             >
               {anio === 'todos' ? 'Todos' : anio}
@@ -217,24 +217,24 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
       {/* LISTA DE INFORMES DE EVENTOS */}
       {loading ? (
         <div className="py-20 text-center space-y-3 bg-[#121215] border border-[#202026] rounded-2xl">
-          <RefreshCw className="h-8 w-8 text-amber-400 animate-spin mx-auto" />
+          <RefreshCw className="h-8 w-8 text-red-600 animate-spin mx-auto" />
           <p className="text-xs text-slate-600">Cargando informes de eventos...</p>
         </div>
       ) : eventos.length === 0 ? (
         <div className="py-20 text-center space-y-4 bg-[#121215] border border-[#202026] rounded-2xl p-6">
-          <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mx-auto">
+          <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-red-600 mx-auto">
             <Trophy className="h-8 w-8" />
           </div>
           <div className="space-y-1 max-w-md mx-auto">
             <h3 className="text-base font-bold text-slate-900">No se encontraron eventos cargados</h3>
-            <p className="text-xs text-[#777]">
+            <p className="text-xs text-slate-600">
               Comenzá cargando tu primer balance de torneo, interclubes o jornada con cantina para presentarlo a Comisión Directiva.
             </p>
           </div>
           {!readOnly && (
             <Button
               onClick={handleNuevo}
-              className="bg-[#DC2626] hover:bg-[#e6b800] text-black font-black text-xs gap-2 px-4 h-10"
+              className="bg-primary hover:bg-red-700 text-white shadow-sm font-black text-xs gap-2 px-4 h-10"
             >
               <Plus className="h-4 w-4" />
               <span>Cargar Primer Evento</span>
@@ -263,7 +263,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
             return (
               <div
                 key={ev.id}
-                className="bg-[#141418] border border-[#24242e] hover:border-[#383848] rounded-2xl p-5 flex flex-col justify-between transition-all shadow-md group relative overflow-hidden"
+                className="bg-white shadow-sm border border-[#24242e] hover:border-[#383848] rounded-2xl p-5 flex flex-col justify-between transition-all shadow-md group relative overflow-hidden"
               >
                 {/* Franja superior amarilla decorativa */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-[#DC2626] opacity-80" />
@@ -282,7 +282,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                       </div>
 
                       {ev.subtitulo && (
-                        <p className="text-xs font-semibold uppercase text-amber-400/90 mt-0.5">
+                        <p className="text-xs font-semibold uppercase text-red-600/90 mt-0.5">
                           {ev.subtitulo}
                         </p>
                       )}
@@ -295,7 +295,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
 
                     {/* Ganancia Neta Destacada */}
                     <div className="text-right shrink-0 bg-[#0e0e11] border border-[#282834] px-3.5 py-2 rounded-xl">
-                      <span className="text-[10px] text-[#777] font-bold uppercase tracking-wider block">
+                      <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider block">
                         Superávit Total
                       </span>
                       <span className="text-base sm:text-lg font-black font-mono text-[#DC2626]">
@@ -308,8 +308,8 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs pt-1">
                     {/* Torneo */}
                     <div className="bg-[#101014] border border-[#202028] p-2.5 rounded-lg space-y-0.5">
-                      <span className="text-[10px] text-[#777] uppercase font-bold flex items-center gap-1">
-                        <Trophy className="h-3 w-3 text-amber-400" /> Torneo
+                      <span className="text-[10px] text-slate-600 uppercase font-bold flex items-center gap-1">
+                        <Trophy className="h-3 w-3 text-red-600" /> Torneo
                       </span>
                       <p className="font-mono font-bold text-slate-900 text-xs">
                         {formatCurrency(netoTorneo)}
@@ -319,8 +319,8 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                     {/* Cantina */}
                     {hasCantina ? (
                       <div className="bg-[#101014] border border-[#202028] p-2.5 rounded-lg space-y-0.5">
-                        <span className="text-[10px] text-[#777] uppercase font-bold flex items-center gap-1">
-                          <Coffee className="h-3 w-3 text-amber-400" /> Cantina
+                        <span className="text-[10px] text-slate-600 uppercase font-bold flex items-center gap-1">
+                          <Coffee className="h-3 w-3 text-red-600" /> Cantina
                         </span>
                         <p className="font-mono font-bold text-slate-900 text-xs">
                           {formatCurrency(netoCantina)}
@@ -336,8 +336,8 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                     {/* Otros / Sponsors */}
                     {hasOtros ? (
                       <div className="bg-[#101014] border border-[#202028] p-2.5 rounded-lg space-y-0.5 col-span-2 sm:col-span-1">
-                        <span className="text-[10px] text-[#777] uppercase font-bold flex items-center gap-1">
-                          <Sparkles className="h-3 w-3 text-amber-400" /> Otros
+                        <span className="text-[10px] text-slate-600 uppercase font-bold flex items-center gap-1">
+                          <Sparkles className="h-3 w-3 text-red-600" /> Otros
                         </span>
                         <p className="font-mono font-bold text-slate-900 text-xs">
                           {formatCurrency(netoOtros)}
@@ -353,12 +353,12 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                 </div>
 
                 {/* BOTONES DE ACCIÓN */}
-                <div className="flex items-center justify-between border-t border-[#22222a] pt-4 mt-4 gap-2">
+                <div className="flex items-center justify-between border-t border-slate-200 pt-4 mt-4 gap-2">
                   <Button
                     onClick={() => handleVerSlide(ev)}
                     className="bg-[#1f1f26] hover:bg-amber-500 hover:text-black border border-[#30303c] text-white text-xs font-bold h-9 px-3.5 gap-2 transition-all flex-1"
                   >
-                    <Eye className="h-4 w-4 text-amber-400 group-hover:text-black" />
+                    <Eye className="h-4 w-4 text-red-600 group-hover:text-black" />
                     <span>Ver Diapositiva / Imprimir</span>
                   </Button>
 

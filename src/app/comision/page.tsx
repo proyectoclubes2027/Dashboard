@@ -514,9 +514,9 @@ export default function ComisionDirectivaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0D0D0E] text-white selection:bg-amber-400 selection:text-black">
+    <div className="min-h-screen bg-[#F1F5F9] text-slate-900 selection:bg-red-600 selection:text-white">
       {/* 1. Barra de Encabezado Institucional */}
-      <header className="border-b border-[#222225] bg-[#121214]/90 backdrop-blur sticky top-0 z-30 shadow-md">
+      <header className="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-30 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3.5">
             <img
@@ -526,12 +526,12 @@ export default function ComisionDirectivaPage() {
             />
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] uppercase font-mono tracking-widest px-2 py-0.5 rounded bg-amber-400/10 text-amber-300 border border-amber-400/20 font-bold">
+                <span className="text-[10px] uppercase font-mono tracking-widest px-2 py-0.5 rounded bg-red-600/10 text-red-600 border border-red-500/20 font-bold">
                   Comisión Directiva
                 </span>
-                <span className="text-[10px] text-[#777777] hidden sm:inline">• Portal Ejecutivo de Gestión</span>
+                <span className="text-[10px] text-slate-600 hidden sm:inline">• Portal Ejecutivo de Gestión</span>
               </div>
-              <h1 className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-2">
+              <h1 className="text-base sm:text-lg font-black tracking-tight text-slate-900 flex items-center gap-2">
                 Club Riberas del Paraná — Subcomisión de Tenis
               </h1>
             </div>
@@ -539,20 +539,20 @@ export default function ComisionDirectivaPage() {
 
           {/* Selector de Mes Centralizado y Descarga de Paquete */}
           <div className="flex flex-wrap items-center gap-2 w-full md:w-auto justify-end">
-            <div className="flex items-center bg-[#18181A] border border-[#2C2C32] rounded-xl px-1.5 py-1 shadow-sm">
+            <div className="flex items-center bg-white border border-slate-200 rounded-xl px-1.5 py-1 shadow-sm">
               <Button
                 type="button"
                 variant="ghost"
                 size="sm"
                 onClick={() => handleCambiarMes(-1)}
-                className="h-7 w-7 p-0 text-slate-600 hover:text-white"
+                className="h-7 w-7 p-0 text-slate-600 hover:text-slate-900"
                 title="Mes anterior"
               >
                 <ChevronLeft size={16} />
               </Button>
 
               <div className="flex items-center gap-1.5 px-2">
-                <Calendar size={14} className="text-amber-400" />
+                <Calendar size={14} className="text-red-600" />
                 <input
                   type="month"
                   value={mesSeleccionado}
@@ -566,7 +566,7 @@ export default function ComisionDirectivaPage() {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleCambiarMes(1)}
-                className="h-7 w-7 p-0 text-slate-600 hover:text-white"
+                className="h-7 w-7 p-0 text-slate-600 hover:text-slate-900"
                 title="Mes siguiente"
               >
                 <ChevronRight size={16} />
@@ -578,7 +578,7 @@ export default function ComisionDirectivaPage() {
               variant="outline"
               onClick={fetchDatosComision}
               disabled={loading}
-              className="h-9 w-9 p-0 border-[#2C2C32] bg-[#18181A] text-slate-600 hover:text-white"
+              className="h-9 w-9 p-0 border-slate-200 bg-white text-slate-600 hover:text-slate-900"
               title="Actualizar datos"
             >
               <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
@@ -656,7 +656,7 @@ export default function ComisionDirectivaPage() {
         <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
-              <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
+              <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-red-600">
                 <Wallet size={18} />
               </div>
               <div>
@@ -684,7 +684,7 @@ export default function ComisionDirectivaPage() {
           <div className="p-4 bg-white border-b border-[#242428]">
             <div className="text-[11px] font-bold uppercase text-slate-600 mb-2 flex items-center justify-between">
               <span>Saldos Finales Mes a Mes ({anioActual}):</span>
-              <span className="text-xs text-amber-400">
+              <span className="text-xs text-red-600">
                 Saldo Actual Total en Caja: <strong>{formatCurrency(data?.balance?.saldoActualTotal ?? 0)}</strong>
               </span>
             </div>
@@ -704,7 +704,7 @@ export default function ComisionDirectivaPage() {
                       isSelected
                         ? 'bg-amber-400 text-black border-amber-400 font-bold shadow-md'
                         : tieneMovimientos
-                        ? 'bg-[#18181A] border-[#2E2E34] hover:border-amber-400/50 text-white'
+                        ? 'bg-white border-[#2E2E34] hover:border-amber-400/50 text-white'
                         : 'bg-white border-[#222226] text-[#666]'
                     }`}
                   >
@@ -735,8 +735,8 @@ export default function ComisionDirectivaPage() {
             </div>
 
             <div className="bg-white border border-amber-500/30 p-3 rounded-xl">
-              <div className="text-[10px] text-amber-400 font-bold uppercase">Saldo Final ({labelMesActual})</div>
-              <div className="text-base font-black font-mono text-amber-400">
+              <div className="text-[10px] text-red-600 font-bold uppercase">Saldo Final ({labelMesActual})</div>
+              <div className="text-base font-black font-mono text-red-600">
                 {formatCurrency(data?.balance?.mesActual?.saldoFinal ?? 0)}
               </div>
             </div>
@@ -772,7 +772,7 @@ export default function ComisionDirectivaPage() {
             {/* 4 Cards de Resumen Patrimonial */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {/* Saldo en Caja */}
-              <div className="bg-[#18181C] border border-[#2A2A30] p-3 rounded-xl flex items-center gap-3">
+              <div className="bg-white shadow-sm border border-[#2A2A30] p-3 rounded-xl flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-400">
                   <Wallet size={18} />
                 </div>
@@ -785,7 +785,7 @@ export default function ComisionDirectivaPage() {
               </div>
 
               {/* Capital en Plazos Fijos */}
-              <div className="bg-[#18181C] border border-[#2A2A30] p-3 rounded-xl flex items-center gap-3">
+              <div className="bg-white shadow-sm border border-[#2A2A30] p-3 rounded-xl flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
                   <Landmark size={18} />
                 </div>
@@ -801,7 +801,7 @@ export default function ComisionDirectivaPage() {
               </div>
 
               {/* Ahorro en Dólares */}
-              <div className="bg-[#18181C] border border-[#2A2A30] p-3 rounded-xl flex items-center gap-3">
+              <div className="bg-white shadow-sm border border-[#2A2A30] p-3 rounded-xl flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
                   <DollarSign size={18} />
                 </div>
@@ -812,19 +812,19 @@ export default function ComisionDirectivaPage() {
                   </div>
                   <div className="text-[10px] text-slate-600 flex items-center justify-between">
                     <span>1 U$S = {formatCurrency(data?.balance?.inversiones?.cotizacionDolar ?? 1000)}</span>
-                    <span className="text-amber-400 font-semibold">{formatCurrency(data?.balance?.inversiones?.ahorrosDolaresEnPesos ?? 0)}</span>
+                    <span className="text-red-600 font-semibold">{formatCurrency(data?.balance?.inversiones?.ahorrosDolaresEnPesos ?? 0)}</span>
                   </div>
                 </div>
               </div>
 
               {/* Patrimonio Total Disponible */}
-              <div className="bg-[#18181C] border border-amber-500/30 p-3 rounded-xl flex items-center gap-3 relative overflow-hidden">
+              <div className="bg-white shadow-sm border border-amber-500/30 p-3 rounded-xl flex items-center gap-3 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-amber-400" />
-                <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-400">
+                <div className="p-2.5 rounded-lg bg-amber-500/10 text-red-600">
                   <TrendingUp size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Patrimonio Total Disp.</div>
+                  <div className="text-[10px] text-red-600 font-bold uppercase tracking-wider">Patrimonio Total Disp.</div>
                   <div className="text-sm sm:text-base font-black font-mono text-amber-300 mt-0.5">
                     {formatCurrency(data?.balance?.inversiones?.totalPatrimonioDisponible ?? 0)}
                   </div>
@@ -907,7 +907,7 @@ export default function ComisionDirectivaPage() {
               variant="ghost"
               size="sm"
               onClick={() => setShowDetalleBalance((prev) => !prev)}
-              className="text-xs h-7 text-amber-400 hover:text-amber-300 hover:bg-amber-400/10 gap-1.5 font-bold"
+              className="text-xs h-7 text-red-600 hover:text-amber-300 hover:bg-amber-400/10 gap-1.5 font-bold"
             >
               <span>{showDetalleBalance ? 'Ocultar movimientos detallados' : 'Ver movimientos detallados'}</span>
               {showDetalleBalance ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -971,7 +971,7 @@ export default function ComisionDirectivaPage() {
         <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
-              <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
+              <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-red-600">
                 <Trophy size={18} />
               </div>
               <div>
@@ -989,7 +989,7 @@ export default function ComisionDirectivaPage() {
               variant="ghost"
               size="sm"
               onClick={() => setShowDetalleEventos((prev) => !prev)}
-              className="text-xs h-8 text-amber-400 hover:text-amber-300 hover:bg-amber-400/10 gap-1.5 font-bold"
+              className="text-xs h-8 text-red-600 hover:text-amber-300 hover:bg-amber-400/10 gap-1.5 font-bold"
             >
               <span>{showDetalleEventos ? 'Ocultar informes' : 'Ver informes'}</span>
               {showDetalleEventos ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -1007,7 +1007,7 @@ export default function ComisionDirectivaPage() {
                   {data.eventos.map((ev: any) => (
                     <div
                       key={ev.id}
-                      className="bg-[#18181C] border border-[#2A2A30] hover:border-amber-500/40 p-4 rounded-xl flex flex-col justify-between transition-all gap-3"
+                      className="bg-white shadow-sm border border-[#2A2A30] hover:border-amber-500/40 p-4 rounded-xl flex flex-col justify-between transition-all gap-3"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2">
@@ -1017,7 +1017,7 @@ export default function ComisionDirectivaPage() {
                           </span>
                         </div>
                         {ev.subtitulo && (
-                          <p className="text-[11px] font-semibold text-amber-400/90 uppercase mt-0.5">{ev.subtitulo}</p>
+                          <p className="text-[11px] font-semibold text-red-600/90 uppercase mt-0.5">{ev.subtitulo}</p>
                         )}
                         <p className="text-[11px] text-slate-600 italic font-serif mt-1">{ev.fechaTexto}</p>
                       </div>
@@ -1030,7 +1030,7 @@ export default function ComisionDirectivaPage() {
                         }}
                         className="bg-[#222228] hover:bg-amber-500 hover:text-black border border-[#303038] text-white text-xs font-bold h-8 px-3 gap-1.5 w-full transition-all"
                       >
-                        <Eye size={14} className="text-amber-400" />
+                        <Eye size={14} className="text-red-600" />
                         <span>Ver Diapositiva / Imprimir</span>
                       </Button>
                     </div>
@@ -1092,7 +1092,7 @@ export default function ComisionDirectivaPage() {
                       isSelected
                         ? 'bg-emerald-500 text-black border-emerald-500 font-bold shadow-md'
                         : tieneRecaudacion
-                        ? 'bg-[#18181A] border-emerald-500/30 text-white hover:border-emerald-500/60'
+                        ? 'bg-white border-emerald-500/30 text-white hover:border-emerald-500/60'
                         : 'bg-white border-[#222226] text-[#666]'
                     }`}
                   >
@@ -1131,7 +1131,7 @@ export default function ComisionDirectivaPage() {
             </div>
 
             <div className="bg-white border border-[#28282E] p-3 rounded-xl">
-              <div className="text-[10px] text-amber-400 font-bold uppercase">Grupo Entrenamiento</div>
+              <div className="text-[10px] text-red-600 font-bold uppercase">Grupo Entrenamiento</div>
               <div className="text-xl font-black text-slate-900">{data?.escuela?.porGrupo?.['Grupo Entrenamiento'] || 0} juveniles</div>
             </div>
           </div>
@@ -1156,7 +1156,7 @@ export default function ComisionDirectivaPage() {
           {/* Filtro y Tabla Desplegables de Alumnos de Escuela */}
           {showDetalleEscuela && (
             <div className="animate-in fade-in duration-200">
-              <div className="p-3 border-b border-[#242428] flex flex-wrap items-center justify-between gap-2 bg-[#121214]">
+              <div className="p-3 border-b border-[#242428] flex flex-wrap items-center justify-between gap-2 bg-white shadow-sm">
                 <div className="flex items-center gap-1">
                   {['todos', 'Escuelita', 'Minitenis', 'Grupo Entrenamiento'].map((grp) => (
                     <Button
@@ -1210,7 +1210,7 @@ export default function ComisionDirectivaPage() {
                                 ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
                                 : al.grupo === 'Minitenis'
                                 ? 'bg-sky-500/10 text-sky-400 border-sky-500/30'
-                                : 'bg-amber-500/10 text-amber-400 border-amber-500/30'
+                                : 'bg-amber-500/10 text-red-600 border-amber-500/30'
                             }`}>
                               {al.grupo === 'Grupo Entrenamiento' ? 'Competencia' : al.grupo}
                             </Badge>
@@ -1276,7 +1276,7 @@ export default function ComisionDirectivaPage() {
                       isSelected
                         ? 'bg-purple-500 text-white border-purple-500 font-bold shadow-md'
                         : tieneAlumnos
-                        ? 'bg-[#18181A] border-purple-500/30 text-white hover:border-purple-500/60'
+                        ? 'bg-white border-purple-500/30 text-white hover:border-purple-500/60'
                         : 'bg-white border-[#222226] text-[#666]'
                     }`}
                   >
@@ -1310,7 +1310,7 @@ export default function ComisionDirectivaPage() {
           {/* Filtros y Tabla Particulares (Desplegables) */}
           {showDetalleParticulares && (
             <div className="animate-in fade-in duration-200">
-              <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-[#121214]">
+              <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-white shadow-sm">
                 <span className="text-xs text-slate-600">
                   Detalle nominal de asistencias:
                 </span>
@@ -1403,17 +1403,17 @@ export default function ComisionDirectivaPage() {
 
           {/* Resumen */}
           <div className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 bg-white border-b border-[#242428]">
-            <div className="bg-[#161619] border border-[#25252A] p-2.5 rounded-xl">
+            <div className="bg-white shadow-sm border border-[#25252A] p-2.5 rounded-xl">
               <div className="text-[10px] text-slate-600 font-bold uppercase">Total Clases Dadas</div>
               <div className="text-lg font-black text-slate-900">{data?.clasesProfesor?.totalClases || 0}</div>
             </div>
 
-            <div className="bg-[#161619] border border-[#25252A] p-2.5 rounded-xl">
+            <div className="bg-white shadow-sm border border-[#25252A] p-2.5 rounded-xl">
               <div className="text-[10px] text-sky-400 font-bold uppercase">Total Alumnos Atendidos</div>
               <div className="text-lg font-black text-sky-400">{data?.clasesProfesor?.totalAlumnos || 0}</div>
             </div>
 
-            <div className="bg-[#161619] border border-emerald-500/30 p-2.5 rounded-xl">
+            <div className="bg-white shadow-sm border border-emerald-500/30 p-2.5 rounded-xl">
               <div className="text-[10px] text-emerald-300 font-bold uppercase">Monto Total Liquidado</div>
               <div className="text-lg font-black font-mono text-emerald-400">
                 {formatCurrency(data?.clasesProfesor?.totalMonto || 0)}
@@ -1441,7 +1441,7 @@ export default function ComisionDirectivaPage() {
           {/* Filtros y Tabla Clases Profesor (Desplegables) */}
           {showDetalleProfesor && (
             <div className="animate-in fade-in duration-200">
-              <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-[#121214]">
+              <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-white shadow-sm">
                 <span className="text-xs text-slate-600">
                   Detalle de planillas por fecha:
                 </span>
@@ -1506,7 +1506,7 @@ export default function ComisionDirectivaPage() {
         <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
-              <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
+              <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-red-600">
                 <Users size={18} />
               </div>
               <div>
@@ -1540,7 +1540,7 @@ export default function ComisionDirectivaPage() {
               variant="ghost"
               size="sm"
               onClick={() => setShowDetalleSocios((prev) => !prev)}
-              className="text-xs h-7 text-amber-400 hover:text-amber-300 hover:bg-amber-400/10 gap-1.5 font-bold"
+              className="text-xs h-7 text-red-600 hover:text-amber-300 hover:bg-amber-400/10 gap-1.5 font-bold"
             >
               <span>{showDetalleSocios ? 'Ocultar nómina de socios' : 'Ver nómina de socios'}</span>
               {showDetalleSocios ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -1550,7 +1550,7 @@ export default function ComisionDirectivaPage() {
           {/* Búsqueda y Tabla Socios (Desplegables) */}
           {showDetalleSocios && (
             <div className="animate-in fade-in duration-200">
-              <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-[#121214]">
+              <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-white shadow-sm">
                 <span className="text-xs text-slate-600">
                   Buscador rápido de socios:
                 </span>

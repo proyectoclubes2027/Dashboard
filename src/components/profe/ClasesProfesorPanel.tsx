@@ -429,7 +429,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
               <GraduationCap className="h-5 w-5 text-[#DC2626]" />
-              <h3 className="text-white text-base font-bold">
+              <h3 className="text-slate-900 text-base font-bold">
                 Página del Profesor · Carga Diaria de Clases
               </h3>
               <Badge variant="outline" className="text-[10px] bg-[#DC2626]/10 text-[#DC2626] border-[#DC2626]/30 font-bold uppercase">
@@ -437,7 +437,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               </Badge>
             </div>
 
-            <p className="text-slate-600 text-xs mb-3 leading-relaxed">
+            <p className="text-slate-700 font-medium text-xs mb-3 leading-relaxed">
               El profesor ingresa a este link todos los días desde su celular para registrar la cantidad de clases dictadas, alumnos que tuvo y el total recaudado del día.
             </p>
 
@@ -451,7 +451,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               size="sm"
               variant="outline"
               onClick={handleCopyLink}
-              className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-9 text-xs font-semibold"
+              className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-slate-900 h-9 text-xs font-semibold"
             >
               {copiedLink ? <Check className="h-3.5 w-3.5 mr-1.5 text-green-400" /> : <Copy className="h-3.5 w-3.5 mr-1.5" />}
               {copiedLink ? 'Copiado!' : 'Copiar Link'}
@@ -460,7 +460,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
             <Button
               size="sm"
               onClick={() => window.open(profeUrl, '_blank')}
-              className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] h-9 text-xs font-bold shadow-sm"
+              className="bg-primary text-white hover:bg-red-700 shadow-sm h-9 text-xs font-bold shadow-sm"
             >
               <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
               Abrir enlace
@@ -472,7 +472,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
       {/* Header con Filtro de Mes y Botones de Acción */}
       <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h3 className="text-white text-base font-bold flex items-center gap-2">
+          <h3 className="text-slate-900 text-base font-bold flex items-center gap-2">
             <ClipboardList className="h-5 w-5 text-[#DC2626]" />
             Control de Clases · Alumnos y Recaudación Diaria
           </h3>
@@ -483,12 +483,12 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
 
         <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
           <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-            <SelectTrigger className="h-8 text-xs bg-slate-50 border-slate-200 text-white focus:ring-[#DC2626] w-[160px]">
+            <SelectTrigger className="h-8 text-xs bg-white border-slate-300 text-slate-900 focus:ring-red-600 w-[160px]">
               <SelectValue placeholder="Seleccionar mes" />
             </SelectTrigger>
-            <SelectContent className="bg-white border-slate-200 text-white">
+            <SelectContent className="bg-white border-slate-200 text-slate-900">
               {monthOptions.map((opt) => (
-                <SelectItem key={opt.value} value={opt.value} className="focus:bg-[#333333] focus:text-white">
+                <SelectItem key={opt.value} value={opt.value} className="focus:bg-red-50 focus:text-red-700">
                   {opt.label}
                 </SelectItem>
               ))}
@@ -500,7 +500,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
             size="sm"
             variant="outline"
             onClick={handleExportSemanaPDF}
-            className="border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white h-8 text-xs font-semibold"
+            className="border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-slate-900 h-8 text-xs font-semibold"
             title="Descargar informe semanal oficial en PDF para Comisión Directiva"
           >
             <FileDown className="h-3.5 w-3.5 mr-1" />
@@ -512,7 +512,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
             size="sm"
             variant="outline"
             onClick={handleExportMesPDF}
-            className="border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white h-8 text-xs font-semibold"
+            className="border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-slate-900 h-8 text-xs font-semibold"
             title="Descargar informe mensual oficial en PDF para Comisión Directiva"
           >
             <FileDown className="h-3.5 w-3.5 mr-1" />
@@ -523,7 +523,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
             <Button
               size="sm"
               onClick={() => handleOpenCreateModal()}
-              className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] h-8 text-xs font-bold"
+              className="bg-primary text-white hover:bg-red-700 shadow-sm h-8 text-xs font-bold"
             >
               <Plus className="h-3.5 w-3.5 mr-1" />
               Cargar Día
@@ -535,7 +535,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
             size="sm"
             onClick={() => fetchRegistrosProfeMensual(selectedMonth)}
             disabled={loadingProfe}
-            className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+            className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-slate-900 h-8 text-xs font-semibold"
           >
             <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loadingProfe ? 'animate-spin' : ''}`} />
             Actualizar
@@ -711,7 +711,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={() => setCurrentWeekDate(subWeeks(currentWeekDate, 1))}
-              className="h-8 px-2 border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white text-xs"
+              className="h-8 px-2 border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-slate-900 text-xs"
               title="Semana anterior"
             >
               <ChevronLeft className="w-4 h-4 mr-1" /> Ant.
@@ -720,7 +720,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={() => setCurrentWeekDate(new Date())}
-              className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
+              className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-slate-900"
             >
               Esta Semana
             </Button>
@@ -728,7 +728,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={() => setCurrentWeekDate(addWeeks(currentWeekDate, 1))}
-              className="h-8 px-2 border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white text-xs"
+              className="h-8 px-2 border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-slate-900 text-xs"
               title="Semana siguiente"
             >
               Sig. <ChevronRight className="w-4 h-4 ml-1" />
@@ -737,7 +737,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={handleExportSemanaPDF}
-              className="h-8 text-xs border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white font-semibold"
+              className="h-8 text-xs border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-slate-900 font-semibold"
               title="Descargar informe semanal para presentar en Comisión Directiva"
             >
               <FileDown className="w-3.5 h-3.5 mr-1" />
@@ -837,7 +837,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                         e.stopPropagation();
                         handleOpenEditModal(reg);
                       }}
-                      className="text-slate-600 hover:text-white"
+                      className="text-slate-600 hover:text-slate-900"
                       title="Editar"
                     >
                       <Pencil className="w-3 h-3" />
@@ -876,7 +876,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={handleExportMesPDF}
-              className="h-8 text-xs border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-white font-semibold"
+              className="h-8 text-xs border-[#DC2626]/50 text-[#DC2626] hover:bg-[#DC2626]/10 hover:text-slate-900 font-semibold"
               title="Exportar informe mensual oficial en PDF para Comisión Directiva"
             >
               <FileDown className="w-3.5 h-3.5 mr-1" />
@@ -886,7 +886,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={handleExportMesExcel}
-              className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
+              className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-slate-900"
               title="Exportar a planilla Excel (.xlsx)"
             >
               <Download className="w-3.5 h-3.5 mr-1" />
@@ -975,7 +975,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                               variant="ghost"
                               size="icon"
                               onClick={() => handleOpenEditModal(registro)}
-                              className="h-7 w-7 text-slate-600 hover:text-white hover:bg-slate-50"
+                              className="h-7 w-7 text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                               title="Editar"
                             >
                               <Pencil className="h-3.5 w-3.5" />
@@ -1005,7 +1005,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
       {/* Modal para Crear / Editar Registro del Día */}
       {!readOnly && (
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="bg-white border-slate-200 text-white sm:max-w-[440px]">
+          <DialogContent className="bg-white border-slate-200 text-slate-900 sm:max-w-[440px]">
             <DialogHeader>
               <DialogTitle className="text-slate-900 font-bold text-lg flex items-center gap-2">
                 <ClipboardList className="w-5 h-5 text-[#DC2626]" />
@@ -1091,14 +1091,14 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                   type="button"
                   variant="outline"
                   onClick={() => setIsModalOpen(false)}
-                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
+                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-slate-900"
                 >
                   Cancelar
                 </Button>
                 <Button
                   type="submit"
                   disabled={submittingModal}
-                  className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-bold"
+                  className="bg-primary text-white hover:bg-red-700 shadow-sm font-bold"
                 >
                   {submittingModal ? 'Guardando...' : editingRegistro ? 'Guardar Cambios' : 'Guardar Día'}
                 </Button>

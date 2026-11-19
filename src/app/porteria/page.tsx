@@ -235,21 +235,21 @@ export default function PorteriaPage() {
       if (filtroTipo !== 'todos' || searchTerm.trim()) {
         // En búsqueda/filtro, ocultar celdas libres para focalizar
         return (
-          <div className="bg-[#121214] border border-[#222226] rounded-xl p-3 min-h-[85px] flex items-center justify-center text-[#555] text-xs italic">
+          <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-3 min-h-[85px] flex items-center justify-center text-slate-400 text-xs italic">
             Sin reservas
           </div>
         );
       }
 
       return (
-        <div className="bg-[#131316] border border-[#24242A] rounded-xl p-3.5 min-h-[85px] flex items-center justify-between transition-colors">
+        <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-3.5 min-h-[85px] flex items-center justify-between transition-colors">
           <div className="space-y-0.5">
-            <span className="text-[11px] font-black uppercase tracking-wider text-[#666]">
+            <span className="text-[11px] font-black uppercase tracking-wider text-slate-500">
               Cancha {canchaId}
             </span>
-            <p className="text-xs text-[#555] italic">Libre (Sin reserva)</p>
+            <p className="text-xs text-slate-400 italic">Libre (Sin reserva)</p>
           </div>
-          <Badge variant="outline" className="bg-[#1A1A1E] text-[#666] border-[#2E2E35] text-[10px]">
+          <Badge variant="outline" className="bg-slate-100 text-slate-500 border-[#2E2E35] text-[10px]">
             Libre
           </Badge>
         </div>
@@ -263,7 +263,7 @@ export default function PorteriaPage() {
     const esBloqueado = tipo === 'bloqueado';
     const enJuego = turno.estadoTiempo === 'en_curso' && tabDia === 'hoy';
 
-    let cardBgClass = 'bg-[#15151A] border-[#2C2C35] hover:border-[#3D3D48]';
+    let cardBgClass = 'bg-white border-slate-200 shadow-sm hover:border-[#3D3D48]';
     let canchaBadgeClass = 'bg-blue-600 text-white';
 
     if (enJuego) {
@@ -370,7 +370,7 @@ export default function PorteriaPage() {
 
                 {turno.acompanante ? (
                   <div className="text-xs sm:text-[13px] font-medium text-blue-100 flex items-start gap-1.5 bg-[#1E1E26] px-2.5 py-1.5 rounded-lg border border-[#353545] shadow-xs">
-                    <Users className="h-4 w-4 text-blue-400 shrink-0 mt-0.5" />
+                    <Users className="h-4 w-4 text-red-600 shrink-0 mt-0.5" />
                     <div className="flex flex-wrap items-center gap-1.5 leading-snug">
                       <span className="text-[#888899] font-bold text-xs">+</span>
                       {turno.acompanante.split('/').map((item, aIdx) => {
@@ -400,7 +400,7 @@ export default function PorteriaPage() {
                           key={pIdx}
                           className="text-xs sm:text-[13px] font-medium text-blue-100 flex items-center gap-1.5 bg-[#1E1E26] px-2.5 py-1 rounded-lg border border-[#353545] shadow-xs"
                         >
-                          <Users className="h-4 w-4 text-blue-400 shrink-0" />
+                          <Users className="h-4 w-4 text-red-600 shrink-0" />
                           <span className="text-[#888899] font-bold text-xs">+</span>
                           <span className="font-bold text-slate-900 bg-white/10 px-2 py-0.5 rounded border border-white/15">
                             {p.nombre}
@@ -418,11 +418,11 @@ export default function PorteriaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0C0C0E] text-[#ECECEC] p-3 sm:p-5 lg:p-6 space-y-5 max-w-[1500px] mx-auto">
+    <div className="min-h-screen bg-[#F1F5F9] text-slate-900 p-3 sm:p-5 lg:p-6 space-y-5 max-w-[1500px] mx-auto">
       {/* HEADER DE PORTERÍA */}
-      <header className="bg-[#161619] border border-[#26262B] rounded-2xl p-4 sm:p-5 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <header className="bg-white border border-slate-200 shadow-md rounded-2xl p-4 sm:p-5 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-black text-slate-900 text-xl shadow-lg shadow-blue-500/20">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center font-black text-slate-900 text-xl shadow-lg shadow-blue-500/20">
             <Shield className="h-6 w-6" />
           </div>
           <div>
@@ -449,10 +449,10 @@ export default function PorteriaPage() {
           <Button
             onClick={() => fetchData(false)}
             disabled={loading}
-            className="bg-[#222226] hover:bg-[#2C2C32] border border-[#303038] text-white h-11 px-4 rounded-xl gap-2 text-xs font-semibold"
+            className="bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 shadow-sm h-11 px-4 rounded-xl gap-2 text-xs font-semibold"
             title="Refrescar datos en vivo"
           >
-            <RefreshCw className={`h-4 w-4 text-blue-400 ${loading ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`h-4 w-4 text-red-600 ${loading ? 'animate-spin' : ''}`} />
             <span className="hidden sm:inline">Actualizar</span>
           </Button>
         </div>
@@ -545,7 +545,7 @@ export default function PorteriaPage() {
         >
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className={`text-xs font-black uppercase tracking-wider ${tabDia === 'hoy' ? 'text-blue-400' : 'text-[#777]'}`}>
+              <span className={`text-xs font-black uppercase tracking-wider ${tabDia === 'hoy' ? 'text-red-600' : 'text-[#777]'}`}>
                 ☀️ HOY
               </span>
               {tabDia === 'hoy' && (
@@ -645,16 +645,16 @@ export default function PorteriaPage() {
       </div>
 
       {/* BUSCADOR DE PORTERÍA & FILTROS */}
-      <div className="bg-[#161619] border border-[#26262B] rounded-2xl p-4 sm:p-5 space-y-4 shadow-xl">
+      <div className="bg-white border border-slate-200 shadow-md rounded-2xl p-4 sm:p-5 space-y-4 shadow-xl">
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           {/* Buscador Rápido */}
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-400" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-red-600" />
             <Input
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="¿Quién llega al portón? Escribí Apellido, DNI o Nombre..."
-              className="pl-10 pr-9 h-11 bg-white border-[#2B2B32] text-white placeholder:text-[#666] focus:border-blue-500 rounded-xl text-sm"
+              className="pl-10 pr-9 h-11 bg-white border-[#2B2B32] text-white placeholder:text-slate-500 focus:border-blue-500 rounded-xl text-sm"
             />
             {searchTerm && (
               <button
@@ -748,14 +748,14 @@ export default function PorteriaPage() {
           {/* Encabezado de Columnas (visible en desktop/tablets) */}
           <div className="hidden md:grid md:grid-cols-12 gap-3 px-4 py-2.5 bg-white border border-[#24242A] rounded-xl text-xs font-black uppercase tracking-wider text-slate-600">
             <div className="col-span-2 flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5 text-blue-400" />
+              <Clock className="h-3.5 w-3.5 text-red-600" />
               <span>Horario</span>
             </div>
             <div className="col-span-5 flex items-center gap-1.5 text-emerald-400">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
               <span>Cancha 1</span>
             </div>
-            <div className="col-span-5 flex items-center gap-1.5 text-blue-400">
+            <div className="col-span-5 flex items-center gap-1.5 text-red-600">
               <span className="w-2 h-2 rounded-full bg-blue-400"></span>
               <span>Cancha 2</span>
             </div>
@@ -763,7 +763,7 @@ export default function PorteriaPage() {
 
           {loading && (
             <div className="py-16 text-center space-y-3">
-              <RefreshCw className="h-8 w-8 text-blue-400 animate-spin mx-auto" />
+              <RefreshCw className="h-8 w-8 text-red-600 animate-spin mx-auto" />
               <p className="text-sm text-slate-600">Cargando turnos de portería...</p>
             </div>
           )}
@@ -838,7 +838,7 @@ export default function PorteriaPage() {
 
                       {/* COLUMNA 3: CANCHA 2 (5 columnas en desktop) */}
                       <div className="md:col-span-5">
-                        <div className="md:hidden text-[10px] font-black uppercase text-blue-400 mb-1">
+                        <div className="md:hidden text-[10px] font-black uppercase text-red-600 mb-1">
                           Cancha 2
                         </div>
                         {renderCanchaCard(2, shift)}
