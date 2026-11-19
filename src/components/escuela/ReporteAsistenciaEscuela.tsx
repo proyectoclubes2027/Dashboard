@@ -185,11 +185,11 @@ export default function ReporteAsistenciaEscuela() {
       <div className="bg-white border border-slate-200 rounded-2xl p-4 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-3">
           <div>
-            <h3 className="text-sm font-bold text-white flex items-center gap-2">
+            <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <Calendar className="h-4 w-4 text-amber-400" />
               <span>Reportes de Asistencia de Escuela</span>
             </h3>
-            <p className="text-xs text-[#888888] mt-0.5">
+            <p className="text-xs text-slate-600 mt-0.5">
               {periodoLabel ? `Período: ${periodoLabel}` : 'Consulta de concurrencia y ausencias'}
             </p>
           </div>
@@ -199,7 +199,7 @@ export default function ReporteAsistenciaEscuela() {
               size="sm"
               onClick={handleExportExcel}
               disabled={alumnosFiltrados.length === 0}
-              className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs h-8 gap-1.5"
+              className="bg-emerald-600 hover:bg-emerald-500 text-slate-900 font-bold text-xs h-8 gap-1.5"
             >
               <FileSpreadsheet className="h-3.5 w-3.5" />
               <span>Exportar Excel</span>
@@ -225,7 +225,7 @@ export default function ReporteAsistenciaEscuela() {
             className={`p-3 rounded-xl border text-left transition-all ${
               tipoReporte === 'semana'
                 ? 'bg-amber-400 text-black border-amber-400 shadow-md font-bold'
-                : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
+                : 'bg-white text-slate-600 hover:text-white border-slate-200'
             }`}
           >
             <span className="text-xs uppercase font-extrabold block">Reporte Semanal</span>
@@ -238,7 +238,7 @@ export default function ReporteAsistenciaEscuela() {
             className={`p-3 rounded-xl border text-left transition-all ${
               tipoReporte === 'mes'
                 ? 'bg-amber-400 text-black border-amber-400 shadow-md font-bold'
-                : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
+                : 'bg-white text-slate-600 hover:text-white border-slate-200'
             }`}
           >
             <span className="text-xs uppercase font-extrabold block">Reporte Mensual</span>
@@ -251,7 +251,7 @@ export default function ReporteAsistenciaEscuela() {
             className={`p-3 rounded-xl border text-left transition-all ${
               tipoReporte === 'rango'
                 ? 'bg-amber-400 text-black border-amber-400 shadow-md font-bold'
-                : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
+                : 'bg-white text-slate-600 hover:text-white border-slate-200'
             }`}
           >
             <span className="text-xs uppercase font-extrabold block">Rango Personalizado</span>
@@ -263,7 +263,7 @@ export default function ReporteAsistenciaEscuela() {
         <div className="flex flex-wrap items-center gap-3 pt-1">
           {tipoReporte === 'semana' && (
             <div className="flex items-center gap-2">
-              <span className="text-xs text-[#888]">Cualquier día de la semana:</span>
+              <span className="text-xs text-slate-600">Cualquier día de la semana:</span>
               <Input
                 type="date"
                 value={fechaRef}
@@ -275,7 +275,7 @@ export default function ReporteAsistenciaEscuela() {
 
           {tipoReporte === 'mes' && (
             <div className="flex items-center gap-2">
-              <span className="text-xs text-[#888]">Mes:</span>
+              <span className="text-xs text-slate-600">Mes:</span>
               <Input
                 type="month"
                 value={mesRef}
@@ -287,14 +287,14 @@ export default function ReporteAsistenciaEscuela() {
 
           {tipoReporte === 'rango' && (
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs text-[#888]">Desde:</span>
+              <span className="text-xs text-slate-600">Desde:</span>
               <Input
                 type="date"
                 value={fechaDesde}
                 onChange={(e) => setFechaDesde(e.target.value)}
                 className="h-8 text-xs bg-slate-50 border-slate-200 text-white w-36"
               />
-              <span className="text-xs text-[#888]">Hasta:</span>
+              <span className="text-xs text-slate-600">Hasta:</span>
               <Input
                 type="date"
                 value={fechaHasta}
@@ -306,7 +306,7 @@ export default function ReporteAsistenciaEscuela() {
 
           {/* Filtro por grupo */}
           <div className="flex items-center gap-1.5 ml-auto">
-            <span className="text-xs text-[#888]">Grupo:</span>
+            <span className="text-xs text-slate-600">Grupo:</span>
             <select
               value={grupoFiltro}
               onChange={(e) => setGrupoFiltro(e.target.value)}
@@ -326,16 +326,16 @@ export default function ReporteAsistenciaEscuela() {
       {/* Tarjetas KPIs del Reporte */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-          <div className="flex items-center justify-between text-[#888]">
+          <div className="flex items-center justify-between text-slate-600">
             <span className="text-[10px] font-bold uppercase tracking-wider">Total Clases Dictadas</span>
             <Calendar className="h-4 w-4 text-primary" />
           </div>
-          <span className="text-2xl font-black text-white mt-1 block">{totalClases}</span>
+          <span className="text-2xl font-black text-slate-900 mt-1 block">{totalClases}</span>
           <span className="text-[10px] text-[#777]">días con clase registrada</span>
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-          <div className="flex items-center justify-between text-[#888]">
+          <div className="flex items-center justify-between text-slate-600">
             <span className="text-[10px] font-bold uppercase tracking-wider">Promedio Concurrencia</span>
             <Percent className="h-4 w-4 text-amber-400" />
           </div>
@@ -346,7 +346,7 @@ export default function ReporteAsistenciaEscuela() {
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-          <div className="flex items-center justify-between text-[#888]">
+          <div className="flex items-center justify-between text-slate-600">
             <span className="text-[10px] font-bold uppercase tracking-wider">Asistencia Perfecta</span>
             <CheckCircle2 className="h-4 w-4 text-emerald-400" />
           </div>
@@ -357,7 +357,7 @@ export default function ReporteAsistenciaEscuela() {
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-          <div className="flex items-center justify-between text-[#888]">
+          <div className="flex items-center justify-between text-slate-600">
             <span className="text-[10px] font-bold uppercase tracking-wider">Alerta Ausencias</span>
             <XCircle className="h-4 w-4 text-red-400" />
           </div>
@@ -370,7 +370,7 @@ export default function ReporteAsistenciaEscuela() {
 
       {/* Buscador de Alumno */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#888]" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-600" />
         <Input
           placeholder="Filtrar reporte por alumno o tutor..."
           value={search}
@@ -382,18 +382,18 @@ export default function ReporteAsistenciaEscuela() {
       {/* Tabla Detallada de Asistencias del Período */}
       <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
         {loading ? (
-          <div className="p-8 text-center text-xs text-[#888] space-y-2">
+          <div className="p-8 text-center text-xs text-slate-600 space-y-2">
             <Loader2 className="h-6 w-6 animate-spin mx-auto text-amber-400" />
             <p>Calculando reporte de asistencia...</p>
           </div>
         ) : alumnosFiltrados.length === 0 ? (
-          <div className="p-8 text-center text-xs text-[#888]">
+          <div className="p-8 text-center text-xs text-slate-600">
             No se encontraron alumnos para los filtros seleccionados.
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-slate-50 text-[#AAAAAA] uppercase font-bold text-[10px] border-b border-slate-200">
+              <thead className="bg-slate-50 text-slate-600 uppercase font-bold text-[10px] border-b border-slate-200">
                 <tr>
                   <th className="py-2.5 px-3">Alumno</th>
                   <th className="py-2.5 px-2">Grupo</th>
@@ -407,14 +407,14 @@ export default function ReporteAsistenciaEscuela() {
                   return (
                     <tr key={al.id} className="hover:bg-slate-50 transition-colors">
                       <td className="py-3 px-3">
-                        <span className="font-bold text-white block text-sm">{al.nombre}</span>
+                        <span className="font-bold text-slate-900 block text-sm">{al.nombre}</span>
                         {al.edad ? <span className="text-[10px] text-[#777]">{al.edad} años</span> : null}
                       </td>
 
                       <td className="py-3 px-2">
                         <Badge
                           variant="outline"
-                          className="text-[9px] font-bold uppercase border-white/10 text-[#CCCCCC]"
+                          className="text-[9px] font-bold uppercase border-white/10 text-slate-800"
                         >
                           {al.grupo}
                         </Badge>

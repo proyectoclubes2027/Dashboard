@@ -272,7 +272,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                     Sin Login / Sin PIN
                   </Badge>
                 </CardTitle>
-                <CardDescription className="text-[#888888] text-xs">
+                <CardDescription className="text-slate-600 text-xs">
                   Links públicos para compartir con Secretaría, Portería, Profesor o tener siempre a mano cuando te los pidan.
                 </CardDescription>
               </div>
@@ -299,7 +299,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                           <Icon className="h-4 w-4" />
                         </div>
                         <div>
-                          <h4 className="text-sm font-black text-white">{acc.label}</h4>
+                          <h4 className="text-sm font-black text-slate-900">{acc.label}</h4>
                           <span className="text-[11px] font-mono text-[#777] block">{acc.path}</span>
                         </div>
                       </div>
@@ -308,7 +308,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                       </Badge>
                     </div>
 
-                    <p className="text-xs text-[#999999] leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       {acc.descripcion}
                     </p>
                   </div>
@@ -344,7 +344,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                         title="Abrir página en nueva pestaña"
                       >
                         <a href={acc.path} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-3.5 w-3.5 text-[#888]" />
+                          <ExternalLink className="h-3.5 w-3.5 text-slate-600" />
                           <span>Abrir</span>
                         </a>
                       </Button>
@@ -360,7 +360,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
       <div className="flex items-center justify-between pt-2">
         <div>
           <h3 className="text-white text-lg font-semibold">Configuración de Cuotas</h3>
-          <p className="text-[#999999] text-sm mt-1">
+          <p className="text-slate-600 text-sm mt-1">
             Definí el valor de la cuota mensual para cada categoría de socio.
           </p>
         </div>
@@ -399,9 +399,9 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-[#999999] text-xs leading-relaxed">{cat.descripcion}</p>
+                <p className="text-slate-600 text-xs leading-relaxed">{cat.descripcion}</p>
                 <div className="space-y-1.5">
-                  <Label className="text-[#CCCCCC] text-xs">Valor ($)</Label>
+                  <Label className="text-slate-800 text-xs">Valor ($)</Label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
                     <Input
@@ -421,7 +421,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
 
       <div className="mt-8 border-t border-slate-200 pt-6">
         <h3 className="text-white text-lg font-semibold">Balance de Caja</h3>
-        <p className="text-[#999999] text-sm mt-1 mb-4">
+        <p className="text-slate-600 text-sm mt-1 mb-4">
           Configuración inicial para el sistema de balances.
         </p>
         
@@ -440,11 +440,11 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
             </div>
           </CardHeader>
           <CardContent className="space-y-3">
-            <p className="text-[#999999] text-xs leading-relaxed">
+            <p className="text-slate-600 text-xs leading-relaxed">
               Este valor se toma como base para calcular todos los saldos mensuales subsiguientes.
             </p>
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">Monto ($)</Label>
+              <Label className="text-slate-800 text-xs">Monto ($)</Label>
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
                 <Input
@@ -465,7 +465,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
           <Zap className="h-5 w-5 text-amber-400" />
           <h3 className="text-white text-lg font-semibold">Tarifas de Iluminación (Turnos con Luz)</h3>
         </div>
-        <p className="text-[#999999] text-sm mb-4">
+        <p className="text-slate-600 text-sm mb-4">
           Costo adicional por turno nocturno (a partir de las 19:00 hs) para socios y profesor.
         </p>
 
@@ -476,7 +476,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                 <Label className="text-white text-xs font-bold block">
                   Fecha a partir de la cual se liquida el cobro de Luz
                 </Label>
-                <p className="text-[#888888] text-[11px] mt-0.5">
+                <p className="text-slate-600 text-[11px] mt-0.5">
                   Los turnos nocturnos jugados antes de esta fecha quedan 100% bonificados.
                 </p>
               </div>
@@ -507,11 +507,11 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
               </div>
             </CardHeader>
             <CardContent className="space-y-3">
-              <p className="text-[#999999] text-xs leading-relaxed">
+              <p className="text-slate-600 text-xs leading-relaxed">
                 Single (2 socios): 50% c/u ($3.000). Dobles (4 socios): 25% c/u ($1.500). Si juegan invitados, el socio titular asume la parte del invitado.
               </p>
               <div className="space-y-1.5">
-                <Label className="text-[#CCCCCC] text-xs">Monto Total Turno ($)</Label>
+                <Label className="text-slate-800 text-xs">Monto Total Turno ($)</Label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
                   <Input
@@ -541,11 +541,11 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
               </div>
             </CardHeader>
             <CardContent className="space-y-3">
-              <p className="text-[#999999] text-xs leading-relaxed">
+              <p className="text-slate-600 text-xs leading-relaxed">
                 Valor fijo por turno bloqueado por clases del profesor a partir de las 19:00 hs.
               </p>
               <div className="space-y-1.5">
-                <Label className="text-[#CCCCCC] text-xs">Monto por Turno Profe ($)</Label>
+                <Label className="text-slate-800 text-xs">Monto por Turno Profe ($)</Label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
                   <Input
@@ -567,7 +567,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
           <UserPlus className="h-5 w-5 text-emerald-400" />
           <h3 className="text-white text-lg font-semibold">Régimen de Invitados</h3>
         </div>
-        <p className="text-[#999999] text-sm mb-4">
+        <p className="text-slate-600 text-sm mb-4">
           Definí el cupo de invitaciones bonificadas al año y el valor que se cobra por cada invitado adicional.
         </p>
 
@@ -578,7 +578,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                 <Label className="text-white text-xs font-bold block">
                   Fecha a partir de la cual se cobra Invitado Extra
                 </Label>
-                <p className="text-[#888888] text-[11px] mt-0.5">
+                <p className="text-slate-600 text-[11px] mt-0.5">
                   Las invitaciones que excedan el cupo anual antes de esta fecha quedan bonificadas.
                 </p>
               </div>
@@ -609,11 +609,11 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
               </div>
             </CardHeader>
             <CardContent className="space-y-3">
-              <p className="text-[#999999] text-xs leading-relaxed">
+              <p className="text-slate-600 text-xs leading-relaxed">
                 Monto que se facturará en secretaría al socio titular por cada invitado que exceda el cupo anual.
               </p>
               <div className="space-y-1.5">
-                <Label className="text-[#CCCCCC] text-xs">Monto por Invitado ($)</Label>
+                <Label className="text-slate-800 text-xs">Monto por Invitado ($)</Label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
                   <Input
@@ -643,11 +643,11 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
               </div>
             </CardHeader>
             <CardContent className="space-y-3">
-              <p className="text-[#999999] text-xs leading-relaxed">
+              <p className="text-slate-600 text-xs leading-relaxed">
                 Cantidad máxima de invitaciones sin cargo que cada socio titular puede utilizar por año calendario.
               </p>
               <div className="space-y-1.5">
-                <Label className="text-[#CCCCCC] text-xs">Cantidad de Invitaciones</Label>
+                <Label className="text-slate-800 text-xs">Cantidad de Invitaciones</Label>
                 <Input
                   type="number"
                   disabled={readOnly}

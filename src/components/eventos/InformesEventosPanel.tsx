@@ -133,7 +133,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
                 Informes de Eventos
               </h1>
               <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px] px-2 py-0.5">
@@ -175,7 +175,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
       <div className="bg-[#141418] border border-[#24242d] p-4 rounded-xl flex items-center justify-between max-w-sm">
         <div>
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#777]">Eventos Registrados</span>
-          <p className="text-2xl font-black text-white font-mono mt-0.5">{eventos.length}</p>
+          <p className="text-2xl font-black text-slate-900 font-mono mt-0.5">{eventos.length}</p>
         </div>
         <div className="p-3 bg-amber-500/10 rounded-xl text-amber-400 border border-amber-500/20">
           <Trophy className="h-5 w-5" />
@@ -218,7 +218,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
       {loading ? (
         <div className="py-20 text-center space-y-3 bg-[#121215] border border-[#202026] rounded-2xl">
           <RefreshCw className="h-8 w-8 text-amber-400 animate-spin mx-auto" />
-          <p className="text-xs text-[#888]">Cargando informes de eventos...</p>
+          <p className="text-xs text-slate-600">Cargando informes de eventos...</p>
         </div>
       ) : eventos.length === 0 ? (
         <div className="py-20 text-center space-y-4 bg-[#121215] border border-[#202026] rounded-2xl p-6">
@@ -226,7 +226,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
             <Trophy className="h-8 w-8" />
           </div>
           <div className="space-y-1 max-w-md mx-auto">
-            <h3 className="text-base font-bold text-white">No se encontraron eventos cargados</h3>
+            <h3 className="text-base font-bold text-slate-900">No se encontraron eventos cargados</h3>
             <p className="text-xs text-[#777]">
               Comenzá cargando tu primer balance de torneo, interclubes o jornada con cantina para presentarlo a Comisión Directiva.
             </p>
@@ -273,7 +273,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-lg font-black text-white tracking-tight uppercase group-hover:text-amber-300 transition-colors">
+                        <h3 className="text-lg font-black text-slate-900 tracking-tight uppercase group-hover:text-amber-300 transition-colors">
                           {ev.titulo}
                         </h3>
                         <Badge className="bg-amber-500/15 text-amber-300 border-amber-500/30 text-[10px] px-2 py-0">
@@ -288,7 +288,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                       )}
 
                       <p className="text-xs text-slate-500 italic font-serif mt-1 flex items-center gap-1.5">
-                        <Calendar className="h-3.5 w-3.5 text-zinc-500 not-italic" />
+                        <Calendar className="h-3.5 w-3.5 text-slate-500 not-italic" />
                         <span>{ev.fechaTexto}</span>
                       </p>
                     </div>
@@ -311,7 +311,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                       <span className="text-[10px] text-[#777] uppercase font-bold flex items-center gap-1">
                         <Trophy className="h-3 w-3 text-amber-400" /> Torneo
                       </span>
-                      <p className="font-mono font-bold text-white text-xs">
+                      <p className="font-mono font-bold text-slate-900 text-xs">
                         {formatCurrency(netoTorneo)}
                       </p>
                     </div>
@@ -322,14 +322,14 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                         <span className="text-[10px] text-[#777] uppercase font-bold flex items-center gap-1">
                           <Coffee className="h-3 w-3 text-amber-400" /> Cantina
                         </span>
-                        <p className="font-mono font-bold text-white text-xs">
+                        <p className="font-mono font-bold text-slate-900 text-xs">
                           {formatCurrency(netoCantina)}
                         </p>
                       </div>
                     ) : (
                       <div className="bg-[#101014] border border-[#202028] p-2.5 rounded-lg space-y-0.5 opacity-40">
                         <span className="text-[10px] text-[#666] uppercase font-bold">Cantina</span>
-                        <p className="font-mono text-zinc-500 text-xs">Sin cantina</p>
+                        <p className="font-mono text-slate-500 text-xs">Sin cantina</p>
                       </div>
                     )}
 
@@ -339,14 +339,14 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                         <span className="text-[10px] text-[#777] uppercase font-bold flex items-center gap-1">
                           <Sparkles className="h-3 w-3 text-amber-400" /> Otros
                         </span>
-                        <p className="font-mono font-bold text-white text-xs">
+                        <p className="font-mono font-bold text-slate-900 text-xs">
                           {formatCurrency(netoOtros)}
                         </p>
                       </div>
                     ) : (
                       <div className="bg-[#101014] border border-[#202028] p-2.5 rounded-lg space-y-0.5 opacity-40 col-span-2 sm:col-span-1">
                         <span className="text-[10px] text-[#666] uppercase font-bold">Otros Rubros</span>
-                        <p className="font-mono text-zinc-500 text-xs">-</p>
+                        <p className="font-mono text-slate-500 text-xs">-</p>
                       </div>
                     )}
                   </div>
@@ -368,7 +368,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                         variant="ghost"
                         size="sm"
                         onClick={() => handleEditar(ev)}
-                        className="h-9 w-9 p-0 text-[#888] hover:text-white hover:bg-[#202028]"
+                        className="h-9 w-9 p-0 text-slate-600 hover:text-white hover:bg-[#202028]"
                         title="Editar datos"
                       >
                         <Edit2 className="h-4 w-4" />
@@ -377,7 +377,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                         variant="ghost"
                         size="sm"
                         onClick={() => handleEliminar(ev)}
-                        className="h-9 w-9 p-0 text-[#888] hover:text-red-400 hover:bg-red-500/10"
+                        className="h-9 w-9 p-0 text-slate-600 hover:text-red-400 hover:bg-red-500/10"
                         title="Eliminar informe"
                       >
                         <Trash2 className="h-4 w-4" />

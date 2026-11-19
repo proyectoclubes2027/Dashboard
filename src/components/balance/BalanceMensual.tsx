@@ -223,7 +223,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
               <Wallet className="h-6 w-6 text-blue-500" />
             </div>
             <div>
-              <p className="text-[#999999] text-xs font-medium uppercase tracking-wider">Saldo Inicial</p>
+              <p className="text-slate-600 text-xs font-medium uppercase tracking-wider">Saldo Inicial</p>
               <h4 className="text-white text-xl font-bold mt-0.5">{formatCurrency(saldoInicial)}</h4>
             </div>
           </CardContent>
@@ -235,7 +235,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
               <ArrowUpCircle className="h-6 w-6 text-green-500" />
             </div>
             <div>
-              <p className="text-[#999999] text-xs font-medium uppercase tracking-wider">Ingresos</p>
+              <p className="text-slate-600 text-xs font-medium uppercase tracking-wider">Ingresos</p>
               <h4 className="text-green-500 text-xl font-bold mt-0.5">+{formatCurrency(totalIngresos)}</h4>
             </div>
           </CardContent>
@@ -247,7 +247,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
               <ArrowDownCircle className="h-6 w-6 text-red-500" />
             </div>
             <div>
-              <p className="text-[#999999] text-xs font-medium uppercase tracking-wider">Egresos</p>
+              <p className="text-slate-600 text-xs font-medium uppercase tracking-wider">Egresos</p>
               <h4 className="text-red-500 text-xl font-bold mt-0.5">-{formatCurrency(totalEgresos)}</h4>
             </div>
           </CardContent>
@@ -260,7 +260,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
               <Search className="h-6 w-6 text-[#DC2626]" />
             </div>
             <div>
-              <p className="text-[#999999] text-xs font-medium uppercase tracking-wider">Saldo Final</p>
+              <p className="text-slate-600 text-xs font-medium uppercase tracking-wider">Saldo Final</p>
               <h4 className="text-white text-xl font-bold mt-0.5">{formatCurrency(saldoFinal)}</h4>
             </div>
           </CardContent>
@@ -273,12 +273,12 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200">
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-center w-12">N°</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Fecha</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Descripción / Concepto</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Responsable</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-right">Importe (+/-)</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-right">Saldo</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider text-center w-12">N°</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Fecha</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Descripción / Concepto</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Responsable</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider text-right">Importe (+/-)</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider text-right">Saldo</th>
                 <th className="px-4 py-3 w-10"></th>
               </tr>
             </thead>
@@ -304,7 +304,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
                     <td className="px-4 py-3.5 text-white text-sm">
                       <div className="font-medium">{m.descripcion}</div>
                     </td>
-                    <td className="px-4 py-3.5 text-[#999999] text-sm italic">
+                    <td className="px-4 py-3.5 text-slate-600 text-sm italic">
                       {m.responsable}
                     </td>
                     <td className={`px-4 py-3.5 text-right font-bold text-sm ${m.tipo === 'ingreso' ? 'text-green-500' : 'text-red-500'}`}>

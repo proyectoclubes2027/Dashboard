@@ -132,7 +132,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
             <Users className="h-5 w-5 text-[#DC2626]" />
             Pago Masivo
           </DialogTitle>
-          <DialogDescription className="text-[#999999]">
+          <DialogDescription className="text-slate-600">
             Seleccionar socios para registrar pago del mes seleccionado. El monto se calcula según la categoría.
           </DialogDescription>
         </DialogHeader>
@@ -160,28 +160,28 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
             {/* Mes y método */}
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <Label className="text-[#CCCCCC] text-xs">Mes a pagar</Label>
+                <Label className="text-slate-800 text-xs">Mes a pagar</Label>
                 <Select value={mesPagado} onValueChange={setMesPagado}>
-                  <SelectTrigger className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
+                  <SelectTrigger className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-slate-200">
                     {monthOptions.map(opt => (
-                      <SelectItem key={opt.value} value={opt.value} className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">{opt.label}</SelectItem>
+                      <SelectItem key={opt.value} value={opt.value} className="text-slate-800 focus:bg-slate-50 focus:text-white">{opt.label}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <Label className="text-[#CCCCCC] text-xs">Método de pago</Label>
+                <Label className="text-slate-800 text-xs">Método de pago</Label>
                 <Select value={metodoPago} onValueChange={setMetodoPago}>
-                  <SelectTrigger className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
+                  <SelectTrigger className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-slate-200">
-                    <SelectItem value="efectivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Efectivo</SelectItem>
-                    <SelectItem value="transferencia" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Transferencia</SelectItem>
-                    <SelectItem value="mercadopago" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">MercadoPago</SelectItem>
+                    <SelectItem value="efectivo" className="text-slate-800 focus:bg-slate-50 focus:text-white">Efectivo</SelectItem>
+                    <SelectItem value="transferencia" className="text-slate-800 focus:bg-slate-50 focus:text-white">Transferencia</SelectItem>
+                    <SelectItem value="mercadopago" className="text-slate-800 focus:bg-slate-50 focus:text-white">MercadoPago</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -200,7 +200,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
             {/* Lista de socios */}
             <div className="flex-1 overflow-y-auto space-y-0.5 max-h-[500px] pr-1">
               {sociosFiltrados.length === 0 ? (
-                <p className="text-center text-[#999999] text-sm py-6">No hay socios disponibles</p>
+                <p className="text-center text-slate-600 text-sm py-6">No hay socios disponibles</p>
               ) : (
                 sociosFiltrados.map(socio => (
                   <div
@@ -211,14 +211,14 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
                     onClick={() => toggleSocio(socio.id)}
                   >
                     <Checkbox checked={selectedIds.has(socio.id)} className="h-3.5 w-3.5 border-[#666666] data-[state=checked]:bg-[#DC2626] data-[state=checked]:border-[#DC2626]" />
-                    <span className="text-[#CCCCCC] text-[13px] font-medium truncate">{socio.apellido}, {socio.nombre}</span>
+                    <span className="text-slate-800 text-[13px] font-medium truncate">{socio.apellido}, {socio.nombre}</span>
                   </div>
                 ))
               )}
             </div>
 
             <DialogFooter className="gap-2 sm:gap-0">
-              <Button variant="outline" onClick={() => onOpenChange(false)} disabled={submitting} className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50">
+              <Button variant="outline" onClick={() => onOpenChange(false)} disabled={submitting} className="border-slate-200 text-slate-800 hover:bg-slate-50">
                 Cancelar
               </Button>
               <Button onClick={handleSubmit} disabled={submitting || selectedIds.size === 0} className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium">

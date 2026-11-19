@@ -353,7 +353,7 @@ export default function EventoModal({
           variant="outline"
           size="sm"
           onClick={() => addItem(setter, 'torneo')}
-          className="flex-1 text-xs h-8 bg-[#15151a] border-dashed border-[#333] hover:border-amber-400/50 hover:bg-amber-400/5 text-[#aaa] hover:text-amber-300 gap-1.5"
+          className="flex-1 text-xs h-8 bg-[#15151a] border-dashed border-[#333] hover:border-amber-400/50 hover:bg-amber-400/5 text-slate-600 hover:text-amber-300 gap-1.5"
         >
           <Plus className="h-3.5 w-3.5" />
           <span>Agregar {tipo === 'ingreso' ? 'Ingreso' : 'Gasto'}</span>
@@ -373,7 +373,7 @@ export default function EventoModal({
                 <Trophy className="h-5 w-5" />
               </div>
               <div>
-                <DialogTitle className="text-base sm:text-lg font-black text-white">
+                <DialogTitle className="text-base sm:text-lg font-black text-slate-900">
                   {eventoToEdit ? 'Editar Informe de Evento' : 'Nuevo Informe de Torneo / Evento'}
                 </DialogTitle>
                 <p className="text-xs text-[#888894]">
@@ -385,12 +385,12 @@ export default function EventoModal({
             {/* Resumen rápido en header */}
             <div className="hidden md:flex items-center gap-4 bg-[#101013] px-4 py-2 rounded-xl border border-[#252530] text-xs">
               <div className="flex items-center gap-1.5">
-                <span className="text-[#888]">Ingresos:</span>
+                <span className="text-slate-600">Ingresos:</span>
                 <span className="font-mono font-bold text-emerald-400">{formatCurrency(totalIngresos)}</span>
               </div>
               <div className="h-4 w-px bg-[#2b2b35]" />
               <div className="flex items-center gap-1.5">
-                <span className="text-[#888]">Egresos:</span>
+                <span className="text-slate-600">Egresos:</span>
                 <span className="font-mono font-bold text-red-400">{formatCurrency(totalEgresos)}</span>
               </div>
               <div className="h-4 w-px bg-[#2b2b35]" />
@@ -408,7 +408,7 @@ export default function EventoModal({
             {/* SECCIÓN 1: DATOS BÁSICOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 bg-[#141419] p-4 rounded-xl border border-[#23232c]">
               <div className="sm:col-span-2">
-                <Label className="text-xs text-[#aaa] font-bold">
+                <Label className="text-xs text-slate-600 font-bold">
                   Título del Evento / Torneo <span className="text-amber-400">*</span>
                 </Label>
                 <Input
@@ -416,12 +416,12 @@ export default function EventoModal({
                   value={titulo}
                   onChange={(e) => setTitulo(e.target.value)}
                   placeholder="Ej: INTERCLUBES, PEÑA TENIS, TORNEO PRIMAVERA"
-                  className="mt-1 bg-[#101013] border-[#2c2c36] text-sm h-10 text-white font-bold"
+                  className="mt-1 bg-[#101013] border-[#2c2c36] text-sm h-10 text-slate-900 font-bold"
                 />
               </div>
 
               <div>
-                <Label className="text-xs text-[#aaa]">Subtítulo o Aclaración</Label>
+                <Label className="text-xs text-slate-600">Subtítulo o Aclaración</Label>
                 <Input
                   value={subtitulo}
                   onChange={(e) => setSubtitulo(e.target.value)}
@@ -431,7 +431,7 @@ export default function EventoModal({
               </div>
 
               <div>
-                <Label className="text-xs text-[#aaa]">Organizador / Responsable</Label>
+                <Label className="text-xs text-slate-600">Organizador / Responsable</Label>
                 <Input
                   value={organizador}
                   onChange={(e) => setOrganizador(e.target.value)}
@@ -441,7 +441,7 @@ export default function EventoModal({
               </div>
 
               <div className="sm:col-span-2">
-                <Label className="text-xs text-[#aaa]">
+                <Label className="text-xs text-slate-600">
                   Texto de Fecha en Diapositiva <span className="text-amber-400">*</span>
                 </Label>
                 <Input
@@ -454,7 +454,7 @@ export default function EventoModal({
               </div>
 
               <div className="sm:col-span-2">
-                <Label className="text-xs text-[#aaa]">
+                <Label className="text-xs text-slate-600">
                   Fecha Calendario (Para orden cronológico) <span className="text-amber-400">*</span>
                 </Label>
                 <Input
@@ -494,7 +494,7 @@ export default function EventoModal({
                 </div>
 
                 {/* Subtotales informativos de Ingresos */}
-                <div className="pt-2 border-t border-[#1e1e24] flex items-center justify-between text-[11px] text-[#888] flex-wrap gap-2">
+                <div className="pt-2 border-t border-[#1e1e24] flex items-center justify-between text-[11px] text-slate-600 flex-wrap gap-2">
                   <span>🏆 Torneo: <b className="text-white font-mono">{formatCurrency(ingTorneo)}</b></span>
                   <span>☕ Cantina: <b className="text-white font-mono">{formatCurrency(ingCantina)}</b></span>
                   {ingOtros > 0 && <span>✨ Otros: <b className="text-white font-mono">{formatCurrency(ingOtros)}</b></span>}
@@ -526,7 +526,7 @@ export default function EventoModal({
                 </div>
 
                 {/* Subtotales informativos de Egresos */}
-                <div className="pt-2 border-t border-[#1e1e24] flex items-center justify-between text-[11px] text-[#888] flex-wrap gap-2">
+                <div className="pt-2 border-t border-[#1e1e24] flex items-center justify-between text-[11px] text-slate-600 flex-wrap gap-2">
                   <span>🏆 Torneo: <b className="text-white font-mono">{formatCurrency(egrTorneo)}</b></span>
                   <span>☕ Cantina: <b className="text-white font-mono">{formatCurrency(egrCantina)}</b></span>
                   {egrOtros > 0 && <span>✨ Otros: <b className="text-white font-mono">{formatCurrency(egrOtros)}</b></span>}
@@ -536,7 +536,7 @@ export default function EventoModal({
 
             {/* SECCIÓN 3: NOTAS Y OBSERVACIONES */}
             <div>
-              <Label className="text-xs text-[#aaa]">Observaciones o notas adicionales</Label>
+              <Label className="text-xs text-slate-600">Observaciones o notas adicionales</Label>
               <Input
                 value={notas}
                 onChange={(e) => setNotas(e.target.value)}
@@ -549,7 +549,7 @@ export default function EventoModal({
           {/* Footer Fijo con Totales y Botón Guardar */}
           <DialogFooter className="p-4 bg-[#141418] border-t border-[#25252f] flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
-              <span className="text-xs uppercase tracking-wider text-[#888] font-bold">
+              <span className="text-xs uppercase tracking-wider text-slate-600 font-bold">
                 Recaudación Total para Subcomisión:
               </span>
               <span className={`text-base font-black font-mono px-3 py-1 rounded-lg border ${

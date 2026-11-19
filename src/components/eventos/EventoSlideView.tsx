@@ -514,7 +514,7 @@ export default function EventoSlideView({
               <Trophy className="h-5 w-5" />
             </div>
             <div>
-              <DialogTitle className="text-base sm:text-lg font-black text-white">
+              <DialogTitle className="text-base sm:text-lg font-black text-slate-900">
                 Informe Oficial para Comisión Directiva
               </DialogTitle>
               <p className="text-xs text-[#888892]">
@@ -551,7 +551,7 @@ export default function EventoSlideView({
               className={`h-8 text-xs rounded-lg px-3 gap-1.5 ${
                 slideActiva === 'consolidado'
                   ? 'bg-amber-500 text-black font-black hover:bg-amber-400'
-                  : 'bg-[#18181f] border-[#2c2c38] text-[#aaa] hover:text-white'
+                  : 'bg-[#18181f] border-[#2c2c38] text-slate-600 hover:text-white'
               }`}
             >
               <Receipt className="h-3.5 w-3.5" />
@@ -566,7 +566,7 @@ export default function EventoSlideView({
               className={`h-8 text-xs rounded-lg px-3 gap-1.5 ${
                 slideActiva === 'torneo'
                   ? 'bg-amber-500 text-black font-black hover:bg-amber-400'
-                  : 'bg-[#18181f] border-[#2c2c38] text-[#aaa] hover:text-white'
+                  : 'bg-[#18181f] border-[#2c2c38] text-slate-600 hover:text-white'
               }`}
             >
               <Trophy className="h-3.5 w-3.5" />
@@ -582,7 +582,7 @@ export default function EventoSlideView({
                 className={`h-8 text-xs rounded-lg px-3 gap-1.5 ${
                   slideActiva === 'cantina'
                     ? 'bg-amber-500 text-black font-black hover:bg-amber-400'
-                    : 'bg-[#18181f] border-[#2c2c38] text-[#aaa] hover:text-white'
+                    : 'bg-[#18181f] border-[#2c2c38] text-slate-600 hover:text-white'
                 }`}
               >
                 <Coffee className="h-3.5 w-3.5" />
@@ -599,7 +599,7 @@ export default function EventoSlideView({
                 className={`h-8 text-xs rounded-lg px-3 gap-1.5 ${
                   slideActiva === 'otros'
                     ? 'bg-amber-500 text-black font-black hover:bg-amber-400'
-                    : 'bg-[#18181f] border-[#2c2c38] text-[#aaa] hover:text-white'
+                    : 'bg-[#18181f] border-[#2c2c38] text-slate-600 hover:text-white'
                 }`}
               >
                 <Sparkles className="h-3.5 w-3.5" />

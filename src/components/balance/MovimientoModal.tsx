@@ -125,7 +125,7 @@ export default function MovimientoModal({
         <form onSubmit={handleSubmit} className="space-y-4 py-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="fecha" className="text-[#999999]">Fecha</Label>
+              <Label htmlFor="fecha" className="text-slate-600">Fecha</Label>
               <Input 
                 id="fecha"
                 type="date"
@@ -136,7 +136,7 @@ export default function MovimientoModal({
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="tipo" className="text-[#999999]">Tipo</Label>
+              <Label htmlFor="tipo" className="text-slate-600">Tipo</Label>
               <Select 
                 value={formData.tipo} 
                 onValueChange={(v: any) => setFormData({ ...formData, tipo: v })}
@@ -153,7 +153,7 @@ export default function MovimientoModal({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="descripcion" className="text-[#999999]">Descripción / Concepto</Label>
+            <Label htmlFor="descripcion" className="text-slate-600">Descripción / Concepto</Label>
             <Input 
               id="descripcion"
               placeholder="Ej: Pago luz, Cobro clases..."
@@ -165,7 +165,7 @@ export default function MovimientoModal({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="responsable" className="text-[#999999]">Responsable</Label>
+            <Label htmlFor="responsable" className="text-slate-600">Responsable</Label>
             <Input 
               id="responsable"
               placeholder="Ej: Juan Pérez"
@@ -177,7 +177,7 @@ export default function MovimientoModal({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="monto" className="text-[#999999]">Importe ($)</Label>
+            <Label htmlFor="monto" className="text-slate-600">Importe ($)</Label>
             <div className="relative">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
               <Input 
@@ -197,7 +197,7 @@ export default function MovimientoModal({
               type="button" 
               variant="outline" 
               onClick={() => onOpenChange(false)}
-              className="bg-transparent border-slate-200 text-[#999999] hover:bg-slate-50 hover:text-white"
+              className="bg-transparent border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-white"
             >
               Cancelar
             </Button>

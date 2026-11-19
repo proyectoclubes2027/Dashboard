@@ -578,7 +578,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               </Badge>
             </div>
 
-            <p className="text-[#AAAAAA] text-xs mb-2 leading-relaxed">
+            <p className="text-slate-600 text-xs mb-2 leading-relaxed">
               Los alumnos escanean este código con su celular e ingresan su número de DNI para registrar su asistencia a la clase del día.
             </p>
 
@@ -589,7 +589,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               </span>
             </div>
 
-            <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-[12px] font-mono text-[#CCCCCC] mb-3 max-w-full overflow-hidden text-ellipsis">
+            <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-[12px] font-mono text-slate-800 mb-3 max-w-full overflow-hidden text-ellipsis">
               <span className="truncate">{asistenciaUrl}</span>
             </div>
 
@@ -598,7 +598,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 size="sm"
                 variant="outline"
                 onClick={handleCopyLink}
-                className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
               >
                 {copiedLink ? <Check className="h-3.5 w-3.5 mr-1.5 text-green-400" /> : <Copy className="h-3.5 w-3.5 mr-1.5" />}
                 {copiedLink ? 'Copiado!' : 'Copiar Link'}
@@ -608,7 +608,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 size="sm"
                 variant="outline"
                 onClick={handlePrintQr}
-                className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
               >
                 <Printer className="h-3.5 w-3.5 mr-1.5" />
                 Imprimir QR
@@ -632,14 +632,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
         <TabsList className="bg-white border border-slate-200 p-1 h-12 mb-4 grid grid-cols-2 w-full max-w-md print:hidden">
           <TabsTrigger 
             value="diaria" 
-            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-slate-600 text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
           >
             <CheckCircle2 className="w-4 h-4 shrink-0" />
             <span>Presentes Diarios ({asistenciasDiarias.length})</span>
           </TabsTrigger>
           <TabsTrigger 
             value="mensual"
-            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-slate-600 text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
           >
             <Users className="w-4 h-4 shrink-0" />
             <span>Alumnos Mensual</span>
@@ -657,7 +657,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   <Users className="h-5 w-5 text-[#DC2626]" />
                   Presentes de Alumnos · {format(selectedDate, "EEEE dd 'de' MMMM", { locale: es })}
                 </h3>
-                <p className="text-[#999999] text-xs mt-0.5">
+                <p className="text-slate-600 text-xs mt-0.5">
                   {asistenciasDiarias.length} alumno{asistenciasDiarias.length !== 1 ? 's' : ''} presentes en la clase
                   {noRegistradosHoyCount > 0 && (
                     <span className="ml-2 font-bold text-amber-400">
@@ -697,7 +697,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   variant="outline"
                   size="sm"
                   onClick={() => setSelectedDate(new Date())}
-                  className="h-8 text-xs border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
+                  className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
                 >
                   Hoy
                 </Button>
@@ -719,7 +719,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   size="sm"
                   onClick={() => fetchAsistenciasDiarias(selectedDate)}
                   disabled={loading}
-                  className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                 >
                   <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loading ? 'animate-spin' : ''}`} />
                   Actualizar
@@ -751,12 +751,12 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 <Table>
                   <TableHeader>
                     <TableRow className="border-slate-200 hover:bg-transparent">
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Hora</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Alumno / Socio</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">DNI</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center">Estado Socio / Cuota</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Detalle / Notas</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-right w-20">Acciones</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Hora</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Alumno / Socio</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">DNI</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center">Estado Socio / Cuota</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Detalle / Notas</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-right w-20">Acciones</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -787,23 +787,23 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                             )}
                           >
                             {/* Hora */}
-                            <TableCell className="text-[#999999] text-sm py-3 font-mono whitespace-nowrap">
+                            <TableCell className="text-slate-600 text-sm py-3 font-mono whitespace-nowrap">
                               {format(new Date(asistencia.fecha), 'HH:mm')} hs
                             </TableCell>
 
                             {/* Alumno */}
-                            <TableCell className="text-[#CCCCCC] text-sm py-3">
+                            <TableCell className="text-slate-800 text-sm py-3">
                               {noRegistrado ? (
                                 <div className="flex flex-col gap-0.5">
                                   <div className="flex items-center gap-2 flex-wrap">
-                                    <span className="font-semibold text-white">
+                                    <span className="font-semibold text-slate-900">
                                       {asistencia.socio.apellido === 'No Registrado' ? 'Alumno No Registrado' : `${asistencia.socio.apellido}, ${asistencia.socio.nombre}`}
                                     </span>
                                     <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px] font-bold px-1.5 py-0.5">
                                       <AlertTriangle className="w-3 h-3 mr-1 inline" /> Sin Ficha / Inactivo
                                     </Badge>
                                   </div>
-                                  <div className="text-[11px] text-[#888888] flex items-center gap-2">
+                                  <div className="text-[11px] text-slate-600 flex items-center gap-2">
                                     {asistencia.socio.telefono && (
                                       <span>Tel: <strong className="text-white font-mono">{asistencia.socio.telefono}</strong></span>
                                     )}
@@ -812,14 +812,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                 </div>
                               ) : (
                                 <div>
-                                  <span className="font-semibold text-white">{asistencia.socio.apellido}</span>, {asistencia.socio.nombre}
+                                  <span className="font-semibold text-slate-900">{asistencia.socio.apellido}</span>, {asistencia.socio.nombre}
                                   {asistencia.socio.categoria && (
                                     <span className="text-[11px] text-[#777777] ml-2 capitalize">
                                       ({asistencia.socio.categoria})
                                     </span>
                                   )}
                                   {asistencia.socio.telefono && (
-                                    <span className="text-[11px] text-[#888888] ml-2 font-mono">
+                                    <span className="text-[11px] text-slate-600 ml-2 font-mono">
                                       · {asistencia.socio.telefono}
                                     </span>
                                   )}
@@ -864,7 +864,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                             </TableCell>
 
                             {/* Observaciones */}
-                            <TableCell className="text-[#888888] text-xs py-3 max-w-[200px] truncate" title={asistencia.notas || ''}>
+                            <TableCell className="text-slate-600 text-xs py-3 max-w-[200px] truncate" title={asistencia.notas || ''}>
                               {asistencia.notas ? (
                                 <span className={noRegistrado ? 'text-amber-300/80' : ''}>
                                   {asistencia.notas}
@@ -912,7 +912,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     <Award className="w-5 h-5 text-[#DC2626]" />
                     <span>Reporte de Asistencias de Alumnos</span>
                   </h3>
-                  <p className="text-[#999999] text-xs print:text-gray-600 mt-0.5">
+                  <p className="text-slate-600 text-xs print:text-gray-600 mt-0.5">
                     {periodoLabel || selectedMonth} · <strong>{asistenciasMensuales.length}</strong> asistencia{asistenciasMensuales.length !== 1 ? 's' : ''} registradas · <strong>{rankingAlumnos.length}</strong> alumnos únicos
                   </p>
                 </div>
@@ -927,7 +927,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`px-2.5 py-1 text-xs font-bold rounded-md transition-all ${
                         vistaReporte === 'acumulado'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'text-[#AAAAAA] hover:text-white'
+                          : 'text-slate-600 hover:text-white'
                       }`}
                     >
                       Acumulado ({rankingAlumnos.length})
@@ -938,7 +938,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`px-2.5 py-1 text-xs font-bold rounded-md transition-all ${
                         vistaReporte === 'detalle'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'text-[#AAAAAA] hover:text-white'
+                          : 'text-slate-600 hover:text-white'
                       }`}
                     >
                       Pase x Pase ({asistenciasMensuales.length})
@@ -961,7 +961,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     variant="outline"
                     size="sm"
                     onClick={() => window.print()}
-                    className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                    className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                   >
                     <Printer className="h-3.5 w-3.5 mr-1.5" />
                     Imprimir
@@ -972,7 +972,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     size="sm"
                     onClick={() => fetchAsistenciasPeriodo()}
                     disabled={loading}
-                    className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                    className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                   >
                     <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loading ? 'animate-spin' : ''}`} />
                     Actualizar
@@ -983,7 +983,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               {/* Botonera de Períodos: Por Día, Semana, Este Mes, Otro Mes, Todo el Año, Fechas */}
               <div className="bg-white border border-slate-200 rounded-xl p-3 flex flex-col gap-2.5 print:hidden">
                 <div className="flex items-center justify-between flex-wrap gap-2">
-                  <span className="text-[11px] text-[#888888] font-bold uppercase tracking-wider">
+                  <span className="text-[11px] text-slate-600 font-bold uppercase tracking-wider">
                     Período del Reporte:
                   </span>
                   <div className="flex flex-wrap items-center gap-1.5">
@@ -993,7 +993,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1 ${
                         modoPeriodoReporte === 'dia'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                          : 'bg-slate-50 text-slate-600 hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       <CalendarIcon className="w-3.5 h-3.5" />
@@ -1005,7 +1005,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'semana'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                          : 'bg-slate-50 text-slate-600 hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Esta Semana
@@ -1019,7 +1019,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'mes' && selectedMonth === format(new Date(), 'yyyy-MM')
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                          : 'bg-slate-50 text-slate-600 hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Este Mes
@@ -1030,7 +1030,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'mes' && selectedMonth !== format(new Date(), 'yyyy-MM')
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                          : 'bg-slate-50 text-slate-600 hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Otro Mes
@@ -1041,7 +1041,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'anio'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                          : 'bg-slate-50 text-slate-600 hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Todo el Año
@@ -1052,7 +1052,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'personalizado'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                          : 'bg-slate-50 text-slate-600 hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Rango Fechas
@@ -1063,7 +1063,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 {/* Sub-selector según el modo seleccionado */}
                 {modoPeriodoReporte === 'dia' && (
                   <div className="pt-2 border-t border-[#262626] flex flex-wrap items-center gap-2">
-                    <span className="text-[11px] text-[#888]">Elegir Día:</span>
+                    <span className="text-[11px] text-slate-600">Elegir Día:</span>
                     <Input
                       type="date"
                       value={reporteDia}
@@ -1076,7 +1076,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       size="sm"
                       variant="outline"
                       onClick={() => setReporteDia(format(new Date(), 'yyyy-MM-dd'))}
-                      className="h-7 px-2.5 text-xs bg-slate-50 border-slate-200 text-[#CCCCCC] hover:text-white"
+                      className="h-7 px-2.5 text-xs bg-slate-50 border-slate-200 text-slate-800 hover:text-white"
                     >
                       Hoy
                     </Button>
@@ -1088,7 +1088,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                         d.setDate(d.getDate() - 1);
                         setReporteDia(format(d, 'yyyy-MM-dd'));
                       }}
-                      className="h-7 px-2.5 text-xs bg-slate-50 border-slate-200 text-[#CCCCCC] hover:text-white"
+                      className="h-7 px-2.5 text-xs bg-slate-50 border-slate-200 text-slate-800 hover:text-white"
                     >
                       Ayer
                     </Button>
@@ -1096,7 +1096,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 )}
                 {modoPeriodoReporte === 'mes' && (
                   <div className="pt-2 border-t border-[#262626] flex items-center gap-2">
-                    <span className="text-[11px] text-[#888]">Seleccionar Mes:</span>
+                    <span className="text-[11px] text-slate-600">Seleccionar Mes:</span>
                     <Select value={selectedMonth} onValueChange={setSelectedMonth}>
                       <SelectTrigger className="h-7 text-xs bg-slate-50 border-slate-200 text-white focus:ring-[#DC2626] w-[180px]">
                         <SelectValue placeholder="Seleccionar mes" />
@@ -1114,7 +1114,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
 
                 {modoPeriodoReporte === 'anio' && (
                   <div className="pt-2 border-t border-[#262626] flex items-center justify-between gap-2">
-                    <span className="text-[11px] text-[#888]">
+                    <span className="text-[11px] text-slate-600">
                       Asistencias de todo el año <strong>{reporteAnio}</strong>:
                     </span>
                     <div className="flex items-center gap-1.5">
@@ -1127,7 +1127,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                           className={`h-7 px-3 text-xs font-bold ${
                             reporteAnio === yr
                               ? 'bg-[#DC2626] text-black'
-                              : 'bg-slate-50 border-slate-200 text-[#AAAAAA] hover:text-white'
+                              : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-white'
                           }`}
                         >
                           {yr}
@@ -1140,7 +1140,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 {modoPeriodoReporte === 'personalizado' && (
                   <div className="pt-2 border-t border-[#262626] flex flex-wrap items-center gap-2">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[11px] text-[#888]">Desde:</span>
+                      <span className="text-[11px] text-slate-600">Desde:</span>
                       <Input
                         type="date"
                         value={reporteFechaDesde}
@@ -1149,7 +1149,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       />
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[11px] text-[#888]">Hasta:</span>
+                      <span className="text-[11px] text-slate-600">Hasta:</span>
                       <Input
                         type="date"
                         value={reporteFechaHasta}
@@ -1197,11 +1197,11 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 <Table className="print:text-black">
                   <TableHeader>
                     <TableRow className="border-slate-200 hover:bg-transparent print:border-b-2 print:border-black">
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 w-12 text-center print:text-black">#</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">Alumno / Socio</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center print:text-black print:font-bold">Total Asistencias</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center print:hidden">Estado Cuota</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 w-12 text-center print:text-black">#</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold">Alumno / Socio</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center print:text-black print:font-bold">Total Asistencias</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center print:hidden">Estado Cuota</TableHead>
                       <TableHead className="w-10 text-center print:hidden"></TableHead>
                     </TableRow>
                   </TableHeader>
@@ -1239,23 +1239,23 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                               )}
                             >
                               {/* Puesto */}
-                              <TableCell className="text-center font-mono text-xs text-[#888888] py-3 print:text-black">
+                              <TableCell className="text-center font-mono text-xs text-slate-600 py-3 print:text-black">
                                 {idx + 1}
                               </TableCell>
 
                               {/* Alumno */}
-                              <TableCell className="text-[#CCCCCC] text-sm py-3 print:text-black">
+                              <TableCell className="text-slate-800 text-sm py-3 print:text-black">
                                 {noRegistrado ? (
                                   <div className="flex flex-col gap-0.5">
                                     <div className="flex items-center gap-2 flex-wrap">
-                                      <span className="font-semibold text-white">
+                                      <span className="font-semibold text-slate-900">
                                         {item.socio.apellido === 'No Registrado' ? 'Alumno No Registrado' : `${item.socio.apellido}, ${item.socio.nombre}`}
                                       </span>
                                       <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px] font-bold px-1.5 py-0">
                                         Sin Ficha / Inactivo
                                       </Badge>
                                     </div>
-                                    <div className="text-[11px] text-[#888888] flex items-center gap-2">
+                                    <div className="text-[11px] text-slate-600 flex items-center gap-2">
                                       {item.socio.telefono && (
                                         <span>Tel: <strong className="text-white font-mono">{item.socio.telefono}</strong></span>
                                       )}
@@ -1264,14 +1264,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                   </div>
                                 ) : (
                                   <div>
-                                    <span className="font-semibold text-white">{item.socio.apellido}</span>, {item.socio.nombre}
+                                    <span className="font-semibold text-slate-900">{item.socio.apellido}</span>, {item.socio.nombre}
                                     {item.socio.categoria && (
                                       <span className="text-[11px] text-[#777777] ml-2 capitalize">
                                         ({item.socio.categoria})
                                       </span>
                                     )}
                                     {item.socio.telefono && (
-                                      <span className="text-[11px] text-[#888888] ml-2 font-mono">
+                                      <span className="text-[11px] text-slate-600 ml-2 font-mono">
                                         · {item.socio.telefono}
                                       </span>
                                     )}
@@ -1324,7 +1324,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                 <Button
                                   variant="ghost"
                                   size="icon"
-                                  className="h-7 w-7 text-[#888888] hover:text-white"
+                                  className="h-7 w-7 text-slate-600 hover:text-white"
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     setExpandedAlumnoKey(isExpanded ? null : itemKey);
@@ -1345,12 +1345,12 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                               <TableRow className="bg-white border-slate-200 hover:bg-white">
                                 <TableCell colSpan={6} className="p-3 pl-8 pr-6">
                                   <div className="bg-white border border-slate-200 rounded-xl p-3.5 space-y-2.5 shadow-inner">
-                                    <div className="flex items-center justify-between text-xs font-bold text-[#AAAAAA] border-b border-slate-200 pb-2">
+                                    <div className="flex items-center justify-between text-xs font-bold text-slate-600 border-b border-slate-200 pb-2">
                                       <span className="flex items-center gap-1.5 text-white">
                                         <Award className="h-3.5 w-3.5 text-[#DC2626]" />
                                         Detalle de asistencias de {item.socio.nombre} {item.socio.apellido}:
                                       </span>
-                                      <span className="text-[11px] text-[#888]">
+                                      <span className="text-[11px] text-slate-600">
                                         Total: <strong className="text-[#DC2626]">{item.totalClases}</strong> {item.totalClases === 1 ? 'asistencia' : 'asistencias'}
                                       </span>
                                     </div>
@@ -1359,13 +1359,13 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                       {item.detalles.map((det, dIdx) => (
                                         <div
                                           key={det.id || dIdx}
-                                          className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-white border border-slate-200 text-[#CCCCCC]"
+                                          className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-white border border-slate-200 text-slate-800"
                                         >
                                           <div className="flex flex-col">
-                                            <span className="font-semibold text-white">
+                                            <span className="font-semibold text-slate-900">
                                               {format(new Date(det.fecha), "EEEE dd/MM/yyyy", { locale: es })}
                                             </span>
-                                            <span className="text-[11px] text-[#888] font-mono">
+                                            <span className="text-[11px] text-slate-600 font-mono">
                                               Hora: {format(new Date(det.fecha), "HH:mm 'hs'")}
                                             </span>
                                             {det.notas && (
@@ -1399,13 +1399,13 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 <Table className="print:text-black">
                   <TableHeader>
                     <TableRow className="border-slate-200 hover:bg-transparent print:border-b-2 print:border-black">
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black">Fecha</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">Alumno / Socio</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center print:hidden">Estado</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">Notas</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black">Fecha</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold">Alumno / Socio</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center print:hidden">Estado</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold">Notas</TableHead>
                       {!readOnly && (
-                        <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-right w-20 print:hidden">Acciones</TableHead>
+                        <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-right w-20 print:hidden">Acciones</TableHead>
                       )}
                     </TableRow>
                   </TableHeader>
@@ -1435,7 +1435,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                             )}
                           >
                             {/* Fecha */}
-                            <TableCell className="text-[#999999] text-sm py-3 font-mono whitespace-nowrap print:text-black">
+                            <TableCell className="text-slate-600 text-sm py-3 font-mono whitespace-nowrap print:text-black">
                               {format(new Date(asistencia.fecha), "dd/MM/yyyy")}
                               <span className="ml-1 text-xs text-[#666666] print:hidden">
                                 {format(new Date(asistencia.fecha), 'HH:mm')}
@@ -1443,18 +1443,18 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                             </TableCell>
 
                             {/* Alumno */}
-                            <TableCell className="text-[#CCCCCC] text-sm py-3 print:text-black">
+                            <TableCell className="text-slate-800 text-sm py-3 print:text-black">
                               {noRegistrado ? (
                                 <div className="flex flex-col gap-0.5">
                                   <div className="flex items-center gap-2 flex-wrap">
-                                    <span className="font-semibold text-white">
+                                    <span className="font-semibold text-slate-900">
                                       {asistencia.socio.apellido === 'No Registrado' ? 'Alumno No Registrado' : `${asistencia.socio.apellido}, ${asistencia.socio.nombre}`}
                                     </span>
                                     <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px] font-bold px-1.5 py-0.5">
                                       <AlertTriangle className="w-3 h-3 mr-1 inline" /> Sin Ficha / Inactivo
                                     </Badge>
                                   </div>
-                                  <div className="text-[11px] text-[#888888] flex items-center gap-2">
+                                  <div className="text-[11px] text-slate-600 flex items-center gap-2">
                                     {asistencia.socio.telefono && (
                                       <span>Tel: <strong className="text-white font-mono">{asistencia.socio.telefono}</strong></span>
                                     )}
@@ -1463,14 +1463,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                 </div>
                               ) : (
                                 <div>
-                                  <span className="font-semibold text-white">{asistencia.socio.apellido}</span>, {asistencia.socio.nombre}
+                                  <span className="font-semibold text-slate-900">{asistencia.socio.apellido}</span>, {asistencia.socio.nombre}
                                   {asistencia.socio.categoria && (
                                     <span className="text-[11px] text-[#777777] ml-2 capitalize">
                                       ({asistencia.socio.categoria})
                                     </span>
                                   )}
                                   {asistencia.socio.telefono && (
-                                    <span className="text-[11px] text-[#888888] ml-2 font-mono">
+                                    <span className="text-[11px] text-slate-600 ml-2 font-mono">
                                       · {asistencia.socio.telefono}
                                     </span>
                                   )}
@@ -1512,7 +1512,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                             </TableCell>
 
                             {/* Notas */}
-                            <TableCell className="text-[#888888] text-xs py-3 max-w-[160px] truncate print:text-black" title={asistencia.notas || ''}>
+                            <TableCell className="text-slate-600 text-xs py-3 max-w-[160px] truncate print:text-black" title={asistencia.notas || ''}>
                               {asistencia.notas ? (
                                 <span className={noRegistrado ? 'text-amber-300/80' : ''}>{asistencia.notas}</span>
                               ) : (
@@ -1554,7 +1554,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               <Trash2 className="h-5 w-5" />
               ¿Eliminar registro de asistencia?
             </DialogTitle>
-            <DialogDescription className="text-xs text-[#AAAAAA] mt-1.5 leading-relaxed">
+            <DialogDescription className="text-xs text-slate-600 mt-1.5 leading-relaxed">
               Esta acción eliminará la asistencia de{' '}
               <strong className="text-white">
                 {asistenciaParaEliminar?.socio.nombre} {asistenciaParaEliminar?.socio.apellido}
@@ -1578,7 +1578,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               variant="destructive"
               onClick={handleEliminarAsistencia}
               disabled={Boolean(eliminandoId)}
-              className="bg-red-600 hover:bg-red-700 text-white font-bold gap-1.5"
+              className="bg-red-600 hover:bg-red-700 text-slate-900 font-bold gap-1.5"
             >
               {eliminandoId ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
               <span>Eliminar</span>

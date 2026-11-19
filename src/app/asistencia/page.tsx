@@ -136,7 +136,7 @@ export default function AsistenciaPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-[#DC2626] tracking-tight mb-1">CARP Tenis</h1>
-          <p className="text-[#999999] text-sm">Registro de Asistencia a Clases</p>
+          <p className="text-slate-600 text-sm">Registro de Asistencia a Clases</p>
         </div>
 
         <Card className="bg-white border-slate-200 shadow-2xl overflow-hidden">
@@ -144,7 +144,7 @@ export default function AsistenciaPage() {
           {status === 'idle' && step === 'dni' && (
             <CardHeader className="text-center pb-2">
               <CardTitle className="text-white text-xl">Ingresá tu DNI</CardTitle>
-              <CardDescription className="text-[#888888] text-xs">
+              <CardDescription className="text-slate-600 text-xs">
                 Para marcar tu presente en la clase de hoy
               </CardDescription>
             </CardHeader>
@@ -156,7 +156,7 @@ export default function AsistenciaPage() {
                 <UserCheck className="w-5 h-5" />
               </div>
               <CardTitle className="text-white text-lg">Completar Datos del Alumno</CardTitle>
-              <CardDescription className="text-[#AAAAAA] text-xs">
+              <CardDescription className="text-slate-600 text-xs">
                 Es la primera vez que ingresás con el DNI <strong className="text-white">{dni}</strong>. Ingresá tus datos para que el profesor te tenga en su lista.
               </CardDescription>
             </CardHeader>
@@ -203,7 +203,7 @@ export default function AsistenciaPage() {
               <form onSubmit={handleSubmitDatosNuevos} className="space-y-3.5 animate-in fade-in zoom-in-95 duration-200">
                 <div className="grid grid-cols-2 gap-2.5">
                   <div className="space-y-1">
-                    <Label htmlFor="nombre" className="text-xs text-[#CCCCCC] font-semibold flex items-center gap-1">
+                    <Label htmlFor="nombre" className="text-xs text-slate-800 font-semibold flex items-center gap-1">
                       <User className="w-3.5 h-3.5 text-[#DC2626]" /> Nombre *
                     </Label>
                     <Input
@@ -218,7 +218,7 @@ export default function AsistenciaPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="apellido" className="text-xs text-[#CCCCCC] font-semibold">
+                    <Label htmlFor="apellido" className="text-xs text-slate-800 font-semibold">
                       Apellido *
                     </Label>
                     <Input
@@ -234,7 +234,7 @@ export default function AsistenciaPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="tel" className="text-xs text-[#CCCCCC] font-semibold flex items-center gap-1">
+                  <Label htmlFor="tel" className="text-xs text-slate-800 font-semibold flex items-center gap-1">
                     <Phone className="w-3.5 h-3.5 text-[#DC2626]" /> Celular / WhatsApp de contacto *
                   </Label>
                   <Input
@@ -256,7 +256,7 @@ export default function AsistenciaPage() {
                     type="button"
                     variant="outline"
                     onClick={() => setStep('dni')}
-                    className="h-11 px-3 border-slate-200 text-[#AAAAAA] hover:text-white hover:bg-slate-50"
+                    className="h-11 px-3 border-slate-200 text-slate-600 hover:text-white hover:bg-slate-50"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1" />
                     Volver
@@ -285,8 +285,8 @@ export default function AsistenciaPage() {
                 <div className="h-16 w-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
                   <CheckCircle2 className="h-10 w-10" />
                 </div>
-                <p className="text-lg font-bold text-white px-2 leading-snug">{message}</p>
-                <p className="text-xs text-[#888888]">¡Que tengas un excelente entrenamiento!</p>
+                <p className="text-lg font-bold text-slate-900 px-2 leading-snug">{message}</p>
+                <p className="text-xs text-slate-600">¡Que tengas un excelente entrenamiento!</p>
               </div>
             )}
 
@@ -295,7 +295,7 @@ export default function AsistenciaPage() {
                 <div className="h-16 w-16 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
                   <AlertTriangle className="h-10 w-10" />
                 </div>
-                <p className="text-base font-bold text-white px-2 leading-snug">{message}</p>
+                <p className="text-base font-bold text-slate-900 px-2 leading-snug">{message}</p>
               </div>
             )}
 
@@ -304,11 +304,11 @@ export default function AsistenciaPage() {
                 <div className="h-16 w-16 rounded-full bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400">
                   <XCircle className="h-10 w-10" />
                 </div>
-                <p className="text-base font-bold text-white px-2 leading-snug">{message}</p>
+                <p className="text-base font-bold text-slate-900 px-2 leading-snug">{message}</p>
                 <Button 
                   variant="outline" 
                   onClick={handleReset}
-                  className="mt-2 border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
+                  className="mt-2 border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
                 >
                   Intentar de nuevo
                 </Button>

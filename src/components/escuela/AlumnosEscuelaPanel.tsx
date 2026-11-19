@@ -365,12 +365,12 @@ export default function AlumnosEscuelaPanel({
             className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs shrink-0 transition-all ${
               vistaActiva === 'padron'
                 ? 'bg-primary text-black shadow-md'
-                : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
+                : 'bg-white text-slate-600 hover:text-white border border-slate-200'
             }`}
           >
             <ListOrdered className="h-4 w-4" />
             <span>Padrón</span>
-            <Badge className={`text-[10px] px-1.5 py-0 ${vistaActiva === 'padron' ? 'bg-black text-primary' : 'bg-slate-50 text-[#888]'}`}>
+            <Badge className={`text-[10px] px-1.5 py-0 ${vistaActiva === 'padron' ? 'bg-black text-primary' : 'bg-slate-50 text-slate-600'}`}>
               {stats.total}
             </Badge>
           </button>
@@ -440,13 +440,13 @@ export default function AlumnosEscuelaPanel({
           {/* KPI Cards: en desktop arriba, en mobile abajo y más compacto */}
           <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
-              <div className="flex items-center justify-between text-[#888888]">
+              <div className="flex items-center justify-between text-slate-600">
                 <span className="text-xs font-semibold uppercase tracking-wider">Total Alumnos</span>
                 <Users size={18} className="text-primary" />
               </div>
               <div className="mt-3">
-                <span className="text-2xl lg:text-3xl font-black text-white">{stats.total}</span>
-                <span className="text-xs text-[#888888] ml-2">inscriptos</span>
+                <span className="text-2xl lg:text-3xl font-black text-slate-900">{stats.total}</span>
+                <span className="text-xs text-slate-600 ml-2">inscriptos</span>
               </div>
             </div>
 
@@ -456,8 +456,8 @@ export default function AlumnosEscuelaPanel({
                 <Sparkles size={18} />
               </div>
               <div className="mt-3">
-                <span className="text-2xl lg:text-3xl font-black text-white">{stats.escuelita}</span>
-                <span className="text-xs text-[#888888] ml-2">chicos</span>
+                <span className="text-2xl lg:text-3xl font-black text-slate-900">{stats.escuelita}</span>
+                <span className="text-xs text-slate-600 ml-2">chicos</span>
               </div>
             </div>
 
@@ -467,8 +467,8 @@ export default function AlumnosEscuelaPanel({
                 <GraduationCap size={18} />
               </div>
               <div className="mt-3">
-                <span className="text-2xl lg:text-3xl font-black text-white">{stats.minitenis}</span>
-                <span className="text-xs text-[#888888] ml-2">chicos</span>
+                <span className="text-2xl lg:text-3xl font-black text-slate-900">{stats.minitenis}</span>
+                <span className="text-xs text-slate-600 ml-2">chicos</span>
               </div>
             </div>
 
@@ -478,8 +478,8 @@ export default function AlumnosEscuelaPanel({
                 <Trophy size={18} />
               </div>
               <div className="mt-3">
-                <span className="text-2xl lg:text-3xl font-black text-white">{stats.entrenamiento}</span>
-                <span className="text-xs text-[#888888] ml-2">juveniles</span>
+                <span className="text-2xl lg:text-3xl font-black text-slate-900">{stats.entrenamiento}</span>
+                <span className="text-xs text-slate-600 ml-2">juveniles</span>
               </div>
             </div>
           </div>
@@ -492,7 +492,7 @@ export default function AlumnosEscuelaPanel({
                 size="sm"
                 variant={selectedGrupo === 'todos' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('todos')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'todos' ? 'bg-primary text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'todos' ? 'bg-primary text-black' : 'border-slate-200 text-slate-600 hover:text-white'}`}
               >
                 Todos ({stats.total})
               </Button>
@@ -500,7 +500,7 @@ export default function AlumnosEscuelaPanel({
                 size="sm"
                 variant={selectedGrupo === 'Escuelita' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('Escuelita')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Escuelita' ? 'bg-emerald-500 text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Escuelita' ? 'bg-emerald-500 text-black' : 'border-slate-200 text-slate-600 hover:text-white'}`}
               >
                 Escuelita ({stats.escuelita})
               </Button>
@@ -508,7 +508,7 @@ export default function AlumnosEscuelaPanel({
                 size="sm"
                 variant={selectedGrupo === 'Minitenis' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('Minitenis')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Minitenis' ? 'bg-sky-500 text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Minitenis' ? 'bg-sky-500 text-black' : 'border-slate-200 text-slate-600 hover:text-white'}`}
               >
                 Minitenis ({stats.minitenis})
               </Button>
@@ -516,7 +516,7 @@ export default function AlumnosEscuelaPanel({
                 size="sm"
                 variant={selectedGrupo === 'Grupo Entrenamiento' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('Grupo Entrenamiento')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black' : 'border-slate-200 text-slate-600 hover:text-white'}`}
               >
                 Entrenamiento ({stats.entrenamiento})
               </Button>
@@ -525,7 +525,7 @@ export default function AlumnosEscuelaPanel({
             {/* Búsqueda y Botón Agregar (Optimizados para táctil en móvil) */}
             <div className="flex items-center gap-2">
               <div className="relative flex-1 md:w-64">
-                <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#888888]" />
+                <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600" />
                 <Input
                   type="text"
                   placeholder="Buscar alumno..."
@@ -552,7 +552,7 @@ export default function AlumnosEscuelaPanel({
                 variant="ghost"
                 onClick={fetchAlumnos}
                 disabled={loading}
-                className="h-9 w-9 p-0 text-[#888888] hover:text-white shrink-0"
+                className="h-9 w-9 p-0 text-slate-600 hover:text-white shrink-0"
                 title="Refrescar lista"
               >
                 <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
@@ -575,13 +575,13 @@ export default function AlumnosEscuelaPanel({
       {loading ? (
         <div className="flex flex-col items-center justify-center py-16 gap-3">
           <Loader2 size={32} className="animate-spin text-primary" />
-          <p className="text-sm text-[#888888]">Cargando alumnos de la escuela...</p>
+          <p className="text-sm text-slate-600">Cargando alumnos de la escuela...</p>
         </div>
       ) : filteredAlumnos.length === 0 ? (
         <div className="bg-white border border-slate-200 rounded-xl p-12 text-center">
           <Users size={40} className="mx-auto text-[#555555] mb-3" />
           <p className="text-white font-semibold">No se encontraron alumnos</p>
-          <p className="text-xs text-[#888888] mt-1">
+          <p className="text-xs text-slate-600 mt-1">
             {search ? 'Probá con otro término de búsqueda' : 'No hay alumnos registrados en este grupo'}
           </p>
         </div>
@@ -606,7 +606,7 @@ export default function AlumnosEscuelaPanel({
                       <GroupIcon size={16} />
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
                         {grupoNombre}
                         <Badge variant="outline" className={`text-[10px] py-0 px-2 font-bold ${style.badge}`}>
                           {list.length} {list.length === 1 ? 'alumno' : 'alumnos'}
@@ -630,7 +630,7 @@ export default function AlumnosEscuelaPanel({
                         setFormObservaciones('');
                         setModalOpen(true);
                       }}
-                      className="h-7 text-xs text-[#888888] hover:text-primary gap-1 px-2"
+                      className="h-7 text-xs text-slate-600 hover:text-primary gap-1 px-2"
                     >
                       <Plus size={12} />
                       <span>Agregar a {grupoNombre}</span>
@@ -657,13 +657,13 @@ export default function AlumnosEscuelaPanel({
                           </span>
 
                           <div className="min-w-0">
-                            <p className="text-sm font-semibold text-white group-hover:text-primary transition-colors truncate">
+                            <p className="text-sm font-semibold text-slate-900 group-hover:text-primary transition-colors truncate">
                               {alumno.nombre}
                             </p>
 
                             {/* Metadatos adicionales si existen */}
                             {(alumno.edad || alumno.tutor || alumno.telefono || alumno.observaciones) && (
-                              <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-[#888888] mt-0.5">
+                              <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-slate-600 mt-0.5">
                                 {alumno.edad && (
                                   <span className="inline-flex items-center gap-1">
                                     <span className="text-[#555555]">Edad:</span> {alumno.edad} años
@@ -680,7 +680,7 @@ export default function AlumnosEscuelaPanel({
                                   </span>
                                 )}
                                 {alumno.observaciones && (
-                                  <span className="text-[#AAAAAA] italic text-[11px] truncate max-w-xs">
+                                  <span className="text-slate-600 italic text-[11px] truncate max-w-xs">
                                     "{alumno.observaciones}"
                                   </span>
                                 )}
@@ -696,7 +696,7 @@ export default function AlumnosEscuelaPanel({
                               size="sm"
                               variant="ghost"
                               onClick={() => handleOpenEdit(alumno)}
-                              className="h-8 w-8 sm:h-7 sm:w-7 p-0 text-[#888888] hover:text-white hover:bg-white/10"
+                              className="h-8 w-8 sm:h-7 sm:w-7 p-0 text-slate-600 hover:text-white hover:bg-white/10"
                               title="Editar alumno"
                             >
                               <Pencil size={15} />
@@ -708,7 +708,7 @@ export default function AlumnosEscuelaPanel({
                                 setAlumnoToDelete(alumno);
                                 setDeleteAlertOpen(true);
                               }}
-                              className="h-8 w-8 sm:h-7 sm:w-7 p-0 text-[#888888] hover:text-red-400 hover:bg-red-500/10"
+                              className="h-8 w-8 sm:h-7 sm:w-7 p-0 text-slate-600 hover:text-red-400 hover:bg-red-500/10"
                               title="Eliminar alumno"
                             >
                               <Trash2 size={15} />
@@ -728,9 +728,9 @@ export default function AlumnosEscuelaPanel({
             <div className="bg-white border border-slate-200 rounded-lg p-2.5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Users size={14} className="text-primary" />
-                <span className="text-[11px] font-semibold text-[#888888] uppercase">Total</span>
+                <span className="text-[11px] font-semibold text-slate-600 uppercase">Total</span>
               </div>
-              <span className="text-base font-black text-white">{stats.total}</span>
+              <span className="text-base font-black text-slate-900">{stats.total}</span>
             </div>
 
             <div className="bg-white border border-emerald-500/20 rounded-lg p-2.5 flex items-center justify-between">
@@ -738,7 +738,7 @@ export default function AlumnosEscuelaPanel({
                 <Sparkles size={14} className="text-emerald-400" />
                 <span className="text-[11px] font-semibold text-emerald-400 uppercase">Escuelita</span>
               </div>
-              <span className="text-base font-black text-white">{stats.escuelita}</span>
+              <span className="text-base font-black text-slate-900">{stats.escuelita}</span>
             </div>
 
             <div className="bg-white border border-sky-500/20 rounded-lg p-2.5 flex items-center justify-between">
@@ -746,7 +746,7 @@ export default function AlumnosEscuelaPanel({
                 <GraduationCap size={14} className="text-sky-400" />
                 <span className="text-[11px] font-semibold text-sky-400 uppercase">Minitenis</span>
               </div>
-              <span className="text-base font-black text-white">{stats.minitenis}</span>
+              <span className="text-base font-black text-slate-900">{stats.minitenis}</span>
             </div>
 
             <div className="bg-white border border-amber-500/20 rounded-lg p-2.5 flex items-center justify-between">
@@ -754,7 +754,7 @@ export default function AlumnosEscuelaPanel({
                 <Trophy size={14} className="text-amber-400" />
                 <span className="text-[11px] font-semibold text-amber-400 uppercase">Entrenam.</span>
               </div>
-              <span className="text-base font-black text-white">{stats.entrenamiento}</span>
+              <span className="text-base font-black text-slate-900">{stats.entrenamiento}</span>
             </div>
           </div>
         </div>
@@ -764,18 +764,18 @@ export default function AlumnosEscuelaPanel({
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         <DialogContent className="bg-white border-slate-200 text-white max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-base font-bold text-white flex items-center gap-2">
+            <DialogTitle className="text-base font-bold text-slate-900 flex items-center gap-2">
               <GraduationCap size={18} className="text-primary" />
               {editingAlumno ? 'Editar Alumno' : 'Nuevo Alumno de la Escuela'}
             </DialogTitle>
-            <DialogDescription className="text-xs text-[#888888]">
+            <DialogDescription className="text-xs text-slate-600">
               Completá los datos del alumno para el control de la escuela de tenis.
             </DialogDescription>
           </DialogHeader>
 
           <form onSubmit={handleSave} className="space-y-4 py-2">
             <div>
-              <Label className="text-xs text-[#AAAAAA]">Nombre completo *</Label>
+              <Label className="text-xs text-slate-600">Nombre completo *</Label>
               <Input
                 required
                 placeholder="Ej: Felipe Rodriguez"
@@ -786,7 +786,7 @@ export default function AlumnosEscuelaPanel({
             </div>
 
             <div>
-              <Label className="text-xs text-[#AAAAAA]">Grupo *</Label>
+              <Label className="text-xs text-slate-600">Grupo *</Label>
               <select
                 value={formGrupo}
                 onChange={(e) => setFormGrupo(e.target.value)}
@@ -802,7 +802,7 @@ export default function AlumnosEscuelaPanel({
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <Label className="text-xs text-[#AAAAAA]">Edad (opcional)</Label>
+                <Label className="text-xs text-slate-600">Edad (opcional)</Label>
                 <Input
                   type="number"
                   placeholder="Ej: 9"
@@ -814,7 +814,7 @@ export default function AlumnosEscuelaPanel({
                 />
               </div>
               <div>
-                <Label className="text-xs text-[#AAAAAA]">Teléfono / WhatsApp</Label>
+                <Label className="text-xs text-slate-600">Teléfono / WhatsApp</Label>
                 <Input
                   type="text"
                   placeholder="Ej: 3400 123456"
@@ -826,7 +826,7 @@ export default function AlumnosEscuelaPanel({
             </div>
 
             <div>
-              <Label className="text-xs text-[#AAAAAA]">Nombre del Padre / Madre / Tutor</Label>
+              <Label className="text-xs text-slate-600">Nombre del Padre / Madre / Tutor</Label>
               <Input
                 type="text"
                 placeholder="Ej: Juan Rodriguez"
@@ -837,7 +837,7 @@ export default function AlumnosEscuelaPanel({
             </div>
 
             <div>
-              <Label className="text-xs text-[#AAAAAA]">Observaciones / Horarios</Label>
+              <Label className="text-xs text-slate-600">Observaciones / Horarios</Label>
               <Input
                 type="text"
                 placeholder="Ej: Viene martes y jueves 17hs"
@@ -873,10 +873,10 @@ export default function AlumnosEscuelaPanel({
       <AlertDialog open={deleteAlertOpen} onOpenChange={setDeleteAlertOpen}>
         <AlertDialogContent className="bg-white border-slate-200 text-white max-w-sm">
           <AlertDialogHeader>
-            <AlertDialogTitle className="text-sm font-bold text-white">
+            <AlertDialogTitle className="text-sm font-bold text-slate-900">
               ¿Eliminar alumno de la escuela?
             </AlertDialogTitle>
-            <AlertDialogDescription className="text-xs text-[#888888]">
+            <AlertDialogDescription className="text-xs text-slate-600">
               Estás a punto de eliminar a{' '}
               <strong className="text-white">{alumnoToDelete?.nombre}</strong> del grupo{' '}
               <strong className="text-white">{alumnoToDelete?.grupo}</strong>. Esta acción no se puede deshacer.
@@ -889,7 +889,7 @@ export default function AlumnosEscuelaPanel({
             <AlertDialogAction
               onClick={handleDeleteConfirm}
               disabled={deleting}
-              className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs gap-1.5"
+              className="bg-red-600 hover:bg-red-700 text-slate-900 font-bold text-xs gap-1.5"
             >
               {deleting && <Loader2 size={12} className="animate-spin" />}
               <span>Eliminar</span>

@@ -545,7 +545,7 @@ export default function ComisionDirectivaPage() {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleCambiarMes(-1)}
-                className="h-7 w-7 p-0 text-[#AAAAAA] hover:text-white"
+                className="h-7 w-7 p-0 text-slate-600 hover:text-white"
                 title="Mes anterior"
               >
                 <ChevronLeft size={16} />
@@ -566,7 +566,7 @@ export default function ComisionDirectivaPage() {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleCambiarMes(1)}
-                className="h-7 w-7 p-0 text-[#AAAAAA] hover:text-white"
+                className="h-7 w-7 p-0 text-slate-600 hover:text-white"
                 title="Mes siguiente"
               >
                 <ChevronRight size={16} />
@@ -578,7 +578,7 @@ export default function ComisionDirectivaPage() {
               variant="outline"
               onClick={fetchDatosComision}
               disabled={loading}
-              className="h-9 w-9 p-0 border-[#2C2C32] bg-[#18181A] text-[#AAAAAA] hover:text-white"
+              className="h-9 w-9 p-0 border-[#2C2C32] bg-[#18181A] text-slate-600 hover:text-white"
               title="Actualizar datos"
             >
               <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
@@ -607,15 +607,15 @@ export default function ComisionDirectivaPage() {
         {/* KPI Cards Superiores */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           <div className="bg-white border border-[#242428] rounded-2xl p-4 shadow-sm flex flex-col justify-between">
-            <div className="flex items-center justify-between text-[#888888]">
+            <div className="flex items-center justify-between text-slate-600">
               <span className="text-[11px] font-bold uppercase tracking-wider">Padrón de Socios</span>
               <Users size={18} className="text-sky-400" />
             </div>
             <div className="mt-2">
-              <div className="text-2xl sm:text-3xl font-black text-white">
+              <div className="text-2xl sm:text-3xl font-black text-slate-900">
                 {data?.socios?.total ?? 0}
               </div>
-              <div className="text-[11px] text-[#888888] mt-0.5">Socios activos del club</div>
+              <div className="text-[11px] text-slate-600 mt-0.5">Socios activos del club</div>
             </div>
           </div>
 
@@ -625,7 +625,7 @@ export default function ComisionDirectivaPage() {
               <GraduationCap size={18} />
             </div>
             <div className="mt-2">
-              <div className="text-2xl sm:text-3xl font-black text-white">
+              <div className="text-2xl sm:text-3xl font-black text-slate-900">
                 {data?.escuela?.totalAlumnos ?? 0}
               </div>
               <div className="text-[11px] text-emerald-300 font-semibold mt-0.5">
@@ -640,7 +640,7 @@ export default function ComisionDirectivaPage() {
               <Sparkles size={18} />
             </div>
             <div className="mt-2">
-              <div className="text-2xl sm:text-3xl font-black text-white">
+              <div className="text-2xl sm:text-3xl font-black text-slate-900">
                 {data?.particulares?.totalAlumnosMesActual ?? 0}
               </div>
               <div className="text-[11px] text-purple-300 font-semibold mt-0.5">
@@ -660,10 +660,10 @@ export default function ComisionDirectivaPage() {
                 <Wallet size={18} />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <h2 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
                   1. Balance Financiero — Saldo Mes a Mes y Resumen Oficial
                 </h2>
-                <p className="text-xs text-[#888888]">
+                <p className="text-xs text-slate-600">
                   Saldo final mes por mes del año {anioActual} y detalle de movimientos de {labelMesActual}
                 </p>
               </div>
@@ -682,7 +682,7 @@ export default function ComisionDirectivaPage() {
 
           {/* Visor Mes a Mes con Saldos Finales */}
           <div className="p-4 bg-white border-b border-[#242428]">
-            <div className="text-[11px] font-bold uppercase text-[#888] mb-2 flex items-center justify-between">
+            <div className="text-[11px] font-bold uppercase text-slate-600 mb-2 flex items-center justify-between">
               <span>Saldos Finales Mes a Mes ({anioActual}):</span>
               <span className="text-xs text-amber-400">
                 Saldo Actual Total en Caja: <strong>{formatCurrency(data?.balance?.saldoActualTotal ?? 0)}</strong>
@@ -750,7 +750,7 @@ export default function ComisionDirectivaPage() {
                   <Landmark size={15} />
                 </div>
                 <div>
-                  <h3 className="text-xs sm:text-sm font-bold text-white">Inversiones, Ahorros y Patrimonio Total</h3>
+                  <h3 className="text-xs sm:text-sm font-bold text-slate-900">Inversiones, Ahorros y Patrimonio Total</h3>
                   <p className="text-[11px] text-[#777]">Plazos fijos activos, reservas en dólares y total disponible</p>
                 </div>
               </div>
@@ -777,7 +777,7 @@ export default function ComisionDirectivaPage() {
                   <Wallet size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] text-[#888] font-bold uppercase tracking-wider">Saldo en Caja (Pesos)</div>
+                  <div className="text-[10px] text-slate-600 font-bold uppercase tracking-wider">Saldo en Caja (Pesos)</div>
                   <div className="text-sm sm:text-base font-black font-mono text-white mt-0.5">
                     {formatCurrency(data?.balance?.saldoActualTotal ?? 0)}
                   </div>
@@ -790,7 +790,7 @@ export default function ComisionDirectivaPage() {
                   <Landmark size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] text-[#888] font-bold uppercase tracking-wider">Capital Plazos Fijos</div>
+                  <div className="text-[10px] text-slate-600 font-bold uppercase tracking-wider">Capital Plazos Fijos</div>
                   <div className="text-sm sm:text-base font-black font-mono text-emerald-400 mt-0.5">
                     {formatCurrency(data?.balance?.inversiones?.capitalPlazosActivos ?? 0)}
                   </div>
@@ -806,11 +806,11 @@ export default function ComisionDirectivaPage() {
                   <DollarSign size={18} />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[10px] text-[#888] font-bold uppercase tracking-wider">Ahorro en Dólares</div>
+                  <div className="text-[10px] text-slate-600 font-bold uppercase tracking-wider">Ahorro en Dólares</div>
                   <div className="text-sm sm:text-base font-black font-mono text-emerald-400 mt-0.5">
                     U$S {formatCurrency(data?.balance?.inversiones?.ahorrosDolares ?? 0).replace('$', '').trim()}
                   </div>
-                  <div className="text-[10px] text-[#888] flex items-center justify-between">
+                  <div className="text-[10px] text-slate-600 flex items-center justify-between">
                     <span>1 U$S = {formatCurrency(data?.balance?.inversiones?.cotizacionDolar ?? 1000)}</span>
                     <span className="text-amber-400 font-semibold">{formatCurrency(data?.balance?.inversiones?.ahorrosDolaresEnPesos ?? 0)}</span>
                   </div>
@@ -836,15 +836,15 @@ export default function ComisionDirectivaPage() {
             {/* Cartera de Plazos Fijos (Desplegable) */}
             {showDetalleInversiones && (
               <div className="mt-3 bg-white border border-[#242428] rounded-xl overflow-hidden animate-in fade-in duration-200">
-                <div className="px-3 py-2 bg-white border-b border-[#242428] text-xs font-bold text-white flex items-center justify-between">
+                <div className="px-3 py-2 bg-white border-b border-[#242428] text-xs font-bold text-slate-900 flex items-center justify-between">
                   <span>Cartera y Certificados de Plazo Fijo</span>
-                  <span className="text-[11px] text-[#888]">
+                  <span className="text-[11px] text-slate-600">
                     Total certificados: {data?.balance?.inversiones?.plazosFijos?.length || 0}
                   </span>
                 </div>
                 <div className="overflow-x-auto max-h-60 overflow-y-auto">
                   <table className="w-full text-left text-xs">
-                    <thead className="bg-white text-[#888] font-bold border-b border-[#242428] sticky top-0">
+                    <thead className="bg-white text-slate-600 font-bold border-b border-[#242428] sticky top-0">
                       <tr>
                         <th className="py-2 px-3 text-center w-10">#</th>
                         <th className="py-2 px-3">Banco / Entidad</th>
@@ -868,9 +868,9 @@ export default function ComisionDirectivaPage() {
                           return (
                             <tr key={p.id || idx} className="hover:bg-white/[0.02]">
                               <td className="py-2 px-3 text-center text-[#666] font-mono">{idx + 1}</td>
-                              <td className="py-2 px-3 font-semibold text-white">{p.banco}</td>
-                              <td className="py-2 px-3 font-mono text-[11px] text-[#888]">{p.fechaConstitucion}</td>
-                              <td className="py-2 px-3 font-mono text-[11px] text-[#888]">{p.fechaVencimiento}</td>
+                              <td className="py-2 px-3 font-semibold text-slate-900">{p.banco}</td>
+                              <td className="py-2 px-3 font-mono text-[11px] text-slate-600">{p.fechaConstitucion}</td>
+                              <td className="py-2 px-3 font-mono text-[11px] text-slate-600">{p.fechaVencimiento}</td>
                               <td className="py-2 px-3 text-right font-mono font-bold text-emerald-400">
                                 {formatCurrency(p.montoInvertido)}
                               </td>
@@ -881,7 +881,7 @@ export default function ComisionDirectivaPage() {
                                 <Badge className={`text-[10px] uppercase font-bold ${
                                   isActivo
                                     ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                                    : 'bg-[#2A2A30] text-[#888] border-[#3A3A40]'
+                                    : 'bg-[#2A2A30] text-slate-600 border-[#3A3A40]'
                                 }`}>
                                   {p.estado}
                                 </Badge>
@@ -899,7 +899,7 @@ export default function ComisionDirectivaPage() {
 
           {/* Botón desplegable / ocultable de Movimientos */}
           <div className="p-3 bg-[#131315] border-b border-[#242428] flex items-center justify-between">
-            <span className="text-xs text-[#888888]">
+            <span className="text-xs text-slate-600">
               Movimientos registrados en {labelMesActual}: <strong className="text-white">{data?.balance?.movimientos?.length || 0}</strong>
             </span>
             <Button
@@ -918,7 +918,7 @@ export default function ComisionDirectivaPage() {
           {showDetalleBalance && (
             <div className="overflow-x-auto max-h-72 overflow-y-auto animate-in fade-in duration-200">
               <table className="w-full text-left text-xs">
-                <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                <thead className="bg-white text-slate-600 font-bold border-b border-[#242428] sticky top-0">
                   <tr>
                     <th className="py-2.5 px-3">#</th>
                     <th className="py-2.5 px-3">Fecha</th>
@@ -939,9 +939,9 @@ export default function ComisionDirectivaPage() {
                     data.balance.movimientos.map((m: any, idx: number) => (
                       <tr key={m.id} className="hover:bg-white/[0.02]">
                         <td className="py-2 px-3 text-[#666] font-mono">{idx + 1}</td>
-                        <td className="py-2 px-3 font-mono text-[11px] text-[#888]">{m.fecha}</td>
-                        <td className="py-2 px-3 font-semibold text-white">{m.descripcion}</td>
-                        <td className="py-2 px-3 text-[#888]">{m.responsable || '-'}</td>
+                        <td className="py-2 px-3 font-mono text-[11px] text-slate-600">{m.fecha}</td>
+                        <td className="py-2 px-3 font-semibold text-slate-900">{m.descripcion}</td>
+                        <td className="py-2 px-3 text-slate-600">{m.responsable || '-'}</td>
                         <td className="py-2 px-3">
                           <Badge className={`text-[10px] uppercase font-bold ${
                             m.tipo === 'ingreso'
@@ -975,10 +975,10 @@ export default function ComisionDirectivaPage() {
                 <Trophy size={18} />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <h2 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
                   Balances de Torneos, Interclubes y Eventos
                 </h2>
-                <p className="text-xs text-[#888888]">
+                <p className="text-xs text-slate-600">
                   Informes oficiales de recaudación deportiva, cantina e insumos con diseño institucional
                 </p>
               </div>
@@ -1019,7 +1019,7 @@ export default function ComisionDirectivaPage() {
                         {ev.subtitulo && (
                           <p className="text-[11px] font-semibold text-amber-400/90 uppercase mt-0.5">{ev.subtitulo}</p>
                         )}
-                        <p className="text-[11px] text-[#888] italic font-serif mt-1">{ev.fechaTexto}</p>
+                        <p className="text-[11px] text-slate-600 italic font-serif mt-1">{ev.fechaTexto}</p>
                       </div>
 
                       <Button
@@ -1051,10 +1051,10 @@ export default function ComisionDirectivaPage() {
                 <GraduationCap size={18} />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <h2 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
                   2. Escuela de Tenis — Alumnos y Recaudación Mensual
                 </h2>
-                <p className="text-xs text-[#888888]">
+                <p className="text-xs text-slate-600">
                   Total de alumnos divididos por grupos, recaudación mes a mes y padrón nominal
                 </p>
               </div>
@@ -1073,7 +1073,7 @@ export default function ComisionDirectivaPage() {
 
           {/* Visor Mes a Mes de Recaudación de Cuotas */}
           <div className="p-4 bg-white border-b border-[#242428]">
-            <div className="text-[11px] font-bold uppercase text-[#888] mb-2">
+            <div className="text-[11px] font-bold uppercase text-slate-600 mb-2">
               Recaudación de Cuotas Escuela Mes por Mes ({anioActual}):
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-1.5">
@@ -1117,28 +1117,28 @@ export default function ComisionDirectivaPage() {
           <div className="p-4 grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#131315] border-b border-[#242428]">
             <div className="bg-white border border-emerald-500/30 p-3 rounded-xl">
               <div className="text-[10px] text-emerald-400 font-bold uppercase">Total Inscriptos</div>
-              <div className="text-xl font-black text-white">{data?.escuela?.totalAlumnos || 0} alumnos</div>
+              <div className="text-xl font-black text-slate-900">{data?.escuela?.totalAlumnos || 0} alumnos</div>
             </div>
 
             <div className="bg-white border border-[#28282E] p-3 rounded-xl">
               <div className="text-[10px] text-emerald-400 font-bold uppercase">Escuelita</div>
-              <div className="text-xl font-black text-white">{data?.escuela?.porGrupo?.Escuelita || 0} chicos</div>
+              <div className="text-xl font-black text-slate-900">{data?.escuela?.porGrupo?.Escuelita || 0} chicos</div>
             </div>
 
             <div className="bg-white border border-[#28282E] p-3 rounded-xl">
               <div className="text-[10px] text-sky-400 font-bold uppercase">Minitenis</div>
-              <div className="text-xl font-black text-white">{data?.escuela?.porGrupo?.Minitenis || 0} chicos</div>
+              <div className="text-xl font-black text-slate-900">{data?.escuela?.porGrupo?.Minitenis || 0} chicos</div>
             </div>
 
             <div className="bg-white border border-[#28282E] p-3 rounded-xl">
               <div className="text-[10px] text-amber-400 font-bold uppercase">Grupo Entrenamiento</div>
-              <div className="text-xl font-black text-white">{data?.escuela?.porGrupo?.['Grupo Entrenamiento'] || 0} juveniles</div>
+              <div className="text-xl font-black text-slate-900">{data?.escuela?.porGrupo?.['Grupo Entrenamiento'] || 0} juveniles</div>
             </div>
           </div>
 
           {/* Barra de control desplegable para el Padrón de Alumnos */}
           <div className="p-3 bg-[#131315] border-b border-[#242428] flex items-center justify-between">
-            <span className="text-xs text-[#888888]">
+            <span className="text-xs text-slate-600">
               Alumnos registrados en escuela: <strong className="text-white">{data?.escuela?.totalAlumnos || 0}</strong>
             </span>
             <Button
@@ -1164,7 +1164,7 @@ export default function ComisionDirectivaPage() {
                       size="sm"
                       variant={filtroGrupoEscuela === grp ? 'default' : 'ghost'}
                       onClick={() => setFiltroGrupoEscuela(grp)}
-                      className={`text-xs h-7 px-2.5 ${filtroGrupoEscuela === grp ? 'bg-primary text-black font-bold' : 'text-[#888888]'}`}
+                      className={`text-xs h-7 px-2.5 ${filtroGrupoEscuela === grp ? 'bg-primary text-black font-bold' : 'text-slate-600'}`}
                     >
                       {grp === 'todos' ? 'Todos' : grp === 'Grupo Entrenamiento' ? 'Competencia' : grp}
                     </Button>
@@ -1185,7 +1185,7 @@ export default function ComisionDirectivaPage() {
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-slate-600 font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-4 w-16">#</th>
                       <th className="py-2.5 px-4">Nombre y Apellido del Alumno</th>
@@ -1203,7 +1203,7 @@ export default function ComisionDirectivaPage() {
                       escuelaFiltrada.map((al: any, idx: number) => (
                         <tr key={al.id} className="hover:bg-white/[0.02]">
                           <td className="py-2.5 px-4 text-[#666] font-mono">{idx + 1}</td>
-                          <td className="py-2.5 px-4 font-semibold text-white">{al.nombre}</td>
+                          <td className="py-2.5 px-4 font-semibold text-slate-900">{al.nombre}</td>
                           <td className="py-2.5 px-4 text-right">
                             <Badge variant="outline" className={`text-[10px] font-bold ${
                               al.grupo === 'Escuelita'
@@ -1235,10 +1235,10 @@ export default function ComisionDirectivaPage() {
                 <Sparkles size={18} />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <h2 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
                   3. Clases Particulares — Alumnos y Asistencias Mensuales
                 </h2>
-                <p className="text-xs text-[#888888]">
+                <p className="text-xs text-slate-600">
                   Total de alumnos particulares por mes y cantidad de clases asistidas
                 </p>
               </div>
@@ -1257,7 +1257,7 @@ export default function ComisionDirectivaPage() {
 
           {/* Visor Mes por Mes de Particulares */}
           <div className="p-4 bg-white border-b border-[#242428]">
-            <div className="text-[11px] font-bold uppercase text-[#888] mb-2">
+            <div className="text-[11px] font-bold uppercase text-slate-600 mb-2">
               Cantidad de Alumnos Particulares por Mes ({anioActual}):
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-1.5">
@@ -1292,7 +1292,7 @@ export default function ComisionDirectivaPage() {
 
           {/* Barra de control desplegable para Particulares */}
           <div className="p-3 bg-[#131315] border-b border-[#242428] flex items-center justify-between">
-            <span className="text-xs text-[#888888]">
+            <span className="text-xs text-slate-600">
               Alumnos con clases en {labelMesActual}: <strong className="text-white">{data?.particulares?.totalAlumnosMesActual || 0}</strong>
             </span>
             <Button
@@ -1311,7 +1311,7 @@ export default function ComisionDirectivaPage() {
           {showDetalleParticulares && (
             <div className="animate-in fade-in duration-200">
               <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-[#121214]">
-                <span className="text-xs text-[#888888]">
+                <span className="text-xs text-slate-600">
                   Detalle nominal de asistencias:
                 </span>
 
@@ -1329,7 +1329,7 @@ export default function ComisionDirectivaPage() {
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-slate-600 font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-4 w-16">#</th>
                       <th className="py-2.5 px-4">Alumno</th>
@@ -1348,10 +1348,10 @@ export default function ComisionDirectivaPage() {
                       particularesFiltrados.map((al: any, idx: number) => (
                         <tr key={al.id} className="hover:bg-white/[0.02]">
                           <td className="py-2.5 px-4 text-[#666] font-mono">{idx + 1}</td>
-                          <td className="py-2.5 px-4 font-semibold text-white">{al.nombre}</td>
+                          <td className="py-2.5 px-4 font-semibold text-slate-900">{al.nombre}</td>
                           <td className="py-2.5 px-4">
                             <Badge variant="outline" className={`text-[10px] ${
-                              al.esSocio ? 'border-sky-500/30 text-sky-400 bg-sky-500/10' : 'border-[#333] text-[#888]'
+                              al.esSocio ? 'border-sky-500/30 text-sky-400 bg-sky-500/10' : 'border-[#333] text-slate-600'
                             }`}>
                               {al.esSocio ? 'Socio' : 'No Socio'}
                             </Badge>
@@ -1381,10 +1381,10 @@ export default function ComisionDirectivaPage() {
                 <BookOpen size={18} />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <h2 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
                   4. Planilla de Clases del Profesor
                 </h2>
-                <p className="text-xs text-[#888888]">
+                <p className="text-xs text-slate-600">
                   Registros asentados por el profesor en {labelMesActual} (clases, cantidad de alumnos y liquidación)
                 </p>
               </div>
@@ -1404,8 +1404,8 @@ export default function ComisionDirectivaPage() {
           {/* Resumen */}
           <div className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 bg-white border-b border-[#242428]">
             <div className="bg-[#161619] border border-[#25252A] p-2.5 rounded-xl">
-              <div className="text-[10px] text-[#888] font-bold uppercase">Total Clases Dadas</div>
-              <div className="text-lg font-black text-white">{data?.clasesProfesor?.totalClases || 0}</div>
+              <div className="text-[10px] text-slate-600 font-bold uppercase">Total Clases Dadas</div>
+              <div className="text-lg font-black text-slate-900">{data?.clasesProfesor?.totalClases || 0}</div>
             </div>
 
             <div className="bg-[#161619] border border-[#25252A] p-2.5 rounded-xl">
@@ -1423,7 +1423,7 @@ export default function ComisionDirectivaPage() {
 
           {/* Barra de control desplegable para Registros del Profesor */}
           <div className="p-3 bg-[#131315] border-b border-[#242428] flex items-center justify-between">
-            <span className="text-xs text-[#888]">
+            <span className="text-xs text-slate-600">
               Registros asentados en {labelMesActual}: <strong className="text-white">{data?.clasesProfesor?.registros?.length || 0}</strong>
             </span>
             <Button
@@ -1442,7 +1442,7 @@ export default function ComisionDirectivaPage() {
           {showDetalleProfesor && (
             <div className="animate-in fade-in duration-200">
               <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-[#121214]">
-                <span className="text-xs text-[#888]">
+                <span className="text-xs text-slate-600">
                   Detalle de planillas por fecha:
                 </span>
 
@@ -1460,7 +1460,7 @@ export default function ComisionDirectivaPage() {
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-slate-600 font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-3">#</th>
                       <th className="py-2.5 px-3">Fecha</th>
@@ -1483,13 +1483,13 @@ export default function ComisionDirectivaPage() {
                         <tr key={r.id} className="hover:bg-white/[0.02]">
                           <td className="py-2 px-3 text-[#666] font-mono">{idx + 1}</td>
                           <td className="py-2 px-3 font-mono text-white font-semibold">{r.fecha}</td>
-                          <td className="py-2 px-3 text-[#888]">{r.turno || '-'}</td>
-                          <td className="py-2 px-3 text-center font-bold text-white">{r.cantidadClases}</td>
+                          <td className="py-2 px-3 text-slate-600">{r.turno || '-'}</td>
+                          <td className="py-2 px-3 text-center font-bold text-slate-900">{r.cantidadClases}</td>
                           <td className="py-2 px-3 text-center text-sky-400 font-bold">{r.cantidadAlumnos}</td>
                           <td className="py-2 px-3 text-right font-mono font-bold text-emerald-400">
                             {formatCurrency(r.precioTotal)}
                           </td>
-                          <td className="py-2 px-3 text-[#888] text-[11px]">{r.observaciones || '-'}</td>
+                          <td className="py-2 px-3 text-slate-600 text-[11px]">{r.observaciones || '-'}</td>
                         </tr>
                       ))
                     )}
@@ -1510,10 +1510,10 @@ export default function ComisionDirectivaPage() {
                 <Users size={18} />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <h2 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
                   5. Padrón General de Socios
                 </h2>
-                <p className="text-xs text-[#888888]">
+                <p className="text-xs text-slate-600">
                   Nómina completa de todos los socios activos de tenis ({data?.socios?.total || 0} socios)
                 </p>
               </div>
@@ -1532,7 +1532,7 @@ export default function ComisionDirectivaPage() {
 
           {/* Barra de control desplegable para el Padrón de Socios */}
           <div className="p-3 bg-[#131315] border-b border-[#242428] flex items-center justify-between">
-            <span className="text-xs text-[#888888]">
+            <span className="text-xs text-slate-600">
               Total socios registrados: <strong className="text-white">{data?.socios?.total || 0}</strong>
             </span>
             <Button
@@ -1551,7 +1551,7 @@ export default function ComisionDirectivaPage() {
           {showDetalleSocios && (
             <div className="animate-in fade-in duration-200">
               <div className="p-3 border-b border-[#242428] flex items-center justify-between gap-2 bg-[#121214]">
-                <span className="text-xs text-[#888888]">
+                <span className="text-xs text-slate-600">
                   Buscador rápido de socios:
                 </span>
 
@@ -1569,7 +1569,7 @@ export default function ComisionDirectivaPage() {
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-slate-600 font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-4 w-16">#</th>
                       <th className="py-2.5 px-4">DNI</th>
@@ -1590,9 +1590,9 @@ export default function ComisionDirectivaPage() {
                         <tr key={s.id} className="hover:bg-white/[0.02]">
                           <td className="py-2 px-4 text-[#666] font-mono">{idx + 1}</td>
                           <td className="py-2 px-4 font-mono font-bold text-sky-400">{s.dni || '-'}</td>
-                          <td className="py-2 px-4 font-semibold text-white">{s.apellido}, {s.nombre}</td>
-                          <td className="py-2 px-4 text-[#888]">{s.telefono || '-'}</td>
-                          <td className="py-2 px-4 text-[#888] text-[11px] font-mono">{s.email || '-'}</td>
+                          <td className="py-2 px-4 font-semibold text-slate-900">{s.apellido}, {s.nombre}</td>
+                          <td className="py-2 px-4 text-slate-600">{s.telefono || '-'}</td>
+                          <td className="py-2 px-4 text-slate-600 text-[11px] font-mono">{s.email || '-'}</td>
                         </tr>
                       ))
                     )}

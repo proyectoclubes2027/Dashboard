@@ -365,22 +365,22 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-3.5 flex items-center gap-3">
-          <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+          <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-600">
             <CheckCircle className="h-5 w-5" />
           </div>
           <div>
             <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">Al Día</p>
-            <p className="text-xl font-black text-emerald-400 mt-0.5">{alDiaCount.toLocaleString('es-AR')}</p>
+            <p className="text-xl font-black text-emerald-600 mt-0.5">{alDiaCount.toLocaleString('es-AR')}</p>
           </div>
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-3.5 flex items-center gap-3">
-          <div className="p-2.5 rounded-lg bg-destructive/10 text-destructive">
+          <div className="p-2.5 rounded-lg bg-destructive/10 text-red-600">
             <AlertTriangle className="h-5 w-5" />
           </div>
           <div>
             <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">Deudores</p>
-            <p className="text-xl font-black text-destructive mt-0.5">{deudoresCount.toLocaleString('es-AR')}</p>
+            <p className="text-xl font-black text-red-600 mt-0.5">{deudoresCount.toLocaleString('es-AR')}</p>
           </div>
         </div>
 
@@ -391,7 +391,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
           <div>
             <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">Total General</p>
             <p className="text-xl font-black text-foreground mt-0.5">{socios.length.toLocaleString('es-AR')}</p>
-            <span className="text-[10px] text-zinc-500">({inactivosCount} inactivos)</span>
+            <span className="text-[10px] text-slate-500">({inactivosCount} inactivos)</span>
           </div>
         </div>
       </div>
@@ -401,12 +401,12 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
           <div className="flex items-center gap-2 flex-wrap">
             <h3 className="text-foreground text-sm font-semibold">Socios del Club</h3>
-            <span className="text-[#666666] text-xs">({socios.length})</span>
+            <span className="text-slate-500 text-xs">({socios.length})</span>
             {!readOnly && !hideABM && (
               <Button
                 size="sm"
                 onClick={onCrearSocio}
-                className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium text-xs h-7 px-2.5"
+                className="bg-primary text-white hover:bg-red-700 shadow-sm font-medium text-xs h-7 px-2.5"
               >
                 <Plus className="h-3.5 w-3.5 mr-1" />
                 Nuevo
@@ -418,7 +418,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                   size="sm"
                   variant="outline"
                   disabled={exporting}
-                  className="border-[#CCCCCC]/30 text-[#CCCCCC] hover:bg-[#CCCCCC]/10 text-xs h-7 px-2.5"
+                  className="border-[#CCCCCC]/30 text-slate-800 hover:bg-[#CCCCCC]/10 text-xs h-7 px-2.5"
                 >
                   {exporting ? (
                     <Loader2 className="h-3.5 w-3.5 mr-1 animate-spin" />
@@ -428,7 +428,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                   Exportar
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border-slate-200 text-[#CCCCCC]">
+              <DropdownMenuContent className="bg-white border-slate-200 text-slate-800">
                 <DropdownMenuItem onClick={() => handleExportExcel('todos')} className="focus:bg-slate-50 focus:text-foreground cursor-pointer">
                   Exportar Todos (Activos + Inactivos)
                 </DropdownMenuItem>
@@ -460,22 +460,22 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <Select value={filterActivo} onValueChange={setFilterActivo}>
-              <SelectTrigger className="w-[120px] bg-slate-50 border-slate-200 text-[#CCCCCC] h-8 text-xs">
+              <SelectTrigger className="w-[120px] bg-slate-50 border-slate-200 text-slate-800 h-8 text-xs">
                 <SelectValue placeholder="Situación" />
               </SelectTrigger>
               <SelectContent className="bg-white border-slate-200">
-                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Todos</SelectItem>
-                <SelectItem value="activo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Activos</SelectItem>
-                <SelectItem value="inactivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Inactivos</SelectItem>
+                <SelectItem value="todos" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Todos</SelectItem>
+                <SelectItem value="activo" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Activos</SelectItem>
+                <SelectItem value="inactivo" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Inactivos</SelectItem>
               </SelectContent>
             </Select>
             <Select value={filterEstado} onValueChange={setFilterEstado}>
-              <SelectTrigger className="w-[130px] bg-slate-50 border-slate-200 text-[#CCCCCC] h-8 text-xs">
+              <SelectTrigger className="w-[130px] bg-slate-50 border-slate-200 text-slate-800 h-8 text-xs">
                 <SelectValue placeholder="Estado" />
               </SelectTrigger>
               <SelectContent className="bg-white border-slate-200">
-                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Todos</SelectItem>
-                <SelectItem value="al_dia" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">✅ Al día (Total)</SelectItem>
+                <SelectItem value="todos" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Todos</SelectItem>
+                <SelectItem value="al_dia" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">✅ Al día (Total)</SelectItem>
                 <SelectItem value="al_dia_pagado" className="text-[#00AA55] focus:bg-slate-50 focus:text-foreground">
                   🟢 Al día (Mes actual PAGO)
                 </SelectItem>
@@ -488,23 +488,23 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
               </SelectContent>
             </Select>
             <Select value={filterCategoria} onValueChange={setFilterCategoria}>
-              <SelectTrigger className="w-[120px] bg-slate-50 border-slate-200 text-[#CCCCCC] h-8 text-xs">
+              <SelectTrigger className="w-[120px] bg-slate-50 border-slate-200 text-slate-800 h-8 text-xs">
                 <SelectValue placeholder="Categoría" />
               </SelectTrigger>
               <SelectContent className="bg-white border-slate-200">
-                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Todas</SelectItem>
-                <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Socio</SelectItem>
-                <SelectItem value="alumno" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Alumno</SelectItem>
-                <SelectItem value="vitalicio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Vitalicio</SelectItem>
+                <SelectItem value="todos" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Todas</SelectItem>
+                <SelectItem value="socio" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Socio</SelectItem>
+                <SelectItem value="alumno" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Alumno</SelectItem>
+                <SelectItem value="vitalicio" className="text-slate-800 focus:bg-slate-50 focus:text-foreground">Vitalicio</SelectItem>
               </SelectContent>
             </Select>
             <div className="relative w-44">
-              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#999999]" />
+              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-600" />
               <Input
                 placeholder="Buscar..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-8 bg-slate-50 border-slate-200 text-[#CCCCCC] placeholder:text-[#666666] h-8 text-xs"
+                className="pl-8 bg-slate-50 border-slate-200 text-slate-800 placeholder:text-slate-500 h-8 text-xs"
               />
             </div>
           </div>
@@ -516,45 +516,45 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
             <TableHeader>
               <TableRow className="border-slate-200 hover:bg-transparent">
                 <TableHead
-                  className="text-[#999999] font-medium text-xs cursor-pointer select-none h-9 py-1"
+                  className="text-slate-600 font-medium text-xs cursor-pointer select-none h-9 py-1"
                   onClick={() => toggleSort('apellido')}
                 >
                   Socio <SortIcon field="apellido" />
                 </TableHead>
                 <TableHead
-                  className="text-[#999999] font-medium text-xs cursor-pointer select-none h-9 py-1"
+                  className="text-slate-600 font-medium text-xs cursor-pointer select-none h-9 py-1"
                   onClick={() => toggleSort('categoria')}
                 >
                   Cat. <SortIcon field="categoria" />
                 </TableHead>
                 <TableHead
-                  className="text-[#999999] font-medium text-xs cursor-pointer select-none h-9 py-1"
+                  className="text-slate-600 font-medium text-xs cursor-pointer select-none h-9 py-1"
                   onClick={() => toggleSort('dni')}
                 >
                   DNI <SortIcon field="dni" />
                 </TableHead>
-                <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Email</TableHead>
-                <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Teléfono</TableHead>
+                <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Email</TableHead>
+                <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Teléfono</TableHead>
                 <TableHead
-                  className="text-[#999999] font-medium text-xs cursor-pointer select-none h-9 py-1 text-center"
+                  className="text-slate-600 font-medium text-xs cursor-pointer select-none h-9 py-1 text-center"
                   onClick={() => toggleSort('estado')}
                 >
                   Estado <SortIcon field="estado" />
                 </TableHead>
-                <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center">Acciones</TableHead>
+                <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center">Acciones</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {filteredSocios.length === 0 ? (
                 <TableRow className="border-slate-200">
-                  <TableCell colSpan={7} className="text-center py-6 text-[#999999] text-xs">
+                  <TableCell colSpan={7} className="text-center py-6 text-slate-600 text-xs">
                     No se encontraron socios
                   </TableCell>
                 </TableRow>
               ) : (
                 filteredSocios.map((socio) => (
                   <TableRow key={socio.id} className="border-slate-200 hover:bg-slate-50">
-                    <TableCell className="text-[#CCCCCC] text-xs py-2">
+                    <TableCell className="text-slate-800 text-xs py-2">
                       <span className="font-medium">{socio.apellido}</span>{', '}
                       {socio.nombre}
                       {socio.rol === 'admin' && (
@@ -578,11 +578,11 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                         {socio.categoria.charAt(0).toUpperCase() + socio.categoria.slice(1)}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-[#CCCCCC] font-mono text-[11px] py-2">{socio.dni}</TableCell>
-                    <TableCell className="text-[#999999] text-[11px] py-2 max-w-[160px] truncate">
+                    <TableCell className="text-slate-800 font-mono text-[11px] py-2">{socio.dni}</TableCell>
+                    <TableCell className="text-slate-600 text-[11px] py-2 max-w-[160px] truncate">
                       {socio.email}
                     </TableCell>
-                    <TableCell className="text-[#999999] text-[11px] py-2 whitespace-nowrap">
+                    <TableCell className="text-slate-600 text-[11px] py-2 whitespace-nowrap">
                       {socio.telefono ? (
                         <span className="flex items-center gap-1">
                           <Phone className="h-3 w-3" />
@@ -619,7 +619,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                           size="sm"
                           variant="ghost"
                           onClick={() => onVerHistorial({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido, categoria: socio.categoria })}
-                          className="h-7 w-7 p-0 text-[#999999] hover:text-foreground hover:bg-slate-50"
+                          className="h-7 w-7 p-0 text-slate-600 hover:text-foreground hover:bg-slate-50"
                           title="Historial de Pagos"
                         >
                           <History className="h-3.5 w-3.5" />
@@ -641,7 +641,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                               size="sm"
                               variant="ghost"
                               onClick={() => onEditarSocio(socio)}
-                              className="h-7 w-7 p-0 text-[#999999] hover:text-foreground hover:bg-slate-50"
+                              className="h-7 w-7 p-0 text-slate-600 hover:text-foreground hover:bg-slate-50"
                               title="Editar"
                             >
                               <Pencil className="h-3.5 w-3.5" />
@@ -661,7 +661,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                                   size="sm"
                                   variant="ghost"
                                   onClick={() => { setDeleteTarget(socio); setDeleteType('hard'); }}
-                                  className="h-7 w-7 p-0 text-[#999999] hover:text-[#EF4444] hover:bg-[#EF4444]/10"
+                                  className="h-7 w-7 p-0 text-slate-600 hover:text-[#EF4444] hover:bg-[#EF4444]/10"
                                   title="Eliminar definitivamente"
                                 >
                                   <Trash2 className="h-3.5 w-3.5" />
@@ -672,7 +672,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                                 size="sm"
                                 variant="ghost"
                                 onClick={() => { setDeleteTarget(socio); setDeleteType('soft'); }}
-                                className="h-7 w-7 p-0 text-[#999999] hover:text-[#EF4444] hover:bg-[#EF4444]/10"
+                                className="h-7 w-7 p-0 text-slate-600 hover:text-[#EF4444] hover:bg-[#EF4444]/10"
                                 title="Dar de baja"
                               >
                                 <Trash2 className="h-3.5 w-3.5" />
@@ -692,7 +692,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
         {/* Cards compactas mobile/tablet */}
         <div className="lg:hidden space-y-2">
           {filteredSocios.length === 0 ? (
-            <div className="text-center py-6 text-[#999999] text-xs">
+            <div className="text-center py-6 text-slate-600 text-xs">
               No se encontraron socios
             </div>
           ) : (
@@ -712,9 +712,9 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                         <span className="ml-2 text-[9px] text-red-400 font-bold uppercase">Inactivo</span>
                       )}
                     </p>
-                    <p className="text-[#999999] text-[11px] truncate">{socio.email}</p>
+                    <p className="text-slate-600 text-[11px] truncate">{socio.email}</p>
                     {socio.telefono && (
-                      <p className="text-[#999999] text-[11px] truncate">{socio.telefono}</p>
+                      <p className="text-slate-600 text-[11px] truncate">{socio.telefono}</p>
                     )}
                   </div>
                   <div className="flex items-center gap-1.5 flex-shrink-0">
@@ -743,7 +743,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                   </div>
                 </div>
                 <div className="flex items-center justify-end gap-1 mt-2 pt-2 border-t border-slate-200 flex-wrap">
-                  <Button size="sm" variant="ghost" onClick={() => onVerHistorial({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido, categoria: socio.categoria })} className="h-7 px-2 text-[#999999] hover:bg-slate-50 text-[10px]">
+                  <Button size="sm" variant="ghost" onClick={() => onVerHistorial({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido, categoria: socio.categoria })} className="h-7 px-2 text-slate-600 hover:bg-slate-50 text-[10px]">
                     <History className="h-3 w-3 mr-0.5" /> Historial
                   </Button>
                   {!readOnly && (
@@ -753,7 +753,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                   )}
                   {!readOnly && !hideABM && (
                     <>
-                      <Button size="sm" variant="ghost" onClick={() => onEditarSocio(socio)} className="h-7 px-2 text-[#999999] hover:bg-slate-50 text-[10px]">
+                      <Button size="sm" variant="ghost" onClick={() => onEditarSocio(socio)} className="h-7 px-2 text-slate-600 hover:bg-slate-50 text-[10px]">
                         <Pencil className="h-3 w-3 mr-0.5" /> Editar
                       </Button>
                       {socio.estado === 'inactivo' ? (
@@ -761,12 +761,12 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                           <Button size="sm" variant="ghost" onClick={() => setReactivateTarget(socio)} className="h-7 px-2 text-[#00AA55] hover:bg-[#00AA55]/10 text-[10px]">
                             <UserCheck className="h-3 w-3 mr-0.5" /> Reactivar
                           </Button>
-                          <Button size="sm" variant="ghost" onClick={() => { setDeleteTarget(socio); setDeleteType('hard'); }} className="h-7 px-2 text-[#999999] hover:text-[#EF4444] hover:bg-[#EF4444]/10 text-[10px]">
+                          <Button size="sm" variant="ghost" onClick={() => { setDeleteTarget(socio); setDeleteType('hard'); }} className="h-7 px-2 text-slate-600 hover:text-[#EF4444] hover:bg-[#EF4444]/10 text-[10px]">
                             <Trash2 className="h-3 w-3 mr-0.5" /> Eliminar
                           </Button>
                         </>
                       ) : (
-                        <Button size="sm" variant="ghost" onClick={() => { setDeleteTarget(socio); setDeleteType('soft'); }} className="h-7 px-2 text-[#999999] hover:text-[#EF4444] hover:bg-[#EF4444]/10 text-[10px]">
+                        <Button size="sm" variant="ghost" onClick={() => { setDeleteTarget(socio); setDeleteType('soft'); }} className="h-7 px-2 text-slate-600 hover:text-[#EF4444] hover:bg-[#EF4444]/10 text-[10px]">
                           <Trash2 className="h-3 w-3 mr-0.5" /> Baja
                         </Button>
                       )}
@@ -780,7 +780,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
 
         {/* Resumen compacto */}
         {!loading && filteredSocios.length > 0 && (
-          <div className="mt-2 pt-2 border-t border-slate-200 text-[#666666] text-[10px]">
+          <div className="mt-2 pt-2 border-t border-slate-200 text-slate-500 text-[10px]">
             Mostrando {filteredSocios.length} de {socios.length} socios
           </div>
         )}
@@ -794,7 +794,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
               <AlertTriangle className="h-5 w-5 text-[#EF4444]" />
               {deleteType === 'hard' ? '¿Eliminar definitivamente?' : '¿Dar de baja?'}
             </AlertDialogTitle>
-            <AlertDialogDescription className="text-[#999999]">
+            <AlertDialogDescription className="text-slate-600">
               {deleteType === 'hard' ? (
                 <>
                   Vas a eliminar <span className="text-foreground font-medium">{deleteTarget?.nombre} {deleteTarget?.apellido}</span> definitivamente.
@@ -809,7 +809,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="flex-col sm:flex-row gap-2">
-            <AlertDialogCancel className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-foreground">
+            <AlertDialogCancel className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-foreground">
               Cancelar
             </AlertDialogCancel>
             <AlertDialogAction
@@ -828,12 +828,12 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
         <AlertDialogContent className="bg-white border-slate-200">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-foreground">¿Reactivar a {reactivateTarget?.nombre} {reactivateTarget?.apellido}?</AlertDialogTitle>
-            <AlertDialogDescription className="text-[#999999]">
+            <AlertDialogDescription className="text-slate-600">
               El socio volverá a estar <span className="text-[#00AA55] font-medium">activo</span> y aparecerá en la lista de socios.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-foreground">
+            <AlertDialogCancel className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-foreground">
               Cancelar
             </AlertDialogCancel>
             <AlertDialogAction

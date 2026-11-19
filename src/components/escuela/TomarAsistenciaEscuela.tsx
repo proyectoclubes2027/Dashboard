@@ -226,7 +226,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
             <Calendar className="h-4 w-4" />
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs text-[#AAAAAA] font-bold">Fecha:</span>
+            <span className="text-xs text-slate-600 font-bold">Fecha:</span>
             <Input
               type="date"
               value={fecha}
@@ -241,7 +241,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
           variant="ghost"
           onClick={fetchAsistencias}
           disabled={loading}
-          className="h-8 w-8 p-0 text-[#888] hover:text-white"
+          className="h-8 w-8 p-0 text-slate-600 hover:text-white"
           title="Refrescar lista"
         >
           <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin text-amber-400' : ''}`} />
@@ -256,7 +256,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
           className={`py-1.5 px-3 rounded-lg text-xs font-bold transition-all shrink-0 border ${
             grupoActivo === 'todos'
               ? 'bg-amber-400 text-black border-amber-400 shadow-sm'
-              : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
+              : 'bg-white text-slate-600 hover:text-white border-slate-200'
           }`}
         >
           Todos ({alumnos.length})
@@ -275,7 +275,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
               className={`py-1.5 px-3 rounded-lg text-xs font-bold transition-all shrink-0 border ${
                 isActive
                   ? 'bg-amber-400 text-black border-amber-400 shadow-sm'
-                  : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
+                  : 'bg-white text-slate-600 hover:text-white border-slate-200'
               }`}
             >
               <span>{cfg.label}</span>
@@ -290,7 +290,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
       {/* Buscador y Acciones Masivas compactas */}
       <div className="flex items-center gap-2">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#888]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-600" />
           <Input
             placeholder="Buscar alumno..."
             value={searchTerm}
@@ -303,7 +303,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
           size="sm"
           onClick={() => marcarMasivo(true)}
           disabled={savingAll || alumnosFiltrados.length === 0}
-          className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs h-8 px-2.5 gap-1 shrink-0"
+          className="bg-emerald-600 hover:bg-emerald-500 text-slate-900 font-bold text-xs h-8 px-2.5 gap-1 shrink-0"
           title="Marcar todos los visibles como presentes"
         >
           <CheckCheck className="h-3.5 w-3.5" />
@@ -315,7 +315,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
           variant="outline"
           onClick={() => marcarMasivo(false)}
           disabled={savingAll || alumnosFiltrados.length === 0}
-          className="bg-slate-50 border-slate-200 text-[#AAAAAA] hover:text-white font-bold text-xs h-8 px-2.5 gap-1 shrink-0"
+          className="bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 font-bold text-xs h-8 px-2.5 gap-1 shrink-0"
           title="Limpiar asistencias"
         >
           <RotateCcw className="h-3.5 w-3.5" />
@@ -350,7 +350,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
                 className={`relative select-none rounded-xl p-2.5 sm:p-3 border text-left transition-all duration-150 flex flex-col justify-between min-h-[64px] active:scale-[0.97] ${
                   isPresent
                     ? 'bg-emerald-500 text-black border-emerald-400 shadow-md shadow-emerald-500/20'
-                    : 'bg-white border-slate-200 text-[#AAAAAA] hover:border-[#444] hover:bg-slate-50'
+                    : 'bg-white border-slate-200 text-slate-600 hover:border-[#444] hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-start justify-between gap-1 w-full">
@@ -375,7 +375,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
                     {al.grupo === 'Grupo Entrenamiento' ? 'Entrenamiento' : al.grupo}
                   </span>
                   <span className={`text-[9px] font-mono uppercase tracking-wider font-extrabold px-1.5 py-0.2 rounded ${
-                    isPresent ? 'bg-black text-emerald-400' : 'bg-slate-100 text-[#888]'
+                    isPresent ? 'bg-black text-emerald-400' : 'bg-slate-100 text-slate-600'
                   }`}>
                     {isPresent ? 'PRESENTE' : 'AUSENTE'}
                   </span>

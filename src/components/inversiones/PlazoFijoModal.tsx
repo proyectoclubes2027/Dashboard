@@ -127,7 +127,7 @@ export default function PlazoFijoModal({
         
         <form onSubmit={handleSubmit} className="space-y-4 py-4">
           <div className="space-y-2">
-            <Label htmlFor="banco" className="text-[#999999]">Banco o Entidad</Label>
+            <Label htmlFor="banco" className="text-slate-600">Banco o Entidad</Label>
             <Input 
               id="banco"
               placeholder="Ej: Banco Nación"
@@ -139,7 +139,7 @@ export default function PlazoFijoModal({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="montoInvertido" className="text-[#999999]">Capital / Monto Total ($)</Label>
+            <Label htmlFor="montoInvertido" className="text-slate-600">Capital / Monto Total ($)</Label>
             <Input 
               id="montoInvertido"
               type="text"
@@ -153,7 +153,7 @@ export default function PlazoFijoModal({
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="fechaConstitucion" className="text-[#999999]">Constitución</Label>
+              <Label htmlFor="fechaConstitucion" className="text-slate-600">Constitución</Label>
               <Input 
                 id="fechaConstitucion"
                 type="date"
@@ -164,7 +164,7 @@ export default function PlazoFijoModal({
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="fechaVencimiento" className="text-[#999999]">Vencimiento</Label>
+              <Label htmlFor="fechaVencimiento" className="text-slate-600">Vencimiento</Label>
               <Input 
                 id="fechaVencimiento"
                 type="date"
@@ -177,7 +177,7 @@ export default function PlazoFijoModal({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="estado" className="text-[#999999]">Estado</Label>
+            <Label htmlFor="estado" className="text-slate-600">Estado</Label>
             <Select 
               value={formData.estado} 
               onValueChange={(v: string) => setFormData({ ...formData, estado: v })}
@@ -197,7 +197,7 @@ export default function PlazoFijoModal({
               type="button" 
               variant="outline" 
               onClick={() => onOpenChange(false)}
-              className="bg-transparent border-slate-200 text-[#999999] hover:bg-slate-50 hover:text-white"
+              className="bg-transparent border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-white"
             >
               Cancelar
             </Button>

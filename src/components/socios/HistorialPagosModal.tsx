@@ -81,7 +81,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
           <DialogTitle className="text-white">
             Historial de Pagos
           </DialogTitle>
-          <DialogDescription className="text-[#999999]">
+          <DialogDescription className="text-slate-600">
             {socio ? `${socio.nombre} ${socio.apellido}${socio.categoria ? ` (${socio.categoria})` : ''}` : ''}
           </DialogDescription>
         </DialogHeader>
@@ -95,7 +95,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
         ) : pagos.length === 0 ? (
           <div className="text-center py-8">
             <DollarSign className="h-10 w-10 text-[#333333] mx-auto mb-2" />
-            <p className="text-[#999999] text-sm">Sin registros</p>
+            <p className="text-slate-600 text-sm">Sin registros</p>
           </div>
         ) : (
           <>
@@ -104,16 +104,16 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-[#DC2626]" />
-                  <span className="text-[#CCCCCC] text-xs font-semibold">{pagos.length} registros en total</span>
+                  <span className="text-slate-800 text-xs font-semibold">{pagos.length} registros en total</span>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-2 mt-1">
                 <div className="bg-white rounded p-2 text-center border border-slate-200">
-                  <p className="text-[#999999] text-[10px] uppercase">Total Pagado</p>
+                  <p className="text-slate-600 text-[10px] uppercase">Total Pagado</p>
                   <p className="text-[#00AA55] font-bold text-sm">${totalPagado.toLocaleString('es-AR')}</p>
                 </div>
                 <div className="bg-white rounded p-2 text-center border border-slate-200">
-                  <p className="text-[#999999] text-[10px] uppercase">Deuda Pendiente</p>
+                  <p className="text-slate-600 text-[10px] uppercase">Deuda Pendiente</p>
                   <p className="text-red-400 font-bold text-sm">${totalPendiente.toLocaleString('es-AR')}</p>
                 </div>
               </div>

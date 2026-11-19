@@ -768,7 +768,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               variant="ghost"
               onClick={fetchPagos}
               disabled={loading}
-              className="h-8 w-8 p-0 text-[#888888] hover:text-white shrink-0"
+              className="h-8 w-8 p-0 text-slate-600 hover:text-white shrink-0"
               title="Refrescar estado"
             >
               <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
@@ -829,7 +829,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               size="sm"
               variant={grupoFiltro === 'todos' ? 'default' : 'outline'}
               onClick={() => setGrupoFiltro('todos')}
-              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'todos' ? 'bg-primary text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'todos' ? 'bg-primary text-black font-bold' : 'border-slate-200 text-slate-600'}`}
             >
               Todos
             </Button>
@@ -837,7 +837,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               size="sm"
               variant={grupoFiltro === 'Escuelita' ? 'default' : 'outline'}
               onClick={() => setGrupoFiltro('Escuelita')}
-              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'Escuelita' ? 'bg-emerald-500 text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'Escuelita' ? 'bg-emerald-500 text-black font-bold' : 'border-slate-200 text-slate-600'}`}
             >
               Escuelita
             </Button>
@@ -845,7 +845,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               size="sm"
               variant={grupoFiltro === 'Minitenis' ? 'default' : 'outline'}
               onClick={() => setGrupoFiltro('Minitenis')}
-              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'Minitenis' ? 'bg-sky-500 text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'Minitenis' ? 'bg-sky-500 text-black font-bold' : 'border-slate-200 text-slate-600'}`}
             >
               Minitenis
             </Button>
@@ -853,7 +853,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               size="sm"
               variant={grupoFiltro === 'Grupo Entrenamiento' ? 'default' : 'outline'}
               onClick={() => setGrupoFiltro('Grupo Entrenamiento')}
-              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+              className={`text-xs h-7 px-2.5 shrink-0 ${grupoFiltro === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black font-bold' : 'border-slate-200 text-slate-600'}`}
             >
               Competencia
             </Button>
@@ -865,7 +865,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               size="sm"
               variant={estadoFiltro === 'todos' ? 'secondary' : 'ghost'}
               onClick={() => setEstadoFiltro('todos')}
-              className="text-xs h-7 px-2 text-[#AAAAAA] shrink-0"
+              className="text-xs h-7 px-2 text-slate-600 shrink-0"
             >
               Todos ({filteredAlumnos.length})
             </Button>
@@ -873,7 +873,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               size="sm"
               variant={estadoFiltro === 'pagados' ? 'secondary' : 'ghost'}
               onClick={() => setEstadoFiltro('pagados')}
-              className={`text-xs h-7 px-2 shrink-0 ${estadoFiltro === 'pagados' ? 'text-emerald-400 font-bold bg-emerald-500/10' : 'text-[#888888]'}`}
+              className={`text-xs h-7 px-2 shrink-0 ${estadoFiltro === 'pagados' ? 'text-emerald-400 font-bold bg-emerald-500/10' : 'text-slate-600'}`}
             >
               Pagados ({resumen?.cantidadPagados || 0})
             </Button>
@@ -881,7 +881,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               size="sm"
               variant={estadoFiltro === 'pendientes' ? 'secondary' : 'ghost'}
               onClick={() => setEstadoFiltro('pendientes')}
-              className={`text-xs h-7 px-2 shrink-0 ${estadoFiltro === 'pendientes' ? 'text-amber-400 font-bold bg-amber-500/10' : 'text-[#888888]'}`}
+              className={`text-xs h-7 px-2 shrink-0 ${estadoFiltro === 'pendientes' ? 'text-amber-400 font-bold bg-amber-500/10' : 'text-slate-600'}`}
             >
               Impagos ({resumen?.cantidadPendientes || 0})
             </Button>
@@ -893,14 +893,14 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
       {loading ? (
         <div className="flex flex-col items-center justify-center py-16 gap-3">
           <Loader2 size={32} className="animate-spin text-primary" />
-          <p className="text-sm text-[#888888]">Cargando estado de cuotas de {labelMesActual}...</p>
+          <p className="text-sm text-slate-600">Cargando estado de cuotas de {labelMesActual}...</p>
         </div>
       ) : filteredAlumnos.length === 0 ? (
         <Card className="bg-white border-slate-200">
           <CardContent className="flex flex-col items-center justify-center py-14 text-center">
             <Users size={44} className="text-[#444444] mb-3" />
-            <p className="text-sm font-semibold text-white">No se encontraron alumnos</p>
-            <p className="text-xs text-[#888888] mt-1">
+            <p className="text-sm font-semibold text-slate-900">No se encontraron alumnos</p>
+            <p className="text-xs text-slate-600 mt-1">
               Probá cambiando los filtros o el mes seleccionado.
             </p>
           </CardContent>
@@ -922,7 +922,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                   className={`relative select-none rounded-xl p-2.5 sm:p-3 border text-left transition-all duration-150 flex flex-col justify-between min-h-[68px] active:scale-[0.97] ${
                     estaPagado
                       ? 'bg-emerald-500 text-black border-emerald-400 shadow-md shadow-emerald-500/20'
-                      : 'bg-white border-slate-200 text-[#AAAAAA] hover:border-[#444] hover:bg-slate-50'
+                      : 'bg-white border-slate-200 text-slate-600 hover:border-[#444] hover:bg-slate-50'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-1 w-full">
@@ -961,7 +961,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
           <div className="hidden md:block bg-white border border-slate-200 rounded-xl overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-white text-[#888888] uppercase text-[10px] font-bold border-b border-slate-200">
+                <thead className="bg-white text-slate-600 uppercase text-[10px] font-bold border-b border-slate-200">
                   <tr>
                     <th className="py-3 px-3 w-10 text-center">#</th>
                     <th className="py-3 px-4">Alumno</th>
@@ -998,7 +998,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
 
                         {/* Alumno */}
                         <td className="py-3 px-4">
-                          <span className="font-bold text-white text-sm block">
+                          <span className="font-bold text-slate-900 text-sm block">
                             {alumno.nombre}
                           </span>
                           {alumno.edad && (
@@ -1020,16 +1020,16 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
 
                         {/* Tutor / Teléfono */}
                         <td className="py-3 px-3">
-                          <span className="text-[#CCCCCC] block">{alumno.tutor || '-'}</span>
+                          <span className="text-slate-800 block">{alumno.tutor || '-'}</span>
                           {alumno.telefono && (
-                            <span className="text-[10px] text-[#888888] font-mono block">
+                            <span className="text-[10px] text-slate-600 font-mono block">
                               {alumno.telefono}
                             </span>
                           )}
                         </td>
 
                         {/* Valor Cuota */}
-                        <td className="py-3 px-3 text-right font-mono font-bold text-white">
+                        <td className="py-3 px-3 text-right font-mono font-bold text-slate-900">
                           {formatCurrency(alumno.montoSugerido)}
                         </td>
 
@@ -1049,14 +1049,14 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                         </td>
 
                         {/* Detalle Cobro */}
-                        <td className="py-3 px-3 text-[#AAAAAA]">
+                        <td className="py-3 px-3 text-slate-600">
                           {alumno.pago ? (
                             <div className="flex flex-col gap-0.5">
                               <div className="flex items-center gap-2">
                                 <span className="text-emerald-400 font-bold font-mono">
                                   {formatCurrency(alumno.pago.monto)}
                                 </span>
-                                <span className="text-[10px] uppercase font-bold text-[#888888] px-1 py-0.2 rounded bg-slate-50">
+                                <span className="text-[10px] uppercase font-bold text-slate-600 px-1 py-0.2 rounded bg-slate-50">
                                   {alumno.pago.metodoPago}
                                 </span>
                               </div>
@@ -1079,7 +1079,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                                   size="sm"
                                   variant="outline"
                                   onClick={() => handleOpenCobro(alumno)}
-                                  className="h-7 text-xs border-slate-200 text-[#AAAAAA] hover:text-white"
+                                  className="h-7 text-xs border-slate-200 text-slate-600 hover:text-white"
                                   title="Editar pago"
                                 >
                                   Editar
@@ -1123,13 +1123,13 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
       <Dialog open={cobroModalOpen} onOpenChange={setCobroModalOpen}>
         <DialogContent className="bg-white border-slate-200 text-white max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-base font-bold text-white flex items-center gap-2">
+            <DialogTitle className="text-base font-bold text-slate-900 flex items-center gap-2">
               <DollarSign className="text-emerald-400 h-5 w-5" />
               <span>
                 {alumnoParaCobro?.pagado ? 'Editar Cobro de Cuota' : 'Registrar Cobro de Cuota'}
               </span>
             </DialogTitle>
-            <DialogDescription className="text-xs text-[#888888]">
+            <DialogDescription className="text-xs text-slate-600">
               {alumnoParaCobro?.nombre} · {alumnoParaCobro?.grupo} · Mes: {labelMesActual}
             </DialogDescription>
           </DialogHeader>
@@ -1137,7 +1137,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
           <form onSubmit={handleGuardarCobro} className="space-y-4 pt-2">
             {/* Monto */}
             <div className="space-y-1.5">
-              <Label className="text-xs text-[#AAAAAA]">Monto Cobrado ($)</Label>
+              <Label className="text-xs text-slate-600">Monto Cobrado ($)</Label>
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-emerald-400 font-bold">$</span>
                 <Input
@@ -1145,7 +1145,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                   step="500"
                   value={formMonto}
                   onChange={(e) => setFormMonto(e.target.value)}
-                  className="pl-8 bg-white border-slate-200 text-white font-bold text-lg"
+                  className="pl-8 bg-white border-slate-200 text-slate-900 font-bold text-lg"
                   required
                 />
               </div>
@@ -1157,7 +1157,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
             {/* Fecha de Pago y Método de Pago */}
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <Label className="text-xs text-[#AAAAAA]">Fecha de Pago</Label>
+                <Label className="text-xs text-slate-600">Fecha de Pago</Label>
                 <Input
                   type="date"
                   value={formFechaPago}
@@ -1168,7 +1168,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               </div>
 
               <div className="space-y-1.5">
-                <Label className="text-xs text-[#AAAAAA]">Medio de Pago</Label>
+                <Label className="text-xs text-slate-600">Medio de Pago</Label>
                 <Select value={formMetodoPago} onValueChange={setFormMetodoPago}>
                   <SelectTrigger className="bg-white border-slate-200 text-white text-xs">
                     <SelectValue />
@@ -1183,7 +1183,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
 
             {/* Observaciones */}
             <div className="space-y-1.5">
-              <Label className="text-xs text-[#AAAAAA]">Observaciones (Opcional)</Label>
+              <Label className="text-xs text-slate-600">Observaciones (Opcional)</Label>
               <Input
                 type="text"
                 placeholder="Ej: Abonó mamá en cancha / Comprobante enviado"
@@ -1219,7 +1219,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
       <Dialog open={masivoModalOpen} onOpenChange={setMasivoModalOpen}>
         <DialogContent className="bg-white border-slate-200 text-white max-w-xl max-h-[90vh] flex flex-col p-6">
           <DialogHeader>
-            <DialogTitle className="text-base font-bold text-white flex items-center justify-between">
+            <DialogTitle className="text-base font-bold text-slate-900 flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <CheckCheck size={18} className="text-emerald-400" />
                 <span>Cobro Masivo de Cuotas</span>
@@ -1228,7 +1228,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                 {labelMesActual}
               </span>
             </DialogTitle>
-            <DialogDescription className="text-xs text-[#888888] pt-1">
+            <DialogDescription className="text-xs text-slate-600 pt-1">
               Seleccioná los alumnos que abonaron para registrar sus pagos simultáneamente con un solo clic.
             </DialogDescription>
           </DialogHeader>
@@ -1242,7 +1242,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                   size="sm"
                   variant={masivoGrupoFiltro === 'todos' ? 'default' : 'outline'}
                   onClick={() => setMasivoGrupoFiltro('todos')}
-                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'todos' ? 'bg-primary text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'todos' ? 'bg-primary text-black font-bold' : 'border-slate-200 text-slate-600'}`}
                 >
                   Todos ({alumnosPendientes.length})
                 </Button>
@@ -1251,7 +1251,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                   size="sm"
                   variant={masivoGrupoFiltro === 'Escuelita' ? 'default' : 'outline'}
                   onClick={() => setMasivoGrupoFiltro('Escuelita')}
-                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'Escuelita' ? 'bg-emerald-500 text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'Escuelita' ? 'bg-emerald-500 text-black font-bold' : 'border-slate-200 text-slate-600'}`}
                 >
                   Escuelita
                 </Button>
@@ -1260,7 +1260,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                   size="sm"
                   variant={masivoGrupoFiltro === 'Minitenis' ? 'default' : 'outline'}
                   onClick={() => setMasivoGrupoFiltro('Minitenis')}
-                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'Minitenis' ? 'bg-sky-500 text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'Minitenis' ? 'bg-sky-500 text-black font-bold' : 'border-slate-200 text-slate-600'}`}
                 >
                   Minitenis
                 </Button>
@@ -1269,7 +1269,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                   size="sm"
                   variant={masivoGrupoFiltro === 'Grupo Entrenamiento' ? 'default' : 'outline'}
                   onClick={() => setMasivoGrupoFiltro('Grupo Entrenamiento')}
-                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black font-bold' : 'border-slate-200 text-[#AAAAAA]'}`}
+                  className={`text-[11px] h-6 px-2 ${masivoGrupoFiltro === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black font-bold' : 'border-slate-200 text-slate-600'}`}
                 >
                   Competencia
                 </Button>
@@ -1292,7 +1292,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                   variant="ghost"
                   size="sm"
                   onClick={deselectAllPendientesEnModal}
-                  className="text-[11px] h-6 px-2 text-[#888888] hover:text-white"
+                  className="text-[11px] h-6 px-2 text-slate-600 hover:text-white"
                 >
                   Desmarcar
                 </Button>
@@ -1329,8 +1329,8 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                           className="w-4 h-4 rounded border-[#3A3A3A] text-emerald-500 focus:ring-emerald-500 bg-white cursor-pointer"
                         />
                         <div>
-                          <div className="text-xs font-semibold text-white">{al.nombre}</div>
-                          <div className="text-[10px] text-[#888888] flex items-center gap-1.5">
+                          <div className="text-xs font-semibold text-slate-900">{al.nombre}</div>
+                          <div className="text-[10px] text-slate-600 flex items-center gap-1.5">
                             <span className={`px-1.5 py-0.5 rounded text-[9px] border font-medium ${conf.bg} ${conf.color} ${conf.border}`}>
                               {al.grupo === 'Grupo Entrenamiento' ? 'Entrenamiento' : al.grupo}
                             </span>
@@ -1340,10 +1340,10 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                       </div>
 
                       <div className="text-right">
-                        <div className="text-xs font-mono font-bold text-white">
+                        <div className="text-xs font-mono font-bold text-slate-900">
                           ${al.montoSugerido.toLocaleString('es-AR')}
                         </div>
-                        <div className="text-[10px] text-[#888888]">cuota</div>
+                        <div className="text-[10px] text-slate-600">cuota</div>
                       </div>
                     </label>
                   );
@@ -1355,7 +1355,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
             <div className="bg-white border border-slate-200 rounded-xl p-3 space-y-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <Label className="text-xs text-[#AAAAAA]">Fecha de Cobro</Label>
+                  <Label className="text-xs text-slate-600">Fecha de Cobro</Label>
                   <Input
                     type="date"
                     value={masivoFechaPago}
@@ -1366,7 +1366,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
                 </div>
 
                 <div className="space-y-1">
-                  <Label className="text-xs text-[#AAAAAA]">Medio de Pago</Label>
+                  <Label className="text-xs text-slate-600">Medio de Pago</Label>
                   <Select value={masivoMetodoPago} onValueChange={setMasivoMetodoPago}>
                     <SelectTrigger className="bg-white border-slate-200 text-white text-xs h-8">
                       <SelectValue />
@@ -1380,7 +1380,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               </div>
 
               <div className="space-y-1">
-                <Label className="text-xs text-[#AAAAAA]">Nota / Observación general (Opcional)</Label>
+                <Label className="text-xs text-slate-600">Nota / Observación general (Opcional)</Label>
                 <Input
                   type="text"
                   placeholder="Ej: Cobro en cancha clase sábado"
@@ -1395,7 +1395,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
             <div className="flex items-center justify-between p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
               <div>
                 <div className="text-xs text-emerald-300 font-medium">Alumnos seleccionados:</div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-sm font-bold text-slate-900">
                   {selectedAlumnoIds.length} de {alumnosPendientes.length} pendientes
                 </div>
               </div>
@@ -1437,7 +1437,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               <Trash2 size={16} />
               <span>¿Anular cobro de cuota?</span>
             </DialogTitle>
-            <DialogDescription className="text-xs text-[#888888] leading-relaxed pt-1">
+            <DialogDescription className="text-xs text-slate-600 leading-relaxed pt-1">
               Se eliminará el pago de ${alumnoParaAnular?.pago?.monto.toLocaleString('es-AR')} registrado a nombre de{' '}
               <strong className="text-white">{alumnoParaAnular?.nombre}</strong> para el mes {labelMesActual}. El alumno volverá a figurar como pendiente.
             </DialogDescription>
@@ -1456,7 +1456,7 @@ export default function PagosCuotaEscuelaPanel({ readOnly = false }: Props) {
               type="button"
               onClick={handleConfirmarAnular}
               disabled={anulando}
-              className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs gap-1.5"
+              className="bg-red-600 hover:bg-red-700 text-slate-900 font-bold text-xs gap-1.5"
             >
               {anulando && <Loader2 size={13} className="animate-spin" />}
               <span>Confirmar Anulación</span>

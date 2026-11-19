@@ -148,7 +148,7 @@ export default function AbmSocioModal({
           <DialogTitle className="text-white">
             {isEditing ? 'Modificar Socio' : 'Nuevo Socio'}
           </DialogTitle>
-          <DialogDescription className="text-[#999999]">
+          <DialogDescription className="text-slate-600">
             {isEditing
               ? `Editando datos de ${socio?.nombre} ${socio?.apellido}`
               : 'Complete los datos para dar de alta un nuevo socio'}
@@ -158,76 +158,76 @@ export default function AbmSocioModal({
         <div className="space-y-3 py-2">
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">Nombre *</Label>
+              <Label className="text-slate-800 text-xs">Nombre *</Label>
               <Input
                 value={form.nombre}
                 onChange={(e) => setForm({ ...form, nombre: e.target.value })}
                 placeholder="Juan Pablo"
-                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm"
               />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">Apellido *</Label>
+              <Label className="text-slate-800 text-xs">Apellido *</Label>
               <Input
                 value={form.apellido}
                 onChange={(e) => setForm({ ...form, apellido: e.target.value })}
                 placeholder="Rodríguez"
-                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">DNI *</Label>
+              <Label className="text-slate-800 text-xs">DNI *</Label>
               <Input
                 value={form.dni}
                 onChange={(e) => setForm({ ...form, dni: e.target.value })}
                 placeholder="35000000"
-                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm"
               />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">Teléfono</Label>
+              <Label className="text-slate-800 text-xs">Teléfono</Label>
               <Input
                 value={form.telefono}
                 onChange={(e) => setForm({ ...form, telefono: e.target.value })}
                 placeholder="3462 1234567"
-                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <Label className="text-[#CCCCCC] text-xs">Email *</Label>
+            <Label className="text-slate-800 text-xs">Email *</Label>
             <Input
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="email@ejemplo.com"
-              className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
+              className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">Fecha de Alta</Label>
+              <Label className="text-slate-800 text-xs">Fecha de Alta</Label>
               <Input
                 type="date"
                 value={form.fechaAlta}
                 onChange={(e) => setForm({ ...form, fechaAlta: e.target.value })}
-                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm [color-scheme:dark]"
+                className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm [color-scheme:dark]"
               />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">Ajustar Deuda (meses)</Label>
+              <Label className="text-slate-800 text-xs">Ajustar Deuda (meses)</Label>
               <Input
                 type="number"
                 min="0"
                 max="60"
                 value={form.cuotasAdeudadas}
                 onChange={(e) => setForm({ ...form, cuotasAdeudadas: e.target.value })}
-                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm"
               />
               <p className="text-[10px] text-[#666666] leading-tight">Mínimo meses pendientes a asegurar.</p>
             </div>
@@ -235,19 +235,19 @@ export default function AbmSocioModal({
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">Categoría</Label>
+              <Label className="text-slate-800 text-xs">Categoría</Label>
               <Select value={form.categoria || 'socio'} onValueChange={(v) => setForm({ ...form, categoria: v })}>
-                <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
+                <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-white border-slate-200">
-                  <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
+                  <SelectItem value="socio" className="text-slate-800 focus:bg-slate-50 focus:text-white">
                     🏷️ Socio
                   </SelectItem>
-                  <SelectItem value="alumno" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
+                  <SelectItem value="alumno" className="text-slate-800 focus:bg-slate-50 focus:text-white">
                     🎓 Alumno
                   </SelectItem>
-                  <SelectItem value="vitalicio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
+                  <SelectItem value="vitalicio" className="text-slate-800 focus:bg-slate-50 focus:text-white">
                     👑 Vitalicio
                   </SelectItem>
                 </SelectContent>
@@ -255,17 +255,17 @@ export default function AbmSocioModal({
             </div>
 
             <div className="space-y-1.5">
-              <Label className="text-[#CCCCCC] text-xs">{isEditing ? 'Estado' : 'Rol Inicial'}</Label>
+              <Label className="text-slate-800 text-xs">{isEditing ? 'Estado' : 'Rol Inicial'}</Label>
               {isEditing ? (
                 <Select value={form.estado || 'activo'} onValueChange={(v) => setForm({ ...form, estado: v })}>
-                  <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
+                  <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-slate-200">
-                    <SelectItem value="activo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
+                    <SelectItem value="activo" className="text-slate-800 focus:bg-slate-50 focus:text-white">
                       ✅ Activo
                     </SelectItem>
-                    <SelectItem value="inactivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
+                    <SelectItem value="inactivo" className="text-slate-800 focus:bg-slate-50 focus:text-white">
                       ⏸️ Inactivo
                     </SelectItem>
                   </SelectContent>
@@ -279,13 +279,13 @@ export default function AbmSocioModal({
           </div>
 
           <div className="space-y-1.5 pt-1">
-            <Label className="text-[#CCCCCC] text-xs font-medium">Permisos en App de Reservas</Label>
+            <Label className="text-slate-800 text-xs font-medium">Permisos en App de Reservas</Label>
             <Select value={form.rol || 'socio'} onValueChange={(v) => setForm({ ...form, rol: v })}>
-              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
+              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-white border-slate-200">
-                <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white border-0">
+                <SelectItem value="socio" className="text-slate-800 focus:bg-slate-50 focus:text-white border-0">
                   👤 Socio (Acceso estándar)
                 </SelectItem>
                 <SelectItem value="profesor" className="text-amber-400 focus:bg-slate-50 focus:text-amber-300 border-0">
@@ -307,7 +307,7 @@ export default function AbmSocioModal({
             variant="outline"
             onClick={() => onOpenChange(false)}
             disabled={submitting}
-            className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
+            className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
           >
             Cancelar
           </Button>

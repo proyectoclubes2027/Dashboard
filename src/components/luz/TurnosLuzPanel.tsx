@@ -437,9 +437,9 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               <div className="p-2 rounded-lg bg-amber-400/10 text-amber-400 border border-amber-400/20">
                 <Zap className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold text-white tracking-tight">Turnos con Luz</h2>
+              <h2 className="text-xl font-bold text-slate-900 tracking-tight">Turnos con Luz</h2>
             </div>
-            <p className="text-sm text-[#999999] mt-1">
+            <p className="text-sm text-slate-600 mt-1">
               Registro y liquidación de turnos a partir de las 19:00 hs para Socios y Profesor.
             </p>
           </div>
@@ -452,7 +452,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'dia'
                     ? 'bg-[#DC2626] text-[#121212] shadow-sm'
-                    : 'text-[#AAAAAA] hover:text-white'
+                    : 'text-slate-600 hover:text-white'
                 }`}
               >
                 Día
@@ -462,7 +462,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'semana'
                     ? 'bg-[#DC2626] text-[#121212] shadow-sm'
-                    : 'text-[#AAAAAA] hover:text-white'
+                    : 'text-slate-600 hover:text-white'
                 }`}
               >
                 Semana
@@ -472,7 +472,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'mes'
                     ? 'bg-[#DC2626] text-[#121212] shadow-sm'
-                    : 'text-[#AAAAAA] hover:text-white'
+                    : 'text-slate-600 hover:text-white'
                 }`}
               >
                 Mes
@@ -482,7 +482,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                   periodoTipo === 'ano'
                     ? 'bg-[#DC2626] text-[#121212] shadow-sm'
-                    : 'text-[#AAAAAA] hover:text-white'
+                    : 'text-slate-600 hover:text-white'
                 }`}
               >
                 Año
@@ -494,7 +494,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               size="sm"
               onClick={fetchData}
               disabled={loading}
-              className="bg-slate-50 border-slate-200 text-[#CCCCCC] hover:text-white hover:bg-slate-50 h-9"
+              className="bg-slate-50 border-slate-200 text-slate-800 hover:text-white hover:bg-slate-50 h-9"
               title="Actualizar datos"
             >
               <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin text-amber-400' : ''}`} />
@@ -523,7 +523,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               <ChevronRight className="h-4 w-4" />
             </Button>
 
-            <span className="text-sm font-bold text-white capitalize px-2 flex items-center gap-1.5">
+            <span className="text-sm font-bold text-slate-900 capitalize px-2 flex items-center gap-1.5">
               <CalendarIcon className="h-4 w-4 text-amber-400" />
               {periodoLabel}
             </span>
@@ -532,7 +532,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
           {/* Tarifas vigentes con botón de edición rápida */}
           <div className="flex items-center gap-2 flex-wrap">
             <div className="flex items-center gap-2 bg-[#202020] border border-slate-200 px-3 py-1.5 rounded-lg text-xs">
-              <span className="text-[#888888]">Tarifas:</span>
+              <span className="text-slate-600">Tarifas:</span>
               <span className="text-white font-medium">
                 Socios: <strong className="text-amber-400">{formatCurrency(data?.tarifas.precioLuzTurno || 6000)}</strong>
               </span>
@@ -547,7 +547,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 variant="outline"
                 size="sm"
                 onClick={() => setEditTarifasOpen(true)}
-                className="h-8 bg-slate-50 border-slate-200 text-xs text-[#CCCCCC] hover:text-white hover:bg-slate-50"
+                className="h-8 bg-slate-50 border-slate-200 text-xs text-slate-800 hover:text-white hover:bg-slate-50"
               >
                 <Settings2 className="h-3.5 w-3.5 mr-1 text-amber-400" />
                 Editar Tarifas
@@ -624,7 +624,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                       className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                         vistaSocios === 'acumulado'
                           ? 'bg-[#DC2626] text-[#121212]'
-                          : 'text-[#AAAAAA] hover:text-white'
+                          : 'text-slate-600 hover:text-white'
                       }`}
                     >
                       Resumen para Secretaría ({sociosFiltrados.length})
@@ -634,7 +634,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                       className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                         vistaSocios === 'detalle'
                           ? 'bg-[#DC2626] text-[#121212]'
-                          : 'text-[#AAAAAA] hover:text-white'
+                          : 'text-slate-600 hover:text-white'
                       }`}
                     >
                       Detalle Turno por Turno ({turnosSociosFiltrados.length})
@@ -645,7 +645,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                     <div className="flex items-center gap-2 flex-wrap">
                       <div className="flex items-center gap-2 bg-[#202020] border border-slate-200 hover:border-amber-400/40 transition-colors rounded-lg px-3 py-1.5 shadow-sm">
                         <CalendarIcon className="h-3.5 w-3.5 text-amber-400 shrink-0" />
-                        <span className="text-[11px] text-[#AAAAAA] font-semibold">Día:</span>
+                        <span className="text-[11px] text-slate-600 font-semibold">Día:</span>
                         <select
                           value={diaFiltro}
                           onChange={(e) => setDiaFiltro(e.target.value)}
@@ -705,7 +705,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   <div className="text-center py-12 px-4">
                     <Moon className="h-12 w-12 text-[#444444] mx-auto mb-3" />
                     <h4 className="text-white font-semibold text-base">Sin turnos con luz de socios</h4>
-                    <p className="text-[#888888] text-xs mt-1">
+                    <p className="text-slate-600 text-xs mt-1">
                       No se registraron turnos nocturnos jugados por socios en este período.
                     </p>
                   </div>
@@ -714,11 +714,11 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                     <Table>
                       <TableHeader className="bg-[#1F1F1F]">
                         <TableRow className="border-slate-200 hover:bg-transparent">
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold w-12 text-center">#</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Socio</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Documento</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold text-center">Turnos Jugados</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold text-right">Total a Cobrar</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold w-12 text-center">#</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Socio</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Documento</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold text-center">Turnos Jugados</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold text-right">Total a Cobrar</TableHead>
                           <TableHead className="w-10"></TableHead>
                         </TableRow>
                       </TableHeader>
@@ -735,7 +735,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                 <TableCell className="text-center text-xs text-[#777777] font-mono">
                                   {idx + 1}
                                 </TableCell>
-                                <TableCell className="font-semibold text-white text-sm">
+                                <TableCell className="font-semibold text-slate-900 text-sm">
                                   <div className="flex items-center gap-2">
                                     <span>{s.nombreCompleto}</span>
                                     {s.telefono && (
@@ -743,7 +743,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                     )}
                                   </div>
                                 </TableCell>
-                                <TableCell className="text-xs text-[#AAAAAA] font-mono">
+                                <TableCell className="text-xs text-slate-600 font-mono">
                                   {s.dni ? `DNI ${s.dni}` : '-'}
                                 </TableCell>
                                 <TableCell className="text-center">
@@ -767,7 +767,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                   <Button
                                     variant="ghost"
                                     size="icon"
-                                    className="h-7 w-7 text-[#888888] hover:text-white"
+                                    className="h-7 w-7 text-slate-600 hover:text-white"
                                   >
                                     {isExpanded ? (
                                       <ChevronUp className="h-4 w-4" />
@@ -783,7 +783,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                 <TableRow className="bg-white border-slate-200">
                                   <TableCell colSpan={6} className="p-3 pl-12 pr-6">
                                     <div className="bg-white border border-slate-200 rounded-lg p-3 space-y-2">
-                                      <div className="flex items-center justify-between text-xs font-bold text-[#AAAAAA] border-b border-[#262626] pb-1.5">
+                                      <div className="flex items-center justify-between text-xs font-bold text-slate-600 border-b border-[#262626] pb-1.5">
                                         <span>Detalle de turnos de {s.nombreCompleto}:</span>
                                         <span>Monto asignado</span>
                                       </div>
@@ -791,15 +791,15 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                         {s.turnosDetalle.map((td, i) => (
                                           <div
                                             key={i}
-                                            className="flex items-center justify-between text-xs py-1 px-2 rounded bg-white text-[#CCCCCC]"
+                                            className="flex items-center justify-between text-xs py-1 px-2 rounded bg-white text-slate-800"
                                           >
                                             <div className="flex items-center gap-2">
                                               <span className="text-white font-medium">{td.fecha}</span>
-                                              <span className="text-[#888888]">· {td.hora} hs</span>
+                                              <span className="text-slate-600">· {td.hora} hs</span>
                                               <Badge variant="outline" className="text-[10px] py-0 px-1.5 bg-slate-50 border-[#3A3A3A] text-white">
                                                 {td.cancha}
                                               </Badge>
-                                              <span className="text-[#888888] text-[11px]">({td.tipoPartido} - {td.rol})</span>
+                                              <span className="text-slate-600 text-[11px]">({td.tipoPartido} - {td.rol})</span>
                                             </div>
                                             <div className="flex items-center gap-2">
                                               {td.pagado ? (
@@ -832,7 +832,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   <div className="text-center py-12 px-4">
                     <Moon className="h-12 w-12 text-[#444444] mx-auto mb-3" />
                     <h4 className="text-white font-semibold text-base">Sin turnos con luz de socios</h4>
-                    <p className="text-[#888888] text-xs mt-1">
+                    <p className="text-slate-600 text-xs mt-1">
                       No se registraron turnos nocturnos en este período o día seleccionado.
                     </p>
                   </div>
@@ -841,13 +841,13 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                     <Table>
                       <TableHeader className="bg-[#1F1F1F]">
                         <TableRow className="border-slate-200 hover:bg-transparent">
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Fecha</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Horario</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Cancha</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Modalidad</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Titular</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold">Jugadores y Cargos</TableHead>
-                          <TableHead className="text-[#AAAAAA] text-xs font-bold text-right">Total Turno</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Fecha</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Horario</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Cancha</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Modalidad</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Titular</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold">Jugadores y Cargos</TableHead>
+                          <TableHead className="text-slate-600 text-xs font-bold text-right">Total Turno</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
@@ -859,7 +859,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                             <TableCell className="text-amber-400 font-bold text-xs whitespace-nowrap">
                               {t.horario} hs
                             </TableCell>
-                            <TableCell className="text-xs text-[#CCCCCC] whitespace-nowrap">
+                            <TableCell className="text-xs text-slate-800 whitespace-nowrap">
                               {t.canchaNombre}
                             </TableCell>
                             <TableCell>
@@ -874,10 +874,10 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                 {t.tipoPartido}
                               </Badge>
                             </TableCell>
-                            <TableCell className="font-semibold text-white text-xs">
+                            <TableCell className="font-semibold text-slate-900 text-xs">
                               <div>{t.titular.nombre}</div>
                               {t.titular.dni && (
-                                <div className="text-[10px] text-[#888888] font-mono">DNI {t.titular.dni}</div>
+                                <div className="text-[10px] text-slate-600 font-mono">DNI {t.titular.dni}</div>
                               )}
                             </TableCell>
                             <TableCell className="text-xs">
@@ -910,7 +910,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                 ))}
                               </div>
                             </TableCell>
-                            <TableCell className="text-right font-black text-white text-xs">
+                            <TableCell className="text-right font-black text-slate-900 text-xs">
                               <div>{formatCurrency(t.montoTotalTurno)}</div>
                               {t.pagado && (
                                 <Badge className="bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[9px] font-bold mt-0.5">
@@ -939,16 +939,16 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                     <GraduationCap className="h-5 w-5 text-purple-400" />
                     Turnos Nocturnos del Profesor
                   </CardTitle>
-                  <CardDescription className="text-xs text-[#888888] mt-0.5">
+                  <CardDescription className="text-xs text-slate-600 mt-0.5">
                     Clases permanentes agendadas desde las 19:00 hs · Tarifa: {formatCurrency(data?.tarifas.precioLuzProfe || 3000)} por turno.
                   </CardDescription>
                 </div>
 
                 <div className="bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs">
-                  <span className="text-[#888888]">Total Clases:</span>
-                  <span className="font-bold text-white">{data?.kpis.totalProfeTurnos || 0} turnos</span>
+                  <span className="text-slate-600">Total Clases:</span>
+                  <span className="font-bold text-slate-900">{data?.kpis.totalProfeTurnos || 0} turnos</span>
                   <span className="text-[#444444]">|</span>
-                  <span className="text-[#888888]">Total a Liquidar:</span>
+                  <span className="text-slate-600">Total a Liquidar:</span>
                   <span className="font-bold text-purple-400 text-sm">
                     {formatCurrency(data?.kpis.totalProfeMonto || 0)}
                   </span>
@@ -966,7 +966,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 <div className="text-center py-12 px-4">
                   <GraduationCap className="h-12 w-12 text-[#444444] mx-auto mb-3" />
                   <h4 className="text-white font-semibold text-base">Sin turnos nocturnos del profesor</h4>
-                  <p className="text-[#888888] text-xs mt-1">
+                  <p className="text-slate-600 text-xs mt-1">
                     No se registraron turnos bloqueados por clases del profesor después de las 19:00 hs en este período.
                   </p>
                 </div>
@@ -975,12 +975,12 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   <Table>
                     <TableHeader className="bg-[#1F1F1F]">
                       <TableRow className="border-slate-200 hover:bg-transparent">
-                        <TableHead className="text-[#AAAAAA] text-xs font-bold w-12 text-center">#</TableHead>
-                        <TableHead className="text-[#AAAAAA] text-xs font-bold">Fecha</TableHead>
-                        <TableHead className="text-[#AAAAAA] text-xs font-bold">Horario</TableHead>
-                        <TableHead className="text-[#AAAAAA] text-xs font-bold">Cancha</TableHead>
-                        <TableHead className="text-[#AAAAAA] text-xs font-bold">Concepto / Motivo</TableHead>
-                        <TableHead className="text-[#AAAAAA] text-xs font-bold text-right">Importe</TableHead>
+                        <TableHead className="text-slate-600 text-xs font-bold w-12 text-center">#</TableHead>
+                        <TableHead className="text-slate-600 text-xs font-bold">Fecha</TableHead>
+                        <TableHead className="text-slate-600 text-xs font-bold">Horario</TableHead>
+                        <TableHead className="text-slate-600 text-xs font-bold">Cancha</TableHead>
+                        <TableHead className="text-slate-600 text-xs font-bold">Concepto / Motivo</TableHead>
+                        <TableHead className="text-slate-600 text-xs font-bold text-right">Importe</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -995,7 +995,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                           <TableCell className="text-amber-400 font-bold text-xs whitespace-nowrap">
                             {t.horario} hs
                           </TableCell>
-                          <TableCell className="text-xs text-[#CCCCCC] whitespace-nowrap">
+                          <TableCell className="text-xs text-slate-800 whitespace-nowrap">
                             {t.canchaNombre}
                           </TableCell>
                           <TableCell className="text-xs text-white">
@@ -1018,8 +1018,8 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
       </Tabs>
 
       {/* 3. Métricas Globales compactas al pie (estilo Sanciones / QR) */}
-      <div className="border border-slate-200 rounded-xl bg-white px-4 py-2.5 flex flex-wrap items-center gap-x-6 gap-y-1.5 text-xs text-[#888888] shadow-sm">
-        <span className="font-semibold text-white uppercase tracking-wider text-[10px] mr-1">
+      <div className="border border-slate-200 rounded-xl bg-white px-4 py-2.5 flex flex-wrap items-center gap-x-6 gap-y-1.5 text-xs text-slate-600 shadow-sm">
+        <span className="font-semibold text-slate-900 uppercase tracking-wider text-[10px] mr-1">
           Métricas globales ({periodoLabel}):
         </span>
 
@@ -1071,14 +1071,14 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               <Zap className="h-5 w-5 text-amber-400" />
               Editar Tarifas de Iluminación
             </DialogTitle>
-            <DialogDescription className="text-xs text-[#888888]">
+            <DialogDescription className="text-xs text-slate-600">
               Modificá el valor adicional por turno nocturno a partir de las 19:00 hs.
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4 py-3">
             <div className="space-y-1.5">
-              <Label className="text-xs text-[#CCCCCC]">Valor Turno Socios (Total por turno)</Label>
+              <Label className="text-xs text-slate-800">Valor Turno Socios (Total por turno)</Label>
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
                 <Input
@@ -1094,7 +1094,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
             </div>
 
             <div className="space-y-1.5">
-              <Label className="text-xs text-[#CCCCCC]">Valor Turno Profesor (Clases)</Label>
+              <Label className="text-xs text-slate-800">Valor Turno Profesor (Clases)</Label>
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666666] text-sm">$</span>
                 <Input

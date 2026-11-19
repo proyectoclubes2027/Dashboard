@@ -103,7 +103,7 @@ export default function ActividadLog() {
       ) : actividades.length === 0 ? (
         <div className="text-center py-6">
           <Clock className="h-8 w-8 text-[#333333] mx-auto mb-2" />
-          <p className="text-[#999999] text-sm">Sin actividad registrada</p>
+          <p className="text-slate-600 text-sm">Sin actividad registrada</p>
         </div>
       ) : (
         <>
@@ -120,7 +120,7 @@ export default function ActividadLog() {
                     <Icon className={`h-3.5 w-3.5 ${iconColor}`} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[#CCCCCC] text-xs leading-relaxed">{act.detalle}</p>
+                    <p className="text-slate-800 text-xs leading-relaxed">{act.detalle}</p>
                     <p className="text-[#666666] text-[10px] mt-0.5">{formatDate(act.createdAt)}</p>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function ActividadLog() {
               variant="ghost"
               size="sm"
               onClick={() => fetchActividad(actividades.length)}
-              className="w-full mt-2 text-[#999999] hover:text-white hover:bg-slate-50 text-xs"
+              className="w-full mt-2 text-slate-600 hover:text-white hover:bg-slate-50 text-xs"
             >
               <ChevronDown className="h-3.5 w-3.5 mr-1" />
               Cargar más

@@ -267,7 +267,7 @@ export default function ProfePage() {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#DC2626] tracking-tight">
             Planilla Diaria de Clases
           </h1>
-          <p className="text-sm text-[#999999]">
+          <p className="text-sm text-slate-600">
             Carga de alumnos y recaudación del día
           </p>
         </div>
@@ -280,7 +280,7 @@ export default function ProfePage() {
             className={`py-2 px-1 rounded-lg text-xs font-bold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 ${
               vistaProfe === 'planilla'
                 ? 'bg-[#DC2626] text-black shadow-md'
-                : 'text-[#AAAAAA] hover:text-white'
+                : 'text-slate-600 hover:text-white'
             }`}
           >
             <FileSpreadsheet size={14} />
@@ -351,13 +351,13 @@ export default function ProfePage() {
             {/* Card Principal */}
             <Card className="bg-white border-slate-200 shadow-2xl overflow-hidden">
           <CardHeader className="border-b border-[#2C2C2C] pb-4 bg-gradient-to-b from-[#252525] to-[#1E1E1E]">
-            <CardTitle className="text-xl text-white font-bold flex items-center justify-between">
+            <CardTitle className="text-xl text-slate-900 font-bold flex items-center justify-between">
               <span>Registro del Día</span>
-              <span className="text-xs font-normal text-[#888888] bg-slate-50 px-2.5 py-1 rounded-md border border-[#3A3A3A]">
+              <span className="text-xs font-normal text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-[#3A3A3A]">
                 1 carga por día
               </span>
             </CardTitle>
-            <CardDescription className="text-[#888888] text-xs">
+            <CardDescription className="text-slate-600 text-xs">
               Ingresá los alumnos que tuviste y el total recaudado en la jornada.
             </CardDescription>
           </CardHeader>
@@ -369,8 +369,8 @@ export default function ProfePage() {
                   <CheckCircle2 className="h-10 w-10" />
                 </div>
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-white">{message}</h3>
-                  <p className="text-sm text-[#888888]">
+                  <h3 className="text-xl font-bold text-slate-900">{message}</h3>
+                  <p className="text-sm text-slate-600">
                     Quedó asentado en la administración del club.
                   </p>
                 </div>
@@ -378,31 +378,31 @@ export default function ProfePage() {
                 {lastSaved && (
                   <div className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-left space-y-2 text-sm">
                     <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                      <span className="text-[#888888]">Día:</span>
-                      <span className="font-semibold text-white capitalize">
+                      <span className="text-slate-600">Día:</span>
+                      <span className="font-semibold text-slate-900 capitalize">
                         {format(parseLocalDate(lastSaved.fecha), 'EEEE dd/MM/yyyy', { locale: es })}
                       </span>
                     </div>
                     <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                      <span className="text-[#888888]">Clases Dictadas:</span>
-                      <span className="font-bold text-white">
+                      <span className="text-slate-600">Clases Dictadas:</span>
+                      <span className="font-bold text-slate-900">
                         {lastSaved.cantidadClases ?? 1} {(lastSaved.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'}
                       </span>
                     </div>
                     <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                      <span className="text-[#888888]">Total Alumnos:</span>
+                      <span className="text-slate-600">Total Alumnos:</span>
                       <span className="font-bold text-[#DC2626]">
                         {lastSaved.cantidadAlumnos} alumno{lastSaved.cantidadAlumnos !== 1 ? 's' : ''}
                       </span>
                     </div>
                     <div className="flex justify-between items-center border-b border-slate-200 pb-2">
-                      <span className="text-[#888888]">Total del Día:</span>
+                      <span className="text-slate-600">Total del Día:</span>
                       <span className="font-bold text-emerald-400 text-base">
                         $ {lastSaved.precioTotal.toLocaleString('es-AR')}
                       </span>
                     </div>
                     {lastSaved.cantidadAlumnos > 0 && (
-                      <div className="flex justify-between items-center text-xs text-[#888888] pt-1">
+                      <div className="flex justify-between items-center text-xs text-slate-600 pt-1">
                         <span>Promedio por alumno:</span>
                         <span>$ {Math.round(lastSaved.precioTotal / lastSaved.cantidadAlumnos).toLocaleString('es-AR')}</span>
                       </div>
@@ -431,7 +431,7 @@ export default function ProfePage() {
                 {/* Fecha */}
                 <div className="space-y-1.5">
                   <div className="flex justify-between items-center">
-                    <Label htmlFor="fecha" className="text-xs uppercase font-semibold text-[#CCCCCC] flex items-center gap-1.5">
+                    <Label htmlFor="fecha" className="text-xs uppercase font-semibold text-slate-800 flex items-center gap-1.5">
                       <CalendarIcon className="w-3.5 h-3.5 text-[#DC2626]" />
                       Día de las Clases
                     </Label>
@@ -464,7 +464,7 @@ export default function ProfePage() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {/* Cantidad de Clases */}
                   <div className="space-y-1.5">
-                    <Label htmlFor="clases" className="text-xs uppercase font-semibold text-[#CCCCCC] flex items-center gap-1.5">
+                    <Label htmlFor="clases" className="text-xs uppercase font-semibold text-slate-800 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-[#DC2626]" />
                       Clases Dictadas
                     </Label>
@@ -483,7 +483,7 @@ export default function ProfePage() {
 
                   {/* Cantidad de Alumnos */}
                   <div className="space-y-1.5">
-                    <Label htmlFor="alumnos" className="text-xs uppercase font-semibold text-[#CCCCCC] flex items-center gap-1.5">
+                    <Label htmlFor="alumnos" className="text-xs uppercase font-semibold text-slate-800 flex items-center gap-1.5">
                       <Users className="w-3.5 h-3.5 text-[#DC2626]" />
                       Total Alumnos
                     </Label>
@@ -502,12 +502,12 @@ export default function ProfePage() {
 
                   {/* Precio Total */}
                   <div className="space-y-1.5">
-                    <Label htmlFor="precio" className="text-xs uppercase font-semibold text-[#CCCCCC] flex items-center gap-1.5">
+                    <Label htmlFor="precio" className="text-xs uppercase font-semibold text-slate-800 flex items-center gap-1.5">
                       <DollarSign className="w-3.5 h-3.5 text-emerald-400" />
                       Total del Día ($)
                     </Label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#888888] font-bold text-lg">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 font-bold text-lg">
                         $
                       </span>
                       <Input
@@ -528,7 +528,7 @@ export default function ProfePage() {
                 {/* Resumen dinámico / métrica instantánea */}
                 {alumnosNumber > 0 && precioNumber > 0 && (
                   <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between text-xs animate-in fade-in">
-                    <span className="text-[#888888] text-[11px] flex items-center gap-1">
+                    <span className="text-slate-600 text-[11px] flex items-center gap-1">
                       <TrendingUp className="w-3.5 h-3.5 text-[#DC2626]" /> Promedio por Alumno:
                     </span>
                     <span className="font-bold text-emerald-400 text-sm">
@@ -539,7 +539,7 @@ export default function ProfePage() {
 
                 {/* Observaciones */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="obs" className="text-xs uppercase font-semibold text-[#AAAAAA]">
+                  <Label htmlFor="obs" className="text-xs uppercase font-semibold text-slate-600">
                     Observaciones / Notas (Opcional)
                   </Label>
                   <Input
@@ -592,7 +592,7 @@ export default function ProfePage() {
         {/* Sección de Últimos Registros Cargados */}
         <div className="space-y-3 pt-2">
           <div className="flex items-center justify-between px-1">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-[#888888] flex items-center gap-1.5">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
               <History className="w-3.5 h-3.5 text-[#DC2626]" />
               Tus Cargas Recientes
             </h2>
@@ -635,7 +635,7 @@ export default function ProfePage() {
                             <span className="text-xs font-bold text-[#DC2626] bg-[#DC2626]/10 px-2 py-0.5 rounded border border-[#DC2626]/20">
                               {reg.cantidadClases ?? 1} {(reg.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'}
                             </span>
-                            <span className="text-sm font-semibold text-white">
+                            <span className="text-sm font-semibold text-slate-900">
                               {reg.cantidadAlumnos} alumno{reg.cantidadAlumnos !== 1 ? 's' : ''}
                             </span>
                           </>

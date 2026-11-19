@@ -163,7 +163,7 @@ export default function RegistrarPagoModal({
       <DialogContent className="bg-white border-slate-200 sm:max-w-md max-h-[90vh] flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-white">Registrar Pago Múltiple</DialogTitle>
-          <DialogDescription className="text-[#999999]">
+          <DialogDescription className="text-slate-600">
             {socio
               ? `Selecciona los meses que está pagando ${socio.nombre} ${socio.apellido}`
               : 'Cargando datos del socio...'}
@@ -173,14 +173,14 @@ export default function RegistrarPagoModal({
         <div className="flex-1 overflow-hidden py-2 space-y-4">
           {/* Pending Months List */}
           <div className="space-y-2">
-            <Label className="text-[#CCCCCC] flex items-center gap-2">
+            <Label className="text-slate-800 flex items-center gap-2">
               <Calendar className="h-4 w-4 text-[#DC2626]" />
               Meses Pendientes
             </Label>
             
             {loadingPendientes ? (
               <div className="h-32 flex items-center justify-center bg-slate-50/30 rounded-lg border border-slate-200 border-dashed">
-                <Loader2 className="h-5 w-5 animate-spin text-[#999999]" />
+                <Loader2 className="h-5 w-5 animate-spin text-slate-600" />
               </div>
             ) : (
               <div className="space-y-2">
@@ -191,7 +191,7 @@ export default function RegistrarPagoModal({
                         <div className="flex flex-col items-center">
                           <AlertCircle className="h-5 w-5 text-[#00AA55] mb-1 opacity-80" />
                           <p className="text-[12px] font-medium text-[#00AA55]">Socio al día</p>
-                          <p className="text-[10px] text-[#999999]">No hay cuotas atrasadas.</p>
+                          <p className="text-[10px] text-slate-600">No hay cuotas atrasadas.</p>
                         </div>
                         
                         {nextUnpaidMonth && (
@@ -226,7 +226,7 @@ export default function RegistrarPagoModal({
                                 ) : (
                                   <Square className="h-4 w-4 text-[#666666]" />
                                 )}
-                                <span className={`text-xs ${isSelected ? 'text-white font-medium' : 'text-[#CCCCCC]'}`}>
+                                <span className={`text-xs ${isSelected ? 'text-white font-medium' : 'text-slate-800'}`}>
                                   {MESES[parseInt(month) - 1]} {year}
                                 </span>
                               </div>
@@ -265,7 +265,7 @@ export default function RegistrarPagoModal({
                 {/* Selector para agregar meses extras */}
                 <div className="flex items-center gap-2">
                   <Select onValueChange={(val) => { if (val && !selectedMonths.includes(val)) toggleMonth(val); }}>
-                    <SelectTrigger className="flex-1 bg-white border-slate-200 h-7 text-[10px] text-[#999999]">
+                    <SelectTrigger className="flex-1 bg-white border-slate-200 h-7 text-[10px] text-slate-600">
                       <SelectValue placeholder="Agregar otro mes (ej: adelanto)..." />
                     </SelectTrigger>
                     <SelectContent className="bg-white border-slate-200">
@@ -274,7 +274,7 @@ export default function RegistrarPagoModal({
                         d.setMonth(d.getMonth() + i); // Mes actual + próximos 5
                         const val = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
                         return (
-                          <SelectItem key={val} value={val} className="text-[#CCCCCC] text-xs">
+                          <SelectItem key={val} value={val} className="text-slate-800 text-xs">
                             {MESES[d.getMonth()]} {d.getFullYear()}
                           </SelectItem>
                         );
@@ -290,12 +290,12 @@ export default function RegistrarPagoModal({
           <div className="grid grid-cols-2 gap-4">
             {/* Amount PER MONTH */}
             <div className="space-y-2">
-              <Label className="text-[#CCCCCC]">Monto por mes ($)</Label>
+              <Label className="text-slate-800">Monto por mes ($)</Label>
               <Input
                 type="number"
                 value={montoManual}
                 onChange={(e) => setMontoManual(e.target.value)}
-                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm"
                 min={0}
                 step={100}
               />
@@ -303,15 +303,15 @@ export default function RegistrarPagoModal({
 
             {/* Payment method */}
             <div className="space-y-2">
-              <Label className="text-[#CCCCCC]">Método de pago</Label>
+              <Label className="text-slate-800">Método de pago</Label>
               <Select value={metodoPago} onValueChange={setMetodoPago}>
-                <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
+                <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-slate-800 h-9 text-sm">
                   <SelectValue placeholder="Método" />
                 </SelectTrigger>
                 <SelectContent className="bg-white border-slate-200">
-                  <SelectItem value="efectivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Efectivo</SelectItem>
-                  <SelectItem value="transferencia" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Transferencia</SelectItem>
-                  <SelectItem value="mercadopago" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">MercadoPago</SelectItem>
+                  <SelectItem value="efectivo" className="text-slate-800 focus:bg-slate-50 focus:text-white">Efectivo</SelectItem>
+                  <SelectItem value="transferencia" className="text-slate-800 focus:bg-slate-50 focus:text-white">Transferencia</SelectItem>
+                  <SelectItem value="mercadopago" className="text-slate-800 focus:bg-slate-50 focus:text-white">MercadoPago</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -319,7 +319,7 @@ export default function RegistrarPagoModal({
 
           {selectedMonths.length > 0 && (
             <div className="p-3 bg-[#DC2626]/5 border border-[#DC2626]/20 rounded-lg flex items-center justify-between">
-              <span className="text-xs text-[#999999]">Total a cobrar:</span>
+              <span className="text-xs text-slate-600">Total a cobrar:</span>
               <span className="text-lg font-bold text-[#DC2626]">${totalFinal.toLocaleString('es-AR')}</span>
             </div>
           )}
@@ -330,7 +330,7 @@ export default function RegistrarPagoModal({
             variant="outline"
             onClick={() => onOpenChange(false)}
             disabled={submitting}
-            className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-9 text-xs"
+            className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-9 text-xs"
           >
             Cancelar
           </Button>

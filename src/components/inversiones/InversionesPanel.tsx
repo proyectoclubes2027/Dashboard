@@ -175,7 +175,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
               <Wallet className="h-6 w-6 text-blue-500" />
             </div>
             <div>
-              <p className="text-[#999999] text-xs font-medium uppercase tracking-wider">Saldo en Caja (Pesos)</p>
+              <p className="text-slate-600 text-xs font-medium uppercase tracking-wider">Saldo en Caja (Pesos)</p>
               <h4 className="text-white text-xl font-bold mt-0.5">{formatCurrency(saldoCaja)}</h4>
             </div>
           </CardContent>
@@ -188,7 +188,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
               <Landmark className="h-6 w-6 text-green-500" />
             </div>
             <div>
-              <p className="text-[#999999] text-xs font-medium uppercase tracking-wider">Capital Plazos Fijos</p>
+              <p className="text-slate-600 text-xs font-medium uppercase tracking-wider">Capital Plazos Fijos</p>
               <h4 className="text-white text-xl font-bold mt-0.5">{formatCurrency(capitalPlazosActivos)}</h4>
             </div>
           </CardContent>
@@ -203,12 +203,12 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                 <DollarSign className="h-6 w-6 text-emerald-500" />
               </div>
               <div className="flex-1">
-                <p className="text-[#999999] text-[10px] font-bold uppercase tracking-wider">Ahorro Dólares</p>
+                <p className="text-slate-600 text-[10px] font-bold uppercase tracking-wider">Ahorro Dólares</p>
                 {!editandoDolares ? (
                   <div className="flex items-center justify-between">
                     <h4 className="text-emerald-500 text-lg font-bold mt-0.5">U$S {formatCurrency(dolaresNum).replace('$', '')}</h4>
                     {!readOnly && (
-                      <Button variant="ghost" size="sm" className="h-6 px-2 text-[#999999] hover:text-white" onClick={() => {
+                      <Button variant="ghost" size="sm" className="h-6 px-2 text-slate-600 hover:text-white" onClick={() => {
                         setTempDolares(formatCurrency(dolaresNum).replace('$ ', ''));
                         setEditandoDolares(true);
                       }}>
@@ -228,7 +228,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                     <Button size="sm" onClick={handleSaveDolares} disabled={savingDolares} className="h-7 px-2 bg-emerald-500 hover:bg-emerald-600 text-white">
                       {savingDolares ? <Loader2 className="h-3 w-3 animate-spin" /> : 'Ok'}
                     </Button>
-                    <Button size="sm" variant="ghost" onClick={() => setEditandoDolares(false)} className="h-7 px-2 text-[#999999]">X</Button>
+                    <Button size="sm" variant="ghost" onClick={() => setEditandoDolares(false)} className="h-7 px-2 text-slate-600">X</Button>
                   </div>
                 )}
               </div>
@@ -236,7 +236,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
 
             <div className="border-t border-slate-200 pt-2 flex items-center justify-between">
               <div>
-                <p className="text-[#999999] text-[9px] uppercase font-bold tracking-wider">Tasa Cambio</p>
+                <p className="text-slate-600 text-[9px] uppercase font-bold tracking-wider">Tasa Cambio</p>
                 {!editandoCotizacion ? (
                   <p className="text-white text-xs font-medium">1 U$S = {formatCurrency(cotiNum)}</p>
                 ) : (
@@ -253,11 +253,11 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                 )}
               </div>
               <div className="text-right">
-                <p className="text-[#999999] text-[9px] uppercase font-bold tracking-wider">En Pesos</p>
+                <p className="text-slate-600 text-[9px] uppercase font-bold tracking-wider">En Pesos</p>
                 <p className="text-[#DC2626] text-xs font-bold">{formatCurrency(dolaresEnPesos)}</p>
               </div>
               {!readOnly && !editandoCotizacion && (
-                 <Button variant="ghost" size="icon" className="h-5 w-5 text-[#999999] hover:text-white ml-1" onClick={() => {
+                 <Button variant="ghost" size="icon" className="h-5 w-5 text-slate-600 hover:text-white ml-1" onClick={() => {
                   setTempCotizacion(formatCurrency(cotiNum).replace('$ ', ''));
                   setEditandoCotizacion(true);
                 }}>
@@ -277,7 +277,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
               <TrendingUp className="h-6 w-6 text-[#DC2626]" />
             </div>
             <div>
-              <p className="text-[#999999] text-[10px] font-bold uppercase tracking-wider">Total Disp. (Pesos)</p>
+              <p className="text-slate-600 text-[10px] font-bold uppercase tracking-wider">Total Disp. (Pesos)</p>
               <h4 className="text-white text-xl font-bold mt-0.5">{formatCurrency(totalDisponible)}</h4>
             </div>
           </CardContent>
@@ -288,17 +288,17 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
       {/* Main Table */}
       <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
         <div className="px-4 py-3 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
-          <h3 className="text-white font-bold text-sm">Historial de Plazos Fijos</h3>
+          <h3 className="text-slate-900 font-bold text-sm">Historial de Plazos Fijos</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200">
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-center w-12">N°</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Banco / Entidad</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Fechas</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-right">Monto Invertido</th>
-                <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-center">Estado</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider text-center w-12">N°</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Banco / Entidad</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Fechas</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider text-right">Monto Invertido</th>
+                <th className="px-4 py-3 text-slate-600 text-[10px] font-bold uppercase tracking-wider text-center">Estado</th>
                 <th className="px-4 py-3 w-10"></th>
               </tr>
             </thead>
@@ -320,8 +320,8 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                     </td>
                     <td className="px-4 py-3.5 text-white text-xs">
                       <div className="flex flex-col gap-0.5">
-                        <span className="text-[#999999]">Desde: <span className="text-white">{p.fechaConstitucion}</span></span>
-                        <span className="text-[#999999]">Hasta: <span className="text-[#DC2626] font-medium">{p.fechaVencimiento}</span></span>
+                        <span className="text-slate-600">Desde: <span className="text-white">{p.fechaConstitucion}</span></span>
+                        <span className="text-slate-600">Hasta: <span className="text-[#DC2626] font-medium">{p.fechaVencimiento}</span></span>
                       </div>
                     </td>
                     <td className="px-4 py-3.5 text-right font-bold text-sm text-white">

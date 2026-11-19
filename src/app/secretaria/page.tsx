@@ -742,20 +742,20 @@ export default function SecretariaPage() {
       {/* 1. HEADER PUESTO DE SECRETARÍA */}
       <header className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-black text-2xl shadow-md">
-            C
+          <div className="w-12 h-12 rounded-xl bg-white p-1 border-2 border-slate-200 flex items-center justify-center shadow-md shrink-0 overflow-hidden">
+            <img src="/logo-club.png" alt="CARP" className="w-full h-full object-contain" />
           </div>
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">CARP Tenis · Secretaría</h1>
+              <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">CARP Tenis · Secretaría</h1>
               <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 text-[10px] font-bold">
                 ● Mostrador Activo
               </Badge>
-              <Badge className="bg-amber-500/15 text-amber-300 border-amber-500/30 text-[10px] font-bold">
+              <Badge className="bg-red-600/15 text-red-600 border-red-500/30 text-[10px] font-bold">
                 Año {anioActual}
               </Badge>
             </div>
-            <p className="text-xs text-[#999999] mt-0.5">
+            <p className="text-xs text-slate-600 mt-0.5">
               Gestión y cobro integral en mostrador: Cuotas sociales, turnos nocturnos con luz y cargos de invitados
             </p>
           </div>
@@ -763,8 +763,8 @@ export default function SecretariaPage() {
 
         <div className="flex items-center gap-2.5 w-full md:w-auto justify-between md:justify-end">
           <div className="text-right hidden sm:block">
-            <span className="text-[11px] text-[#888888] block">Fecha de Operación</span>
-            <span className="text-xs font-bold text-white capitalize">
+            <span className="text-[11px] text-slate-600 block">Fecha de Operación</span>
+            <span className="text-xs font-bold text-slate-900 capitalize">
               {new Date().toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
             </span>
           </div>
@@ -774,10 +774,10 @@ export default function SecretariaPage() {
             size="sm"
             onClick={fetchData}
             disabled={loading}
-            className="bg-slate-50 border-slate-200 text-white hover:bg-[#2F2F2F] h-9 text-xs gap-1.5"
+            className="bg-slate-50 border-slate-300 text-slate-700 hover:bg-slate-100 h-9 text-xs gap-1.5"
             title="Refrescar padrón y caja"
           >
-            <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin text-amber-400' : ''}`} />
+            <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin text-red-600' : ''}`} />
             <span>Refrescar</span>
           </Button>
         </div>
@@ -790,14 +790,14 @@ export default function SecretariaPage() {
           onClick={() => setActiveTab('mostrador')}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all shrink-0 ${
             activeTab === 'mostrador'
-              ? 'bg-amber-400 text-black shadow-md'
-              : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
+              ? 'bg-red-600 text-white shadow-md'
+              : 'bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-300 shadow-sm'
           }`}
         >
           <Receipt className="h-4 w-4" />
           <span>Mostrador de Cobro</span>
           {socioSeleccionado && (
-            <Badge className="bg-black text-amber-400 border-black/40 text-[9px] px-1.5 py-0 font-mono">
+            <Badge className="bg-white text-red-600 border border-red-200 text-[9px] px-1.5 py-0 font-mono font-bold">
               1 en atención
             </Badge>
           )}
@@ -808,17 +808,17 @@ export default function SecretariaPage() {
           onClick={() => setActiveTab('deudores_luz')}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all shrink-0 ${
             activeTab === 'deudores_luz'
-              ? 'bg-amber-400 text-black shadow-md'
-              : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
+              ? 'bg-red-600 text-white shadow-md'
+              : 'bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-300 shadow-sm'
           }`}
         >
-          <Zap className="h-4 w-4 text-amber-500" />
+          <Zap className={`h-4 w-4 ${activeTab === 'deudores_luz' ? 'text-white' : 'text-amber-500'}`} />
           <span>Deudores de Luz e Invitados</span>
           <Badge
-            className={`text-[10px] px-1.5 py-0 ${
+            className={`text-[10px] px-1.5 py-0 font-bold ${
               activeTab === 'deudores_luz'
-                ? 'bg-black text-amber-400'
-                : 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                ? 'bg-white text-red-600'
+                : 'bg-amber-100 text-amber-800 border-amber-300'
             }`}
           >
             {sociosConDeudaAdicional.length}
@@ -830,17 +830,17 @@ export default function SecretariaPage() {
           onClick={() => setActiveTab('padron_general')}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all shrink-0 ${
             activeTab === 'padron_general'
-              ? 'bg-amber-400 text-black shadow-md'
-              : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
+              ? 'bg-red-600 text-white shadow-md'
+              : 'bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-300 shadow-sm'
           }`}
         >
           <Users className="h-4 w-4" />
           <span>Padrón General de Deuda</span>
           <Badge
-            className={`text-[10px] px-1.5 py-0 ${
+            className={`text-[10px] px-1.5 py-0 font-bold ${
               activeTab === 'padron_general'
-                ? 'bg-black text-white'
-                : 'bg-[#2E2E2E] text-[#AAAAAA]'
+                ? 'bg-white text-red-600'
+                : 'bg-slate-100 text-slate-700 border border-slate-200'
             }`}
           >
             {socios.length} socios
@@ -860,7 +860,7 @@ export default function SecretariaPage() {
                 ¡Cobro asentado en caja para {ultimoCobroExitoso.socio}!
               </p>
               <p className="text-xs text-emerald-300/90">
-                Total cobrado: <strong className="text-white font-black">${ultimoCobroExitoso.monto.toLocaleString('es-AR')}</strong> • {ultimoCobroExitoso.metodo.toUpperCase()} • Conceptos cobrados: <strong className="text-white">{ultimoCobroExitoso.items.join(' | ')}</strong>
+                Total cobrado: <strong className="text-white font-black">${ultimoCobroExitoso.monto.toLocaleString('es-AR')}</strong> • {ultimoCobroExitoso.metodo.toUpperCase()} • Conceptos cobrados: <strong className="text-slate-900 font-bold">{ultimoCobroExitoso.items.join(' | ')}</strong>
               </p>
             </div>
           </div>
@@ -885,29 +885,29 @@ export default function SecretariaPage() {
             {/* BUSCADOR RÁPIDO */}
             <Card className="bg-white border-slate-200">
               <CardHeader className="pb-3">
-                <CardTitle className="text-base font-bold flex items-center gap-2 text-white">
-                  <Search className="h-4 w-4 text-amber-400" />
+                <CardTitle className="text-base font-bold flex items-center gap-2 text-slate-900">
+                  <Search className="h-4 w-4 text-red-600" />
                   <span>1. Buscar Socio para Cobrar</span>
                 </CardTitle>
-                <CardDescription className="text-xs text-[#999999]">
+                <CardDescription className="text-xs text-slate-600">
                   Ingresá el número de DNI o apellido del socio presente en la secretaría
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="relative">
-                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-amber-400" />
+                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-red-600" />
                   <Input
                     ref={searchInputRef}
                     placeholder="Ej: 28456789 o Pérez..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-9 h-12 text-sm bg-slate-50 border-slate-200 text-white placeholder:text-[#777777] focus:border-amber-400 rounded-xl"
+                    className="pl-10 pr-9 h-12 text-sm bg-white border-2 border-slate-300 text-slate-900 placeholder:text-slate-400 focus:border-red-600 rounded-xl font-medium shadow-sm"
                     autoFocus
                   />
                   {searchTerm && (
                     <button
                       onClick={() => setSearchTerm('')}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-[#777777] hover:text-white"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
                     >
                       <X className="h-4 w-4" />
                     </button>
@@ -916,9 +916,9 @@ export default function SecretariaPage() {
 
                 {/* RESULTADOS EN VIVO */}
                 {searchTerm.trim().length > 0 && (
-                  <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden divide-y divide-[#303030] max-h-72 overflow-y-auto shadow-2xl">
+                  <div className="bg-white border-2 border-slate-200 rounded-xl overflow-hidden divide-y divide-slate-100 max-h-72 overflow-y-auto shadow-xl">
                     {sociosFiltrados.length === 0 ? (
-                      <div className="p-4 text-center text-xs text-[#888888]">
+                      <div className="p-4 text-center text-xs text-slate-500 font-medium">
                         No se encontró ningún socio con &quot;{searchTerm}&quot;.
                       </div>
                     ) : (
@@ -927,27 +927,27 @@ export default function SecretariaPage() {
                           key={s.id}
                           type="button"
                           onClick={() => handleSeleccionarSocio(s)}
-                          className="w-full p-3 text-left hover:bg-amber-400/10 flex items-center justify-between gap-3 transition-colors group"
+                          className="w-full p-3 text-left hover:bg-red-50 flex items-center justify-between gap-3 transition-colors group"
                         >
                           <div className="space-y-0.5">
                             <div className="flex items-center gap-2 flex-wrap">
-                              <span className="font-bold text-sm text-white group-hover:text-amber-300">
+                              <span className="font-bold text-sm text-slate-900 group-hover:text-red-600">
                                 {s.nombreCompleto}
                               </span>
-                              <Badge variant="outline" className="text-[10px] uppercase font-semibold">
+                              <Badge variant="outline" className="text-[10px] uppercase font-bold text-slate-600 border-slate-300 bg-slate-50">
                                 {s.categoria}
                               </Badge>
                             </div>
-                            <span className="text-xs text-[#888888]">
-                              DNI: <strong className="text-[#CCCCCC]">{s.dni}</strong> • Cuota:{' '}
-                              <strong className="text-white">${s.valorCuota.toLocaleString('es-AR')}</strong>
+                            <span className="text-xs text-slate-600">
+                              DNI: <strong className="text-slate-900 font-bold">{s.dni}</strong> • Cuota:{' '}
+                              <strong className="text-slate-900 font-bold">${s.valorCuota.toLocaleString('es-AR')}</strong>
                             </span>
                           </div>
 
                           <div className="flex items-center gap-2 shrink-0 flex-wrap justify-end">
                             {/* Badges de estado rápido */}
                             {s.luz?.deudaLuz > 0 && (
-                              <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[9px] font-bold">
+                              <Badge className="bg-red-600/20 text-red-600 border-red-500/40 text-[9px] font-bold">
                                 💡 Luz ${s.luz.deudaLuz.toLocaleString('es-AR')}
                               </Badge>
                             )}
@@ -961,11 +961,11 @@ export default function SecretariaPage() {
                                 ✓ Al Día
                               </Badge>
                             ) : (
-                              <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px] font-bold">
+                              <Badge className="bg-red-600/20 text-red-600 border-red-500/40 text-[10px] font-bold">
                                 ⚠️ Debe cuota
                               </Badge>
                             )}
-                            <ArrowRight className="h-4 w-4 text-[#666666] group-hover:text-amber-400 transition-transform group-hover:translate-x-0.5" />
+                            <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-red-600 transition-transform group-hover:translate-x-0.5" />
                           </div>
                         </button>
                       ))
@@ -977,22 +977,22 @@ export default function SecretariaPage() {
 
             {/* FICHA ACTIVA DE COBRO 360° */}
             {socioSeleccionado ? (
-              <Card className="bg-white border-2 border-amber-400/50 rounded-2xl shadow-xl overflow-hidden animate-in fade-in duration-200">
-                <CardHeader className="bg-gradient-to-r from-amber-400/15 via-[#242424] to-[#1C1C1C] pb-4 border-b border-slate-200">
+              <Card className="bg-white border-2 border-red-500/50 rounded-2xl shadow-xl overflow-hidden animate-in fade-in duration-200">
+                <CardHeader className="bg-gradient-to-r from-red-600/10 via-slate-50 to-white pb-4 border-b border-slate-200">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <span className="text-[10px] uppercase font-black text-amber-400 tracking-wider block">
+                      <span className="text-[10px] uppercase font-black text-red-600 tracking-wider block">
                         Ficha de Socio · Mostrador
                       </span>
-                      <h2 className="text-xl sm:text-2xl font-black text-white mt-0.5">
+                      <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">
                         {socioSeleccionado.nombreCompleto}
                       </h2>
-                      <div className="flex items-center gap-2 mt-1 flex-wrap text-xs text-[#AAAAAA]">
-                        <span>DNI: <strong className="text-white font-mono">{socioSeleccionado.dni}</strong></span>
+                      <div className="flex items-center gap-2 mt-1 flex-wrap text-xs text-slate-600">
+                        <span>DNI: <strong className="text-slate-900 font-mono">{socioSeleccionado.dni}</strong></span>
                         <span>•</span>
-                        <span className="capitalize">Categoría: <strong className="text-white">{socioSeleccionado.categoria}</strong></span>
+                        <span className="capitalize">Categoría: <strong className="text-slate-900 font-bold">{socioSeleccionado.categoria}</strong></span>
                         <span>•</span>
-                        <span>Teléfono: <strong className="text-white">{socioSeleccionado.telefono || 'Sin registrar'}</strong></span>
+                        <span>Teléfono: <strong className="text-slate-900 font-bold">{socioSeleccionado.telefono || 'Sin registrar'}</strong></span>
                       </div>
                     </div>
 
@@ -1000,7 +1000,7 @@ export default function SecretariaPage() {
                       variant="ghost"
                       size="sm"
                       onClick={() => setSocioSeleccionado(null)}
-                      className="text-[#888888] hover:text-white hover:bg-slate-50 h-8 w-8 p-0"
+                      className="text-slate-600 hover:text-white hover:bg-slate-50 h-8 w-8 p-0"
                       title="Cancelar selección"
                     >
                       <X className="h-4 w-4" />
@@ -1013,8 +1013,8 @@ export default function SecretariaPage() {
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
-                        <CreditCard className="h-4 w-4 text-amber-400" />
-                        <span className="text-xs font-bold text-white uppercase tracking-wider">
+                        <CreditCard className="h-4 w-4 text-red-600" />
+                        <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                           1. Cuotas Sociales (Valor: ${socioSeleccionado.valorCuota.toLocaleString('es-AR')})
                         </span>
                       </div>
@@ -1023,13 +1023,13 @@ export default function SecretariaPage() {
                           ✓ Cuotas al día
                         </Badge>
                       ) : (
-                        <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px] font-bold">
+                        <Badge className="bg-red-600/20 text-red-600 border-red-500/40 text-[10px] font-bold">
                           ⚠️ Adeuda {socioSeleccionado.mesesAdeudados} mes(es) (${socioSeleccionado.deudaCuotas.toLocaleString('es-AR')})
                         </Badge>
                       )}
                     </div>
 
-                    <p className="text-[11px] text-[#888888]">
+                    <p className="text-[11px] text-slate-600">
                       Tocá los meses para sumar o restar al cobro de cuota:
                     </p>
 
@@ -1046,10 +1046,10 @@ export default function SecretariaPage() {
                             onClick={() => handleToggleMes(mes)}
                             className={`p-2.5 rounded-xl border text-xs font-bold transition-all text-left flex items-center justify-between ${
                               isSelected
-                                ? 'bg-amber-400 text-black border-amber-400 shadow-md scale-[1.01]'
+                                ? 'bg-red-600 text-white border-red-500 shadow-md scale-[1.01]'
                                 : esPendiente
-                                ? 'bg-white text-amber-300 border-amber-500/30 hover:border-amber-400/60'
-                                : 'bg-[#1E1E22] text-[#DDD] border-[#33333A] hover:border-amber-400/60'
+                                ? 'bg-white text-red-600 border-red-500/30 hover:border-red-500/60'
+                                : 'bg-[#1E1E22] text-[#DDD] border-[#33333A] hover:border-red-500/60'
                             }`}
                           >
                             <div>
@@ -1059,8 +1059,8 @@ export default function SecretariaPage() {
                                   isSelected
                                     ? 'text-black/80 font-medium'
                                     : esPendiente
-                                    ? 'text-amber-400 font-semibold'
-                                    : 'text-[#888888] font-normal'
+                                    ? 'text-red-600 font-semibold'
+                                    : 'text-slate-600 font-normal'
                                 }`}
                               >
                                 {esPendiente ? 'Adeudado' : esActual ? 'Mes actual' : 'Adelanto'}
@@ -1077,8 +1077,8 @@ export default function SecretariaPage() {
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
-                        <Zap className="h-4 w-4 text-amber-400" />
-                        <span className="text-xs font-bold text-white uppercase tracking-wider">
+                        <Zap className="h-4 w-4 text-red-600" />
+                        <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                           2. Turnos Nocturnos con Luz (Desde 19:00 hs · Año {anioActual})
                         </span>
                       </div>
@@ -1087,20 +1087,20 @@ export default function SecretariaPage() {
                           ✓ Sin deuda de luz
                         </Badge>
                       ) : (
-                        <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px] font-bold">
+                        <Badge className="bg-red-600/20 text-red-600 border-red-500/40 text-[10px] font-bold">
                           ⚠️ Adeuda {socioSeleccionado.luz.turnosPendientes.length} turno(s) (${socioSeleccionado.luz.deudaLuz.toLocaleString('es-AR')})
                         </Badge>
                       )}
                     </div>
 
                     {socioSeleccionado.luz.turnosPendientes.length === 0 ? (
-                      <div className="p-3 bg-white rounded-lg text-xs text-[#888888] flex items-center gap-2">
+                      <div className="p-3 bg-white rounded-lg text-xs text-slate-600 flex items-center gap-2">
                         <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                         <span>Este socio no tiene turnos con luz pendientes de cobro en el año.</span>
                       </div>
                     ) : (
                       <div className="space-y-2">
-                        <p className="text-[11px] text-[#888888]">
+                        <p className="text-[11px] text-slate-600">
                           Seleccioná los turnos nocturnos a incluir en este cobro:
                         </p>
                         <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
@@ -1113,7 +1113,7 @@ export default function SecretariaPage() {
                                 onClick={() => handleToggleTurnoLuz(turno.turnoId)}
                                 className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition-all ${
                                   isSelected
-                                    ? 'bg-amber-400/15 border-amber-400 text-white shadow-sm'
+                                    ? 'bg-red-600/15 border-red-500 text-white shadow-sm'
                                     : 'bg-white border-slate-200 text-[#BBBBBB] hover:bg-slate-100'
                                 }`}
                               >
@@ -1125,23 +1125,23 @@ export default function SecretariaPage() {
                                     <Badge variant="outline" className="text-[9px] border-[#444] text-[#AAA]">
                                       {turno.cancha}
                                     </Badge>
-                                    <Badge variant="outline" className="text-[9px] border-[#444] text-amber-300">
+                                    <Badge variant="outline" className="text-[9px] border-[#444] text-red-600">
                                       {turno.tipoPartido}
                                     </Badge>
                                   </div>
-                                  <span className="text-[10px] text-[#888888] block">
+                                  <span className="text-[10px] text-slate-600 block">
                                     Costo compartido entre {turno.sociosCount} socio(s)
                                   </span>
                                 </div>
 
                                 <div className="flex items-center gap-2.5">
-                                  <span className="font-black text-sm text-amber-400">
+                                  <span className="font-black text-sm text-red-600">
                                     ${turno.monto.toLocaleString('es-AR')}
                                   </span>
                                   <div
                                     className={`w-5 h-5 rounded-md flex items-center justify-center border ${
                                       isSelected
-                                        ? 'bg-amber-400 border-amber-400 text-black'
+                                        ? 'bg-red-600 border-red-500 text-black'
                                         : 'border-[#555] bg-[#222]'
                                     }`}
                                   >
@@ -1161,7 +1161,7 @@ export default function SecretariaPage() {
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
                         <Users className="h-4 w-4 text-sky-400" />
-                        <span className="text-xs font-bold text-white uppercase tracking-wider">
+                        <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                           3. Control de Invitados (Cupo: 4 bonificados gratis en {anioActual})
                         </span>
                       </div>
@@ -1178,15 +1178,15 @@ export default function SecretariaPage() {
 
                     {/* Barra de progreso visual */}
                     <div className="space-y-1">
-                      <div className="flex justify-between text-[11px] text-[#AAAAAA]">
+                      <div className="flex justify-between text-[11px] text-slate-600">
                         <span>
-                          Bonificados consumidos: <strong className="text-white">{socioSeleccionado.invitados.bonificadosUsados} / 4</strong>
+                          Bonificados consumidos: <strong className="text-slate-900 font-bold">{socioSeleccionado.invitados.bonificadosUsados} / 4</strong>
                         </span>
                         <span>
                           {socioSeleccionado.invitados.bonificadosRestantes > 0 ? (
                             <strong className="text-emerald-400">Le quedan {socioSeleccionado.invitados.bonificadosRestantes} gratis</strong>
                           ) : (
-                            <strong className="text-amber-400">Cupo gratis agotado</strong>
+                            <strong className="text-red-600">Cupo gratis agotado</strong>
                           )}
                         </span>
                       </div>
@@ -1228,7 +1228,7 @@ export default function SecretariaPage() {
                                   onClick={() => handleToggleTurnoInvitado(d.turnoId)}
                                   className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition-all ${
                                     estaPagado
-                                      ? 'bg-emerald-500/10 border-emerald-500/30 text-[#888] cursor-default'
+                                      ? 'bg-emerald-500/10 border-emerald-500/30 text-slate-600 cursor-default'
                                       : isSelected
                                       ? 'bg-red-500/20 border-red-400 text-white'
                                       : 'bg-white border-slate-200 text-[#BBB] hover:border-red-400/50'
@@ -1284,10 +1284,10 @@ export default function SecretariaPage() {
                                 className="w-full p-2.5 rounded-lg bg-white border border-slate-200 flex items-center justify-between text-xs"
                               >
                                 <div>
-                                  <span className="font-bold text-white block">
+                                  <span className="font-bold text-slate-900 block">
                                     {d.fecha} · {d.hora} hs ({d.cancha})
                                   </span>
-                                  <span className="text-[10px] text-[#888] block">
+                                  <span className="text-[10px] text-slate-600 block">
                                     {d.conCargo} invitado(s) adicional(es)
                                   </span>
                                 </div>
@@ -1299,7 +1299,7 @@ export default function SecretariaPage() {
                         </div>
                       )
                     ) : (
-                      <div className="p-3 bg-white rounded-lg text-xs text-[#888888] flex items-center gap-2">
+                      <div className="p-3 bg-white rounded-lg text-xs text-slate-600 flex items-center gap-2">
                         <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                         <span>Está dentro de su cupo gratuito anual. No debe cargos por invitados.</span>
                       </div>
@@ -1308,7 +1308,7 @@ export default function SecretariaPage() {
 
                   {/* SECCIÓN D: MÉTODO DE PAGO */}
                   <div>
-                    <label className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
+                    <label className="text-xs font-bold text-slate-900 uppercase tracking-wider block mb-2">
                       Método de Pago
                     </label>
                     <div className="grid grid-cols-3 gap-2">
@@ -1318,7 +1318,7 @@ export default function SecretariaPage() {
                         className={`p-3 rounded-xl border text-xs font-bold flex flex-col items-center gap-1.5 transition-all ${
                           metodoPago === 'efectivo'
                             ? 'bg-emerald-500 text-white border-emerald-400 shadow-lg scale-[1.02]'
-                            : 'bg-slate-50 text-[#CCCCCC] border-slate-200 hover:text-white hover:bg-slate-50'
+                            : 'bg-slate-50 text-slate-800 border-slate-200 hover:text-white hover:bg-slate-50'
                         }`}
                       >
                         <Banknote className="h-5 w-5" />
@@ -1331,7 +1331,7 @@ export default function SecretariaPage() {
                         className={`p-3 rounded-xl border text-xs font-bold flex flex-col items-center gap-1.5 transition-all ${
                           metodoPago === 'transferencia'
                             ? 'bg-blue-600 text-white border-blue-400 shadow-lg scale-[1.02]'
-                            : 'bg-slate-50 text-[#CCCCCC] border-slate-200 hover:text-white hover:bg-slate-50'
+                            : 'bg-slate-50 text-slate-800 border-slate-200 hover:text-white hover:bg-slate-50'
                         }`}
                       >
                         <CreditCard className="h-5 w-5" />
@@ -1344,7 +1344,7 @@ export default function SecretariaPage() {
                         className={`p-3 rounded-xl border text-xs font-bold flex flex-col items-center gap-1.5 transition-all ${
                           metodoPago === 'mercadopago'
                             ? 'bg-sky-500 text-white border-sky-300 shadow-lg scale-[1.02]'
-                            : 'bg-slate-50 text-[#CCCCCC] border-slate-200 hover:text-white hover:bg-slate-50'
+                            : 'bg-slate-50 text-slate-800 border-slate-200 hover:text-white hover:bg-slate-50'
                         }`}
                       >
                         <QrCode className="h-5 w-5" />
@@ -1354,18 +1354,18 @@ export default function SecretariaPage() {
                   </div>
 
                   {/* SECCIÓN E: RESUMEN DE COBRO Y CONFIRMACIÓN */}
-                  <div className="bg-slate-50 border-2 border-amber-400/40 rounded-xl p-4 space-y-3">
-                    <div className="flex items-center justify-between text-xs text-[#AAAAAA] pb-2 border-b border-[#333]">
+                  <div className="bg-slate-50 border-2 border-red-500/40 rounded-xl p-4 space-y-3">
+                    <div className="flex items-center justify-between text-xs text-slate-600 pb-2 border-b border-[#333]">
                       <span>Desglose de conceptos seleccionados:</span>
-                      <span className="font-bold text-white">
+                      <span className="font-bold text-slate-900">
                         {mesesSeleccionados.length} cuota(s) (${subtotalCuotas.toLocaleString('es-AR')}) • {turnosLuzSeleccionados.length} luz (${subtotalLuz.toLocaleString('es-AR')}) • {turnosInvitadosSeleccionados.length} extra (${subtotalInvitados.toLocaleString('es-AR')})
                       </span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-1">
                       <div>
-                        <span className="text-[11px] text-[#888888] block">Total a liquidar en mostrador:</span>
-                        <span className="text-3xl font-black text-amber-400 tracking-tight">
+                        <span className="text-[11px] text-slate-600 block">Total a liquidar en mostrador:</span>
+                        <span className="text-3xl font-black text-red-600 tracking-tight">
                           ${montoFinalCobro.toLocaleString('es-AR')}
                         </span>
                       </div>
@@ -1389,11 +1389,11 @@ export default function SecretariaPage() {
               </Card>
             ) : (
               <div className="bg-white border border-slate-200 rounded-2xl p-10 text-center space-y-3">
-                <div className="w-14 h-14 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center mx-auto">
+                <div className="w-14 h-14 rounded-full bg-red-600/10 text-red-600 flex items-center justify-center mx-auto">
                   <Receipt className="h-7 w-7" />
                 </div>
-                <h3 className="font-bold text-white text-base">Esperando socio para cobrar</h3>
-                <p className="text-xs text-[#888888] max-w-sm mx-auto">
+                <h3 className="font-bold text-slate-900 text-base">Esperando socio para cobrar</h3>
+                <p className="text-xs text-slate-600 max-w-sm mx-auto">
                   Buscá al socio por DNI o apellido en el campo superior. La ficha cargará automáticamente su estado de cuotas, turnos con luz pendientes y consumo de invitados.
                 </p>
               </div>
@@ -1405,12 +1405,12 @@ export default function SecretariaPage() {
             {/* SELECTOR DE PERÍODO / RENDICIÓN */}
             <div className="bg-white border border-slate-200 rounded-xl p-3 space-y-2.5">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5 text-amber-400" />
+                <span className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+                  <Calendar className="h-3.5 w-3.5 text-red-600" />
                   <span>Rendición de Caja</span>
                 </span>
                 {loadingCaja && (
-                  <span className="flex items-center gap-1 text-[11px] text-amber-400">
+                  <span className="flex items-center gap-1 text-[11px] text-red-600">
                     <Loader2 className="h-3 w-3 animate-spin" />
                     Actualizando...
                   </span>
@@ -1424,8 +1424,8 @@ export default function SecretariaPage() {
                   onClick={() => cambiarPeriodoCaja('hoy')}
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'hoy'
-                      ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                   }`}
                 >
                   Hoy
@@ -1435,8 +1435,8 @@ export default function SecretariaPage() {
                   onClick={() => cambiarPeriodoCaja('ayer')}
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'ayer'
-                      ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                   }`}
                 >
                   Ayer
@@ -1446,8 +1446,8 @@ export default function SecretariaPage() {
                   onClick={() => cambiarPeriodoCaja('mes')}
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'mes'
-                      ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                   }`}
                 >
                   Este Mes
@@ -1460,8 +1460,8 @@ export default function SecretariaPage() {
                   }}
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'otro_mes'
-                      ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                   }`}
                 >
                   Otro Mes
@@ -1474,8 +1474,8 @@ export default function SecretariaPage() {
                   }}
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'anio'
-                      ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                   }`}
                 >
                   Todo el Año
@@ -1485,8 +1485,8 @@ export default function SecretariaPage() {
                   onClick={() => setModoPeriodoCaja('personalizado')}
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'personalizado'
-                      ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200'
                   }`}
                 >
                   Fechas
@@ -1497,18 +1497,18 @@ export default function SecretariaPage() {
               {modoPeriodoCaja === 'otro_mes' && (
                 <div className="pt-2 border-t border-slate-200 flex items-center gap-2">
                   <div className="flex-1">
-                    <span className="text-[10px] text-[#888] block mb-0.5">Seleccionar Mes (YYYY-MM)</span>
+                    <span className="text-[10px] text-slate-600 block mb-0.5">Seleccionar Mes (YYYY-MM)</span>
                     <Input
                       type="month"
                       value={cajaMesSeleccionado || mesActual || '2026-03'}
                       onChange={(e) => setCajaMesSeleccionado(e.target.value)}
-                      className="h-8 text-xs bg-slate-50 border-slate-200 text-white p-1"
+                      className="h-8 text-xs bg-white border-slate-300 text-slate-900 p-1"
                     />
                   </div>
                   <Button
                     size="sm"
                     onClick={() => cambiarPeriodoCaja('otro_mes', undefined, undefined, cajaMesSeleccionado)}
-                    className="h-8 px-3 mt-3.5 bg-amber-400 text-black hover:bg-amber-500 font-bold text-xs"
+                    className="h-8 px-3 mt-3.5 bg-red-600 text-white hover:bg-red-700 font-bold text-xs"
                   >
                     Ver Mes
                   </Button>
@@ -1518,7 +1518,7 @@ export default function SecretariaPage() {
               {/* SELECTOR DE TODO EL AÑO */}
               {modoPeriodoCaja === 'anio' && (
                 <div className="pt-2 border-t border-slate-200 flex items-center justify-between gap-2">
-                  <span className="text-xs text-[#AAAAAA]">
+                  <span className="text-xs text-slate-600">
                     Rendición anual completa del año <strong>{cajaAnioSeleccionado || '2026'}</strong>
                   </span>
                   <div className="flex items-center gap-1.5">
@@ -1533,8 +1533,8 @@ export default function SecretariaPage() {
                         }}
                         className={`h-7 px-2.5 text-xs font-bold ${
                           cajaAnioSeleccionado === yr
-                            ? 'bg-amber-400 text-black'
-                            : 'bg-slate-50 border-slate-200 text-[#AAAAAA] hover:text-white'
+                            ? 'bg-red-600 text-white'
+                            : 'bg-slate-100 border-slate-300 text-slate-700 hover:text-slate-900'
                         }`}
                       >
                         {yr}
@@ -1548,27 +1548,27 @@ export default function SecretariaPage() {
               {modoPeriodoCaja === 'personalizado' && (
                 <div className="pt-2 border-t border-slate-200 flex items-center gap-2">
                   <div className="flex-1">
-                    <span className="text-[10px] text-[#888] block mb-0.5">Desde</span>
+                    <span className="text-[10px] text-slate-600 block mb-0.5">Desde</span>
                     <Input
                       type="date"
                       value={cajaFechaDesde}
                       onChange={(e) => setCajaFechaDesde(e.target.value)}
-                      className="h-7 text-xs bg-slate-50 border-slate-200 text-white p-1"
+                      className="h-7 text-xs bg-white border-slate-300 text-slate-900 p-1"
                     />
                   </div>
                   <div className="flex-1">
-                    <span className="text-[10px] text-[#888] block mb-0.5">Hasta</span>
+                    <span className="text-[10px] text-slate-600 block mb-0.5">Hasta</span>
                     <Input
                       type="date"
                       value={cajaFechaHasta}
                       onChange={(e) => setCajaFechaHasta(e.target.value)}
-                      className="h-7 text-xs bg-slate-50 border-slate-200 text-white p-1"
+                      className="h-7 text-xs bg-white border-slate-300 text-slate-900 p-1"
                     />
                   </div>
                   <Button
                     size="sm"
                     onClick={() => cambiarPeriodoCaja('personalizado', cajaFechaDesde, cajaFechaHasta)}
-                    className="h-7 px-2.5 mt-3.5 bg-amber-400 text-black hover:bg-amber-500 font-bold text-xs"
+                    className="h-7 px-2.5 mt-3.5 bg-red-600 text-white hover:bg-red-700 font-bold text-xs"
                   >
                     Filtrar
                   </Button>
@@ -1579,7 +1579,7 @@ export default function SecretariaPage() {
             {/* TARJETAS DE TOTALES DE CAJA */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-                <span className="text-[10px] text-[#888888] font-bold uppercase tracking-wider block">
+                <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider block">
                   {modoPeriodoCaja === 'hoy'
                     ? 'Total Cobrado Hoy'
                     : modoPeriodoCaja === 'ayer'
@@ -1592,33 +1592,33 @@ export default function SecretariaPage() {
                     ? `Total Año ${cajaAnioSeleccionado}`
                     : 'Total Recaudado'}
                 </span>
-                <span className="text-xl font-black text-white mt-1 block">
+                <span className="text-2xl font-black text-slate-900 mt-1 block">
                   ${resumenHoy.totalRecaudado.toLocaleString('es-AR')}
                 </span>
-                <span className="text-[11px] text-[#AAAAAA] mt-0.5 block">
+                <span className="text-[11px] text-slate-600 mt-0.5 block">
                   {resumenHoy.cantidadCobros} cobro(s) realizados
                 </span>
               </div>
 
               <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block">
+                <span className="text-[10px] text-emerald-700 font-bold uppercase tracking-wider block">
                   Efectivo en Mano
                 </span>
-                <span className="text-xl font-black text-emerald-400 mt-1 block">
+                <span className="text-2xl font-black text-emerald-600 mt-1 block">
                   ${resumenHoy.totalEfectivo.toLocaleString('es-AR')}
                 </span>
-                <span className="text-[11px] text-[#AAAAAA] mt-0.5 block">Caja física</span>
+                <span className="text-[11px] text-slate-600 mt-0.5 block">Caja física</span>
               </div>
 
               <div className="bg-white border border-slate-200 rounded-xl p-3.5 col-span-2 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] text-blue-400 font-bold uppercase tracking-wider block">
+                  <span className="text-[10px] text-blue-700 font-bold uppercase tracking-wider block">
                     Digital (Transferencia / MP)
                   </span>
-                  <span className="text-lg font-black text-blue-400 mt-0.5 block">
+                  <span className="text-xl font-black text-blue-700 mt-0.5 block">
                     ${resumenHoy.totalTransferencia.toLocaleString('es-AR')}
                   </span>
-                  <div className="text-[10px] text-[#777] mt-1 space-x-2">
+                  <div className="text-[10px] text-slate-500 mt-1 space-x-2">
                     <span>Cuotas: ${resumenHoy.totalCuotas.toLocaleString('es-AR')}</span>
                     <span>• Luz: ${resumenHoy.totalLuz.toLocaleString('es-AR')}</span>
                     <span>• Invitados: ${resumenHoy.totalInvitados.toLocaleString('es-AR')}</span>
@@ -1629,7 +1629,7 @@ export default function SecretariaPage() {
                   size="sm"
                   onClick={handleExportExcelCierre}
                   disabled={pagosHoy.length === 0}
-                  className="bg-slate-50 border-slate-200 text-white hover:bg-emerald-600 hover:text-white hover:border-emerald-500 text-xs h-8 gap-1.5 transition-colors shrink-0"
+                  className="bg-white border-slate-300 text-slate-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-500 text-xs h-8 gap-1.5 transition-colors shrink-0 border-slate-300 text-slate-700 hover:bg-slate-100"
                   title="Exportar planilla de rendición del período seleccionado"
                 >
                   <FileDown className="h-3.5 w-3.5" />
@@ -1642,8 +1642,8 @@ export default function SecretariaPage() {
             <Card className="bg-white border-slate-200">
               <CardHeader className="pb-3 flex flex-row items-center justify-between space-y-0">
                 <div>
-                  <CardTitle className="text-sm font-bold text-white flex items-center gap-1.5">
-                    <Clock className="h-4 w-4 text-amber-400" />
+                  <CardTitle className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+                    <Clock className="h-4 w-4 text-red-600" />
                     <span>
                       {modoPeriodoCaja === 'hoy'
                         ? 'Cobros de Hoy'
@@ -1659,7 +1659,7 @@ export default function SecretariaPage() {
                       ({pagosHoy.length})
                     </span>
                   </CardTitle>
-                  <CardDescription className="text-xs text-[#888888]">
+                  <CardDescription className="text-xs text-slate-600">
                     {cajaFechaDesde === cajaFechaHasta || !cajaFechaHasta
                       ? `Fecha: ${cajaFechaDesde || fechaHoy || 'Hoy'}`
                       : `Desde ${cajaFechaDesde} hasta ${cajaFechaHasta}`}
@@ -1673,8 +1673,8 @@ export default function SecretariaPage() {
                     <div className="h-10 bg-slate-50 rounded-lg animate-pulse" />
                   </div>
                 ) : pagosHoy.length === 0 ? (
-                  <div className="p-8 text-center text-xs text-[#777777] space-y-1">
-                    <Clock className="h-6 w-6 mx-auto opacity-40 text-amber-400" />
+                  <div className="p-8 text-center text-xs text-slate-500 space-y-1">
+                    <Clock className="h-6 w-6 mx-auto opacity-40 text-red-600" />
                     <p>No se registraron cobros en el período seleccionado.</p>
                   </div>
                 ) : (
@@ -1686,15 +1686,15 @@ export default function SecretariaPage() {
                       >
                         <div className="space-y-0.5">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold text-white">{p.socioNombre}</span>
-                            <span className="text-[10px] text-[#777777] font-mono">DNI {p.socioDni}</span>
+                            <span className="text-xs font-bold text-slate-900">{p.socioNombre}</span>
+                            <span className="text-[10px] text-slate-500 font-mono">DNI {p.socioDni}</span>
                           </div>
                           <div className="flex items-center gap-1.5 flex-wrap">
                             <Badge
                               variant="outline"
                               className={`text-[9px] px-1 py-0 font-bold uppercase ${
                                 p.tipo === 'luz'
-                                  ? 'border-amber-500/30 text-amber-400'
+                                  ? 'border-red-500/30 text-red-600'
                                   : p.tipo === 'invitado_extra'
                                   ? 'border-red-500/30 text-red-400'
                                   : 'border-emerald-500/30 text-emerald-400'
@@ -1702,7 +1702,7 @@ export default function SecretariaPage() {
                             >
                               {p.tipo === 'luz' ? 'Luz' : p.tipo === 'invitado_extra' ? 'Invitado' : 'Cuota'}
                             </Badge>
-                            <span className="text-[11px] text-[#AAAAAA]">{p.concepto}</span>
+                            <span className="text-[11px] text-slate-600">{p.concepto}</span>
                             <span className="text-[10px] text-[#666] font-mono">• {p.hora}</span>
                           </div>
                         </div>
@@ -1740,23 +1740,23 @@ export default function SecretariaPage() {
           <CardHeader className="pb-4 border-b border-slate-200">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <CardTitle className="text-lg font-bold text-white flex items-center gap-2">
-                  <Zap className="h-5 w-5 text-amber-400" />
+                <CardTitle className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                  <Zap className="h-5 w-5 text-red-600" />
                   <span>Socios con Deuda de Turnos Nocturnos y Adicionales ({sociosConDeudaAdicional.length})</span>
                 </CardTitle>
-                <CardDescription className="text-xs text-[#999999] mt-0.5">
+                <CardDescription className="text-xs text-slate-600 mt-0.5">
                   Nómina de socios que jugaron turnos con luz nocturna o llevaron invitados excedentes sin cancelar en secretaría
                 </CardDescription>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="relative w-full sm:w-64">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#888]" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-600" />
                   <Input
                     placeholder="Filtrar por nombre o DNI..."
                     value={searchDeudoresLuz}
                     onChange={(e) => setSearchDeudoresLuz(e.target.value)}
-                    className="pl-9 h-9 text-xs bg-slate-50 border-slate-200 text-white"
+                    className="pl-9 h-9 text-xs bg-white border-slate-300 text-slate-900"
                   />
                 </div>
 
@@ -1765,7 +1765,7 @@ export default function SecretariaPage() {
                   size="sm"
                   onClick={handleExportExcelDeudoresLuz}
                   disabled={sociosConDeudaAdicional.length === 0}
-                  className="bg-slate-50 border-slate-200 text-white hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
+                  className="bg-white border-slate-300 text-slate-900 hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
                 >
                   <FileSpreadsheet className="h-4 w-4" />
                   <span>Exportar Excel</span>
@@ -1776,9 +1776,9 @@ export default function SecretariaPage() {
 
           <CardContent className="p-0">
             {sociosDeudoresLuzFiltrados.length === 0 ? (
-              <div className="p-12 text-center text-xs text-[#888888] space-y-2">
+              <div className="p-12 text-center text-xs text-slate-600 space-y-2">
                 <CheckCircle2 className="h-8 w-8 text-emerald-400 mx-auto" />
-                <p className="font-bold text-white text-sm">¡Excelente! No hay socios con deuda de luz o adicionales pendientes.</p>
+                <p className="font-bold text-slate-900 text-sm">¡Excelente! No hay socios con deuda de luz o adicionales pendientes.</p>
                 <p>Todos los turnos nocturnos y cargos de invitados del año se encuentran regularizados.</p>
               </div>
             ) : (
@@ -1786,16 +1786,16 @@ export default function SecretariaPage() {
                 <Table>
                   <TableHeader className="bg-white">
                     <TableRow className="border-slate-200 hover:bg-transparent">
-                      <TableHead className="text-white text-xs font-bold">#</TableHead>
-                      <TableHead className="text-white text-xs font-bold">Socio</TableHead>
-                      <TableHead className="text-white text-xs font-bold">Documento</TableHead>
-                      <TableHead className="text-white text-xs font-bold">Teléfono</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-center">Turnos Luz</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-right">Deuda Luz</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-center">Invitados Extra</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-right">Deuda Invitados</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-right">Total Adicionales</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-center">Acción</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold">#</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold">Socio</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold">Documento</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold">Teléfono</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-center">Turnos Luz</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-right">Deuda Luz</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-center">Invitados Extra</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-right">Deuda Invitados</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-right">Total Adicionales</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-center">Acción</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody className="divide-y divide-[#262626]">
@@ -1803,8 +1803,8 @@ export default function SecretariaPage() {
                       const totalAdicional = s.luz.deudaLuz + s.invitados.deudaInvitados;
                       return (
                         <TableRow key={s.id} className="border-slate-200 hover:bg-slate-50">
-                          <TableCell className="text-xs text-[#777] font-mono">{idx + 1}</TableCell>
-                          <TableCell className="text-xs font-bold text-white">
+                          <TableCell className="text-xs text-slate-500 font-mono">{idx + 1}</TableCell>
+                          <TableCell className="text-xs font-bold text-slate-900">
                             {s.nombreCompleto}
                             <Badge variant="outline" className="text-[9px] uppercase ml-2 text-[#999]">
                               {s.categoria}
@@ -1814,14 +1814,14 @@ export default function SecretariaPage() {
                           <TableCell className="text-xs text-[#999]">{s.telefono || '-'}</TableCell>
                           <TableCell className="text-center">
                             {s.luz.turnosPendientes.length > 0 ? (
-                              <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/40 text-[10px]">
+                              <Badge className="bg-red-600/20 text-red-600 border-red-500/40 text-[10px]">
                                 {s.luz.turnosPendientes.length} turno(s)
                               </Badge>
                             ) : (
                               <span className="text-[#666] text-xs">-</span>
                             )}
                           </TableCell>
-                          <TableCell className="text-right text-xs font-bold text-amber-400">
+                          <TableCell className="text-right text-xs font-bold text-red-600">
                             {s.luz.deudaLuz > 0 ? `$${s.luz.deudaLuz.toLocaleString('es-AR')}` : '-'}
                           </TableCell>
                           <TableCell className="text-center">
@@ -1840,14 +1840,14 @@ export default function SecretariaPage() {
                               ? `$${s.invitados.deudaInvitados.toLocaleString('es-AR')}`
                               : '-'}
                           </TableCell>
-                          <TableCell className="text-right text-sm font-black text-white">
+                          <TableCell className="text-right text-sm font-black text-slate-900">
                             ${totalAdicional.toLocaleString('es-AR')}
                           </TableCell>
                           <TableCell className="text-center">
                             <Button
                               size="sm"
                               onClick={() => handleSeleccionarSocio(s)}
-                              className="bg-amber-400 hover:bg-amber-500 text-black font-bold text-xs h-8 px-3 gap-1 rounded-lg"
+                              className="bg-red-600 hover:bg-red-700 text-black font-bold text-xs h-8 px-3 gap-1 rounded-lg"
                             >
                               <span>Cobrar</span>
                               <ChevronRight className="h-3.5 w-3.5" />
@@ -1872,33 +1872,33 @@ export default function SecretariaPage() {
           {/* TARJETAS KPI DE MOROSIDAD */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-              <span className="text-[10px] text-[#888888] font-bold uppercase tracking-wider block">
+              <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider block">
                 Total Padrón Activo
               </span>
-              <span className="text-2xl font-black text-white mt-1 block">
+              <span className="text-2xl font-black text-slate-900 mt-1 block">
                 {metricasPadron.totalSocios}
               </span>
-              <span className="text-[11px] text-[#888888]">Socios en sistema</span>
+              <span className="text-[11px] text-slate-600">Socios en sistema</span>
             </div>
 
             <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-              <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block">
+              <span className="text-[10px] text-emerald-700 font-bold uppercase tracking-wider block">
                 Socios Al Día
               </span>
               <span className="text-2xl font-black text-emerald-400 mt-1 block">
                 {metricasPadron.alDia}
               </span>
-              <span className="text-[11px] text-[#888888]">Cuotas y conceptos al día</span>
+              <span className="text-[11px] text-slate-600">Cuotas y conceptos al día</span>
             </div>
 
             <div className="bg-white border border-slate-200 rounded-xl p-3.5">
-              <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider block">
+              <span className="text-[10px] text-red-600 font-bold uppercase tracking-wider block">
                 Socios Con Deuda
               </span>
-              <span className="text-2xl font-black text-amber-400 mt-1 block">
+              <span className="text-2xl font-black text-red-600 mt-1 block">
                 {metricasPadron.conDeuda}
               </span>
-              <span className="text-[11px] text-[#888888]">
+              <span className="text-[11px] text-slate-600">
                 Cuotas vencidas: ${metricasPadron.totalDeudaCuotas.toLocaleString('es-AR')}
               </span>
             </div>
@@ -1909,11 +1909,11 @@ export default function SecretariaPage() {
             <CardHeader className="pb-4 border-b border-slate-200">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                 <div>
-                  <CardTitle className="text-lg font-bold text-white flex items-center gap-2">
-                    <Users className="h-5 w-5 text-amber-400" />
+                  <CardTitle className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <Users className="h-5 w-5 text-red-600" />
                     <span>Padrón de Socios y Estado de Deuda Integral</span>
                   </CardTitle>
-                  <CardDescription className="text-xs text-[#999999] mt-0.5">
+                  <CardDescription className="text-xs text-slate-600 mt-0.5">
                     Padrón de socios con detalle de cuotas sociales, turnos nocturnos con luz y cargos por invitados
                   </CardDescription>
                 </div>
@@ -1926,7 +1926,7 @@ export default function SecretariaPage() {
                       onClick={() => setFiltroPadron('con_deuda')}
                       className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                         filtroPadron === 'con_deuda'
-                          ? 'bg-amber-400 text-black shadow'
+                          ? 'bg-red-600 text-white shadow'
                           : 'text-[#AAA] hover:text-white'
                       }`}
                     >
@@ -1957,12 +1957,12 @@ export default function SecretariaPage() {
                   </div>
 
                   <div className="relative w-full sm:w-56">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#888]" />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-600" />
                     <Input
                       placeholder="Buscar en padrón..."
                       value={searchPadron}
                       onChange={(e) => setSearchPadron(e.target.value)}
-                      className="pl-9 h-9 text-xs bg-slate-50 border-slate-200 text-white"
+                      className="pl-9 h-9 text-xs bg-white border-slate-300 text-slate-900"
                     />
                   </div>
 
@@ -1970,7 +1970,7 @@ export default function SecretariaPage() {
                     variant="outline"
                     size="sm"
                     onClick={handleExportExcelPadron}
-                    className="bg-slate-50 border-slate-200 text-white hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
+                    className="bg-white border-slate-300 text-slate-900 hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
                   >
                     <FileSpreadsheet className="h-4 w-4" />
                     <span>Exportar Padrón</span>
@@ -1984,23 +1984,23 @@ export default function SecretariaPage() {
                 <Table>
                   <TableHeader className="bg-white">
                     <TableRow className="border-slate-200 hover:bg-transparent">
-                      <TableHead className="text-white text-xs font-bold">#</TableHead>
-                      <TableHead className="text-white text-xs font-bold">Socio</TableHead>
-                      <TableHead className="text-white text-xs font-bold">Documento</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-center">Cuotas</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-right">Deuda Cuotas</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-right">Deuda Luz</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-center">Invitados (Año)</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-right">Deuda Invitados</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-center">Estado</TableHead>
-                      <TableHead className="text-white text-xs font-bold text-center">Acción</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold">#</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold">Socio</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold">Documento</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-center">Cuotas</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-right">Deuda Cuotas</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-right">Deuda Luz</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-center">Invitados (Año)</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-right">Deuda Invitados</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-center">Estado</TableHead>
+                      <TableHead className="text-slate-700 font-bold text-xs font-bold text-center">Acción</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody className="divide-y divide-[#262626]">
                     {sociosPadronFiltrados.map((s, idx) => (
                       <TableRow key={s.id} className="border-slate-200 hover:bg-slate-50">
-                        <TableCell className="text-xs text-[#777] font-mono">{idx + 1}</TableCell>
-                        <TableCell className="text-xs font-bold text-white">
+                        <TableCell className="text-xs text-slate-500 font-mono">{idx + 1}</TableCell>
+                        <TableCell className="text-xs font-bold text-slate-900">
                           {s.nombreCompleto}
                           <Badge variant="outline" className="text-[9px] uppercase ml-2 text-[#999]">
                             {s.categoria}
@@ -2019,7 +2019,7 @@ export default function SecretariaPage() {
                         <TableCell className="text-right text-xs font-bold text-[#DDD]">
                           {s.deudaCuotas > 0 ? `$${s.deudaCuotas.toLocaleString('es-AR')}` : '-'}
                         </TableCell>
-                        <TableCell className="text-right text-xs font-bold text-amber-400">
+                        <TableCell className="text-right text-xs font-bold text-red-600">
                           {s.luz.deudaLuz > 0 ? `$${s.luz.deudaLuz.toLocaleString('es-AR')}` : '-'}
                         </TableCell>
                         <TableCell className="text-center text-xs">
@@ -2049,7 +2049,7 @@ export default function SecretariaPage() {
                             size="sm"
                             variant="ghost"
                             onClick={() => handleSeleccionarSocio(s)}
-                            className="text-amber-400 hover:text-white hover:bg-amber-400/20 text-xs h-8 px-2.5 font-bold"
+                            className="text-red-600 hover:text-white hover:bg-red-600/20 text-xs h-8 px-2.5 font-bold"
                           >
                             Cobrar
                           </Button>

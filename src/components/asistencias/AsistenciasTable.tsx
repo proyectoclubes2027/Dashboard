@@ -598,7 +598,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   'px-2.5 py-1 text-[11px] font-semibold rounded-md transition-all',
                   qrType === 'profe'
                     ? 'bg-[#DC2626] text-[#121212] shadow'
-                    : 'text-[#999999] hover:text-white'
+                    : 'text-slate-600 hover:text-white'
                 )}
               >
                 QR Profe
@@ -610,7 +610,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   'px-2.5 py-1 text-[11px] font-semibold rounded-md transition-all',
                   qrType === 'alumnos'
                     ? 'bg-[#DC2626] text-[#121212] shadow'
-                    : 'text-[#999999] hover:text-white'
+                    : 'text-slate-600 hover:text-white'
                 )}
               >
                 QR Alumnos
@@ -631,13 +631,13 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
               </Badge>
             </div>
 
-            <p className="text-[#AAAAAA] text-xs mb-2 leading-relaxed">
+            <p className="text-slate-600 text-xs mb-2 leading-relaxed">
               {qrType === 'profe'
                 ? 'El profesor ingresa a este link todos los días para registrar los alumnos que tuvo y el total recaudado del día.'
                 : 'Los alumnos escanean el código con su celular e ingresan su DNI para marcar su presente.'}
             </p>
 
-            <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-[12px] font-mono text-[#CCCCCC] mb-3 max-w-full overflow-hidden text-ellipsis">
+            <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-[12px] font-mono text-slate-800 mb-3 max-w-full overflow-hidden text-ellipsis">
               <span className="truncate">{currentUrl}</span>
             </div>
 
@@ -646,7 +646,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 size="sm"
                 variant="outline"
                 onClick={handleCopyLink}
-                className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
               >
                 {copiedLink ? <Check className="h-3.5 w-3.5 mr-1.5 text-green-400" /> : <Copy className="h-3.5 w-3.5 mr-1.5" />}
                 {copiedLink ? 'Copiado!' : 'Copiar Link'}
@@ -656,7 +656,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 size="sm"
                 variant="outline"
                 onClick={handlePrintQr}
-                className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
               >
                 <Printer className="h-3.5 w-3.5 mr-1.5" />
                 Imprimir QR
@@ -680,21 +680,21 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
         <TabsList className="bg-white border border-slate-200 p-1 h-12 mb-4 grid grid-cols-3 w-full max-w-2xl print:hidden">
           <TabsTrigger 
             value="profe" 
-            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-slate-600 text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
           >
             <BarChart3 className="w-4 h-4 shrink-0" />
             <span className="truncate">Planilla y Reportes</span>
           </TabsTrigger>
           <TabsTrigger 
             value="diaria" 
-            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-slate-600 text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
           >
             <CheckCircle2 className="w-4 h-4 shrink-0" />
             <span className="truncate">Presentes Diarios</span>
           </TabsTrigger>
           <TabsTrigger 
             value="mensual"
-            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
+            className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-slate-600 text-xs sm:text-sm font-semibold h-10 px-2 sm:px-3 rounded-md transition-all flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden"
           >
             <Users className="w-4 h-4 shrink-0" />
             <span className="truncate">Alumnos Mensual</span>
@@ -712,7 +712,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 <ClipboardList className="h-5 w-5 text-[#DC2626]" />
                 Control de Clases · Alumnos y Recaudación Diaria
               </h3>
-              <p className="text-[#999999] text-xs mt-0.5">
+              <p className="text-slate-600 text-xs mt-0.5">
                 Seguimiento de concurrencia y valor total por día, semana y mes
               </p>
             </div>
@@ -771,7 +771,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 size="sm"
                 onClick={() => fetchRegistrosProfeMensual(selectedMonth)}
                 disabled={loadingProfe}
-                className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
               >
                 <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loadingProfe ? 'animate-spin' : ''}`} />
                 Actualizar
@@ -791,7 +791,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   <span className="text-xs uppercase font-bold text-[#DC2626] tracking-wider flex items-center gap-1.5">
                     <CalendarIcon className="w-3.5 h-3.5" /> En el Día
                   </span>
-                  <span className="text-[11px] text-[#888888] capitalize">
+                  <span className="text-[11px] text-slate-600 capitalize">
                     {format(selectedDate, 'EEEE dd/MM', { locale: es })}
                   </span>
                 </div>
@@ -804,14 +804,14 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                           {selectedDayRecord.cantidadClases ?? 1} {(selectedDayRecord.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'}
                         </span>
                         <span className="text-2xl font-extrabold text-white">
-                          {selectedDayRecord.cantidadAlumnos} <span className="text-xs font-normal text-[#888888]">alumnos</span>
+                          {selectedDayRecord.cantidadAlumnos} <span className="text-xs font-normal text-slate-600">alumnos</span>
                         </span>
                       </div>
                       <span className="text-xl font-extrabold text-emerald-400">
                         $ {selectedDayRecord.precioTotal.toLocaleString('es-AR')}
                       </span>
                     </div>
-                    <div className="text-[11px] text-[#888888] flex items-center justify-between pt-1 border-t border-[#2C2C2C]">
+                    <div className="text-[11px] text-slate-600 flex items-center justify-between pt-1 border-t border-[#2C2C2C]">
                       <span>Total de clases:</span>
                       <span className="font-semibold text-[#DC2626]">
                         {selectedDayRecord.cantidadClases ?? 1} {(selectedDayRecord.cantidadClases ?? 1) === 1 ? 'clase dictada' : 'clases dictadas'}
@@ -820,7 +820,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   </div>
                 ) : (
                   <div className="py-2 text-center space-y-1">
-                    <p className="text-xs text-[#888888]">Sin planilla cargada para este día</p>
+                    <p className="text-xs text-slate-600">Sin planilla cargada para este día</p>
                     {!readOnly && (
                       <button
                         type="button"
@@ -847,7 +847,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   <span className="text-xs uppercase font-bold text-blue-400 tracking-wider flex items-center gap-1.5">
                     <CalendarDays className="w-3.5 h-3.5" /> En la Semana
                   </span>
-                  <span className="text-[11px] text-[#888888]">
+                  <span className="text-[11px] text-slate-600">
                     {format(daysOfCurrentWeek[0], 'dd/MM')} al {format(daysOfCurrentWeek[6], 'dd/MM')}
                   </span>
                 </div>
@@ -859,16 +859,16 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                         {semanaStats.clases} {semanaStats.clases === 1 ? 'clase' : 'clases'}
                       </span>
                       <span className="text-2xl font-extrabold text-white">
-                        {semanaStats.alumnos} <span className="text-xs font-normal text-[#888888]">alumnos</span>
+                        {semanaStats.alumnos} <span className="text-xs font-normal text-slate-600">alumnos</span>
                       </span>
                     </div>
                     <span className="text-xl font-extrabold text-emerald-400">
                       $ {semanaStats.total.toLocaleString('es-AR')}
                     </span>
                   </div>
-                  <div className="text-[11px] text-[#888888] flex items-center justify-between pt-1 border-t border-[#2C2C2C]">
+                  <div className="text-[11px] text-slate-600 flex items-center justify-between pt-1 border-t border-[#2C2C2C]">
                     <span>Días con actividad:</span>
-                    <span className="font-semibold text-white">
+                    <span className="font-semibold text-slate-900">
                       {semanaStats.diasConClase} de 7 días
                     </span>
                   </div>
@@ -888,7 +888,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   <span className="text-xs uppercase font-bold text-purple-400 tracking-wider flex items-center gap-1.5">
                     <TrendingUp className="w-3.5 h-3.5" /> En el Mes
                   </span>
-                  <span className="text-[11px] text-[#888888]">
+                  <span className="text-[11px] text-slate-600">
                     {format(new Date(selectedMonth + '-01T00:00:00'), 'MMMM yyyy', { locale: es })}
                   </span>
                 </div>
@@ -900,16 +900,16 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                         {totalClasesMes} {totalClasesMes === 1 ? 'clase' : 'clases'}
                       </span>
                       <span className="text-2xl font-extrabold text-white">
-                        {totalAlumnosMes} <span className="text-xs font-normal text-[#888888]">alumnos</span>
+                        {totalAlumnosMes} <span className="text-xs font-normal text-slate-600">alumnos</span>
                       </span>
                     </div>
                     <span className="text-xl font-extrabold text-emerald-400">
                       $ {totalRecaudadoMes.toLocaleString('es-AR')}
                     </span>
                   </div>
-                  <div className="text-[11px] text-[#888888] flex items-center justify-between pt-1 border-t border-[#2C2C2C]">
+                  <div className="text-[11px] text-slate-600 flex items-center justify-between pt-1 border-t border-[#2C2C2C]">
                     <span>Días con clases:</span>
-                    <span className="font-semibold text-white">
+                    <span className="font-semibold text-slate-900">
                       {totalDiasConClaseMes} {totalDiasConClaseMes === 1 ? 'día con actividad' : 'días con actividad'}
                     </span>
                   </div>
@@ -932,7 +932,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   <CalendarDays className="w-4 h-4 text-[#DC2626]" />
                   Desglose Semanal por Día de la Semana
                 </h4>
-                <p className="text-[#888888] text-xs">
+                <p className="text-slate-600 text-xs">
                   Semana del {format(daysOfCurrentWeek[0], 'dd/MM/yyyy')} al {format(daysOfCurrentWeek[6], 'dd/MM/yyyy')}
                 </p>
               </div>
@@ -943,7 +943,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   variant="outline"
                   size="sm"
                   onClick={() => setCurrentWeekDate(subWeeks(currentWeekDate, 1))}
-                  className="h-8 px-2 border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white text-xs"
+                  className="h-8 px-2 border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white text-xs"
                   title="Semana anterior"
                 >
                   <ChevronLeft className="w-4 h-4 mr-1" /> Ant.
@@ -952,7 +952,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   variant="outline"
                   size="sm"
                   onClick={() => setCurrentWeekDate(new Date())}
-                  className="h-8 text-xs border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
+                  className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
                 >
                   Esta Semana
                 </Button>
@@ -960,7 +960,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   variant="outline"
                   size="sm"
                   onClick={() => setCurrentWeekDate(addWeeks(currentWeekDate, 1))}
-                  className="h-8 px-2 border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white text-xs"
+                  className="h-8 px-2 border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white text-xs"
                   title="Semana siguiente"
                 >
                   Sig. <ChevronRight className="w-4 h-4 ml-1" />
@@ -1003,7 +1003,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                       <div className="flex items-center justify-between mb-1">
                         <span className={cn(
                           'text-xs font-bold uppercase',
-                          isToday ? 'text-[#DC2626]' : 'text-[#AAAAAA]'
+                          isToday ? 'text-[#DC2626]' : 'text-slate-600'
                         )}>
                           {format(day, 'EEE', { locale: es })}
                         </span>
@@ -1018,7 +1018,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                             <span className="text-[11px] font-bold text-[#DC2626]">
                               {reg.cantidadClases ?? 1} {(reg.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'}
                             </span>
-                            <span className="text-xs font-semibold text-white">
+                            <span className="text-xs font-semibold text-slate-900">
                               {reg.cantidadAlumnos} al.
                             </span>
                           </div>
@@ -1035,7 +1035,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
 
                     <div className="pt-2 border-t border-slate-200 flex justify-between items-center text-[10px]">
                       {reg ? (
-                        <span className="text-[#888888] truncate max-w-[90px]" title={reg.observaciones || 'Registrado'}>
+                        <span className="text-slate-600 truncate max-w-[90px]" title={reg.observaciones || 'Registrado'}>
                           {reg.observaciones || 'Registrado'}
                         </span>
                       ) : !readOnly ? (
@@ -1060,7 +1060,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                             e.stopPropagation();
                             handleOpenEditModal(reg);
                           }}
-                          className="text-[#888888] hover:text-white"
+                          className="text-slate-600 hover:text-white"
                           title="Editar"
                         >
                           <Pencil className="w-3 h-3" />
@@ -1074,7 +1074,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
 
             {/* Resumen total al pie de la semana */}
             <div className="bg-[#171717] rounded-lg p-2.5 px-4 flex flex-col sm:flex-row items-center justify-between text-xs border border-[#2B2B2B] gap-2">
-              <span className="text-[#888888]">
+              <span className="text-slate-600">
                 Total de la semana: <strong className="text-[#DC2626]">{semanaStats.clases} clases</strong> (<strong className="text-white">{semanaStats.alumnos} alumnos</strong>) en <strong className="text-white">{semanaStats.diasConClase} días con actividad</strong>
               </span>
               <span className="text-emerald-400 font-bold text-sm">
@@ -1111,7 +1111,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   variant="outline"
                   size="sm"
                   onClick={handleExportMesExcel}
-                  className="h-8 text-xs border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
+                  className="h-8 text-xs border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
                   title="Exportar a planilla Excel (.xlsx)"
                 >
                   <Download className="w-3.5 h-3.5 mr-1" />
@@ -1135,14 +1135,14 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 <Table>
                   <TableHeader>
                     <TableRow className="border-slate-200 hover:bg-transparent">
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Día de la Semana</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Fecha</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center">Clases</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center">Alumnos del Día</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-right">Valor Total del Día</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Observaciones</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Día de la Semana</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Fecha</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center">Clases</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center">Alumnos del Día</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-right">Valor Total del Día</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Observaciones</TableHead>
                       {!readOnly && (
-                        <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center">Acciones</TableHead>
+                        <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center">Acciones</TableHead>
                       )}
                     </TableRow>
                   </TableHeader>
@@ -1164,7 +1164,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
 
                           {/* Cantidad Clases */}
                           <TableCell className="text-center py-2.5">
-                            <span className="font-bold text-white text-xs bg-slate-50 px-2 py-0.5 rounded border border-[#3A3A3A]">
+                            <span className="font-bold text-slate-900 text-xs bg-slate-50 px-2 py-0.5 rounded border border-[#3A3A3A]">
                               {registro.cantidadClases ?? 1}
                             </span>
                           </TableCell>
@@ -1182,7 +1182,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                           </TableCell>
 
                           {/* Observaciones */}
-                          <TableCell className="text-[#888888] text-xs py-2.5 max-w-[220px] truncate" title={registro.observaciones || ''}>
+                          <TableCell className="text-slate-600 text-xs py-2.5 max-w-[220px] truncate" title={registro.observaciones || ''}>
                             {registro.observaciones || '-'}
                           </TableCell>
 
@@ -1194,7 +1194,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                                   variant="ghost"
                                   size="icon"
                                   onClick={() => handleOpenEditModal(registro)}
-                                  className="h-7 w-7 text-[#888888] hover:text-white hover:bg-slate-50"
+                                  className="h-7 w-7 text-slate-600 hover:text-white hover:bg-slate-50"
                                   title="Editar"
                                 >
                                   <Pencil className="h-3.5 w-3.5" />
@@ -1204,7 +1204,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                                   size="icon"
                                   onClick={() => handleDeleteRegistro(registro.id)}
                                   disabled={isDeleting}
-                                  className="h-7 w-7 text-[#888888] hover:text-rose-400 hover:bg-rose-500/10"
+                                  className="h-7 w-7 text-slate-600 hover:text-rose-400 hover:bg-rose-500/10"
                                   title="Eliminar"
                                 >
                                   <Trash2 className="h-3.5 w-3.5" />
@@ -1235,7 +1235,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="text-white font-bold text-sm capitalize">
+                    <h4 className="text-slate-900 font-bold text-sm capitalize">
                       Planilla del {format(selectedDate, 'EEEE dd/MM/yyyy', { locale: es })}
                     </h4>
                     {registroProfeDiario && (
@@ -1244,7 +1244,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                       </Badge>
                     )}
                   </div>
-                  <p className="text-[#888888] text-xs">
+                  <p className="text-slate-600 text-xs">
                     {registroProfeDiario 
                       ? `Registrado para este día`
                       : 'El profesor todavía no cargó los datos de esta fecha'}
@@ -1258,7 +1258,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     <div className="text-sm font-bold text-emerald-400">
                       $ {registroProfeDiario.precioTotal.toLocaleString('es-AR')}
                     </div>
-                    <div className="text-[11px] text-[#999999]">
+                    <div className="text-[11px] text-slate-600">
                       {registroProfeDiario.cantidadClases ?? 1} {(registroProfeDiario.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'} · {registroProfeDiario.cantidadAlumnos} alumno{registroProfeDiario.cantidadAlumnos !== 1 ? 's' : ''} en total
                     </div>
                   </div>
@@ -1267,7 +1267,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                       size="sm"
                       variant="outline"
                       onClick={() => handleOpenEditModal(registroProfeDiario)}
-                      className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                      className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                     >
                       <Pencil className="h-3.5 w-3.5 mr-1" />
                       Editar
@@ -1287,8 +1287,8 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
             </div>
 
             {registroProfeDiario?.observaciones && (
-              <div className="mt-3 pt-2.5 border-t border-[#2C2C2C] text-xs text-[#999999] flex items-center gap-1.5">
-                <span className="font-semibold text-[#CCCCCC]">Observaciones:</span>
+              <div className="mt-3 pt-2.5 border-t border-[#2C2C2C] text-xs text-slate-600 flex items-center gap-1.5">
+                <span className="font-semibold text-slate-800">Observaciones:</span>
                 <span>{registroProfeDiario.observaciones}</span>
               </div>
             )}
@@ -1302,7 +1302,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   <Users className="h-4 w-4 text-[#DC2626]" />
                   Presentes de Alumnos con DNI ({format(selectedDate, 'dd/MM/yyyy')})
                 </h3>
-                <p className="text-[#999999] text-xs mt-0.5">
+                <p className="text-slate-600 text-xs mt-0.5">
                   {asistenciasDiarias.length} alumno{asistenciasDiarias.length !== 1 ? 's' : ''} marcaron su presente por QR
                 </p>
               </div>
@@ -1341,7 +1341,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     fetchRegistroProfeDiario(selectedDate);
                   }}
                   disabled={loading}
-                  className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                 >
                   <RefreshCcw className={`h-3.5 w-3.5 mr-2 ${loading ? 'animate-spin' : ''}`} />
                   Actualizar
@@ -1360,10 +1360,10 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 <Table>
                   <TableHeader>
                     <TableRow className="border-slate-200 hover:bg-transparent">
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Hora</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Socio / Alumno</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">DNI</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center">Estado Cuota</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Hora</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">Socio / Alumno</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1">DNI</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 text-center">Estado Cuota</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -1382,13 +1382,13 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                             key={asistencia.id}
                             className={`border-slate-200 ${tieneAlertas ? 'bg-red-500/5 hover:bg-red-500/10' : 'hover:bg-slate-50'}`}
                           >
-                            <TableCell className="text-[#999999] text-sm py-3 font-mono">
+                            <TableCell className="text-slate-600 text-sm py-3 font-mono">
                               {format(new Date(asistencia.fecha), 'HH:mm')} hs
                             </TableCell>
-                            <TableCell className="text-[#CCCCCC] text-sm py-3">
-                              <span className="font-semibold text-white">{asistencia.socio.apellido}</span>, {asistencia.socio.nombre}
+                            <TableCell className="text-slate-800 text-sm py-3">
+                              <span className="font-semibold text-slate-900">{asistencia.socio.apellido}</span>, {asistencia.socio.nombre}
                             </TableCell>
-                            <TableCell className="text-[#999999] text-xs font-mono py-3">
+                            <TableCell className="text-slate-600 text-xs font-mono py-3">
                               {asistencia.socio.dni}
                             </TableCell>
                             <TableCell className="text-center py-3">
@@ -1428,7 +1428,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-white text-base font-bold print:text-black">Reporte Mensual de Asistencia</h3>
-                <p className="text-[#999999] text-xs print:text-gray-600">
+                <p className="text-slate-600 text-xs print:text-gray-600">
                   Total de clases asistidas por alumno en {format(new Date(selectedMonth + '-01T00:00:00'), 'MMMM yyyy', { locale: es })}
                 </p>
               </div>
@@ -1451,7 +1451,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   variant="outline"
                   size="sm"
                   onClick={() => window.print()}
-                  className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                 >
                   <Printer className="h-3.5 w-3.5 mr-1.5" />
                   Imprimir
@@ -1462,7 +1462,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   size="sm"
                   onClick={() => fetchAsistenciasMensuales(selectedMonth)}
                   disabled={loading}
-                  className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
+                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                 >
                   <RefreshCcw className={`h-3.5 w-3.5 mr-2 ${loading ? 'animate-spin' : ''}`} />
                   Actualizar
@@ -1481,9 +1481,9 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                 <Table className="print:text-black">
                   <TableHeader>
                     <TableRow className="border-slate-200 hover:bg-transparent print:border-b-2 print:border-black">
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">Socio / Alumno</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
-                      <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold text-center">Total Clases Asistidas</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold">Socio / Alumno</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
+                      <TableHead className="text-slate-600 font-medium text-xs h-9 py-1 print:text-black print:font-bold text-center">Total Clases Asistidas</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -1499,10 +1499,10 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                           key={socio.id}
                           className="border-slate-200 hover:bg-slate-50 print:border-b print:border-gray-300 print:hover:bg-transparent"
                         >
-                          <TableCell className="text-[#CCCCCC] text-sm py-3 print:text-black">
-                            <span className="font-semibold text-white">{socio.apellido}</span>, {socio.nombre}
+                          <TableCell className="text-slate-800 text-sm py-3 print:text-black">
+                            <span className="font-semibold text-slate-900">{socio.apellido}</span>, {socio.nombre}
                           </TableCell>
-                          <TableCell className="text-[#999999] text-xs font-mono py-3 print:text-black">
+                          <TableCell className="text-slate-600 text-xs font-mono py-3 print:text-black">
                             {socio.dni}
                           </TableCell>
                           <TableCell className="text-center py-3">
@@ -1526,11 +1526,11 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <DialogContent className="bg-white border-slate-200 text-white sm:max-w-[440px]">
             <DialogHeader>
-              <DialogTitle className="text-white font-bold text-lg flex items-center gap-2">
+              <DialogTitle className="text-slate-900 font-bold text-lg flex items-center gap-2">
                 <ClipboardList className="w-5 h-5 text-[#DC2626]" />
                 {editingRegistro ? 'Editar Planilla del Día' : 'Cargar Planilla del Día'}
               </DialogTitle>
-              <DialogDescription className="text-[#888888] text-xs">
+              <DialogDescription className="text-slate-600 text-xs">
                 Ingresá los alumnos y el valor total del día (1 carga por día).
               </DialogDescription>
             </DialogHeader>
@@ -1538,7 +1538,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
             <form onSubmit={handleSaveModal} className="space-y-4 pt-2">
               {/* Fecha */}
               <div className="space-y-1.5">
-                <Label className="text-xs uppercase font-semibold text-[#CCCCCC]">Día</Label>
+                <Label className="text-xs uppercase font-semibold text-slate-800">Día</Label>
                 <Input
                   type="date"
                   value={formFecha}
@@ -1551,7 +1551,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
               {/* Clases, Alumnos y Precio */}
               <div className="grid grid-cols-3 gap-2.5">
                 <div className="space-y-1.5">
-                  <Label className="text-xs uppercase font-semibold text-[#CCCCCC]">Clases</Label>
+                  <Label className="text-xs uppercase font-semibold text-slate-800">Clases</Label>
                   <Input
                     type="number"
                     min="1"
@@ -1560,12 +1560,12 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     value={formClases}
                     onChange={(e) => setFormClases(e.target.value)}
                     required
-                    className="bg-slate-50 border-slate-200 text-white font-bold focus:border-[#DC2626]"
+                    className="bg-slate-50 border-slate-200 text-slate-900 font-bold focus:border-[#DC2626]"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label className="text-xs uppercase font-semibold text-[#CCCCCC]">Alumnos</Label>
+                  <Label className="text-xs uppercase font-semibold text-slate-800">Alumnos</Label>
                   <Input
                     type="number"
                     min="0"
@@ -1574,12 +1574,12 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     value={formAlumnos}
                     onChange={(e) => setFormAlumnos(e.target.value)}
                     required
-                    className="bg-slate-50 border-slate-200 text-white font-bold focus:border-[#DC2626]"
+                    className="bg-slate-50 border-slate-200 text-slate-900 font-bold focus:border-[#DC2626]"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label className="text-xs uppercase font-semibold text-[#CCCCCC]">Total ($)</Label>
+                  <Label className="text-xs uppercase font-semibold text-slate-800">Total ($)</Label>
                   <Input
                     type="number"
                     min="0"
@@ -1588,14 +1588,14 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                     value={formPrecio}
                     onChange={(e) => setFormPrecio(e.target.value)}
                     required
-                    className="bg-slate-50 border-slate-200 text-white font-bold focus:border-[#DC2626]"
+                    className="bg-slate-50 border-slate-200 text-slate-900 font-bold focus:border-[#DC2626]"
                   />
                 </div>
               </div>
 
               {/* Observaciones */}
               <div className="space-y-1.5">
-                <Label className="text-xs uppercase font-semibold text-[#CCCCCC]">Observaciones (Opcional)</Label>
+                <Label className="text-xs uppercase font-semibold text-slate-800">Observaciones (Opcional)</Label>
                 <Input
                   type="text"
                   placeholder="Notas adicionales..."
@@ -1610,7 +1610,7 @@ export default function AsistenciasTable({ readOnly = false }: { readOnly?: bool
                   type="button"
                   variant="outline"
                   onClick={() => setIsModalOpen(false)}
-                  className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
+                  className="border-slate-200 text-slate-800 hover:bg-slate-50 hover:text-white"
                 >
                   Cancelar
                 </Button>
