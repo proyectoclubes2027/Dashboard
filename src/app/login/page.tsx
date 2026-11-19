@@ -67,7 +67,7 @@ export default function LoginPage() {
                 <Input
                   id="username"
                   type="text"
-                  placeholder="Ej: TenisCAEC"
+                  placeholder="Ej: admin o demo"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className="bg-[#0d0d0d] border-[#2a2a2a] text-white pl-10 h-11 focus:border-[#FFCC00] transition-colors"
