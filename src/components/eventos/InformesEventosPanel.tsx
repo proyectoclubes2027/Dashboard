@@ -152,7 +152,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
             size="sm"
             onClick={() => fetchEventos()}
             disabled={loading}
-            className="h-10 px-3 bg-[#1b1b22] border-[#2c2c36] hover:bg-[#252530] text-xs text-zinc-300 gap-1.5"
+            className="h-10 px-3 bg-[#1b1b22] border-[#2c2c36] hover:bg-[#252530] text-xs text-slate-700 gap-1.5"
             title="Refrescar listado"
           >
             <RefreshCw className={`h-4 w-4 text-amber-400 ${loading ? 'animate-spin' : ''}`} />
@@ -287,7 +287,7 @@ export default function InformesEventosPanel({ readOnly = false }: InformesEvent
                         </p>
                       )}
 
-                      <p className="text-xs text-zinc-400 italic font-serif mt-1 flex items-center gap-1.5">
+                      <p className="text-xs text-slate-500 italic font-serif mt-1 flex items-center gap-1.5">
                         <Calendar className="h-3.5 w-3.5 text-zinc-500 not-italic" />
                         <span>{ev.fechaTexto}</span>
                       </p>

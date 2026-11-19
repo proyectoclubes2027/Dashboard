@@ -641,7 +641,7 @@ export default function EventoSlideView({
               </div>
 
               <div className="text-left md:text-right shrink-0">
-                <span className="text-sm sm:text-base italic font-serif text-zinc-300 block">
+                <span className="text-sm sm:text-base italic font-serif text-slate-700 block">
                   {evento.fechaTexto}
                 </span>
                 <span className="text-[11px] uppercase tracking-wider text-[#DC2626] font-sans font-bold block mt-0.5">
@@ -663,7 +663,7 @@ export default function EventoSlideView({
                         <span className="font-sans font-black text-xs uppercase tracking-wider text-amber-300">
                           INGRESOS (TODOS LOS RUBROS)
                         </span>
-                        <span className="font-sans font-black text-xs uppercase tracking-wider text-zinc-300">
+                        <span className="font-sans font-black text-xs uppercase tracking-wider text-slate-700">
                           Recaudación ($)
                         </span>
                       </div>
@@ -681,7 +681,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin ingresos cargados</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin ingresos cargados</div>
                         )}
                       </div>
                     </div>
@@ -717,7 +717,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin egresos cargados</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin egresos cargados</div>
                         )}
                       </div>
                     </div>
@@ -759,7 +759,7 @@ export default function EventoSlideView({
                         <span className="font-sans font-black text-xs uppercase tracking-wider text-amber-300">
                           INGRESOS TORNEO
                         </span>
-                        <span className="font-sans font-black text-xs uppercase tracking-wider text-zinc-300">
+                        <span className="font-sans font-black text-xs uppercase tracking-wider text-slate-700">
                           Recaudación ($)
                         </span>
                       </div>
@@ -772,7 +772,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin ingresos cargados</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin ingresos cargados</div>
                         )}
                       </div>
                     </div>
@@ -803,7 +803,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin egresos cargados</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin egresos cargados</div>
                         )}
                       </div>
                     </div>
@@ -845,7 +845,7 @@ export default function EventoSlideView({
                         <span className="font-sans font-black text-xs uppercase tracking-wider text-amber-300">
                           INGRESOS - CANTINA
                         </span>
-                        <span className="font-sans font-black text-xs uppercase tracking-wider text-zinc-300">
+                        <span className="font-sans font-black text-xs uppercase tracking-wider text-slate-700">
                           Recaudación ($)
                         </span>
                       </div>
@@ -858,7 +858,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin ingresos de cantina</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin ingresos de cantina</div>
                         )}
                       </div>
                     </div>
@@ -889,7 +889,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin egresos de cantina</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin egresos de cantina</div>
                         )}
                       </div>
                     </div>
@@ -930,7 +930,7 @@ export default function EventoSlideView({
                         <span className="font-sans font-black text-xs uppercase tracking-wider text-amber-300">
                           INGRESOS - AUSPICIANTES / OTROS
                         </span>
-                        <span className="font-sans font-black text-xs uppercase tracking-wider text-zinc-300">
+                        <span className="font-sans font-black text-xs uppercase tracking-wider text-slate-700">
                           Monto ($)
                         </span>
                       </div>
@@ -943,7 +943,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin otros ingresos</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin otros ingresos</div>
                         )}
                       </div>
                     </div>
@@ -973,7 +973,7 @@ export default function EventoSlideView({
                             </div>
                           ))
                         ) : (
-                          <div className="px-4 py-3 text-xs italic text-zinc-400 bg-zinc-50">Sin otros egresos</div>
+                          <div className="px-4 py-3 text-xs italic text-slate-500 bg-zinc-50">Sin otros egresos</div>
                         )}
                       </div>
                     </div>
@@ -1006,7 +1006,7 @@ export default function EventoSlideView({
             {/* 3. PIE DE PÁGINA INSTITUCIONAL DE LA DIAPOSITIVA */}
             <div className="pt-8 mt-6 border-t border-zinc-300 flex items-center justify-between text-xs text-zinc-600 font-serif italic">
               <span>Club Atlético Riberas del Paraná — SubComisión de Tenis</span>
-              <span className="font-sans font-bold text-[10px] uppercase tracking-wider text-zinc-400">
+              <span className="font-sans font-bold text-[10px] uppercase tracking-wider text-slate-500">
                 CARP · Portal Oficial
               </span>
             </div>

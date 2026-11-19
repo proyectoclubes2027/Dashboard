@@ -182,8 +182,8 @@ export default function ReporteAsistenciaEscuela() {
   return (
     <div className="space-y-4">
       {/* Controles de Selección de Reporte */}
-      <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-2xl p-4 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2A2A2A] pb-3">
+      <div className="bg-white border border-slate-200 rounded-2xl p-4 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-3">
           <div>
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
               <Calendar className="h-4 w-4 text-amber-400" />
@@ -209,7 +209,7 @@ export default function ReporteAsistenciaEscuela() {
               variant="outline"
               onClick={fetchReporte}
               disabled={loading}
-              className="bg-[#242424] border-[#383838] text-white hover:bg-[#2F2F2F] h-8 w-8 p-0"
+              className="bg-slate-50 border-slate-200 text-white hover:bg-[#2F2F2F] h-8 w-8 p-0"
               title="Refrescar reporte"
             >
               <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin text-amber-400' : ''}`} />
@@ -225,7 +225,7 @@ export default function ReporteAsistenciaEscuela() {
             className={`p-3 rounded-xl border text-left transition-all ${
               tipoReporte === 'semana'
                 ? 'bg-amber-400 text-black border-amber-400 shadow-md font-bold'
-                : 'bg-[#141414] text-[#AAAAAA] hover:text-white border-[#2A2A2A]'
+                : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
             }`}
           >
             <span className="text-xs uppercase font-extrabold block">Reporte Semanal</span>
@@ -238,7 +238,7 @@ export default function ReporteAsistenciaEscuela() {
             className={`p-3 rounded-xl border text-left transition-all ${
               tipoReporte === 'mes'
                 ? 'bg-amber-400 text-black border-amber-400 shadow-md font-bold'
-                : 'bg-[#141414] text-[#AAAAAA] hover:text-white border-[#2A2A2A]'
+                : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
             }`}
           >
             <span className="text-xs uppercase font-extrabold block">Reporte Mensual</span>
@@ -251,7 +251,7 @@ export default function ReporteAsistenciaEscuela() {
             className={`p-3 rounded-xl border text-left transition-all ${
               tipoReporte === 'rango'
                 ? 'bg-amber-400 text-black border-amber-400 shadow-md font-bold'
-                : 'bg-[#141414] text-[#AAAAAA] hover:text-white border-[#2A2A2A]'
+                : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
             }`}
           >
             <span className="text-xs uppercase font-extrabold block">Rango Personalizado</span>
@@ -268,7 +268,7 @@ export default function ReporteAsistenciaEscuela() {
                 type="date"
                 value={fechaRef}
                 onChange={(e) => setFechaRef(e.target.value)}
-                className="h-8 text-xs bg-[#242424] border-[#383838] text-white w-40"
+                className="h-8 text-xs bg-slate-50 border-slate-200 text-white w-40"
               />
             </div>
           )}
@@ -280,7 +280,7 @@ export default function ReporteAsistenciaEscuela() {
                 type="month"
                 value={mesRef}
                 onChange={(e) => setMesRef(e.target.value)}
-                className="h-8 text-xs bg-[#242424] border-[#383838] text-white w-40"
+                className="h-8 text-xs bg-slate-50 border-slate-200 text-white w-40"
               />
             </div>
           )}
@@ -292,14 +292,14 @@ export default function ReporteAsistenciaEscuela() {
                 type="date"
                 value={fechaDesde}
                 onChange={(e) => setFechaDesde(e.target.value)}
-                className="h-8 text-xs bg-[#242424] border-[#383838] text-white w-36"
+                className="h-8 text-xs bg-slate-50 border-slate-200 text-white w-36"
               />
               <span className="text-xs text-[#888]">Hasta:</span>
               <Input
                 type="date"
                 value={fechaHasta}
                 onChange={(e) => setFechaHasta(e.target.value)}
-                className="h-8 text-xs bg-[#242424] border-[#383838] text-white w-36"
+                className="h-8 text-xs bg-slate-50 border-slate-200 text-white w-36"
               />
             </div>
           )}
@@ -310,7 +310,7 @@ export default function ReporteAsistenciaEscuela() {
             <select
               value={grupoFiltro}
               onChange={(e) => setGrupoFiltro(e.target.value)}
-              className="h-8 text-xs bg-[#242424] border border-[#383838] text-white rounded-lg px-2"
+              className="h-8 text-xs bg-slate-50 border border-slate-200 text-white rounded-lg px-2"
             >
               <option value="todos">Todos los grupos</option>
               {GRUPOS.map((g) => (
@@ -325,7 +325,7 @@ export default function ReporteAsistenciaEscuela() {
 
       {/* Tarjetas KPIs del Reporte */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5">
           <div className="flex items-center justify-between text-[#888]">
             <span className="text-[10px] font-bold uppercase tracking-wider">Total Clases Dictadas</span>
             <Calendar className="h-4 w-4 text-primary" />
@@ -334,7 +334,7 @@ export default function ReporteAsistenciaEscuela() {
           <span className="text-[10px] text-[#777]">días con clase registrada</span>
         </div>
 
-        <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5">
           <div className="flex items-center justify-between text-[#888]">
             <span className="text-[10px] font-bold uppercase tracking-wider">Promedio Concurrencia</span>
             <Percent className="h-4 w-4 text-amber-400" />
@@ -345,7 +345,7 @@ export default function ReporteAsistenciaEscuela() {
           <span className="text-[10px] text-[#777]">asistencia global</span>
         </div>
 
-        <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5">
           <div className="flex items-center justify-between text-[#888]">
             <span className="text-[10px] font-bold uppercase tracking-wider">Asistencia Perfecta</span>
             <CheckCircle2 className="h-4 w-4 text-emerald-400" />
@@ -356,7 +356,7 @@ export default function ReporteAsistenciaEscuela() {
           <span className="text-[10px] text-[#777]">100% de asistencia</span>
         </div>
 
-        <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5">
           <div className="flex items-center justify-between text-[#888]">
             <span className="text-[10px] font-bold uppercase tracking-wider">Alerta Ausencias</span>
             <XCircle className="h-4 w-4 text-red-400" />
@@ -375,12 +375,12 @@ export default function ReporteAsistenciaEscuela() {
           placeholder="Filtrar reporte por alumno o tutor..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="pl-9 h-9 text-xs bg-[#1C1C1C] border-[#2E2E2E] text-white"
+          className="pl-9 h-9 text-xs bg-white border-slate-200 text-white"
         />
       </div>
 
       {/* Tabla Detallada de Asistencias del Período */}
-      <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl overflow-hidden">
+      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
         {loading ? (
           <div className="p-8 text-center text-xs text-[#888] space-y-2">
             <Loader2 className="h-6 w-6 animate-spin mx-auto text-amber-400" />
@@ -393,7 +393,7 @@ export default function ReporteAsistenciaEscuela() {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-[#242424] text-[#AAAAAA] uppercase font-bold text-[10px] border-b border-[#2E2E2E]">
+              <thead className="bg-slate-50 text-[#AAAAAA] uppercase font-bold text-[10px] border-b border-slate-200">
                 <tr>
                   <th className="py-2.5 px-3">Alumno</th>
                   <th className="py-2.5 px-2">Grupo</th>
@@ -405,7 +405,7 @@ export default function ReporteAsistenciaEscuela() {
               <tbody className="divide-y divide-[#262626]">
                 {alumnosFiltrados.map((al) => {
                   return (
-                    <tr key={al.id} className="hover:bg-[#222222] transition-colors">
+                    <tr key={al.id} className="hover:bg-slate-50 transition-colors">
                       <td className="py-3 px-3">
                         <span className="font-bold text-white block text-sm">{al.nombre}</span>
                         {al.edad ? <span className="text-[10px] text-[#777]">{al.edad} años</span> : null}

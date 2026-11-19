@@ -160,7 +160,7 @@ export default function RegistrarPagoModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#1E1E1E] border-[#333333] sm:max-w-md max-h-[90vh] flex flex-col">
+      <DialogContent className="bg-white border-slate-200 sm:max-w-md max-h-[90vh] flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-white">Registrar Pago Múltiple</DialogTitle>
           <DialogDescription className="text-[#999999]">
@@ -179,12 +179,12 @@ export default function RegistrarPagoModal({
             </Label>
             
             {loadingPendientes ? (
-              <div className="h-32 flex items-center justify-center bg-[#2A2A2A]/30 rounded-lg border border-[#333333] border-dashed">
+              <div className="h-32 flex items-center justify-center bg-slate-50/30 rounded-lg border border-slate-200 border-dashed">
                 <Loader2 className="h-5 w-5 animate-spin text-[#999999]" />
               </div>
             ) : (
               <div className="space-y-2">
-                <ScrollArea className={`${pendientes.length === 0 && selectedMonths.length === 0 ? 'h-20' : 'h-40'} border border-[#333333] rounded-lg bg-[#1A1A1A]`}>
+                <ScrollArea className={`${pendientes.length === 0 && selectedMonths.length === 0 ? 'h-20' : 'h-40'} border border-slate-200 rounded-lg bg-white`}>
                   <div className="p-2 space-y-1">
                     {pendientes.length === 0 && selectedMonths.length === 0 ? (
                       <div className="h-full flex flex-col items-center justify-center text-center p-2 space-y-3">
@@ -217,7 +217,7 @@ export default function RegistrarPagoModal({
                               key={p.mesPagado}
                               onClick={() => toggleMonth(p.mesPagado)}
                               className={`w-full flex items-center justify-between p-2 rounded-md transition-colors ${
-                                isSelected ? 'bg-[#DC2626]/10 border border-[#DC2626]/30' : 'hover:bg-[#2A2A2A] border border-transparent'
+                                isSelected ? 'bg-[#DC2626]/10 border border-[#DC2626]/30' : 'hover:bg-slate-50 border border-transparent'
                               }`}
                             >
                               <div className="flex items-center gap-2">
@@ -230,7 +230,7 @@ export default function RegistrarPagoModal({
                                   {MESES[parseInt(month) - 1]} {year}
                                 </span>
                               </div>
-                              <Badge variant="outline" className="text-[10px] border-[#333333] text-[#666666]">
+                              <Badge variant="outline" className="text-[10px] border-slate-200 text-[#666666]">
                                 ${p.monto.toLocaleString('es-AR')}
                               </Badge>
                             </button>
@@ -265,10 +265,10 @@ export default function RegistrarPagoModal({
                 {/* Selector para agregar meses extras */}
                 <div className="flex items-center gap-2">
                   <Select onValueChange={(val) => { if (val && !selectedMonths.includes(val)) toggleMonth(val); }}>
-                    <SelectTrigger className="flex-1 bg-[#1A1A1A] border-[#333333] h-7 text-[10px] text-[#999999]">
+                    <SelectTrigger className="flex-1 bg-white border-slate-200 h-7 text-[10px] text-[#999999]">
                       <SelectValue placeholder="Agregar otro mes (ej: adelanto)..." />
                     </SelectTrigger>
-                    <SelectContent className="bg-[#1E1E1E] border-[#333333]">
+                    <SelectContent className="bg-white border-slate-200">
                       {[...Array(6)].map((_, i) => {
                         const d = new Date();
                         d.setMonth(d.getMonth() + i); // Mes actual + próximos 5
@@ -295,7 +295,7 @@ export default function RegistrarPagoModal({
                 type="number"
                 value={montoManual}
                 onChange={(e) => setMontoManual(e.target.value)}
-                className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
                 min={0}
                 step={100}
               />
@@ -305,13 +305,13 @@ export default function RegistrarPagoModal({
             <div className="space-y-2">
               <Label className="text-[#CCCCCC]">Método de pago</Label>
               <Select value={metodoPago} onValueChange={setMetodoPago}>
-                <SelectTrigger className="w-full bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm">
+                <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
                   <SelectValue placeholder="Método" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                  <SelectItem value="efectivo" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">Efectivo</SelectItem>
-                  <SelectItem value="transferencia" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">Transferencia</SelectItem>
-                  <SelectItem value="mercadopago" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">MercadoPago</SelectItem>
+                <SelectContent className="bg-white border-slate-200">
+                  <SelectItem value="efectivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Efectivo</SelectItem>
+                  <SelectItem value="transferencia" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Transferencia</SelectItem>
+                  <SelectItem value="mercadopago" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">MercadoPago</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -330,7 +330,7 @@ export default function RegistrarPagoModal({
             variant="outline"
             onClick={() => onOpenChange(false)}
             disabled={submitting}
-            className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-9 text-xs"
+            className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-9 text-xs"
           >
             Cancelar
           </Button>

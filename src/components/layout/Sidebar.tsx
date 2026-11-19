@@ -70,16 +70,18 @@ export default function Sidebar({ activeTab, onNavigate, isOpen, onClose, onOpen
 
         {/* Logo */}
         <div className="flex flex-col items-center gap-1.5 pt-5 pb-3 px-4 shrink-0">
-          <img
-            src="/logo-club.png"
-            alt="Club Atlético Riberas del Paraná"
-            className="w-20 h-20 object-contain drop-shadow-md"
-          />
-          <div className="text-center">
-            <p className="text-white text-xs font-bold tracking-wide">
+          <div className="w-20 h-20 rounded-full bg-white p-1 border-2 border-slate-200 shadow-md flex items-center justify-center overflow-hidden">
+            <img
+              src="/logo-club.png"
+              alt="Club Atlético Riberas del Paraná"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="text-center mt-1">
+            <p className="text-slate-900 text-xs font-black tracking-wide">
               RIBERAS DEL PARANÁ
             </p>
-            <p className="text-muted-foreground text-[10px] font-medium">
+            <p className="text-slate-500 text-[10px] font-semibold">
               Panel de Gestión
             </p>
           </div>
@@ -112,7 +114,7 @@ export default function Sidebar({ activeTab, onNavigate, isOpen, onClose, onOpen
             href="/porteria"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between w-full px-3 py-2 rounded-xl text-xs font-bold bg-[#1C1C1C] border border-[#2E2E2E] text-zinc-300 hover:bg-[#282828] hover:text-white hover:border-[#3E3E3E] transition-all mb-1.5 shadow-sm group"
+            className="flex items-center justify-between w-full px-3 py-2 rounded-xl text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-white hover:border-[#3E3E3E] transition-all mb-1.5 shadow-sm group"
             title="Abrir panel de control de accesos de Portería en nueva pestaña"
           >
             <div className="flex items-center gap-2.5">

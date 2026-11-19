@@ -174,12 +174,12 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           <Button 
             variant="outline" 
             size="icon" 
-            className="bg-[#1A1A1A] border-[#333333] text-white hover:bg-[#2A2A2A]"
+            className="bg-white border-slate-200 text-white hover:bg-slate-50"
             onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
-          <div className="flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] border border-[#333333] rounded-lg">
+          <div className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg">
             <CalendarIcon className="h-4 w-4 text-[#DC2626]" />
             <span className="text-white font-semibold min-w-[140px] text-center capitalize">
               {format(currentMonth, 'MMMM yyyy', { locale: es })}
@@ -188,7 +188,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           <Button 
             variant="outline" 
             size="icon" 
-            className="bg-[#1A1A1A] border-[#333333] text-white hover:bg-[#2A2A2A]"
+            className="bg-white border-slate-200 text-white hover:bg-slate-50"
             onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
           >
             <ChevronRight className="h-4 w-4" />
@@ -217,7 +217,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="bg-[#1A1A1A] border-[#333333] overflow-hidden">
+        <Card className="bg-white border-slate-200 overflow-hidden">
           <CardContent className="p-4 flex items-center gap-4">
             <div className="p-3 rounded-xl bg-blue-500/10">
               <Wallet className="h-6 w-6 text-blue-500" />
@@ -229,7 +229,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           </CardContent>
         </Card>
 
-        <Card className="bg-[#1A1A1A] border-[#333333] overflow-hidden">
+        <Card className="bg-white border-slate-200 overflow-hidden">
           <CardContent className="p-4 flex items-center gap-4">
             <div className="p-3 rounded-xl bg-green-500/10">
               <ArrowUpCircle className="h-6 w-6 text-green-500" />
@@ -241,7 +241,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           </CardContent>
         </Card>
 
-        <Card className="bg-[#1A1A1A] border-[#333333] overflow-hidden">
+        <Card className="bg-white border-slate-200 overflow-hidden">
           <CardContent className="p-4 flex items-center gap-4">
             <div className="p-3 rounded-xl bg-red-500/10">
               <ArrowDownCircle className="h-6 w-6 text-red-500" />
@@ -253,7 +253,7 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
           </CardContent>
         </Card>
 
-        <Card className="bg-[#1A1A1A] border-[#DC2626]/30 overflow-hidden relative">
+        <Card className="bg-white border-[#DC2626]/30 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-1 bg-[#DC2626]" />
           <CardContent className="p-4 flex items-center gap-4">
             <div className="p-3 rounded-xl bg-[#DC2626]/10">
@@ -268,11 +268,11 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
       </div>
 
       {/* Main Table */}
-      <div className="bg-[#1A1A1A] border border-[#333333] rounded-xl overflow-hidden">
+      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-[#262626] border-b border-[#333333]">
+              <tr className="bg-slate-50 border-b border-slate-200">
                 <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-center w-12">N°</th>
                 <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Fecha</th>
                 <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Descripción / Concepto</th>
@@ -321,10 +321,10 @@ export default function BalanceMensual({ readOnly = false }: { readOnly?: boolea
                               <MoreVertical className="h-4 w-4" />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end" className="bg-[#1A1A1A] border-[#333333] text-white">
+                          <DropdownMenuContent align="end" className="bg-white border-slate-200 text-white">
                             <DropdownMenuItem 
                               onClick={() => { setEditingMovimiento(m); setModalOpen(true); }}
-                              className="focus:bg-[#2A2A2A] focus:text-white cursor-pointer"
+                              className="focus:bg-slate-50 focus:text-white cursor-pointer"
                             >
                               <Pencil className="h-3.5 w-3.5 mr-2" />
                               Editar

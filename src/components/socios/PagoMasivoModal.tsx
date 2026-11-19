@@ -126,7 +126,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#1E1E1E] border-[#333333] sm:max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
+      <DialogContent className="bg-white border-slate-200 sm:max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-white flex items-center gap-2">
             <Users className="h-5 w-5 text-[#DC2626]" />
@@ -162,12 +162,12 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
               <div className="space-y-1.5">
                 <Label className="text-[#CCCCCC] text-xs">Mes a pagar</Label>
                 <Select value={mesPagado} onValueChange={setMesPagado}>
-                  <SelectTrigger className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm">
+                  <SelectTrigger className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-[#1E1E1E] border-[#333333]">
+                  <SelectContent className="bg-white border-slate-200">
                     {monthOptions.map(opt => (
-                      <SelectItem key={opt.value} value={opt.value} className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">{opt.label}</SelectItem>
+                      <SelectItem key={opt.value} value={opt.value} className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">{opt.label}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -175,20 +175,20 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
               <div className="space-y-1.5">
                 <Label className="text-[#CCCCCC] text-xs">Método de pago</Label>
                 <Select value={metodoPago} onValueChange={setMetodoPago}>
-                  <SelectTrigger className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm">
+                  <SelectTrigger className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                    <SelectItem value="efectivo" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">Efectivo</SelectItem>
-                    <SelectItem value="transferencia" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">Transferencia</SelectItem>
-                    <SelectItem value="mercadopago" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">MercadoPago</SelectItem>
+                  <SelectContent className="bg-white border-slate-200">
+                    <SelectItem value="efectivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Efectivo</SelectItem>
+                    <SelectItem value="transferencia" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">Transferencia</SelectItem>
+                    <SelectItem value="mercadopago" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">MercadoPago</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
 
             {/* Selection header */}
-            <div className="flex items-center justify-between border-b border-[#333333] pb-2">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-2">
               <Button variant="ghost" size="sm" onClick={toggleAll} className="text-[#DC2626] hover:text-[#E6B800] text-xs h-7">
                 {selectedIds.size === sociosFiltrados.length ? 'Desmarcar todos' : 'Seleccionar todos'}
               </Button>
@@ -206,7 +206,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
                   <div
                     key={socio.id}
                     className={`flex items-center gap-2 px-2 py-1 rounded-md cursor-pointer transition-colors ${
-                      selectedIds.has(socio.id) ? 'bg-[#DC2626]/10 border border-[#DC2626]/30' : 'hover:bg-[#252525] border border-transparent'
+                      selectedIds.has(socio.id) ? 'bg-[#DC2626]/10 border border-[#DC2626]/30' : 'hover:bg-slate-50 border border-transparent'
                     }`}
                     onClick={() => toggleSocio(socio.id)}
                   >
@@ -218,7 +218,7 @@ export default function PagoMasivoModal({ open, onOpenChange, socios, onSuccess 
             </div>
 
             <DialogFooter className="gap-2 sm:gap-0">
-              <Button variant="outline" onClick={() => onOpenChange(false)} disabled={submitting} className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A]">
+              <Button variant="outline" onClick={() => onOpenChange(false)} disabled={submitting} className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50">
                 Cancelar
               </Button>
               <Button onClick={handleSubmit} disabled={submitting || selectedIds.size === 0} className="bg-[#DC2626] text-[#121212] hover:bg-[#E6B800] font-medium">

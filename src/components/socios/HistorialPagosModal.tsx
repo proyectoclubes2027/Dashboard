@@ -76,7 +76,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#1E1E1E] border-[#333333] sm:max-w-lg max-h-[85vh] overflow-hidden flex flex-col">
+      <DialogContent className="bg-white border-slate-200 sm:max-w-lg max-h-[85vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-white">
             Historial de Pagos
@@ -89,7 +89,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
         {loading ? (
           <div className="space-y-3 px-1">
             {[...Array(6)].map((_, i) => (
-              <Skeleton key={i} className="h-12 w-full bg-[#2A2A2A]" />
+              <Skeleton key={i} className="h-12 w-full bg-slate-50" />
             ))}
           </div>
         ) : pagos.length === 0 ? (
@@ -100,7 +100,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
         ) : (
           <>
             {/* Resumen */}
-            <div className="bg-[#252525] border border-[#333333] rounded-lg p-3 flex flex-col gap-2">
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-[#DC2626]" />
@@ -108,11 +108,11 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-2 mt-1">
-                <div className="bg-[#1E1E1E] rounded p-2 text-center border border-[#333333]">
+                <div className="bg-white rounded p-2 text-center border border-slate-200">
                   <p className="text-[#999999] text-[10px] uppercase">Total Pagado</p>
                   <p className="text-[#00AA55] font-bold text-sm">${totalPagado.toLocaleString('es-AR')}</p>
                 </div>
-                <div className="bg-[#1E1E1E] rounded p-2 text-center border border-[#333333]">
+                <div className="bg-white rounded p-2 text-center border border-slate-200">
                   <p className="text-[#999999] text-[10px] uppercase">Deuda Pendiente</p>
                   <p className="text-red-400 font-bold text-sm">${totalPendiente.toLocaleString('es-AR')}</p>
                 </div>
@@ -127,7 +127,7 @@ export default function HistorialPagosModal({ open, onOpenChange, socio }: Histo
                   className={`flex items-center justify-between p-3 border rounded-lg ${
                     pago.metodoPago === 'pendiente'
                       ? 'bg-red-400/5 border-red-400/20'
-                      : 'bg-[#252525] border-[#333333]'
+                      : 'bg-slate-50 border-slate-200'
                   }`}
                 >
                   <div className="flex items-center gap-3">

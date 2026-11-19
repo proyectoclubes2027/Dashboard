@@ -43,55 +43,55 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0d0d0d] p-4 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4 relative overflow-hidden">
       {/* Background blobs for premium look */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#DC2626]/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#DC2626]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <Card className="w-full max-w-md bg-[#161616] border-[#2a2a2a] shadow-2xl relative z-10">
+      <Card className="w-full max-w-md bg-white border-slate-200 shadow-2xl relative z-10">
         <CardHeader className="space-y-4 flex flex-col items-center">
-            <div className="w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 mb-2 p-2">
+            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border-2 border-slate-200 shadow-md mb-2 p-1 overflow-hidden">
                 <img src="/logo-club.png" alt="Logo Riberas del Paraná" className="w-full h-full object-contain" />
             </div>
           <div className="text-center">
-            <CardTitle className="text-2xl font-bold text-white tracking-tight">Acceso Administrativo</CardTitle>
-            <CardDescription className="text-[#999999] mt-1">Club Atlético Riberas del Paraná</CardDescription>
+            <CardTitle className="text-2xl font-black text-slate-900 tracking-tight">Acceso Administrativo</CardTitle>
+            <CardDescription className="text-slate-600 font-medium mt-1">Club Atlético Riberas del Paraná</CardDescription>
           </div>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="username" className="text-white text-xs font-semibold uppercase tracking-wider">Usuario</Label>
+              <Label htmlFor="username" className="text-slate-700 text-xs font-bold uppercase tracking-wider">Usuario</Label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#666666]" />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <Input
                   id="username"
                   type="text"
                   placeholder="Ej: admin o demo"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="bg-[#0d0d0d] border-[#2a2a2a] text-white pl-10 h-11 focus:border-[#DC2626] transition-colors"
+                  className="bg-white border-slate-300 text-slate-900 pl-10 h-11 focus:border-[#DC2626] transition-colors"
                   required
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password" title="password" className="text-white text-xs font-semibold uppercase tracking-wider">Contraseña</Label>
+              <Label htmlFor="password" title="password" className="text-slate-700 text-xs font-bold uppercase tracking-wider">Contraseña</Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#666666]" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-[#0d0d0d] border-[#2a2a2a] text-white pl-10 pr-10 h-11 focus:border-[#DC2626] transition-colors"
+                  className="bg-white border-slate-300 text-slate-900 pl-10 pr-10 h-11 focus:border-[#DC2626] transition-colors"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666666] hover:text-[#DC2626] transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#DC2626] transition-colors"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -99,7 +99,7 @@ export default function LoginPage() {
             </div>
             
             {error && (
-              <div className="bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#EF4444] text-xs py-2 px-3 rounded-lg animate-in fade-in slide-in-from-top-1">
+              <div className="bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#EF4444] text-xs py-2 px-3 rounded-lg animate-in fade-in slide-in-from-top-1 font-medium">
                 {error}
               </div>
             )}
@@ -121,7 +121,7 @@ export default function LoginPage() {
           </form>
         </CardContent>
         <CardFooter className="flex flex-col items-center gap-4 pt-2">
-          <p className="text-[#666666] text-[10px] uppercase font-bold tracking-[0.1em]">
+          <p className="text-slate-400 text-[10px] uppercase font-bold tracking-[0.1em]">
             CARP Tenis · Panel de Control v2.0
           </p>
         </CardFooter>
@@ -129,7 +129,7 @@ export default function LoginPage() {
       
       {/* Footer text */}
       <div className="absolute bottom-6 left-0 w-full text-center">
-        <p className="text-[#666666] text-xs">Club Atlético Riberas del Paraná © {new Date().getFullYear()}</p>
+        <p className="text-slate-500 text-xs font-medium">Club Atlético Riberas del Paraná © {new Date().getFullYear()}</p>
       </div>
     </div>
   );

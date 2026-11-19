@@ -132,14 +132,14 @@ export default function AsistenciaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-[#DC2626] tracking-tight mb-1">CARP Tenis</h1>
           <p className="text-[#999999] text-sm">Registro de Asistencia a Clases</p>
         </div>
 
-        <Card className="bg-[#1E1E1E] border-[#333333] shadow-2xl overflow-hidden">
+        <Card className="bg-white border-slate-200 shadow-2xl overflow-hidden">
           {/* Header según el estado */}
           {status === 'idle' && step === 'dni' && (
             <CardHeader className="text-center pb-2">
@@ -151,7 +151,7 @@ export default function AsistenciaPage() {
           )}
 
           {status === 'idle' && step === 'completar_datos' && (
-            <CardHeader className="text-center pb-2 bg-[#232323] border-b border-[#333333]">
+            <CardHeader className="text-center pb-2 bg-[#232323] border-b border-slate-200">
               <div className="mx-auto w-10 h-10 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 flex items-center justify-center text-[#DC2626] mb-2">
                 <UserCheck className="w-5 h-5" />
               </div>
@@ -173,7 +173,7 @@ export default function AsistenciaPage() {
                     placeholder="Ej: 32824688"
                     value={dni}
                     onChange={(e) => setDni(e.target.value)}
-                    className="text-center text-2xl h-14 bg-[#2A2A2A] border-[#383838] text-white focus:border-[#DC2626] focus:ring-[#DC2626] font-mono tracking-wider"
+                    className="text-center text-2xl h-14 bg-slate-50 border-slate-200 text-white focus:border-[#DC2626] focus:ring-[#DC2626] font-mono tracking-wider"
                     required
                     autoFocus
                   />
@@ -212,7 +212,7 @@ export default function AsistenciaPage() {
                       placeholder="Ej: Juan"
                       value={nombre}
                       onChange={(e) => setNombre(e.target.value)}
-                      className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#DC2626]"
+                      className="h-10 bg-slate-50 border-slate-200 text-white text-sm focus:border-[#DC2626]"
                       required
                       autoFocus
                     />
@@ -227,7 +227,7 @@ export default function AsistenciaPage() {
                       placeholder="Ej: Pérez"
                       value={apellido}
                       onChange={(e) => setApellido(e.target.value)}
-                      className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#DC2626]"
+                      className="h-10 bg-slate-50 border-slate-200 text-white text-sm focus:border-[#DC2626]"
                       required
                     />
                   </div>
@@ -243,7 +243,7 @@ export default function AsistenciaPage() {
                     placeholder="Ej: 3400551122"
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
-                    className="h-10 bg-[#2A2A2A] border-[#383838] text-white text-sm focus:border-[#DC2626]"
+                    className="h-10 bg-slate-50 border-slate-200 text-white text-sm focus:border-[#DC2626]"
                     required
                   />
                   <p className="text-[11px] text-[#777777]">
@@ -256,7 +256,7 @@ export default function AsistenciaPage() {
                     type="button"
                     variant="outline"
                     onClick={() => setStep('dni')}
-                    className="h-11 px-3 border-[#383838] text-[#AAAAAA] hover:text-white hover:bg-[#2A2A2A]"
+                    className="h-11 px-3 border-slate-200 text-[#AAAAAA] hover:text-white hover:bg-slate-50"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1" />
                     Volver
@@ -308,7 +308,7 @@ export default function AsistenciaPage() {
                 <Button 
                   variant="outline" 
                   onClick={handleReset}
-                  className="mt-2 border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white"
+                  className="mt-2 border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
                 >
                   Intentar de nuevo
                 </Button>

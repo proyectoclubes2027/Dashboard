@@ -751,7 +751,7 @@ export default function GestionTurnosPanel({ readOnly }: { readOnly?: boolean })
                     variant={filtroMonitor === 'finalizados' ? 'default' : 'outline'}
                     size="sm"
                     onClick={() => setFiltroMonitor('finalizados')}
-                    className="text-xs h-7 px-2.5 rounded-full gap-1 text-zinc-400"
+                    className="text-xs h-7 px-2.5 rounded-full gap-1 text-slate-500"
                   >
                     <span>⚪ Finalizados</span>
                     <span className="text-[10px] opacity-75">
@@ -858,7 +858,7 @@ export default function GestionTurnosPanel({ readOnly }: { readOnly?: boolean })
                                   </Badge>
                                 )}
                                 {turno.estadoTurno === 'finalizado' && (
-                                  <Badge variant="secondary" className="text-zinc-400 text-[10px] px-2 py-0">
+                                  <Badge variant="secondary" className="text-slate-500 text-[10px] px-2 py-0">
                                     ⚪ Finalizado
                                   </Badge>
                                 )}
@@ -1292,7 +1292,7 @@ export default function GestionTurnosPanel({ readOnly }: { readOnly?: boolean })
                                 {idx === 0 ? (
                                   <span className="text-amber-500 font-black">🥇 1</span>
                                 ) : idx === 1 ? (
-                                  <span className="text-zinc-400 font-black">🥈 2</span>
+                                  <span className="text-slate-500 font-black">🥈 2</span>
                                 ) : idx === 2 ? (
                                   <span className="text-amber-700 font-black">🥉 3</span>
                                 ) : (

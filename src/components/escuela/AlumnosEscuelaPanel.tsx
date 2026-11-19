@@ -358,19 +358,19 @@ export default function AlumnosEscuelaPanel({
     <div className="space-y-5">
       {/* Selector de Pestaña Principal: Padrón vs Tomar Asistencia */}
       {!hideSubNav && (
-        <div className="flex items-center gap-1.5 sm:gap-2 border-b border-[#2A2A2A] pb-2 overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-1.5 sm:gap-2 border-b border-slate-200 pb-2 overflow-x-auto no-scrollbar">
           <button
             type="button"
             onClick={() => setVistaActiva('padron')}
             className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs shrink-0 transition-all ${
               vistaActiva === 'padron'
                 ? 'bg-primary text-black shadow-md'
-                : 'bg-[#1C1C1C] text-[#AAAAAA] hover:text-white border border-[#2E2E2E]'
+                : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
             }`}
           >
             <ListOrdered className="h-4 w-4" />
             <span>Padrón</span>
-            <Badge className={`text-[10px] px-1.5 py-0 ${vistaActiva === 'padron' ? 'bg-black text-primary' : 'bg-[#2A2A2A] text-[#888]'}`}>
+            <Badge className={`text-[10px] px-1.5 py-0 ${vistaActiva === 'padron' ? 'bg-black text-primary' : 'bg-slate-50 text-[#888]'}`}>
               {stats.total}
             </Badge>
           </button>
@@ -383,7 +383,7 @@ export default function AlumnosEscuelaPanel({
               className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs shrink-0 transition-all ${
                 vistaActiva === 'asistencia'
                   ? 'bg-emerald-500 text-black shadow-md'
-                  : 'bg-[#1C1C1C] text-emerald-400 hover:text-white border border-emerald-500/30'
+                  : 'bg-white text-emerald-400 hover:text-white border border-emerald-500/30'
               }`}
             >
               <CheckSquare className="h-4 w-4" />
@@ -397,7 +397,7 @@ export default function AlumnosEscuelaPanel({
             className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs shrink-0 transition-all ${
               vistaActiva === 'pagos'
                 ? 'bg-emerald-400 text-black shadow-md'
-                : 'bg-[#1C1C1C] text-emerald-300 hover:text-white border border-emerald-500/40'
+                : 'bg-white text-emerald-300 hover:text-white border border-emerald-500/40'
             }`}
           >
             <DollarSign className="h-4 w-4" />
@@ -410,7 +410,7 @@ export default function AlumnosEscuelaPanel({
             className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs shrink-0 transition-all ${
               vistaActiva === 'reportes'
                 ? 'bg-amber-400 text-black shadow-md'
-                : 'bg-[#1C1C1C] text-amber-400 hover:text-white border border-amber-400/30'
+                : 'bg-white text-amber-400 hover:text-white border border-amber-400/30'
             }`}
           >
             <BarChart3 className="h-4 w-4" />
@@ -439,7 +439,7 @@ export default function AlumnosEscuelaPanel({
         <>
           {/* KPI Cards: en desktop arriba, en mobile abajo y más compacto */}
           <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div className="bg-[#181818] border border-[#2A2A2A] rounded-xl p-4 flex flex-col justify-between">
+            <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
               <div className="flex items-center justify-between text-[#888888]">
                 <span className="text-xs font-semibold uppercase tracking-wider">Total Alumnos</span>
                 <Users size={18} className="text-primary" />
@@ -450,7 +450,7 @@ export default function AlumnosEscuelaPanel({
               </div>
             </div>
 
-            <div className="bg-[#181818] border border-emerald-500/20 rounded-xl p-4 flex flex-col justify-between">
+            <div className="bg-white border border-emerald-500/20 rounded-xl p-4 flex flex-col justify-between">
               <div className="flex items-center justify-between text-emerald-400">
                 <span className="text-xs font-semibold uppercase tracking-wider">Escuelita</span>
                 <Sparkles size={18} />
@@ -461,7 +461,7 @@ export default function AlumnosEscuelaPanel({
               </div>
             </div>
 
-            <div className="bg-[#181818] border border-sky-500/20 rounded-xl p-4 flex flex-col justify-between">
+            <div className="bg-white border border-sky-500/20 rounded-xl p-4 flex flex-col justify-between">
               <div className="flex items-center justify-between text-sky-400">
                 <span className="text-xs font-semibold uppercase tracking-wider">Minitenis</span>
                 <GraduationCap size={18} />
@@ -472,7 +472,7 @@ export default function AlumnosEscuelaPanel({
               </div>
             </div>
 
-            <div className="bg-[#181818] border border-amber-500/20 rounded-xl p-4 flex flex-col justify-between">
+            <div className="bg-white border border-amber-500/20 rounded-xl p-4 flex flex-col justify-between">
               <div className="flex items-center justify-between text-amber-400">
                 <span className="text-xs font-semibold uppercase tracking-wider">Entrenamiento</span>
                 <Trophy size={18} />
@@ -485,14 +485,14 @@ export default function AlumnosEscuelaPanel({
           </div>
 
           {/* Barra de Filtros y Acciones */}
-          <div className="bg-[#181818] border border-[#2A2A2A] rounded-xl p-3 sm:p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2.5 sm:gap-3">
+          <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2.5 sm:gap-3">
             {/* Selector de Grupo */}
             <div className="flex flex-wrap items-center gap-1.5">
               <Button
                 size="sm"
                 variant={selectedGrupo === 'todos' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('todos')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'todos' ? 'bg-primary text-black' : 'border-[#2A2A2A] text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'todos' ? 'bg-primary text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
               >
                 Todos ({stats.total})
               </Button>
@@ -500,7 +500,7 @@ export default function AlumnosEscuelaPanel({
                 size="sm"
                 variant={selectedGrupo === 'Escuelita' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('Escuelita')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Escuelita' ? 'bg-emerald-500 text-black' : 'border-[#2A2A2A] text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Escuelita' ? 'bg-emerald-500 text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
               >
                 Escuelita ({stats.escuelita})
               </Button>
@@ -508,7 +508,7 @@ export default function AlumnosEscuelaPanel({
                 size="sm"
                 variant={selectedGrupo === 'Minitenis' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('Minitenis')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Minitenis' ? 'bg-sky-500 text-black' : 'border-[#2A2A2A] text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Minitenis' ? 'bg-sky-500 text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
               >
                 Minitenis ({stats.minitenis})
               </Button>
@@ -516,7 +516,7 @@ export default function AlumnosEscuelaPanel({
                 size="sm"
                 variant={selectedGrupo === 'Grupo Entrenamiento' ? 'default' : 'outline'}
                 onClick={() => setSelectedGrupo('Grupo Entrenamiento')}
-                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black' : 'border-[#2A2A2A] text-[#AAAAAA] hover:text-white'}`}
+                className={`text-xs h-8 px-2.5 font-bold ${selectedGrupo === 'Grupo Entrenamiento' ? 'bg-amber-500 text-black' : 'border-slate-200 text-[#AAAAAA] hover:text-white'}`}
               >
                 Entrenamiento ({stats.entrenamiento})
               </Button>
@@ -531,7 +531,7 @@ export default function AlumnosEscuelaPanel({
                   placeholder="Buscar alumno..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="pl-8 h-9 text-xs bg-[#121212] border-[#2A2A2A] text-white placeholder:text-[#666666] focus-visible:ring-primary"
+                  className="pl-8 h-9 text-xs bg-white border-slate-200 text-white placeholder:text-[#666666] focus-visible:ring-primary"
                 />
               </div>
 
@@ -578,7 +578,7 @@ export default function AlumnosEscuelaPanel({
           <p className="text-sm text-[#888888]">Cargando alumnos de la escuela...</p>
         </div>
       ) : filteredAlumnos.length === 0 ? (
-        <div className="bg-[#181818] border border-[#2A2A2A] rounded-xl p-12 text-center">
+        <div className="bg-white border border-slate-200 rounded-xl p-12 text-center">
           <Users size={40} className="mx-auto text-[#555555] mb-3" />
           <p className="text-white font-semibold">No se encontraron alumnos</p>
           <p className="text-xs text-[#888888] mt-1">
@@ -597,10 +597,10 @@ export default function AlumnosEscuelaPanel({
             return (
               <div
                 key={grupoNombre}
-                className="bg-[#181818] border border-[#2A2A2A] rounded-xl overflow-hidden shadow-sm"
+                className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm"
               >
                 {/* Cabecera del Grupo */}
-                <div className="px-5 py-3.5 bg-[#141414] border-b border-[#2A2A2A] flex items-center justify-between flex-wrap gap-2">
+                <div className="px-5 py-3.5 bg-white border-b border-slate-200 flex items-center justify-between flex-wrap gap-2">
                   <div className="flex items-center gap-2.5">
                     <div className="p-1.5 rounded-lg bg-white/5 text-white">
                       <GroupIcon size={16} />
@@ -648,7 +648,7 @@ export default function AlumnosEscuelaPanel({
                     {list.map((alumno, idx) => (
                       <div
                         key={alumno.id}
-                        className="px-5 py-3 flex items-center justify-between gap-3 hover:bg-[#1C1C1C] transition-colors group"
+                        className="px-5 py-3 flex items-center justify-between gap-3 hover:bg-white transition-colors group"
                       >
                         <div className="flex items-center gap-3.5 min-w-0">
                           {/* Número correlativo */}
@@ -725,7 +725,7 @@ export default function AlumnosEscuelaPanel({
 
           {/* KPI Cards Inferiores para vista de celular (más chicos y abajo) */}
           <div className="grid grid-cols-2 gap-2 pt-2 md:hidden">
-            <div className="bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 flex items-center justify-between">
+            <div className="bg-white border border-slate-200 rounded-lg p-2.5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Users size={14} className="text-primary" />
                 <span className="text-[11px] font-semibold text-[#888888] uppercase">Total</span>
@@ -733,7 +733,7 @@ export default function AlumnosEscuelaPanel({
               <span className="text-base font-black text-white">{stats.total}</span>
             </div>
 
-            <div className="bg-[#141414] border border-emerald-500/20 rounded-lg p-2.5 flex items-center justify-between">
+            <div className="bg-white border border-emerald-500/20 rounded-lg p-2.5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Sparkles size={14} className="text-emerald-400" />
                 <span className="text-[11px] font-semibold text-emerald-400 uppercase">Escuelita</span>
@@ -741,7 +741,7 @@ export default function AlumnosEscuelaPanel({
               <span className="text-base font-black text-white">{stats.escuelita}</span>
             </div>
 
-            <div className="bg-[#141414] border border-sky-500/20 rounded-lg p-2.5 flex items-center justify-between">
+            <div className="bg-white border border-sky-500/20 rounded-lg p-2.5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <GraduationCap size={14} className="text-sky-400" />
                 <span className="text-[11px] font-semibold text-sky-400 uppercase">Minitenis</span>
@@ -749,7 +749,7 @@ export default function AlumnosEscuelaPanel({
               <span className="text-base font-black text-white">{stats.minitenis}</span>
             </div>
 
-            <div className="bg-[#141414] border border-amber-500/20 rounded-lg p-2.5 flex items-center justify-between">
+            <div className="bg-white border border-amber-500/20 rounded-lg p-2.5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Trophy size={14} className="text-amber-400" />
                 <span className="text-[11px] font-semibold text-amber-400 uppercase">Entrenam.</span>
@@ -762,7 +762,7 @@ export default function AlumnosEscuelaPanel({
 
       {/* Modal Crear / Editar Alumno */}
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-        <DialogContent className="bg-[#181818] border-[#2A2A2A] text-white max-w-md">
+        <DialogContent className="bg-white border-slate-200 text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="text-base font-bold text-white flex items-center gap-2">
               <GraduationCap size={18} className="text-primary" />
@@ -781,7 +781,7 @@ export default function AlumnosEscuelaPanel({
                 placeholder="Ej: Felipe Rodriguez"
                 value={formNombre}
                 onChange={(e) => setFormNombre(e.target.value)}
-                className="mt-1 bg-[#121212] border-[#2A2A2A] text-white text-sm focus-visible:ring-primary"
+                className="mt-1 bg-white border-slate-200 text-white text-sm focus-visible:ring-primary"
               />
             </div>
 
@@ -790,7 +790,7 @@ export default function AlumnosEscuelaPanel({
               <select
                 value={formGrupo}
                 onChange={(e) => setFormGrupo(e.target.value)}
-                className="w-full mt-1 px-3 py-2 rounded-md bg-[#121212] border border-[#2A2A2A] text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full mt-1 px-3 py-2 rounded-md bg-white border border-slate-200 text-white text-sm focus:outline-none focus:ring-1 focus:ring-primary"
               >
                 {GRUPOS.map((g) => (
                   <option key={g} value={g}>
@@ -810,7 +810,7 @@ export default function AlumnosEscuelaPanel({
                   max="25"
                   value={formEdad}
                   onChange={(e) => setFormEdad(e.target.value)}
-                  className="mt-1 bg-[#121212] border-[#2A2A2A] text-white text-sm"
+                  className="mt-1 bg-white border-slate-200 text-white text-sm"
                 />
               </div>
               <div>
@@ -820,7 +820,7 @@ export default function AlumnosEscuelaPanel({
                   placeholder="Ej: 3400 123456"
                   value={formTelefono}
                   onChange={(e) => setFormTelefono(e.target.value)}
-                  className="mt-1 bg-[#121212] border-[#2A2A2A] text-white text-sm"
+                  className="mt-1 bg-white border-slate-200 text-white text-sm"
                 />
               </div>
             </div>
@@ -832,7 +832,7 @@ export default function AlumnosEscuelaPanel({
                 placeholder="Ej: Juan Rodriguez"
                 value={formTutor}
                 onChange={(e) => setFormTutor(e.target.value)}
-                className="mt-1 bg-[#121212] border-[#2A2A2A] text-white text-sm"
+                className="mt-1 bg-white border-slate-200 text-white text-sm"
               />
             </div>
 
@@ -843,7 +843,7 @@ export default function AlumnosEscuelaPanel({
                 placeholder="Ej: Viene martes y jueves 17hs"
                 value={formObservaciones}
                 onChange={(e) => setFormObservaciones(e.target.value)}
-                className="mt-1 bg-[#121212] border-[#2A2A2A] text-white text-sm"
+                className="mt-1 bg-white border-slate-200 text-white text-sm"
               />
             </div>
 
@@ -852,7 +852,7 @@ export default function AlumnosEscuelaPanel({
                 type="button"
                 variant="outline"
                 onClick={() => setModalOpen(false)}
-                className="border-[#2A2A2A] text-white hover:bg-white/5 text-xs"
+                className="border-slate-200 text-white hover:bg-white/5 text-xs"
               >
                 Cancelar
               </Button>
@@ -871,7 +871,7 @@ export default function AlumnosEscuelaPanel({
 
       {/* Alerta Confirmar Eliminación */}
       <AlertDialog open={deleteAlertOpen} onOpenChange={setDeleteAlertOpen}>
-        <AlertDialogContent className="bg-[#181818] border-[#2A2A2A] text-white max-w-sm">
+        <AlertDialogContent className="bg-white border-slate-200 text-white max-w-sm">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-sm font-bold text-white">
               ¿Eliminar alumno de la escuela?
@@ -883,7 +883,7 @@ export default function AlumnosEscuelaPanel({
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="gap-2">
-            <AlertDialogCancel className="border-[#2A2A2A] text-white hover:bg-white/5 text-xs">
+            <AlertDialogCancel className="border-slate-200 text-white hover:bg-white/5 text-xs">
               Cancelar
             </AlertDialogCancel>
             <AlertDialogAction

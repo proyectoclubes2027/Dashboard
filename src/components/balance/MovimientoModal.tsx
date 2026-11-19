@@ -115,7 +115,7 @@ export default function MovimientoModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#1A1A1A] border-[#333333] text-white sm:max-w-[425px]">
+      <DialogContent className="bg-white border-slate-200 text-white sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="text-[#DC2626]">
             {movimiento ? 'Editar Movimiento' : 'Registrar Nuevo Movimiento'}
@@ -132,7 +132,7 @@ export default function MovimientoModal({
                 required
                 value={formData.fecha}
                 onChange={(e) => setFormData({ ...formData, fecha: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+                className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
               />
             </div>
             <div className="space-y-2">
@@ -141,10 +141,10 @@ export default function MovimientoModal({
                 value={formData.tipo} 
                 onValueChange={(v: any) => setFormData({ ...formData, tipo: v })}
               >
-                <SelectTrigger id="tipo" className="bg-[#2A2A2A] border-[#333333] text-white">
+                <SelectTrigger id="tipo" className="bg-slate-50 border-slate-200 text-white">
                   <SelectValue placeholder="Tipo" />
                 </SelectTrigger>
-                <SelectContent className="bg-[#1A1A1A] border-[#333333] text-white">
+                <SelectContent className="bg-white border-slate-200 text-white">
                   <SelectItem value="ingreso" className="text-green-500 focus:bg-green-500/10 focus:text-green-500">Ingreso (+)</SelectItem>
                   <SelectItem value="egreso" className="text-red-500 focus:bg-red-500/10 focus:text-red-500">Egreso (-)</SelectItem>
                 </SelectContent>
@@ -160,7 +160,7 @@ export default function MovimientoModal({
               required
               value={formData.descripcion}
               onChange={(e) => setFormData({ ...formData, descripcion: e.target.value })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+              className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -172,7 +172,7 @@ export default function MovimientoModal({
               required
               value={formData.responsable}
               onChange={(e) => setFormData({ ...formData, responsable: e.target.value })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+              className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -187,7 +187,7 @@ export default function MovimientoModal({
                 placeholder="0,00"
                 value={formData.monto}
                 onChange={(e) => setFormData({ ...formData, monto: formatInputCurrency(e.target.value) })}
-                className="bg-[#2A2A2A] border-[#333333] text-white pl-7 focus:border-[#DC2626]"
+                className="bg-slate-50 border-slate-200 text-white pl-7 focus:border-[#DC2626]"
               />
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function MovimientoModal({
               type="button" 
               variant="outline" 
               onClick={() => onOpenChange(false)}
-              className="bg-transparent border-[#333333] text-[#999999] hover:bg-[#2A2A2A] hover:text-white"
+              className="bg-transparent border-slate-200 text-[#999999] hover:bg-slate-50 hover:text-white"
             >
               Cancelar
             </Button>

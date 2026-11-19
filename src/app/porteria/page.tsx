@@ -441,7 +441,7 @@ export default function PorteriaPage() {
 
         {/* Reloj Digital & Botón Refrescar */}
         <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
-          <div className="bg-[#111113] border border-[#26262B] rounded-xl px-4 py-2 text-right">
+          <div className="bg-white border border-[#26262B] rounded-xl px-4 py-2 text-right">
             <span className="text-[10px] text-[#888888] font-bold uppercase tracking-wider block">Hora Oficial</span>
             <span className="text-lg font-black text-white font-mono">{relojDigital || '--:--:--'}</span>
           </div>
@@ -629,7 +629,7 @@ export default function PorteriaPage() {
                   setFechaPersonalizada(e.target.value);
                   setTabDia('otro');
                 }}
-                className="bg-[#111113] border-[#303038] text-white text-xs h-9 rounded-xl w-full max-w-[200px]"
+                className="bg-white border-[#303038] text-white text-xs h-9 rounded-xl w-full max-w-[200px]"
               />
               <Button
                 size="sm"
@@ -654,7 +654,7 @@ export default function PorteriaPage() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="¿Quién llega al portón? Escribí Apellido, DNI o Nombre..."
-              className="pl-10 pr-9 h-11 bg-[#111113] border-[#2B2B32] text-white placeholder:text-[#666] focus:border-blue-500 rounded-xl text-sm"
+              className="pl-10 pr-9 h-11 bg-white border-[#2B2B32] text-white placeholder:text-[#666] focus:border-blue-500 rounded-xl text-sm"
             />
             {searchTerm && (
               <button
@@ -675,7 +675,7 @@ export default function PorteriaPage() {
               className={`rounded-xl text-xs h-9 px-3 ${
                 filtroTipo === 'todos'
                   ? 'bg-blue-600 text-white'
-                  : 'bg-[#111113] border-[#2B2B32] text-[#888] hover:text-white'
+                  : 'bg-white border-[#2B2B32] text-[#888] hover:text-white'
               }`}
             >
               Todos ({turnosActivos.length})
@@ -689,7 +689,7 @@ export default function PorteriaPage() {
                 className={`rounded-xl text-xs h-9 px-3 gap-1.5 ${
                   filtroTipo === 'en_curso'
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-[#111113] border-[#2B2B32] text-[#888] hover:text-white'
+                    : 'bg-white border-[#2B2B32] text-[#888] hover:text-white'
                 }`}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
@@ -704,7 +704,7 @@ export default function PorteriaPage() {
               className={`rounded-xl text-xs h-9 px-3 gap-1.5 ${
                 filtroTipo === 'socios'
                   ? 'bg-blue-600 text-white'
-                  : 'bg-[#111113] border-[#2B2B32] text-[#888] hover:text-white'
+                  : 'bg-white border-[#2B2B32] text-[#888] hover:text-white'
               }`}
             >
               <Users className="h-3.5 w-3.5" />
@@ -718,7 +718,7 @@ export default function PorteriaPage() {
               className={`rounded-xl text-xs h-9 px-3 gap-1.5 ${
                 filtroTipo === 'profe'
                   ? 'bg-amber-600 text-white'
-                  : 'bg-[#111113] border-[#2B2B32] text-[#888] hover:text-white'
+                  : 'bg-white border-[#2B2B32] text-[#888] hover:text-white'
               }`}
             >
               <GraduationCap className="h-3.5 w-3.5" />
@@ -733,7 +733,7 @@ export default function PorteriaPage() {
                 className={`rounded-xl text-xs h-9 px-3 gap-1.5 ${
                   filtroTipo === 'bloqueados'
                     ? 'bg-purple-600 text-white'
-                    : 'bg-[#111113] border-[#2B2B32] text-[#888] hover:text-white'
+                    : 'bg-white border-[#2B2B32] text-[#888] hover:text-white'
                 }`}
               >
                 <Trophy className="h-3.5 w-3.5" />
@@ -746,7 +746,7 @@ export default function PorteriaPage() {
         {/* TABLA ORGANIZADA EN RENGLONES: HORARIO - CANCHA 1 - CANCHA 2 */}
         <div className="space-y-3 pt-1">
           {/* Encabezado de Columnas (visible en desktop/tablets) */}
-          <div className="hidden md:grid md:grid-cols-12 gap-3 px-4 py-2.5 bg-[#111113] border border-[#24242A] rounded-xl text-xs font-black uppercase tracking-wider text-[#888]">
+          <div className="hidden md:grid md:grid-cols-12 gap-3 px-4 py-2.5 bg-white border border-[#24242A] rounded-xl text-xs font-black uppercase tracking-wider text-[#888]">
             <div className="col-span-2 flex items-center gap-1.5">
               <Clock className="h-3.5 w-3.5 text-blue-400" />
               <span>Horario</span>

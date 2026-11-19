@@ -169,7 +169,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         
         {/* Saldo en Caja */}
-        <Card className="bg-[#1A1A1A] border-[#333333] overflow-hidden">
+        <Card className="bg-white border-slate-200 overflow-hidden">
           <CardContent className="p-4 flex items-center gap-4">
             <div className="p-3 rounded-xl bg-blue-500/10">
               <Wallet className="h-6 w-6 text-blue-500" />
@@ -182,7 +182,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
         </Card>
 
         {/* Plazos Fijos Activos */}
-        <Card className="bg-[#1A1A1A] border-[#333333] overflow-hidden">
+        <Card className="bg-white border-slate-200 overflow-hidden">
           <CardContent className="p-4 flex items-center gap-4">
             <div className="p-3 rounded-xl bg-green-500/10">
               <Landmark className="h-6 w-6 text-green-500" />
@@ -195,7 +195,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
         </Card>
 
         {/* Dólares */}
-        <Card className="bg-[#1A1A1A] border-[#333333] overflow-hidden">
+        <Card className="bg-white border-slate-200 overflow-hidden">
           <CardContent className="p-4 flex flex-col gap-3">
             
             <div className="flex items-center gap-4">
@@ -221,7 +221,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                     <Input 
                       value={tempDolares}
                       onChange={(e) => setTempDolares(formatInputCurrency(e.target.value))}
-                      className="h-7 bg-[#2A2A2A] border-[#333333] text-white px-2 py-0 text-sm"
+                      className="h-7 bg-slate-50 border-slate-200 text-white px-2 py-0 text-sm"
                       placeholder="0,00"
                       autoFocus
                     />
@@ -234,7 +234,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
               </div>
             </div>
 
-            <div className="border-t border-[#333333] pt-2 flex items-center justify-between">
+            <div className="border-t border-slate-200 pt-2 flex items-center justify-between">
               <div>
                 <p className="text-[#999999] text-[9px] uppercase font-bold tracking-wider">Tasa Cambio</p>
                 {!editandoCotizacion ? (
@@ -244,7 +244,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                     <Input 
                       value={tempCotizacion}
                       onChange={(e) => setTempCotizacion(formatInputCurrency(e.target.value))}
-                      className="h-6 w-20 bg-[#2A2A2A] border-[#333333] text-white px-1 py-0 text-xs"
+                      className="h-6 w-20 bg-slate-50 border-slate-200 text-white px-1 py-0 text-xs"
                     />
                     <Button size="sm" onClick={handleSaveCotizacion} disabled={savingDolares} className="h-6 px-1.5 bg-emerald-500 text-white">
                       {savingDolares ? <Loader2 className="h-3 w-3 animate-spin" /> : 'Ok'}
@@ -270,7 +270,7 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
         </Card>
 
         {/* Total Pesos + Dolares */}
-        <Card className="bg-[#1A1A1A] border-[#DC2626]/30 overflow-hidden relative">
+        <Card className="bg-white border-[#DC2626]/30 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-1 bg-[#DC2626]" />
           <CardContent className="p-4 flex items-center gap-4">
             <div className="p-3 rounded-xl bg-[#DC2626]/10">
@@ -286,14 +286,14 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
       </div>
 
       {/* Main Table */}
-      <div className="bg-[#1A1A1A] border border-[#333333] rounded-xl overflow-hidden">
-        <div className="px-4 py-3 border-b border-[#333333] bg-[#262626] flex items-center justify-between">
+      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+        <div className="px-4 py-3 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <h3 className="text-white font-bold text-sm">Historial de Plazos Fijos</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-[#262626] border-b border-[#333333]">
+              <tr className="bg-slate-50 border-b border-slate-200">
                 <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider text-center w-12">N°</th>
                 <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Banco / Entidad</th>
                 <th className="px-4 py-3 text-[#999999] text-[10px] font-bold uppercase tracking-wider">Fechas</th>
@@ -344,10 +344,10 @@ export default function InversionesPanel({ readOnly = false }: { readOnly?: bool
                               <MoreVertical className="h-4 w-4" />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end" className="bg-[#1A1A1A] border-[#333333] text-white">
+                          <DropdownMenuContent align="end" className="bg-white border-slate-200 text-white">
                             <DropdownMenuItem 
                               onClick={() => { setEditingPlazo(p); setModalOpen(true); }}
-                              className="focus:bg-[#2A2A2A] focus:text-white cursor-pointer"
+                              className="focus:bg-slate-50 focus:text-white cursor-pointer"
                             >
                               <Pencil className="h-3.5 w-3.5 mr-2" />
                               Editar

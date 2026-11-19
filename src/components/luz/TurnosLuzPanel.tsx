@@ -430,7 +430,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
   return (
     <div className="space-y-6">
       {/* 1. Header con Filtros de Período y Acciones */}
-      <div className="bg-[#181818] border border-[#2A2A2A] rounded-xl p-4 lg:p-5 shadow-sm space-y-4">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 lg:p-5 shadow-sm space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
@@ -446,7 +446,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
 
           {/* Selector de Granularidad: Día / Semana / Mes */}
           <div className="flex items-center gap-2">
-            <div className="bg-[#242424] p-1 rounded-lg flex items-center border border-[#333333]">
+            <div className="bg-slate-50 p-1 rounded-lg flex items-center border border-slate-200">
               <button
                 onClick={() => { setPeriodoTipo('dia'); setDiaFiltro('todos'); }}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
@@ -494,7 +494,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               size="sm"
               onClick={fetchData}
               disabled={loading}
-              className="bg-[#242424] border-[#333333] text-[#CCCCCC] hover:text-white hover:bg-[#2A2A2A] h-9"
+              className="bg-slate-50 border-slate-200 text-[#CCCCCC] hover:text-white hover:bg-slate-50 h-9"
               title="Actualizar datos"
             >
               <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin text-amber-400' : ''}`} />
@@ -503,14 +503,14 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
         </div>
 
         {/* Barra de Navegación de Fechas y Tarifas Activas */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-[#2A2A2A]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-slate-200">
           {/* Navegación temporal */}
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="icon"
               onClick={handlePrev}
-              className="h-8 w-8 bg-[#242424] border-[#333333] text-white hover:bg-[#2A2A2A]"
+              className="h-8 w-8 bg-slate-50 border-slate-200 text-white hover:bg-slate-50"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -518,7 +518,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               variant="outline"
               size="icon"
               onClick={handleNext}
-              className="h-8 w-8 bg-[#242424] border-[#333333] text-white hover:bg-[#2A2A2A]"
+              className="h-8 w-8 bg-slate-50 border-slate-200 text-white hover:bg-slate-50"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -531,7 +531,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
 
           {/* Tarifas vigentes con botón de edición rápida */}
           <div className="flex items-center gap-2 flex-wrap">
-            <div className="flex items-center gap-2 bg-[#202020] border border-[#333333] px-3 py-1.5 rounded-lg text-xs">
+            <div className="flex items-center gap-2 bg-[#202020] border border-slate-200 px-3 py-1.5 rounded-lg text-xs">
               <span className="text-[#888888]">Tarifas:</span>
               <span className="text-white font-medium">
                 Socios: <strong className="text-amber-400">{formatCurrency(data?.tarifas.precioLuzTurno || 6000)}</strong>
@@ -547,7 +547,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 variant="outline"
                 size="sm"
                 onClick={() => setEditTarifasOpen(true)}
-                className="h-8 bg-[#242424] border-[#333333] text-xs text-[#CCCCCC] hover:text-white hover:bg-[#2A2A2A]"
+                className="h-8 bg-slate-50 border-slate-200 text-xs text-[#CCCCCC] hover:text-white hover:bg-slate-50"
               >
                 <Settings2 className="h-3.5 w-3.5 mr-1 text-amber-400" />
                 Editar Tarifas
@@ -570,7 +570,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
       {/* 2. Pestañas Principales: Socios y Profesor */}
       <Tabs defaultValue="socios" className="w-full space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <TabsList className="bg-[#1E1E1E] border border-[#2A2A2A] p-1">
+          <TabsList className="bg-white border border-slate-200 p-1">
             <TabsTrigger
               value="socios"
               className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] font-semibold text-xs px-4"
@@ -594,7 +594,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               variant="outline"
               size="sm"
               disabled={loading || !data?.sociosAcumulado.length}
-              className="bg-[#242424] border-[#333333] text-white hover:bg-[#2A2A2A] text-xs"
+              className="bg-slate-50 border-slate-200 text-white hover:bg-slate-50 text-xs"
             >
               <FileDown className="h-3.5 w-3.5 mr-1.5 text-amber-400" />
               PDF Secretaría (Socios)
@@ -604,7 +604,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
               variant="outline"
               size="sm"
               disabled={loading || !data?.turnosProfesor.length}
-              className="bg-[#242424] border-[#333333] text-white hover:bg-[#2A2A2A] text-xs"
+              className="bg-slate-50 border-slate-200 text-white hover:bg-slate-50 text-xs"
             >
               <FileDown className="h-3.5 w-3.5 mr-1.5 text-purple-400" />
               PDF Profesor
@@ -614,11 +614,11 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
 
         {/* ===================== TAB SOCIOS ===================== */}
         <TabsContent value="socios" className="space-y-4">
-          <Card className="bg-[#181818] border-[#2A2A2A]">
-            <CardHeader className="pb-3 border-b border-[#2A2A2A]">
+          <Card className="bg-white border-slate-200">
+            <CardHeader className="pb-3 border-b border-slate-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="bg-[#242424] p-1 rounded-lg flex items-center border border-[#333333]">
+                  <div className="bg-slate-50 p-1 rounded-lg flex items-center border border-slate-200">
                     <button
                       onClick={() => setVistaSocios('acumulado')}
                       className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
@@ -643,7 +643,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
 
                   {periodoTipo !== 'dia' && diasDisponibles.length > 0 && (
                     <div className="flex items-center gap-2 flex-wrap">
-                      <div className="flex items-center gap-2 bg-[#202020] border border-[#333333] hover:border-amber-400/40 transition-colors rounded-lg px-3 py-1.5 shadow-sm">
+                      <div className="flex items-center gap-2 bg-[#202020] border border-slate-200 hover:border-amber-400/40 transition-colors rounded-lg px-3 py-1.5 shadow-sm">
                         <CalendarIcon className="h-3.5 w-3.5 text-amber-400 shrink-0" />
                         <span className="text-[11px] text-[#AAAAAA] font-semibold">Día:</span>
                         <select
@@ -651,11 +651,11 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                           onChange={(e) => setDiaFiltro(e.target.value)}
                           className="bg-transparent text-white text-xs font-bold focus:outline-none cursor-pointer max-w-[220px] truncate"
                         >
-                          <option value="todos" className="bg-[#242424] text-white">
+                          <option value="todos" className="bg-slate-50 text-white">
                             Todos los días ({diasDisponibles.length})
                           </option>
                           {diasDisponibles.map((dia) => (
-                            <option key={dia} value={dia} className="bg-[#242424] text-white">
+                            <option key={dia} value={dia} className="bg-slate-50 text-white">
                               {formatDiaBonito(dia)}
                             </option>
                           ))}
@@ -685,7 +685,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                       placeholder="Buscar socio por nombre o DNI..."
                       value={searchSocio}
                       onChange={(e) => setSearchSocio(e.target.value)}
-                      className="bg-[#242424] border-[#333333] text-white pl-9 h-9 text-xs"
+                      className="bg-slate-50 border-slate-200 text-white pl-9 h-9 text-xs"
                     />
                   </div>
                 )}
@@ -695,9 +695,9 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
             <CardContent className="p-0">
               {loading ? (
                 <div className="p-8 space-y-3">
-                  <Skeleton className="h-10 w-full bg-[#242424]" />
-                  <Skeleton className="h-10 w-full bg-[#242424]" />
-                  <Skeleton className="h-10 w-full bg-[#242424]" />
+                  <Skeleton className="h-10 w-full bg-slate-50" />
+                  <Skeleton className="h-10 w-full bg-slate-50" />
+                  <Skeleton className="h-10 w-full bg-slate-50" />
                 </div>
               ) : vistaSocios === 'acumulado' ? (
                 /* Sub-vista 1: Resumen Acumulado por Socio (Ideal para Secretaría) */
@@ -713,7 +713,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   <div className="overflow-x-auto">
                     <Table>
                       <TableHeader className="bg-[#1F1F1F]">
-                        <TableRow className="border-[#2A2A2A] hover:bg-transparent">
+                        <TableRow className="border-slate-200 hover:bg-transparent">
                           <TableHead className="text-[#AAAAAA] text-xs font-bold w-12 text-center">#</TableHead>
                           <TableHead className="text-[#AAAAAA] text-xs font-bold">Socio</TableHead>
                           <TableHead className="text-[#AAAAAA] text-xs font-bold">Documento</TableHead>
@@ -729,7 +729,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                             <>
                               <TableRow
                                 key={s.id}
-                                className="border-[#262626] hover:bg-[#222222] transition-colors cursor-pointer"
+                                className="border-[#262626] hover:bg-slate-50 transition-colors cursor-pointer"
                                 onClick={() => setExpandedSocioId(isExpanded ? null : s.id)}
                               >
                                 <TableCell className="text-center text-xs text-[#777777] font-mono">
@@ -780,9 +780,9 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
 
                               {/* Fila expandible con el desglose turno por turno de ese socio */}
                               {isExpanded && (
-                                <TableRow className="bg-[#1C1C1C] border-[#2A2A2A]">
+                                <TableRow className="bg-white border-slate-200">
                                   <TableCell colSpan={6} className="p-3 pl-12 pr-6">
-                                    <div className="bg-[#141414] border border-[#2E2E2E] rounded-lg p-3 space-y-2">
+                                    <div className="bg-white border border-slate-200 rounded-lg p-3 space-y-2">
                                       <div className="flex items-center justify-between text-xs font-bold text-[#AAAAAA] border-b border-[#262626] pb-1.5">
                                         <span>Detalle de turnos de {s.nombreCompleto}:</span>
                                         <span>Monto asignado</span>
@@ -791,12 +791,12 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                         {s.turnosDetalle.map((td, i) => (
                                           <div
                                             key={i}
-                                            className="flex items-center justify-between text-xs py-1 px-2 rounded bg-[#1A1A1A] text-[#CCCCCC]"
+                                            className="flex items-center justify-between text-xs py-1 px-2 rounded bg-white text-[#CCCCCC]"
                                           >
                                             <div className="flex items-center gap-2">
                                               <span className="text-white font-medium">{td.fecha}</span>
                                               <span className="text-[#888888]">· {td.hora} hs</span>
-                                              <Badge variant="outline" className="text-[10px] py-0 px-1.5 bg-[#262626] border-[#3A3A3A] text-white">
+                                              <Badge variant="outline" className="text-[10px] py-0 px-1.5 bg-slate-50 border-[#3A3A3A] text-white">
                                                 {td.cancha}
                                               </Badge>
                                               <span className="text-[#888888] text-[11px]">({td.tipoPartido} - {td.rol})</span>
@@ -840,7 +840,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   <div className="overflow-x-auto">
                     <Table>
                       <TableHeader className="bg-[#1F1F1F]">
-                        <TableRow className="border-[#2A2A2A] hover:bg-transparent">
+                        <TableRow className="border-slate-200 hover:bg-transparent">
                           <TableHead className="text-[#AAAAAA] text-xs font-bold">Fecha</TableHead>
                           <TableHead className="text-[#AAAAAA] text-xs font-bold">Horario</TableHead>
                           <TableHead className="text-[#AAAAAA] text-xs font-bold">Cancha</TableHead>
@@ -888,7 +888,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                                     className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] ${
                                       j.esInvitado
                                         ? 'bg-red-500/10 text-red-400 border border-red-500/20'
-                                        : 'bg-[#252525] text-white border border-[#3A3A3A]'
+                                        : 'bg-slate-50 text-white border border-[#3A3A3A]'
                                     }`}
                                   >
                                     <span className="font-medium">
@@ -931,8 +931,8 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
 
         {/* ===================== TAB PROFESOR ===================== */}
         <TabsContent value="profesor" className="space-y-4">
-          <Card className="bg-[#181818] border-[#2A2A2A]">
-            <CardHeader className="pb-3 border-b border-[#2A2A2A]">
+          <Card className="bg-white border-slate-200">
+            <CardHeader className="pb-3 border-b border-slate-200">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
                   <CardTitle className="text-white text-base font-bold flex items-center gap-2">
@@ -944,7 +944,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   </CardDescription>
                 </div>
 
-                <div className="bg-[#242424] border border-[#333333] px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs">
+                <div className="bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs">
                   <span className="text-[#888888]">Total Clases:</span>
                   <span className="font-bold text-white">{data?.kpis.totalProfeTurnos || 0} turnos</span>
                   <span className="text-[#444444]">|</span>
@@ -959,8 +959,8 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
             <CardContent className="p-0">
               {loading ? (
                 <div className="p-8 space-y-3">
-                  <Skeleton className="h-10 w-full bg-[#242424]" />
-                  <Skeleton className="h-10 w-full bg-[#242424]" />
+                  <Skeleton className="h-10 w-full bg-slate-50" />
+                  <Skeleton className="h-10 w-full bg-slate-50" />
                 </div>
               ) : data?.turnosProfesor.length === 0 ? (
                 <div className="text-center py-12 px-4">
@@ -974,7 +974,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                 <div className="overflow-x-auto">
                   <Table>
                     <TableHeader className="bg-[#1F1F1F]">
-                      <TableRow className="border-[#2A2A2A] hover:bg-transparent">
+                      <TableRow className="border-slate-200 hover:bg-transparent">
                         <TableHead className="text-[#AAAAAA] text-xs font-bold w-12 text-center">#</TableHead>
                         <TableHead className="text-[#AAAAAA] text-xs font-bold">Fecha</TableHead>
                         <TableHead className="text-[#AAAAAA] text-xs font-bold">Horario</TableHead>
@@ -1018,7 +1018,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
       </Tabs>
 
       {/* 3. Métricas Globales compactas al pie (estilo Sanciones / QR) */}
-      <div className="border border-[#2A2A2A] rounded-xl bg-[#181818] px-4 py-2.5 flex flex-wrap items-center gap-x-6 gap-y-1.5 text-xs text-[#888888] shadow-sm">
+      <div className="border border-slate-200 rounded-xl bg-white px-4 py-2.5 flex flex-wrap items-center gap-x-6 gap-y-1.5 text-xs text-[#888888] shadow-sm">
         <span className="font-semibold text-white uppercase tracking-wider text-[10px] mr-1">
           Métricas globales ({periodoLabel}):
         </span>
@@ -1065,7 +1065,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
 
       {/* ===================== MODAL EDITAR TARIFAS ===================== */}
       <Dialog open={editTarifasOpen} onOpenChange={setEditTarifasOpen}>
-        <DialogContent className="bg-[#1C1C1C] border-[#333333] text-white max-w-md">
+        <DialogContent className="bg-white border-slate-200 text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="text-lg font-bold flex items-center gap-2">
               <Zap className="h-5 w-5 text-amber-400" />
@@ -1085,7 +1085,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   type="text"
                   value={inputPrecioTurno}
                   onChange={(e) => setInputPrecioTurno(formatInputCurrency(e.target.value))}
-                  className="bg-[#2A2A2A] border-[#3A3A3A] text-white pl-7 font-bold"
+                  className="bg-slate-50 border-[#3A3A3A] text-white pl-7 font-bold"
                 />
               </div>
               <p className="text-[11px] text-[#777777]">
@@ -1101,7 +1101,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
                   type="text"
                   value={inputPrecioProfe}
                   onChange={(e) => setInputPrecioProfe(formatInputCurrency(e.target.value))}
-                  className="bg-[#2A2A2A] border-[#3A3A3A] text-white pl-7 font-bold"
+                  className="bg-slate-50 border-[#3A3A3A] text-white pl-7 font-bold"
                 />
               </div>
               <p className="text-[11px] text-[#777777]">
@@ -1114,7 +1114,7 @@ export default function TurnosLuzPanel({ readOnly = false }: TurnosLuzPanelProps
             <Button
               variant="outline"
               onClick={() => setEditTarifasOpen(false)}
-              className="bg-[#262626] border-[#3A3A3A] text-white hover:bg-[#333333]"
+              className="bg-slate-50 border-[#3A3A3A] text-white hover:bg-[#333333]"
             >
               Cancelar
             </Button>

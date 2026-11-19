@@ -220,7 +220,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
   return (
     <div className="space-y-4">
       {/* Barra superior solo con Fecha y botón refrescar */}
-      <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3 flex items-center justify-between gap-3">
+      <div className="bg-white border border-slate-200 rounded-xl p-3 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
           <div className="p-2 rounded-lg bg-amber-400/10 text-amber-400 shrink-0">
             <Calendar className="h-4 w-4" />
@@ -231,7 +231,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
               type="date"
               value={fecha}
               onChange={(e) => setFecha(e.target.value)}
-              className="h-8 text-xs font-bold bg-[#242424] border-[#383838] text-white w-auto"
+              className="h-8 text-xs font-bold bg-slate-50 border-slate-200 text-white w-auto"
             />
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
           className={`py-1.5 px-3 rounded-lg text-xs font-bold transition-all shrink-0 border ${
             grupoActivo === 'todos'
               ? 'bg-amber-400 text-black border-amber-400 shadow-sm'
-              : 'bg-[#1C1C1C] text-[#AAAAAA] hover:text-white border-[#2E2E2E]'
+              : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
           }`}
         >
           Todos ({alumnos.length})
@@ -275,7 +275,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
               className={`py-1.5 px-3 rounded-lg text-xs font-bold transition-all shrink-0 border ${
                 isActive
                   ? 'bg-amber-400 text-black border-amber-400 shadow-sm'
-                  : 'bg-[#1C1C1C] text-[#AAAAAA] hover:text-white border-[#2E2E2E]'
+                  : 'bg-white text-[#AAAAAA] hover:text-white border-slate-200'
               }`}
             >
               <span>{cfg.label}</span>
@@ -295,7 +295,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
             placeholder="Buscar alumno..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-9 h-8 text-xs bg-[#1C1C1C] border-[#2E2E2E] text-white"
+            className="pl-9 h-8 text-xs bg-white border-slate-200 text-white"
           />
         </div>
 
@@ -315,7 +315,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
           variant="outline"
           onClick={() => marcarMasivo(false)}
           disabled={savingAll || alumnosFiltrados.length === 0}
-          className="bg-[#242424] border-[#383838] text-[#AAAAAA] hover:text-white font-bold text-xs h-8 px-2.5 gap-1 shrink-0"
+          className="bg-slate-50 border-slate-200 text-[#AAAAAA] hover:text-white font-bold text-xs h-8 px-2.5 gap-1 shrink-0"
           title="Limpiar asistencias"
         >
           <RotateCcw className="h-3.5 w-3.5" />
@@ -327,11 +327,11 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
       {loading ? (
         <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
           {[...Array(8)].map((_, i) => (
-            <div key={i} className="h-16 bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl animate-pulse" />
+            <div key={i} className="h-16 bg-white border border-slate-200 rounded-xl animate-pulse" />
           ))}
         </div>
       ) : alumnosFiltrados.length === 0 ? (
-        <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-8 text-center text-xs text-[#777]">
+        <div className="bg-white border border-slate-200 rounded-xl p-8 text-center text-xs text-[#777]">
           <Users className="h-8 w-8 mx-auto opacity-40 text-amber-400 mb-2" />
           <p>No se encontraron alumnos para el filtro seleccionado.</p>
         </div>
@@ -350,7 +350,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
                 className={`relative select-none rounded-xl p-2.5 sm:p-3 border text-left transition-all duration-150 flex flex-col justify-between min-h-[64px] active:scale-[0.97] ${
                   isPresent
                     ? 'bg-emerald-500 text-black border-emerald-400 shadow-md shadow-emerald-500/20'
-                    : 'bg-[#1C1C1C] border-[#2E2E2E] text-[#AAAAAA] hover:border-[#444] hover:bg-[#222222]'
+                    : 'bg-white border-slate-200 text-[#AAAAAA] hover:border-[#444] hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-start justify-between gap-1 w-full">
@@ -375,7 +375,7 @@ export default function TomarAsistenciaEscuela({ initialFecha, isCompact = false
                     {al.grupo === 'Grupo Entrenamiento' ? 'Entrenamiento' : al.grupo}
                   </span>
                   <span className={`text-[9px] font-mono uppercase tracking-wider font-extrabold px-1.5 py-0.2 rounded ${
-                    isPresent ? 'bg-black text-emerald-400' : 'bg-[#282828] text-[#888]'
+                    isPresent ? 'bg-black text-emerald-400' : 'bg-slate-100 text-[#888]'
                   }`}>
                     {isPresent ? 'PRESENTE' : 'AUSENTE'}
                   </span>

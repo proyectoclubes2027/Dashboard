@@ -549,7 +549,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
   return (
     <div className="space-y-5">
       {/* Panel Superior: Acceso Rápido y QR para Alumnos */}
-      <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-5 shadow-lg print:hidden">
+      <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-lg print:hidden">
         <div className="flex flex-col lg:flex-row items-center gap-6">
           <div className="flex-shrink-0 flex flex-col items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -589,7 +589,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               </span>
             </div>
 
-            <div className="inline-flex items-center gap-2 bg-[#121212] px-3 py-1.5 rounded-lg border border-[#333333] text-[12px] font-mono text-[#CCCCCC] mb-3 max-w-full overflow-hidden text-ellipsis">
+            <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-[12px] font-mono text-[#CCCCCC] mb-3 max-w-full overflow-hidden text-ellipsis">
               <span className="truncate">{asistenciaUrl}</span>
             </div>
 
@@ -598,7 +598,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 size="sm"
                 variant="outline"
                 onClick={handleCopyLink}
-                className="border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
               >
                 {copiedLink ? <Check className="h-3.5 w-3.5 mr-1.5 text-green-400" /> : <Copy className="h-3.5 w-3.5 mr-1.5" />}
                 {copiedLink ? 'Copiado!' : 'Copiar Link'}
@@ -608,7 +608,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 size="sm"
                 variant="outline"
                 onClick={handlePrintQr}
-                className="border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-8 text-xs font-semibold"
+                className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
               >
                 <Printer className="h-3.5 w-3.5 mr-1.5" />
                 Imprimir QR
@@ -629,7 +629,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
 
       {/* Selector de Pestañas: Presentes Diarios vs Alumnos Mensual */}
       <Tabs value={activeTab} onValueChange={(val) => setActiveTab(val as 'diaria' | 'mensual')} className="w-full">
-        <TabsList className="bg-[#1E1E1E] border border-[#333333] p-1 h-12 mb-4 grid grid-cols-2 w-full max-w-md print:hidden">
+        <TabsList className="bg-white border border-slate-200 p-1 h-12 mb-4 grid grid-cols-2 w-full max-w-md print:hidden">
           <TabsTrigger 
             value="diaria" 
             className="data-[state=active]:bg-[#DC2626] data-[state=active]:text-[#121212] text-[#999999] text-xs sm:text-sm font-semibold h-10 px-3 rounded-md transition-all flex items-center justify-center gap-2"
@@ -650,7 +650,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
             TAB 1: PRESENTES DIARIOS (ESCANEOS DEL DÍA CON DNI)
            ========================================================================= */}
         <TabsContent value="diaria" className="m-0 space-y-4 focus-visible:outline-none">
-          <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4">
+          <div className="bg-white border border-slate-200 rounded-xl p-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-white text-base font-bold flex items-center gap-2">
@@ -673,7 +673,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "h-8 text-xs justify-start text-left font-normal bg-[#2A2A2A] border-[#333333] text-white hover:bg-[#333333] hover:text-white",
+                        "h-8 text-xs justify-start text-left font-normal bg-slate-50 border-slate-200 text-white hover:bg-[#333333] hover:text-white",
                         !selectedDate && "text-muted-foreground"
                       )}
                     >
@@ -681,14 +681,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       {selectedDate ? format(selectedDate, 'PPP', { locale: es }) : <span>Elegir fecha</span>}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0 bg-[#1E1E1E] border-[#333333] text-white">
+                  <PopoverContent className="w-auto p-0 bg-white border-slate-200 text-white">
                     <Calendar
                       mode="single"
                       selected={selectedDate}
                       onSelect={(date) => { if (date) setSelectedDate(date); }}
                       initialFocus
                       locale={es}
-                      className="bg-[#1E1E1E] text-white"
+                      className="bg-white text-white"
                     />
                   </PopoverContent>
                 </Popover>
@@ -697,7 +697,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   variant="outline"
                   size="sm"
                   onClick={() => setSelectedDate(new Date())}
-                  className="h-8 text-xs border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white"
+                  className="h-8 text-xs border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
                 >
                   Hoy
                 </Button>
@@ -719,7 +719,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   size="sm"
                   onClick={() => fetchAsistenciasDiarias(selectedDate)}
                   disabled={loading}
-                  className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-8 text-xs font-semibold"
+                  className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                 >
                   <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loading ? 'animate-spin' : ''}`} />
                   Actualizar
@@ -735,7 +735,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   placeholder="Buscar por nombre, apellido o DNI..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-9 h-8 text-xs bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+                  className="pl-9 h-8 text-xs bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
                 />
               </div>
             </div>
@@ -743,14 +743,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
             {loading && asistenciasDiarias.length === 0 ? (
               <div className="space-y-3 mt-4">
                 {[...Array(3)].map((_, i) => (
-                  <Skeleton key={i} className="h-12 w-full bg-[#2A2A2A]" />
+                  <Skeleton key={i} className="h-12 w-full bg-slate-50" />
                 ))}
               </div>
             ) : (
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="border-[#333333] hover:bg-transparent">
+                    <TableRow className="border-slate-200 hover:bg-transparent">
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Hora</TableHead>
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Alumno / Socio</TableHead>
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">DNI</TableHead>
@@ -761,7 +761,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   </TableHeader>
                   <TableBody>
                     {filteredDiarias.length === 0 ? (
-                      <TableRow className="border-[#333333]">
+                      <TableRow className="border-slate-200">
                         <TableCell colSpan={6} className="text-center py-10 text-[#666666] text-sm">
                           {searchTerm 
                             ? 'No se encontraron asistencias que coincidan con la búsqueda.'
@@ -778,12 +778,12 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                           <TableRow
                             key={asistencia.id}
                             className={cn(
-                              'border-[#333333] transition-colors',
+                              'border-slate-200 transition-colors',
                               noRegistrado 
                                 ? 'bg-amber-500/10 hover:bg-amber-500/15' 
                                 : tieneAlertas 
                                 ? 'bg-red-500/5 hover:bg-red-500/10' 
-                                : 'hover:bg-[#252525]'
+                                : 'hover:bg-slate-50'
                             )}
                           >
                             {/* Hora */}
@@ -833,7 +833,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                 "text-xs font-bold px-2 py-1 rounded border",
                                 noRegistrado 
                                   ? "bg-amber-500/20 text-amber-300 border-amber-500/40" 
-                                  : "bg-[#2A2A2A] text-white border-[#3A3A3A]"
+                                  : "bg-slate-50 text-white border-[#3A3A3A]"
                               )}>
                                 {asistencia.socio.dni}
                               </span>
@@ -903,7 +903,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
             TAB 2: REPORTE DE PERÍODO — LISTADO Y RANKING (SEMANAL / MENSUAL / ANUAL)
            ========================================================================= */}
         <TabsContent value="mensual" className="m-0 space-y-4 focus-visible:outline-none">
-          <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 print:border-none print:p-0">
+          <div className="bg-white border border-slate-200 rounded-xl p-4 print:border-none print:p-0">
             {/* Cabecera y Selector de Período estilo Secretaría */}
             <div className="flex flex-col gap-3 mb-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -920,7 +920,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                 {/* Acciones principales: Exportar Excel e Imprimir */}
                 <div className="flex items-center gap-2 print:hidden self-start sm:self-auto flex-wrap">
                   {/* Selector de subvista: Acumulado (por alumno) vs Detalle individual */}
-                  <div className="flex items-center bg-[#141414] border border-[#2E2E2E] rounded-lg p-0.5">
+                  <div className="flex items-center bg-white border border-slate-200 rounded-lg p-0.5">
                     <button
                       type="button"
                       onClick={() => setVistaReporte('acumulado')}
@@ -961,7 +961,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     variant="outline"
                     size="sm"
                     onClick={() => window.print()}
-                    className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-8 text-xs font-semibold"
+                    className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                   >
                     <Printer className="h-3.5 w-3.5 mr-1.5" />
                     Imprimir
@@ -972,7 +972,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                     size="sm"
                     onClick={() => fetchAsistenciasPeriodo()}
                     disabled={loading}
-                    className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-8 text-xs font-semibold"
+                    className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
                   >
                     <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loading ? 'animate-spin' : ''}`} />
                     Actualizar
@@ -981,7 +981,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               </div>
 
               {/* Botonera de Períodos: Por Día, Semana, Este Mes, Otro Mes, Todo el Año, Fechas */}
-              <div className="bg-[#141414] border border-[#2E2E2E] rounded-xl p-3 flex flex-col gap-2.5 print:hidden">
+              <div className="bg-white border border-slate-200 rounded-xl p-3 flex flex-col gap-2.5 print:hidden">
                 <div className="flex items-center justify-between flex-wrap gap-2">
                   <span className="text-[11px] text-[#888888] font-bold uppercase tracking-wider">
                     Período del Reporte:
@@ -993,7 +993,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors flex items-center gap-1 ${
                         modoPeriodoReporte === 'dia'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       <CalendarIcon className="w-3.5 h-3.5" />
@@ -1005,7 +1005,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'semana'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Esta Semana
@@ -1019,7 +1019,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'mes' && selectedMonth === format(new Date(), 'yyyy-MM')
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Este Mes
@@ -1030,7 +1030,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'mes' && selectedMonth !== format(new Date(), 'yyyy-MM')
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Otro Mes
@@ -1041,7 +1041,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'anio'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Todo el Año
@@ -1052,7 +1052,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       className={`py-1 px-2.5 rounded-lg text-xs font-bold transition-colors ${
                         modoPeriodoReporte === 'personalizado'
                           ? 'bg-[#DC2626] text-black shadow-sm'
-                          : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                          : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                       }`}
                     >
                       Rango Fechas
@@ -1070,13 +1070,13 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                       onChange={(e) => {
                         if (e.target.value) setReporteDia(e.target.value);
                       }}
-                      className="h-7 text-xs bg-[#242424] border-[#383838] text-white w-40"
+                      className="h-7 text-xs bg-slate-50 border-slate-200 text-white w-40"
                     />
                     <Button
                       size="sm"
                       variant="outline"
                       onClick={() => setReporteDia(format(new Date(), 'yyyy-MM-dd'))}
-                      className="h-7 px-2.5 text-xs bg-[#242424] border-[#383838] text-[#CCCCCC] hover:text-white"
+                      className="h-7 px-2.5 text-xs bg-slate-50 border-slate-200 text-[#CCCCCC] hover:text-white"
                     >
                       Hoy
                     </Button>
@@ -1088,7 +1088,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                         d.setDate(d.getDate() - 1);
                         setReporteDia(format(d, 'yyyy-MM-dd'));
                       }}
-                      className="h-7 px-2.5 text-xs bg-[#242424] border-[#383838] text-[#CCCCCC] hover:text-white"
+                      className="h-7 px-2.5 text-xs bg-slate-50 border-slate-200 text-[#CCCCCC] hover:text-white"
                     >
                       Ayer
                     </Button>
@@ -1098,10 +1098,10 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   <div className="pt-2 border-t border-[#262626] flex items-center gap-2">
                     <span className="text-[11px] text-[#888]">Seleccionar Mes:</span>
                     <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                      <SelectTrigger className="h-7 text-xs bg-[#242424] border-[#383838] text-white focus:ring-[#DC2626] w-[180px]">
+                      <SelectTrigger className="h-7 text-xs bg-slate-50 border-slate-200 text-white focus:ring-[#DC2626] w-[180px]">
                         <SelectValue placeholder="Seleccionar mes" />
                       </SelectTrigger>
-                      <SelectContent className="bg-[#1E1E1E] border-[#333333] text-white">
+                      <SelectContent className="bg-white border-slate-200 text-white">
                         {monthOptions.map((opt) => (
                           <SelectItem key={opt.value} value={opt.value} className="focus:bg-[#333333] focus:text-white">
                             {opt.label}
@@ -1127,7 +1127,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                           className={`h-7 px-3 text-xs font-bold ${
                             reporteAnio === yr
                               ? 'bg-[#DC2626] text-black'
-                              : 'bg-[#242424] border-[#383838] text-[#AAAAAA] hover:text-white'
+                              : 'bg-slate-50 border-slate-200 text-[#AAAAAA] hover:text-white'
                           }`}
                         >
                           {yr}
@@ -1145,7 +1145,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                         type="date"
                         value={reporteFechaDesde}
                         onChange={(e) => setReporteFechaDesde(e.target.value)}
-                        className="h-7 text-xs bg-[#242424] border-[#383838] text-white w-36"
+                        className="h-7 text-xs bg-slate-50 border-slate-200 text-white w-36"
                       />
                     </div>
                     <div className="flex items-center gap-1.5">
@@ -1154,7 +1154,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                         type="date"
                         value={reporteFechaHasta}
                         onChange={(e) => setReporteFechaHasta(e.target.value)}
-                        className="h-7 text-xs bg-[#242424] border-[#383838] text-white w-36"
+                        className="h-7 text-xs bg-slate-50 border-slate-200 text-white w-36"
                       />
                     </div>
                     <Button
@@ -1178,7 +1178,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   placeholder="Buscar en el reporte por nombre, apellido, DNI..."
                   value={searchReporte}
                   onChange={(e) => setSearchReporte(e.target.value)}
-                  className="pl-9 h-8 text-xs bg-[#242424] border-[#383838] text-white focus:border-[#DC2626]"
+                  className="pl-9 h-8 text-xs bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
                 />
               </div>
             </div>
@@ -1186,7 +1186,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
             {loading && asistenciasMensuales.length === 0 ? (
               <div className="space-y-3 mt-4 print:hidden">
                 {[...Array(3)].map((_, i) => (
-                  <Skeleton key={i} className="h-12 w-full bg-[#2A2A2A]" />
+                  <Skeleton key={i} className="h-12 w-full bg-slate-50" />
                 ))}
               </div>
             ) : vistaReporte === 'acumulado' ? (
@@ -1196,7 +1196,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               <div className="overflow-x-auto print:overflow-visible">
                 <Table className="print:text-black">
                   <TableHeader>
-                    <TableRow className="border-[#333333] hover:bg-transparent print:border-b-2 print:border-black">
+                    <TableRow className="border-slate-200 hover:bg-transparent print:border-b-2 print:border-black">
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 w-12 text-center print:text-black">#</TableHead>
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">Alumno / Socio</TableHead>
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
@@ -1207,7 +1207,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   </TableHeader>
                   <TableBody>
                     {filteredRankingAlumnos.length === 0 ? (
-                      <TableRow className="border-[#333333] print:border-b">
+                      <TableRow className="border-slate-200 print:border-b">
                         <TableCell colSpan={6} className="text-center py-10 text-[#666666] text-sm print:text-black">
                           {searchReporte
                             ? 'No se encontraron alumnos que coincidan con la búsqueda.'
@@ -1228,14 +1228,14 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                               key={itemKey}
                               onClick={() => setExpandedAlumnoKey(isExpanded ? null : itemKey)}
                               className={cn(
-                                'border-[#333333] transition-colors cursor-pointer print:border-b print:border-gray-300',
+                                'border-slate-200 transition-colors cursor-pointer print:border-b print:border-gray-300',
                                 noRegistrado
                                   ? 'bg-amber-500/10 hover:bg-amber-500/15'
                                   : tieneAlertas
                                   ? 'bg-red-500/5 hover:bg-red-500/10'
                                   : isExpanded
-                                  ? 'bg-[#222222]'
-                                  : 'hover:bg-[#252525]'
+                                  ? 'bg-slate-50'
+                                  : 'hover:bg-slate-50'
                               )}
                             >
                               {/* Puesto */}
@@ -1285,7 +1285,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                   "text-xs font-bold px-2 py-1 rounded border",
                                   noRegistrado
                                     ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
-                                    : "bg-[#2A2A2A] text-white border-[#3A3A3A]"
+                                    : "bg-slate-50 text-white border-[#3A3A3A]"
                                 )}>
                                   {item.socio.dni}
                                 </span>
@@ -1342,10 +1342,10 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
 
                             {/* Fila desplegable estilo Turnos con Luz / Invitados */}
                             {isExpanded && (
-                              <TableRow className="bg-[#181818] border-[#2A2A2A] hover:bg-[#181818]">
+                              <TableRow className="bg-white border-slate-200 hover:bg-white">
                                 <TableCell colSpan={6} className="p-3 pl-8 pr-6">
-                                  <div className="bg-[#121212] border border-[#2A2A2A] rounded-xl p-3.5 space-y-2.5 shadow-inner">
-                                    <div className="flex items-center justify-between text-xs font-bold text-[#AAAAAA] border-b border-[#242424] pb-2">
+                                  <div className="bg-white border border-slate-200 rounded-xl p-3.5 space-y-2.5 shadow-inner">
+                                    <div className="flex items-center justify-between text-xs font-bold text-[#AAAAAA] border-b border-slate-200 pb-2">
                                       <span className="flex items-center gap-1.5 text-white">
                                         <Award className="h-3.5 w-3.5 text-[#DC2626]" />
                                         Detalle de asistencias de {item.socio.nombre} {item.socio.apellido}:
@@ -1359,7 +1359,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                       {item.detalles.map((det, dIdx) => (
                                         <div
                                           key={det.id || dIdx}
-                                          className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-[#1C1C1C] border border-[#2E2E2E] text-[#CCCCCC]"
+                                          className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-white border border-slate-200 text-[#CCCCCC]"
                                         >
                                           <div className="flex flex-col">
                                             <span className="font-semibold text-white">
@@ -1398,7 +1398,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               <div className="overflow-x-auto print:overflow-visible">
                 <Table className="print:text-black">
                   <TableHeader>
-                    <TableRow className="border-[#333333] hover:bg-transparent print:border-b-2 print:border-black">
+                    <TableRow className="border-slate-200 hover:bg-transparent print:border-b-2 print:border-black">
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black">Fecha</TableHead>
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">Alumno / Socio</TableHead>
                       <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 print:text-black print:font-bold">DNI</TableHead>
@@ -1411,7 +1411,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                   </TableHeader>
                   <TableBody>
                     {asistenciasMensuales.length === 0 ? (
-                      <TableRow className="border-[#333333] print:border-b">
+                      <TableRow className="border-slate-200 print:border-b">
                         <TableCell colSpan={!readOnly ? 6 : 5} className="text-center py-10 text-[#666666] text-sm print:text-black">
                           No hay asistencias registradas en este período.
                         </TableCell>
@@ -1426,12 +1426,12 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                           <TableRow
                             key={asistencia.id}
                             className={cn(
-                              'border-[#333333] transition-colors print:border-b print:border-gray-300',
+                              'border-slate-200 transition-colors print:border-b print:border-gray-300',
                               noRegistrado
                                 ? 'bg-amber-500/10 hover:bg-amber-500/15'
                                 : tieneAlertas
                                 ? 'bg-red-500/5 hover:bg-red-500/10'
-                                : 'hover:bg-[#252525]'
+                                : 'hover:bg-slate-50'
                             )}
                           >
                             {/* Fecha */}
@@ -1484,7 +1484,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
                                 "text-xs font-bold px-2 py-1 rounded border",
                                 noRegistrado
                                   ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
-                                  : "bg-[#2A2A2A] text-white border-[#3A3A3A]"
+                                  : "bg-slate-50 text-white border-[#3A3A3A]"
                               )}>
                                 {asistencia.socio.dni}
                               </span>
@@ -1548,7 +1548,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
 
       {/* Diálogo de Confirmación para Eliminar Asistencia */}
       <Dialog open={Boolean(asistenciaParaEliminar)} onOpenChange={(open) => { if (!open) setAsistenciaParaEliminar(null); }}>
-        <DialogContent className="bg-[#1E1E1E] border-[#333333] text-white max-w-md">
+        <DialogContent className="bg-white border-slate-200 text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="text-base font-bold flex items-center gap-2 text-red-400">
               <Trash2 className="h-5 w-5" />
@@ -1569,7 +1569,7 @@ export default function AsistenciaAlumnosPanel({ readOnly = false }: { readOnly?
               variant="outline"
               size="sm"
               onClick={() => setAsistenciaParaEliminar(null)}
-              className="bg-[#2A2A2A] border-[#383838] text-white hover:bg-[#333333]"
+              className="bg-slate-50 border-slate-200 text-white hover:bg-[#333333]"
             >
               Cancelar
             </Button>

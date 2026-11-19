@@ -257,7 +257,7 @@ export default function ProfePage() {
   const promedioPorAlumno = alumnosNumber > 0 ? Math.round(precioNumber / alumnosNumber) : 0;
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white flex flex-col justify-between p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-white text-white flex flex-col justify-between p-4 sm:p-6 lg:p-8">
       <div className="w-full max-w-lg mx-auto space-y-6">
         {/* Header con marca CARP */}
         <div className="text-center space-y-2 pt-2">
@@ -273,7 +273,7 @@ export default function ProfePage() {
         </div>
 
         {/* Selector de Modo en Celular: Clases vs Alumnos vs Asistencia vs Cuotas */}
-        <div className="grid grid-cols-4 gap-1 bg-[#1E1E1E] p-1 rounded-xl border border-[#2E2E2E]">
+        <div className="grid grid-cols-4 gap-1 bg-white p-1 rounded-xl border border-slate-200">
           <button
             type="button"
             onClick={() => setVistaProfe('planilla')}
@@ -349,11 +349,11 @@ export default function ProfePage() {
         {vistaProfe === 'planilla' && (
           <>
             {/* Card Principal */}
-            <Card className="bg-[#1E1E1E] border-[#333333] shadow-2xl overflow-hidden">
+            <Card className="bg-white border-slate-200 shadow-2xl overflow-hidden">
           <CardHeader className="border-b border-[#2C2C2C] pb-4 bg-gradient-to-b from-[#252525] to-[#1E1E1E]">
             <CardTitle className="text-xl text-white font-bold flex items-center justify-between">
               <span>Registro del Día</span>
-              <span className="text-xs font-normal text-[#888888] bg-[#2A2A2A] px-2.5 py-1 rounded-md border border-[#3A3A3A]">
+              <span className="text-xs font-normal text-[#888888] bg-slate-50 px-2.5 py-1 rounded-md border border-[#3A3A3A]">
                 1 carga por día
               </span>
             </CardTitle>
@@ -376,26 +376,26 @@ export default function ProfePage() {
                 </div>
 
                 {lastSaved && (
-                  <div className="w-full bg-[#252525] border border-[#333333] rounded-xl p-4 text-left space-y-2 text-sm">
-                    <div className="flex justify-between items-center border-b border-[#333333] pb-2">
+                  <div className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-left space-y-2 text-sm">
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-2">
                       <span className="text-[#888888]">Día:</span>
                       <span className="font-semibold text-white capitalize">
                         {format(parseLocalDate(lastSaved.fecha), 'EEEE dd/MM/yyyy', { locale: es })}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center border-b border-[#333333] pb-2">
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-2">
                       <span className="text-[#888888]">Clases Dictadas:</span>
                       <span className="font-bold text-white">
                         {lastSaved.cantidadClases ?? 1} {(lastSaved.cantidadClases ?? 1) === 1 ? 'clase' : 'clases'}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center border-b border-[#333333] pb-2">
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-2">
                       <span className="text-[#888888]">Total Alumnos:</span>
                       <span className="font-bold text-[#DC2626]">
                         {lastSaved.cantidadAlumnos} alumno{lastSaved.cantidadAlumnos !== 1 ? 's' : ''}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center border-b border-[#333333] pb-2">
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-2">
                       <span className="text-[#888888]">Total del Día:</span>
                       <span className="font-bold text-emerald-400 text-base">
                         $ {lastSaved.precioTotal.toLocaleString('es-AR')}
@@ -449,7 +449,7 @@ export default function ProfePage() {
                     value={fecha}
                     onChange={(e) => setFecha(e.target.value)}
                     required
-                    className="h-12 bg-[#2A2A2A] border-[#383838] text-white text-base focus:border-[#DC2626] focus:ring-[#DC2626]"
+                    className="h-12 bg-slate-50 border-slate-200 text-white text-base focus:border-[#DC2626] focus:ring-[#DC2626]"
                   />
                   {/* Aviso si ya existe carga para este día */}
                   {existingRecord && !checkingDate && (
@@ -477,7 +477,7 @@ export default function ProfePage() {
                       value={cantidadClases}
                       onChange={(e) => setCantidadClases(e.target.value)}
                       required
-                      className="h-12 bg-[#2A2A2A] border-[#383838] text-white text-xl font-bold pl-4 focus:border-[#DC2626] focus:ring-[#DC2626]"
+                      className="h-12 bg-slate-50 border-slate-200 text-white text-xl font-bold pl-4 focus:border-[#DC2626] focus:ring-[#DC2626]"
                     />
                   </div>
 
@@ -496,7 +496,7 @@ export default function ProfePage() {
                       value={cantidadAlumnos}
                       onChange={(e) => setCantidadAlumnos(e.target.value)}
                       required
-                      className="h-12 bg-[#2A2A2A] border-[#383838] text-white text-xl font-bold pl-4 focus:border-[#DC2626] focus:ring-[#DC2626]"
+                      className="h-12 bg-slate-50 border-slate-200 text-white text-xl font-bold pl-4 focus:border-[#DC2626] focus:ring-[#DC2626]"
                     />
                   </div>
 
@@ -519,7 +519,7 @@ export default function ProfePage() {
                         value={precioTotal}
                         onChange={(e) => setPrecioTotal(e.target.value)}
                         required
-                        className="h-12 bg-[#2A2A2A] border-[#383838] text-white text-xl font-bold pl-8 focus:border-[#DC2626] focus:ring-[#DC2626]"
+                        className="h-12 bg-slate-50 border-slate-200 text-white text-xl font-bold pl-8 focus:border-[#DC2626] focus:ring-[#DC2626]"
                       />
                     </div>
                   </div>
@@ -527,7 +527,7 @@ export default function ProfePage() {
 
                 {/* Resumen dinámico / métrica instantánea */}
                 {alumnosNumber > 0 && precioNumber > 0 && (
-                  <div className="p-3 bg-[#262626] border border-[#383838] rounded-lg flex items-center justify-between text-xs animate-in fade-in">
+                  <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between text-xs animate-in fade-in">
                     <span className="text-[#888888] text-[11px] flex items-center gap-1">
                       <TrendingUp className="w-3.5 h-3.5 text-[#DC2626]" /> Promedio por Alumno:
                     </span>
@@ -548,7 +548,7 @@ export default function ProfePage() {
                     placeholder="Ej: Clases normales, clima lluvioso a la tarde..."
                     value={observaciones}
                     onChange={(e) => setObservaciones(e.target.value)}
-                    className="h-10 bg-[#262626] border-[#333333] text-white text-sm focus:border-[#DC2626] focus:ring-[#DC2626]"
+                    className="h-10 bg-slate-50 border-slate-200 text-white text-sm focus:border-[#DC2626] focus:ring-[#DC2626]"
                   />
                 </div>
 
@@ -605,7 +605,7 @@ export default function ProfePage() {
               Cargando historial...
             </div>
           ) : recientes.length === 0 ? (
-            <div className="bg-[#1A1A1A] border border-[#2D2D2D] rounded-lg p-4 text-center text-xs text-[#666666]">
+            <div className="bg-white border border-[#2D2D2D] rounded-lg p-4 text-center text-xs text-[#666666]">
               Todavía no hay registros cargados. ¡Cargá el primero arriba!
             </div>
           ) : (
@@ -613,10 +613,10 @@ export default function ProfePage() {
               {recientes.map((reg) => (
                 <div
                   key={reg.id}
-                  className="bg-[#1A1A1A] hover:bg-[#202020] border border-[#2E2E2E] rounded-xl p-3 flex items-center justify-between transition-colors"
+                  className="bg-white hover:bg-[#202020] border border-slate-200 rounded-xl p-3 flex items-center justify-between transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-10 rounded-lg bg-[#252525] border border-[#333333] flex flex-col items-center justify-center">
+                    <div className="w-12 h-10 rounded-lg bg-slate-50 border border-slate-200 flex flex-col items-center justify-center">
                       <span className="text-[10px] uppercase font-bold text-[#DC2626] leading-none">
                         {format(parseLocalDate(reg.fecha), 'EEE', { locale: es })}
                       </span>

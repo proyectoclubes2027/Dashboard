@@ -653,7 +653,7 @@ export default function SancionesPanel({ readOnly = false }: SancionesPanelProps
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-foreground">Sanciones por Validación QR</span>
-                  <Badge variant="outline" className={`text-[10px] font-semibold py-0 px-1.5 ${configClub?.validacionQrActiva ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' : 'bg-zinc-800 text-zinc-400 border-zinc-700'}`}>
+                  <Badge variant="outline" className={`text-[10px] font-semibold py-0 px-1.5 ${configClub?.validacionQrActiva ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' : 'bg-zinc-800 text-slate-500 border-zinc-700'}`}>
                     {configClub?.validacionQrActiva ? 'Activo (Obligatorio)' : 'Inactivo (Opcional)'}
                   </Badge>
                 </div>
@@ -683,7 +683,7 @@ export default function SancionesPanel({ readOnly = false }: SancionesPanelProps
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-foreground">Sanciones por Cancelación Tardía</span>
-                  <Badge variant="outline" className={`text-[10px] font-semibold py-0 px-1.5 ${configClub?.sancionesCancelacionActiva ? 'bg-amber-500/10 text-amber-400 border-amber-500/30' : 'bg-zinc-800 text-zinc-400 border-zinc-700'}`}>
+                  <Badge variant="outline" className={`text-[10px] font-semibold py-0 px-1.5 ${configClub?.sancionesCancelacionActiva ? 'bg-amber-500/10 text-amber-400 border-amber-500/30' : 'bg-zinc-800 text-slate-500 border-zinc-700'}`}>
                     {configClub?.sancionesCancelacionActiva ? 'Activo' : 'En Pausa'}
                   </Badge>
                 </div>
@@ -917,7 +917,7 @@ export default function SancionesPanel({ readOnly = false }: SancionesPanelProps
                     const isExpanded = expandedSocioDni === socio.socioDni;
 
                     // Semáforo visual del socio
-                    let badgeClass = 'bg-zinc-800 text-zinc-300 border-zinc-700';
+                    let badgeClass = 'bg-zinc-800 text-slate-700 border-zinc-700';
                     if (socio.nivelReincidencia === 'reincidente') {
                       badgeClass = 'bg-amber-950/60 border-amber-500/40 text-amber-300';
                     } else if (socio.nivelReincidencia === 'critico') {
@@ -1105,7 +1105,7 @@ export default function SancionesPanel({ readOnly = false }: SancionesPanelProps
                                                 Vigente
                                               </Badge>
                                             ) : sancion.activa ? (
-                                              <Badge variant="outline" className="text-zinc-400 text-[10px]">
+                                              <Badge variant="outline" className="text-slate-500 text-[10px]">
                                                 Cumplida
                                               </Badge>
                                             ) : (
@@ -1234,7 +1234,7 @@ export default function SancionesPanel({ readOnly = false }: SancionesPanelProps
                             Vigente
                           </Badge>
                         ) : item.activa ? (
-                          <Badge variant="outline" className="text-zinc-400 text-[10px]">
+                          <Badge variant="outline" className="text-slate-500 text-[10px]">
                             Cumplida
                           </Badge>
                         ) : (

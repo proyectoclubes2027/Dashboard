@@ -247,9 +247,9 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
   if (loading) {
     return (
       <div className="space-y-4">
-        <Skeleton className="h-8 w-64 bg-[#2A2A2A]" />
+        <Skeleton className="h-8 w-64 bg-slate-50" />
         {[...Array(3)].map((_, i) => (
-          <Skeleton key={i} className="h-32 w-full bg-[#2A2A2A]" />
+          <Skeleton key={i} className="h-32 w-full bg-slate-50" />
         ))}
       </div>
     );
@@ -259,7 +259,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
     <div className="space-y-6">
       {/* SECCIÓN: ENLACES RÁPIDOS Y ACCESOS DIRECTOS */}
       <Card className="bg-[#18181A] border-[#2C2C32] rounded-2xl overflow-hidden shadow-xl">
-        <CardHeader className="bg-[#141416] border-b border-[#26262B] pb-3">
+        <CardHeader className="bg-white border-b border-[#26262B] pb-3">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
@@ -384,7 +384,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
         {categorias.map((cat) => {
           const Icon = cat.icon;
           return (
-            <Card key={cat.key} className={`bg-[#1E1E1E] border ${cat.borderColor}`}>
+            <Card key={cat.key} className={`bg-white border ${cat.borderColor}`}>
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
                   <div className={`p-2.5 rounded-lg ${cat.bgColor}`}>
@@ -409,7 +409,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                       disabled={readOnly}
                       value={cat.valor}
                       onChange={(e) => cat.onChange(formatInputCurrency(e.target.value))}
-                      className={`bg-[#2A2A2A] border-[#333333] text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                      className={`bg-slate-50 border-slate-200 text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                     />
                   </div>
                 </div>
@@ -419,13 +419,13 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
         })}
       </div>
 
-      <div className="mt-8 border-t border-[#333333] pt-6">
+      <div className="mt-8 border-t border-slate-200 pt-6">
         <h3 className="text-white text-lg font-semibold">Balance de Caja</h3>
         <p className="text-[#999999] text-sm mt-1 mb-4">
           Configuración inicial para el sistema de balances.
         </p>
         
-        <Card className="bg-[#1E1E1E] border-[#333333] max-w-md">
+        <Card className="bg-white border-slate-200 max-w-md">
           <CardHeader className="pb-3">
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-lg bg-blue-500/10">
@@ -452,7 +452,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   disabled={readOnly}
                   value={saldoInicialEnero2026}
                   onChange={(e) => setSaldoInicialEnero2026(formatInputCurrency(e.target.value))}
-                  className={`bg-[#2A2A2A] border-[#333333] text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                  className={`bg-slate-50 border-slate-200 text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                 />
               </div>
             </div>
@@ -460,7 +460,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
         </Card>
       </div>
 
-      <div className="mt-8 border-t border-[#333333] pt-6">
+      <div className="mt-8 border-t border-slate-200 pt-6">
         <div className="flex items-center gap-2 mb-1">
           <Zap className="h-5 w-5 text-amber-400" />
           <h3 className="text-white text-lg font-semibold">Tarifas de Iluminación (Turnos con Luz)</h3>
@@ -470,7 +470,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
-          <Card className="bg-[#1E1E1E] border-amber-400/20 md:col-span-2">
+          <Card className="bg-white border-amber-400/20 md:col-span-2">
             <CardContent className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-amber-500/5 rounded-xl border border-amber-500/15">
               <div>
                 <Label className="text-white text-xs font-bold block">
@@ -486,13 +486,13 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   disabled={readOnly}
                   value={fechaInicioCobroLuz}
                   onChange={(e) => setFechaInicioCobroLuz(e.target.value)}
-                  className={`bg-[#2A2A2A] border-[#383838] text-white h-9 text-xs font-bold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                  className={`bg-slate-50 border-slate-200 text-white h-9 text-xs font-bold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                 />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-[#1E1E1E] border-amber-400/20">
+          <Card className="bg-white border-amber-400/20">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-amber-400/10">
@@ -519,14 +519,14 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                     disabled={readOnly}
                     value={precioLuzTurno}
                     onChange={(e) => setPrecioLuzTurno(formatInputCurrency(e.target.value))}
-                    className={`bg-[#2A2A2A] border-[#333333] text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                    className={`bg-slate-50 border-slate-200 text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                   />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-[#1E1E1E] border-amber-400/20">
+          <Card className="bg-white border-amber-400/20">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-amber-400/10">
@@ -553,7 +553,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                     disabled={readOnly}
                     value={precioLuzProfe}
                     onChange={(e) => setPrecioLuzProfe(formatInputCurrency(e.target.value))}
-                    className={`bg-[#2A2A2A] border-[#333333] text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                    className={`bg-slate-50 border-slate-200 text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                   />
                 </div>
               </div>
@@ -562,7 +562,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
         </div>
       </div>
 
-      <div className="mt-8 border-t border-[#333333] pt-6">
+      <div className="mt-8 border-t border-slate-200 pt-6">
         <div className="flex items-center gap-2 mb-1">
           <UserPlus className="h-5 w-5 text-emerald-400" />
           <h3 className="text-white text-lg font-semibold">Régimen de Invitados</h3>
@@ -572,7 +572,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
-          <Card className="bg-[#1E1E1E] border-emerald-500/20 md:col-span-2">
+          <Card className="bg-white border-emerald-500/20 md:col-span-2">
             <CardContent className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-500/5 rounded-xl border border-emerald-500/15">
               <div>
                 <Label className="text-white text-xs font-bold block">
@@ -588,13 +588,13 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   disabled={readOnly}
                   value={fechaInicioCobroInvitados}
                   onChange={(e) => setFechaInicioCobroInvitados(e.target.value)}
-                  className={`bg-[#2A2A2A] border-[#383838] text-white h-9 text-xs font-bold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                  className={`bg-slate-50 border-slate-200 text-white h-9 text-xs font-bold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                 />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-[#1E1E1E] border-emerald-500/20">
+          <Card className="bg-white border-emerald-500/20">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-emerald-500/10">
@@ -621,14 +621,14 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                     disabled={readOnly}
                     value={precioInvitadoExtra}
                     onChange={(e) => setPrecioInvitadoExtra(formatInputCurrency(e.target.value))}
-                    className={`bg-[#2A2A2A] border-[#333333] text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                    className={`bg-slate-50 border-slate-200 text-white h-9 pl-7 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                   />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-[#1E1E1E] border-emerald-500/20">
+          <Card className="bg-white border-emerald-500/20">
             <CardHeader className="pb-3">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-emerald-500/10">
@@ -655,7 +655,7 @@ export default function ConfiguracionPanel({ readOnly = false }: ConfiguracionPa
                   max="50"
                   value={cupoInvitadosAnual}
                   onChange={(e) => setCupoInvitadosAnual(e.target.value)}
-                  className={`bg-[#2A2A2A] border-[#333333] text-white h-9 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
+                  className={`bg-slate-50 border-slate-200 text-white h-9 text-sm font-semibold ${readOnly ? 'opacity-80 cursor-not-allowed' : ''}`}
                 />
               </div>
             </CardContent>

@@ -85,7 +85,7 @@ export default function ActividadLog() {
   }
 
   return (
-    <div className="bg-[#1E1E1E] border border-[#333333] rounded-lg p-4">
+    <div className="bg-white border border-slate-200 rounded-lg p-4">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <Clock className="h-5 w-5 text-[#DC2626]" />
@@ -97,7 +97,7 @@ export default function ActividadLog() {
       {loading ? (
         <div className="space-y-2">
           {[...Array(8)].map((_, i) => (
-            <Skeleton key={i} className="h-10 w-full bg-[#2A2A2A]" />
+            <Skeleton key={i} className="h-10 w-full bg-slate-50" />
           ))}
         </div>
       ) : actividades.length === 0 ? (
@@ -114,7 +114,7 @@ export default function ActividadLog() {
               return (
                 <div
                   key={act.id}
-                  className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#252525] transition-colors"
+                  className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-colors"
                 >
                   <div className={`w-8 h-8 rounded-lg ${iconBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
                     <Icon className={`h-3.5 w-3.5 ${iconColor}`} />
@@ -133,7 +133,7 @@ export default function ActividadLog() {
               variant="ghost"
               size="sm"
               onClick={() => fetchActividad(actividades.length)}
-              className="w-full mt-2 text-[#999999] hover:text-white hover:bg-[#252525] text-xs"
+              className="w-full mt-2 text-[#999999] hover:text-white hover:bg-slate-50 text-xs"
             >
               <ChevronDown className="h-3.5 w-3.5 mr-1" />
               Cargar más

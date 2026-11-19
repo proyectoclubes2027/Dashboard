@@ -568,7 +568,7 @@ export default function EventoModal({
                 size="sm"
                 onClick={() => onOpenChange(false)}
                 disabled={saving}
-                className="text-xs h-9 bg-[#1b1b22] border-[#2c2c36] text-zinc-300"
+                className="text-xs h-9 bg-[#1b1b22] border-[#2c2c36] text-slate-700"
               >
                 Cancelar
               </Button>

@@ -118,7 +118,7 @@ export default function PlazoFijoModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#1A1A1A] border-[#333333] text-white sm:max-w-[425px]">
+      <DialogContent className="bg-white border-slate-200 text-white sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="text-[#DC2626]">
             {plazoFijo ? 'Editar Plazo Fijo' : 'Nuevo Plazo Fijo'}
@@ -134,7 +134,7 @@ export default function PlazoFijoModal({
               required
               value={formData.banco}
               onChange={(e) => setFormData({ ...formData, banco: e.target.value })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+              className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -147,7 +147,7 @@ export default function PlazoFijoModal({
               placeholder="0,00"
               value={formData.montoInvertido}
               onChange={(e) => setFormData({ ...formData, montoInvertido: formatInputCurrency(e.target.value) })}
-              className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+              className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
             />
           </div>
 
@@ -160,7 +160,7 @@ export default function PlazoFijoModal({
                 required
                 value={formData.fechaConstitucion}
                 onChange={(e) => setFormData({ ...formData, fechaConstitucion: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+                className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
               />
             </div>
             <div className="space-y-2">
@@ -171,7 +171,7 @@ export default function PlazoFijoModal({
                 required
                 value={formData.fechaVencimiento}
                 onChange={(e) => setFormData({ ...formData, fechaVencimiento: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-white focus:border-[#DC2626]"
+                className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
               />
             </div>
           </div>
@@ -182,10 +182,10 @@ export default function PlazoFijoModal({
               value={formData.estado} 
               onValueChange={(v: string) => setFormData({ ...formData, estado: v })}
             >
-              <SelectTrigger id="estado" className="bg-[#2A2A2A] border-[#333333] text-white">
+              <SelectTrigger id="estado" className="bg-slate-50 border-slate-200 text-white">
                 <SelectValue placeholder="Estado" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1A1A1A] border-[#333333] text-white">
+              <SelectContent className="bg-white border-slate-200 text-white">
                 <SelectItem value="activo" className="text-blue-500 focus:bg-blue-500/10 focus:text-blue-500">Activo</SelectItem>
                 <SelectItem value="cobrado" className="text-green-500 focus:bg-green-500/10 focus:text-green-500">Cobrado</SelectItem>
               </SelectContent>
@@ -197,7 +197,7 @@ export default function PlazoFijoModal({
               type="button" 
               variant="outline" 
               onClick={() => onOpenChange(false)}
-              className="bg-transparent border-[#333333] text-[#999999] hover:bg-[#2A2A2A] hover:text-white"
+              className="bg-transparent border-slate-200 text-[#999999] hover:bg-slate-50 hover:text-white"
             >
               Cancelar
             </Button>

@@ -341,10 +341,10 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
 
   if (loading) {
     return (
-      <div className="bg-[#1E1E1E] border border-[#333333] rounded-lg p-4 space-y-3">
-        <Skeleton className="h-8 w-64 bg-[#2A2A2A]" />
+      <div className="bg-white border border-slate-200 rounded-lg p-4 space-y-3">
+        <Skeleton className="h-8 w-64 bg-slate-50" />
         {[...Array(10)].map((_, i) => (
-          <Skeleton key={i} className="h-9 w-full bg-[#2A2A2A]" />
+          <Skeleton key={i} className="h-9 w-full bg-slate-50" />
         ))}
       </div>
     );
@@ -354,7 +354,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
     <>
       {/* TARJETAS DE TOTALES Y ESTADÍSTICAS DE SOCIOS */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-        <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-3.5 flex items-center gap-3">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5 flex items-center gap-3">
           <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
             <Users className="h-5 w-5" />
           </div>
@@ -364,7 +364,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
           </div>
         </div>
 
-        <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-3.5 flex items-center gap-3">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5 flex items-center gap-3">
           <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
             <CheckCircle className="h-5 w-5" />
           </div>
@@ -374,7 +374,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
           </div>
         </div>
 
-        <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-3.5 flex items-center gap-3">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5 flex items-center gap-3">
           <div className="p-2.5 rounded-lg bg-destructive/10 text-destructive">
             <AlertTriangle className="h-5 w-5" />
           </div>
@@ -384,8 +384,8 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
           </div>
         </div>
 
-        <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-3.5 flex items-center gap-3">
-          <div className="p-2.5 rounded-lg bg-[#2A2A2A] text-zinc-400">
+        <div className="bg-white border border-slate-200 rounded-xl p-3.5 flex items-center gap-3">
+          <div className="p-2.5 rounded-lg bg-slate-50 text-slate-500">
             <UserX className="h-5 w-5" />
           </div>
           <div>
@@ -396,7 +396,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
         </div>
       </div>
 
-      <div className="bg-[#1E1E1E] border border-[#333333] rounded-lg p-4">
+      <div className="bg-white border border-slate-200 rounded-lg p-4">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
           <div className="flex items-center gap-2 flex-wrap">
@@ -428,20 +428,20 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                   Exportar
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-[#1E1E1E] border-[#333333] text-[#CCCCCC]">
-                <DropdownMenuItem onClick={() => handleExportExcel('todos')} className="focus:bg-[#2A2A2A] focus:text-foreground cursor-pointer">
+              <DropdownMenuContent className="bg-white border-slate-200 text-[#CCCCCC]">
+                <DropdownMenuItem onClick={() => handleExportExcel('todos')} className="focus:bg-slate-50 focus:text-foreground cursor-pointer">
                   Exportar Todos (Activos + Inactivos)
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleExportExcel('activos')} className="focus:bg-[#2A2A2A] focus:text-foreground cursor-pointer">
+                <DropdownMenuItem onClick={() => handleExportExcel('activos')} className="focus:bg-slate-50 focus:text-foreground cursor-pointer">
                   Solo Activos ({activosCount})
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleExportExcel('inactivos')} className="focus:bg-[#2A2A2A] focus:text-foreground cursor-pointer">
+                <DropdownMenuItem onClick={() => handleExportExcel('inactivos')} className="focus:bg-slate-50 focus:text-foreground cursor-pointer">
                   Solo Inactivos ({inactivosCount})
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleExportExcel('morosos')} className="focus:bg-[#2A2A2A] focus:text-foreground cursor-pointer text-red-400 focus:text-red-300">
+                <DropdownMenuItem onClick={() => handleExportExcel('morosos')} className="focus:bg-slate-50 focus:text-foreground cursor-pointer text-red-400 focus:text-red-300">
                   Solo Morosos ({deudoresCount})
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleExportExcel('al_dia')} className="focus:bg-[#2A2A2A] focus:text-foreground cursor-pointer text-green-400 focus:text-green-300">
+                <DropdownMenuItem onClick={() => handleExportExcel('al_dia')} className="focus:bg-slate-50 focus:text-foreground cursor-pointer text-green-400 focus:text-green-300">
                   Solo Al Día ({alDiaCount})
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -460,42 +460,42 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <Select value={filterActivo} onValueChange={setFilterActivo}>
-              <SelectTrigger className="w-[120px] bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-8 text-xs">
+              <SelectTrigger className="w-[120px] bg-slate-50 border-slate-200 text-[#CCCCCC] h-8 text-xs">
                 <SelectValue placeholder="Situación" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Todos</SelectItem>
-                <SelectItem value="activo" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Activos</SelectItem>
-                <SelectItem value="inactivo" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Inactivos</SelectItem>
+              <SelectContent className="bg-white border-slate-200">
+                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Todos</SelectItem>
+                <SelectItem value="activo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Activos</SelectItem>
+                <SelectItem value="inactivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Inactivos</SelectItem>
               </SelectContent>
             </Select>
             <Select value={filterEstado} onValueChange={setFilterEstado}>
-              <SelectTrigger className="w-[130px] bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-8 text-xs">
+              <SelectTrigger className="w-[130px] bg-slate-50 border-slate-200 text-[#CCCCCC] h-8 text-xs">
                 <SelectValue placeholder="Estado" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Todos</SelectItem>
-                <SelectItem value="al_dia" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">✅ Al día (Total)</SelectItem>
-                <SelectItem value="al_dia_pagado" className="text-[#00AA55] focus:bg-[#2A2A2A] focus:text-foreground">
+              <SelectContent className="bg-white border-slate-200">
+                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Todos</SelectItem>
+                <SelectItem value="al_dia" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">✅ Al día (Total)</SelectItem>
+                <SelectItem value="al_dia_pagado" className="text-[#00AA55] focus:bg-slate-50 focus:text-foreground">
                   🟢 Al día (Mes actual PAGO)
                 </SelectItem>
-                <SelectItem value="al_dia_deuda" className="text-[#F59E0B] focus:bg-[#2A2A2A] focus:text-foreground">
+                <SelectItem value="al_dia_deuda" className="text-[#F59E0B] focus:bg-slate-50 focus:text-foreground">
                   🟡 Al día (debe mes curso)
                 </SelectItem>
-                <SelectItem value="morosos" className="text-[#EF4444] focus:bg-[#2A2A2A] focus:text-foreground">
+                <SelectItem value="morosos" className="text-[#EF4444] focus:bg-slate-50 focus:text-foreground">
                   🔴 Morosos ({deudoresCount})
                 </SelectItem>
               </SelectContent>
             </Select>
             <Select value={filterCategoria} onValueChange={setFilterCategoria}>
-              <SelectTrigger className="w-[120px] bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-8 text-xs">
+              <SelectTrigger className="w-[120px] bg-slate-50 border-slate-200 text-[#CCCCCC] h-8 text-xs">
                 <SelectValue placeholder="Categoría" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Todas</SelectItem>
-                <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Socio</SelectItem>
-                <SelectItem value="alumno" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Alumno</SelectItem>
-                <SelectItem value="vitalicio" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-foreground">Vitalicio</SelectItem>
+              <SelectContent className="bg-white border-slate-200">
+                <SelectItem value="todos" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Todas</SelectItem>
+                <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Socio</SelectItem>
+                <SelectItem value="alumno" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Alumno</SelectItem>
+                <SelectItem value="vitalicio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-foreground">Vitalicio</SelectItem>
               </SelectContent>
             </Select>
             <div className="relative w-44">
@@ -504,7 +504,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                 placeholder="Buscar..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-8 bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] placeholder:text-[#666666] h-8 text-xs"
+                className="pl-8 bg-slate-50 border-slate-200 text-[#CCCCCC] placeholder:text-[#666666] h-8 text-xs"
               />
             </div>
           </div>
@@ -514,7 +514,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
         <div className="hidden lg:block overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="border-[#333333] hover:bg-transparent">
+              <TableRow className="border-slate-200 hover:bg-transparent">
                 <TableHead
                   className="text-[#999999] font-medium text-xs cursor-pointer select-none h-9 py-1"
                   onClick={() => toggleSort('apellido')}
@@ -546,14 +546,14 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
             </TableHeader>
             <TableBody>
               {filteredSocios.length === 0 ? (
-                <TableRow className="border-[#333333]">
+                <TableRow className="border-slate-200">
                   <TableCell colSpan={7} className="text-center py-6 text-[#999999] text-xs">
                     No se encontraron socios
                   </TableCell>
                 </TableRow>
               ) : (
                 filteredSocios.map((socio) => (
-                  <TableRow key={socio.id} className="border-[#333333] hover:bg-[#252525]">
+                  <TableRow key={socio.id} className="border-slate-200 hover:bg-slate-50">
                     <TableCell className="text-[#CCCCCC] text-xs py-2">
                       <span className="font-medium">{socio.apellido}</span>{', '}
                       {socio.nombre}
@@ -619,7 +619,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                           size="sm"
                           variant="ghost"
                           onClick={() => onVerHistorial({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido, categoria: socio.categoria })}
-                          className="h-7 w-7 p-0 text-[#999999] hover:text-foreground hover:bg-[#2A2A2A]"
+                          className="h-7 w-7 p-0 text-[#999999] hover:text-foreground hover:bg-slate-50"
                           title="Historial de Pagos"
                         >
                           <History className="h-3.5 w-3.5" />
@@ -641,7 +641,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                               size="sm"
                               variant="ghost"
                               onClick={() => onEditarSocio(socio)}
-                              className="h-7 w-7 p-0 text-[#999999] hover:text-foreground hover:bg-[#2A2A2A]"
+                              className="h-7 w-7 p-0 text-[#999999] hover:text-foreground hover:bg-slate-50"
                               title="Editar"
                             >
                               <Pencil className="h-3.5 w-3.5" />
@@ -699,7 +699,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
             filteredSocios.map((socio) => (
               <div
                 key={socio.id}
-                className="bg-[#252525] border border-[#333333] rounded-lg p-3"
+                className="bg-slate-50 border border-slate-200 rounded-lg p-3"
               >
                 <div className="flex items-center justify-between gap-2">
                   <div className="min-w-0 flex-1">
@@ -742,8 +742,8 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                     )}
                   </div>
                 </div>
-                <div className="flex items-center justify-end gap-1 mt-2 pt-2 border-t border-[#333333] flex-wrap">
-                  <Button size="sm" variant="ghost" onClick={() => onVerHistorial({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido, categoria: socio.categoria })} className="h-7 px-2 text-[#999999] hover:bg-[#2A2A2A] text-[10px]">
+                <div className="flex items-center justify-end gap-1 mt-2 pt-2 border-t border-slate-200 flex-wrap">
+                  <Button size="sm" variant="ghost" onClick={() => onVerHistorial({ id: socio.id, nombre: socio.nombre, apellido: socio.apellido, categoria: socio.categoria })} className="h-7 px-2 text-[#999999] hover:bg-slate-50 text-[10px]">
                     <History className="h-3 w-3 mr-0.5" /> Historial
                   </Button>
                   {!readOnly && (
@@ -753,7 +753,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
                   )}
                   {!readOnly && !hideABM && (
                     <>
-                      <Button size="sm" variant="ghost" onClick={() => onEditarSocio(socio)} className="h-7 px-2 text-[#999999] hover:bg-[#2A2A2A] text-[10px]">
+                      <Button size="sm" variant="ghost" onClick={() => onEditarSocio(socio)} className="h-7 px-2 text-[#999999] hover:bg-slate-50 text-[10px]">
                         <Pencil className="h-3 w-3 mr-0.5" /> Editar
                       </Button>
                       {socio.estado === 'inactivo' ? (
@@ -780,7 +780,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
 
         {/* Resumen compacto */}
         {!loading && filteredSocios.length > 0 && (
-          <div className="mt-2 pt-2 border-t border-[#333333] text-[#666666] text-[10px]">
+          <div className="mt-2 pt-2 border-t border-slate-200 text-[#666666] text-[10px]">
             Mostrando {filteredSocios.length} de {socios.length} socios
           </div>
         )}
@@ -788,7 +788,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
 
       {/* Confirmación de baja / eliminación */}
       <AlertDialog open={!!deleteTarget} onOpenChange={() => { setDeleteTarget(null); setDeleteType('soft'); }}>
-        <AlertDialogContent className="bg-[#1E1E1E] border-[#333333]">
+        <AlertDialogContent className="bg-white border-slate-200">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-foreground flex items-center gap-2">
               <AlertTriangle className="h-5 w-5 text-[#EF4444]" />
@@ -809,7 +809,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="flex-col sm:flex-row gap-2">
-            <AlertDialogCancel className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-foreground">
+            <AlertDialogCancel className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-foreground">
               Cancelar
             </AlertDialogCancel>
             <AlertDialogAction
@@ -825,7 +825,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
 
       {/* Confirmación de reactivación */}
       <AlertDialog open={!!reactivateTarget} onOpenChange={() => setReactivateTarget(null)}>
-        <AlertDialogContent className="bg-[#1E1E1E] border-[#333333]">
+        <AlertDialogContent className="bg-white border-slate-200">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-foreground">¿Reactivar a {reactivateTarget?.nombre} {reactivateTarget?.apellido}?</AlertDialogTitle>
             <AlertDialogDescription className="text-[#999999]">
@@ -833,7 +833,7 @@ export default function SociosTable({ onRegistrarPago, onEditarSocio, onCrearSoc
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-foreground">
+            <AlertDialogCancel className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-foreground">
               Cancelar
             </AlertDialogCancel>
             <AlertDialogAction

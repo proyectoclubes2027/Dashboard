@@ -143,7 +143,7 @@ export default function AbmSocioModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#1E1E1E] border-[#333333] sm:max-w-md max-h-[90vh] overflow-y-auto">
+      <DialogContent className="bg-white border-slate-200 sm:max-w-md max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-white">
             {isEditing ? 'Modificar Socio' : 'Nuevo Socio'}
@@ -163,7 +163,7 @@ export default function AbmSocioModal({
                 value={form.nombre}
                 onChange={(e) => setForm({ ...form, nombre: e.target.value })}
                 placeholder="Juan Pablo"
-                className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
               />
             </div>
             <div className="space-y-1.5">
@@ -172,7 +172,7 @@ export default function AbmSocioModal({
                 value={form.apellido}
                 onChange={(e) => setForm({ ...form, apellido: e.target.value })}
                 placeholder="Rodríguez"
-                className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
               />
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function AbmSocioModal({
                 value={form.dni}
                 onChange={(e) => setForm({ ...form, dni: e.target.value })}
                 placeholder="35000000"
-                className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
               />
             </div>
             <div className="space-y-1.5">
@@ -193,7 +193,7 @@ export default function AbmSocioModal({
                 value={form.telefono}
                 onChange={(e) => setForm({ ...form, telefono: e.target.value })}
                 placeholder="3462 1234567"
-                className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
               />
             </div>
           </div>
@@ -205,7 +205,7 @@ export default function AbmSocioModal({
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="email@ejemplo.com"
-              className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm"
+              className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
             />
           </div>
 
@@ -216,7 +216,7 @@ export default function AbmSocioModal({
                 type="date"
                 value={form.fechaAlta}
                 onChange={(e) => setForm({ ...form, fechaAlta: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm [color-scheme:dark]"
+                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm [color-scheme:dark]"
               />
             </div>
             <div className="space-y-1.5">
@@ -227,7 +227,7 @@ export default function AbmSocioModal({
                 max="60"
                 value={form.cuotasAdeudadas}
                 onChange={(e) => setForm({ ...form, cuotasAdeudadas: e.target.value })}
-                className="bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm"
+                className="bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm"
               />
               <p className="text-[10px] text-[#666666] leading-tight">Mínimo meses pendientes a asegurar.</p>
             </div>
@@ -237,17 +237,17 @@ export default function AbmSocioModal({
             <div className="space-y-1.5">
               <Label className="text-[#CCCCCC] text-xs">Categoría</Label>
               <Select value={form.categoria || 'socio'} onValueChange={(v) => setForm({ ...form, categoria: v })}>
-                <SelectTrigger className="w-full bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm">
+                <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                  <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">
+                <SelectContent className="bg-white border-slate-200">
+                  <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
                     🏷️ Socio
                   </SelectItem>
-                  <SelectItem value="alumno" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">
+                  <SelectItem value="alumno" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
                     🎓 Alumno
                   </SelectItem>
-                  <SelectItem value="vitalicio" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">
+                  <SelectItem value="vitalicio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
                     👑 Vitalicio
                   </SelectItem>
                 </SelectContent>
@@ -258,20 +258,20 @@ export default function AbmSocioModal({
               <Label className="text-[#CCCCCC] text-xs">{isEditing ? 'Estado' : 'Rol Inicial'}</Label>
               {isEditing ? (
                 <Select value={form.estado || 'activo'} onValueChange={(v) => setForm({ ...form, estado: v })}>
-                  <SelectTrigger className="w-full bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm">
+                  <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                    <SelectItem value="activo" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">
+                  <SelectContent className="bg-white border-slate-200">
+                    <SelectItem value="activo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
                       ✅ Activo
                     </SelectItem>
-                    <SelectItem value="inactivo" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white">
+                    <SelectItem value="inactivo" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white">
                       ⏸️ Inactivo
                     </SelectItem>
                   </SelectContent>
                 </Select>
               ) : (
-                <div className="h-9 flex items-center bg-[#2A2A2A]/50 border border-[#333333] px-3 rounded-md text-[#666666] text-xs">
+                <div className="h-9 flex items-center bg-slate-50/50 border border-slate-200 px-3 rounded-md text-[#666666] text-xs">
                   ✅ Activo por defecto
                 </div>
               )}
@@ -281,17 +281,17 @@ export default function AbmSocioModal({
           <div className="space-y-1.5 pt-1">
             <Label className="text-[#CCCCCC] text-xs font-medium">Permisos en App de Reservas</Label>
             <Select value={form.rol || 'socio'} onValueChange={(v) => setForm({ ...form, rol: v })}>
-              <SelectTrigger className="w-full bg-[#2A2A2A] border-[#333333] text-[#CCCCCC] h-9 text-sm">
+              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-[#CCCCCC] h-9 text-sm">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="bg-[#1E1E1E] border-[#333333]">
-                <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-[#2A2A2A] focus:text-white border-0">
+              <SelectContent className="bg-white border-slate-200">
+                <SelectItem value="socio" className="text-[#CCCCCC] focus:bg-slate-50 focus:text-white border-0">
                   👤 Socio (Acceso estándar)
                 </SelectItem>
-                <SelectItem value="profesor" className="text-amber-400 focus:bg-[#2A2A2A] focus:text-amber-300 border-0">
+                <SelectItem value="profesor" className="text-amber-400 focus:bg-slate-50 focus:text-amber-300 border-0">
                   🎾 Profesor (Turnos clases/torneo, noticias, luz)
                 </SelectItem>
-                <SelectItem value="admin" className="text-purple-400 focus:bg-[#2A2A2A] focus:text-purple-300 border-0">
+                <SelectItem value="admin" className="text-purple-400 focus:bg-slate-50 focus:text-purple-300 border-0">
                   🛡️ Administrador (Acceso total)
                 </SelectItem>
               </SelectContent>
@@ -307,7 +307,7 @@ export default function AbmSocioModal({
             variant="outline"
             onClick={() => onOpenChange(false)}
             disabled={submitting}
-            className="border-[#333333] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white"
+            className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
           >
             Cancelar
           </Button>

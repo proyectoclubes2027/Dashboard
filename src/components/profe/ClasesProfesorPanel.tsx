@@ -424,7 +424,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
   return (
     <div className="space-y-5">
       {/* Panel Superior: Acceso Rápido para el Profesor */}
-      <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-5 shadow-lg">
+      <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-lg">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -441,7 +441,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               El profesor ingresa a este link todos los días desde su celular para registrar la cantidad de clases dictadas, alumnos que tuvo y el total recaudado del día.
             </p>
 
-            <div className="inline-flex items-center gap-2 bg-[#121212] px-3 py-1.5 rounded-lg border border-[#333333] text-[12px] font-mono text-[#CCCCCC] max-w-full overflow-hidden text-ellipsis">
+            <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-[12px] font-mono text-[#CCCCCC] max-w-full overflow-hidden text-ellipsis">
               <span className="truncate">{profeUrl}</span>
             </div>
           </div>
@@ -451,7 +451,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               size="sm"
               variant="outline"
               onClick={handleCopyLink}
-              className="border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-9 text-xs font-semibold"
+              className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-9 text-xs font-semibold"
             >
               {copiedLink ? <Check className="h-3.5 w-3.5 mr-1.5 text-green-400" /> : <Copy className="h-3.5 w-3.5 mr-1.5" />}
               {copiedLink ? 'Copiado!' : 'Copiar Link'}
@@ -470,7 +470,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
       </div>
 
       {/* Header con Filtro de Mes y Botones de Acción */}
-      <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h3 className="text-white text-base font-bold flex items-center gap-2">
             <ClipboardList className="h-5 w-5 text-[#DC2626]" />
@@ -483,10 +483,10 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
 
         <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
           <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-            <SelectTrigger className="h-8 text-xs bg-[#2A2A2A] border-[#383838] text-white focus:ring-[#DC2626] w-[160px]">
+            <SelectTrigger className="h-8 text-xs bg-slate-50 border-slate-200 text-white focus:ring-[#DC2626] w-[160px]">
               <SelectValue placeholder="Seleccionar mes" />
             </SelectTrigger>
-            <SelectContent className="bg-[#1E1E1E] border-[#333333] text-white">
+            <SelectContent className="bg-white border-slate-200 text-white">
               {monthOptions.map((opt) => (
                 <SelectItem key={opt.value} value={opt.value} className="focus:bg-[#333333] focus:text-white">
                   {opt.label}
@@ -535,7 +535,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
             size="sm"
             onClick={() => fetchRegistrosProfeMensual(selectedMonth)}
             disabled={loadingProfe}
-            className="border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white h-8 text-xs font-semibold"
+            className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white h-8 text-xs font-semibold"
           >
             <RefreshCcw className={`h-3.5 w-3.5 mr-1.5 ${loadingProfe ? 'animate-spin' : ''}`} />
             Actualizar
@@ -546,7 +546,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
       {/* BLOQUE DE MÉTRICAS COMPARATIVAS: DÍA, SEMANA Y MES */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* 1. EN EL DÍA */}
-        <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-[#DC2626]/5 rounded-bl-full pointer-events-none" />
           <div>
             <div className="flex items-center justify-between mb-2">
@@ -610,7 +610,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
         </div>
 
         {/* 2. EN LA SEMANA */}
-        <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-bl-full pointer-events-none" />
           <div>
             <div className="flex items-center justify-between mb-2">
@@ -651,7 +651,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
         </div>
 
         {/* 3. EN EL MES */}
-        <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-bl-full pointer-events-none" />
           <div>
             <div className="flex items-center justify-between mb-2">
@@ -693,7 +693,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
       </div>
 
       {/* GRILLA SEMANAL POR DÍA DE LA SEMANA (LUNES A DOMINGO) */}
-      <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 sm:p-5 shadow-sm space-y-3">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#2C2C2C]">
           <div>
             <h4 className="text-white text-sm font-bold flex items-center gap-2">
@@ -711,7 +711,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={() => setCurrentWeekDate(subWeeks(currentWeekDate, 1))}
-              className="h-8 px-2 border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white text-xs"
+              className="h-8 px-2 border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white text-xs"
               title="Semana anterior"
             >
               <ChevronLeft className="w-4 h-4 mr-1" /> Ant.
@@ -720,7 +720,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={() => setCurrentWeekDate(new Date())}
-              className="h-8 text-xs border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white"
+              className="h-8 text-xs border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
             >
               Esta Semana
             </Button>
@@ -728,7 +728,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={() => setCurrentWeekDate(addWeeks(currentWeekDate, 1))}
-              className="h-8 px-2 border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white text-xs"
+              className="h-8 px-2 border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white text-xs"
               title="Semana siguiente"
             >
               Sig. <ChevronRight className="w-4 h-4 ml-1" />
@@ -761,10 +761,10 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                 className={cn(
                   'rounded-xl border p-3 flex flex-col justify-between cursor-pointer transition-all',
                   isSelected
-                    ? 'bg-[#282828] border-[#DC2626] shadow-md ring-1 ring-[#DC2626]/50'
+                    ? 'bg-slate-100 border-[#DC2626] shadow-md ring-1 ring-[#DC2626]/50'
                     : reg
-                    ? 'bg-[#222222] border-[#383838] hover:border-[#555]'
-                    : 'bg-[#181818] border-[#2A2A2A] hover:border-[#383838] opacity-70 hover:opacity-100'
+                    ? 'bg-slate-50 border-slate-200 hover:border-[#555]'
+                    : 'bg-white border-slate-200 hover:border-slate-200 opacity-70 hover:opacity-100'
                 )}
               >
                 <div>
@@ -810,7 +810,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                   )}
                 </div>
 
-                <div className="pt-2 border-t border-[#2E2E2E] flex justify-between items-center text-[10px]">
+                <div className="pt-2 border-t border-slate-200 flex justify-between items-center text-[10px]">
                   {reg ? (
                     <span className="text-[#888888] truncate max-w-[90px]" title={reg.observaciones || 'Registrado'}>
                       {reg.observaciones || 'Registrado'}
@@ -861,7 +861,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
       </div>
 
       {/* HISTORIAL DE CARGAS DEL MES (TABLA COMPLETA) */}
-      <div className="bg-[#1E1E1E] border border-[#333333] rounded-xl p-4 shadow-sm space-y-3">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <h4 className="text-white text-sm font-bold flex items-center gap-2">
@@ -886,7 +886,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               variant="outline"
               size="sm"
               onClick={handleExportMesExcel}
-              className="h-8 text-xs border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white"
+              className="h-8 text-xs border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
               title="Exportar a planilla Excel (.xlsx)"
             >
               <Download className="w-3.5 h-3.5 mr-1" />
@@ -898,7 +898,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
         {loadingProfe && registrosProfeMensual.length === 0 ? (
           <div className="space-y-3">
             {[...Array(3)].map((_, i) => (
-              <Skeleton key={i} className="h-10 w-full bg-[#2A2A2A]" />
+              <Skeleton key={i} className="h-10 w-full bg-slate-50" />
             ))}
           </div>
         ) : registrosProfeMensual.length === 0 ? (
@@ -909,7 +909,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="border-[#333333] hover:bg-transparent">
+                <TableRow className="border-slate-200 hover:bg-transparent">
                   <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Día de la Semana</TableHead>
                   <TableHead className="text-[#999999] font-medium text-xs h-9 py-1">Fecha</TableHead>
                   <TableHead className="text-[#999999] font-medium text-xs h-9 py-1 text-center">Clases</TableHead>
@@ -924,10 +924,10 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
               <TableBody>
                 {registrosProfeMensual.map((registro) => {
                   return (
-                    <TableRow key={registro.id} className="border-[#333333] hover:bg-[#252525]">
+                    <TableRow key={registro.id} className="border-slate-200 hover:bg-slate-50">
                       {/* Día de la semana */}
                       <TableCell className="py-2.5 whitespace-nowrap">
-                        <Badge className="bg-[#2A2A2A] text-white border-[#444] capitalize font-bold text-xs">
+                        <Badge className="bg-slate-50 text-white border-[#444] capitalize font-bold text-xs">
                           {format(parseLocalDate(registro.fecha), 'EEEE', { locale: es })}
                         </Badge>
                       </TableCell>
@@ -944,7 +944,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                             Lluvia
                           </Badge>
                         ) : (
-                          <span className="font-bold text-white text-xs bg-[#2A2A2A] px-2 py-0.5 rounded border border-[#3A3A3A]">
+                          <span className="font-bold text-white text-xs bg-slate-50 px-2 py-0.5 rounded border border-[#3A3A3A]">
                             {registro.cantidadClases ?? 1}
                           </span>
                         )}
@@ -975,7 +975,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                               variant="ghost"
                               size="icon"
                               onClick={() => handleOpenEditModal(registro)}
-                              className="h-7 w-7 text-[#888888] hover:text-white hover:bg-[#2C2C2C]"
+                              className="h-7 w-7 text-[#888888] hover:text-white hover:bg-slate-50"
                               title="Editar"
                             >
                               <Pencil className="h-3.5 w-3.5" />
@@ -1005,7 +1005,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
       {/* Modal para Crear / Editar Registro del Día */}
       {!readOnly && (
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="bg-[#1E1E1E] border-[#333333] text-white sm:max-w-[440px]">
+          <DialogContent className="bg-white border-slate-200 text-white sm:max-w-[440px]">
             <DialogHeader>
               <DialogTitle className="text-white font-bold text-lg flex items-center gap-2">
                 <ClipboardList className="w-5 h-5 text-[#DC2626]" />
@@ -1025,7 +1025,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                   value={formFecha}
                   onChange={(e) => setFormFecha(e.target.value)}
                   required
-                  className="bg-[#2A2A2A] border-[#383838] text-white focus:border-[#DC2626]"
+                  className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
                 />
               </div>
 
@@ -1041,7 +1041,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                     value={formClases}
                     onChange={(e) => setFormClases(e.target.value)}
                     required
-                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#DC2626]"
+                    className="bg-slate-50 border-slate-200 text-white font-bold focus:border-[#DC2626]"
                   />
                 </div>
 
@@ -1055,7 +1055,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                     value={formAlumnos}
                     onChange={(e) => setFormAlumnos(e.target.value)}
                     required
-                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#DC2626]"
+                    className="bg-slate-50 border-slate-200 text-white font-bold focus:border-[#DC2626]"
                   />
                 </div>
 
@@ -1069,7 +1069,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                     value={formPrecio}
                     onChange={(e) => setFormPrecio(e.target.value)}
                     required
-                    className="bg-[#2A2A2A] border-[#383838] text-white font-bold focus:border-[#DC2626]"
+                    className="bg-slate-50 border-slate-200 text-white font-bold focus:border-[#DC2626]"
                   />
                 </div>
               </div>
@@ -1082,7 +1082,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                   placeholder="Notas adicionales..."
                   value={formObservaciones}
                   onChange={(e) => setFormObservaciones(e.target.value)}
-                  className="bg-[#2A2A2A] border-[#383838] text-white focus:border-[#DC2626]"
+                  className="bg-slate-50 border-slate-200 text-white focus:border-[#DC2626]"
                 />
               </div>
 
@@ -1091,7 +1091,7 @@ export default function ClasesProfesorPanel({ readOnly = false }: { readOnly?: b
                   type="button"
                   variant="outline"
                   onClick={() => setIsModalOpen(false)}
-                  className="border-[#383838] text-[#CCCCCC] hover:bg-[#2A2A2A] hover:text-white"
+                  className="border-slate-200 text-[#CCCCCC] hover:bg-slate-50 hover:text-white"
                 >
                   Cancelar
                 </Button>

@@ -606,7 +606,7 @@ export default function ComisionDirectivaPage() {
       <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
         {/* KPI Cards Superiores */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-          <div className="bg-[#141416] border border-[#242428] rounded-2xl p-4 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-[#242428] rounded-2xl p-4 shadow-sm flex flex-col justify-between">
             <div className="flex items-center justify-between text-[#888888]">
               <span className="text-[11px] font-bold uppercase tracking-wider">Padrón de Socios</span>
               <Users size={18} className="text-sky-400" />
@@ -619,7 +619,7 @@ export default function ComisionDirectivaPage() {
             </div>
           </div>
 
-          <div className="bg-[#141416] border border-emerald-500/20 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-emerald-500/20 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
             <div className="flex items-center justify-between text-emerald-400">
               <span className="text-[11px] font-bold uppercase tracking-wider">Alumnos Escuela</span>
               <GraduationCap size={18} />
@@ -634,7 +634,7 @@ export default function ComisionDirectivaPage() {
             </div>
           </div>
 
-          <div className="bg-[#141416] border border-purple-500/20 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-purple-500/20 rounded-2xl p-4 shadow-sm flex flex-col justify-between">
             <div className="flex items-center justify-between text-purple-400">
               <span className="text-[11px] font-bold uppercase tracking-wider">Particulares del Mes</span>
               <Sparkles size={18} />
@@ -653,8 +653,8 @@ export default function ComisionDirectivaPage() {
         {/* =========================================================================
             SECCIÓN 1: BALANCE FINANCIERO MENSUAL (CON SALDOS MES A MES Y DESCARGA)
             ========================================================================= */}
-        <section className="bg-[#141416] border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-[#18181B] border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
+          <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
                 <Wallet size={18} />
@@ -681,7 +681,7 @@ export default function ComisionDirectivaPage() {
           </div>
 
           {/* Visor Mes a Mes con Saldos Finales */}
-          <div className="p-4 bg-[#111113] border-b border-[#242428]">
+          <div className="p-4 bg-white border-b border-[#242428]">
             <div className="text-[11px] font-bold uppercase text-[#888] mb-2 flex items-center justify-between">
               <span>Saldos Finales Mes a Mes ({anioActual}):</span>
               <span className="text-xs text-amber-400">
@@ -705,7 +705,7 @@ export default function ComisionDirectivaPage() {
                         ? 'bg-amber-400 text-black border-amber-400 font-bold shadow-md'
                         : tieneMovimientos
                         ? 'bg-[#18181A] border-[#2E2E34] hover:border-amber-400/50 text-white'
-                        : 'bg-[#141416] border-[#222226] text-[#666]'
+                        : 'bg-white border-[#222226] text-[#666]'
                     }`}
                   >
                     <div className="text-[10px] uppercase font-bold">{nombreMes.slice(0, 3)}</div>
@@ -720,21 +720,21 @@ export default function ComisionDirectivaPage() {
 
           {/* Resumen del mes activo (Ingresos, Egresos y Saldo Final de Cierre) */}
           <div className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 bg-[#131315] border-b border-[#242428]">
-            <div className="bg-[#18181B] border border-emerald-500/20 p-3 rounded-xl">
+            <div className="bg-white border border-emerald-500/20 p-3 rounded-xl">
               <div className="text-[10px] text-emerald-400 font-bold uppercase">Ingresos del Mes</div>
               <div className="text-base font-black font-mono text-emerald-400">
                 +{formatCurrency(data?.balance?.mesActual?.ingresos ?? 0)}
               </div>
             </div>
 
-            <div className="bg-[#18181B] border border-red-500/20 p-3 rounded-xl">
+            <div className="bg-white border border-red-500/20 p-3 rounded-xl">
               <div className="text-[10px] text-red-400 font-bold uppercase">Egresos del Mes</div>
               <div className="text-base font-black font-mono text-red-400">
                 -{formatCurrency(data?.balance?.mesActual?.egresos ?? 0)}
               </div>
             </div>
 
-            <div className="bg-[#18181B] border border-amber-500/30 p-3 rounded-xl">
+            <div className="bg-white border border-amber-500/30 p-3 rounded-xl">
               <div className="text-[10px] text-amber-400 font-bold uppercase">Saldo Final ({labelMesActual})</div>
               <div className="text-base font-black font-mono text-amber-400">
                 {formatCurrency(data?.balance?.mesActual?.saldoFinal ?? 0)}
@@ -835,8 +835,8 @@ export default function ComisionDirectivaPage() {
 
             {/* Cartera de Plazos Fijos (Desplegable) */}
             {showDetalleInversiones && (
-              <div className="mt-3 bg-[#111113] border border-[#242428] rounded-xl overflow-hidden animate-in fade-in duration-200">
-                <div className="px-3 py-2 bg-[#18181B] border-b border-[#242428] text-xs font-bold text-white flex items-center justify-between">
+              <div className="mt-3 bg-white border border-[#242428] rounded-xl overflow-hidden animate-in fade-in duration-200">
+                <div className="px-3 py-2 bg-white border-b border-[#242428] text-xs font-bold text-white flex items-center justify-between">
                   <span>Cartera y Certificados de Plazo Fijo</span>
                   <span className="text-[11px] text-[#888]">
                     Total certificados: {data?.balance?.inversiones?.plazosFijos?.length || 0}
@@ -844,7 +844,7 @@ export default function ComisionDirectivaPage() {
                 </div>
                 <div className="overflow-x-auto max-h-60 overflow-y-auto">
                   <table className="w-full text-left text-xs">
-                    <thead className="bg-[#141416] text-[#888] font-bold border-b border-[#242428] sticky top-0">
+                    <thead className="bg-white text-[#888] font-bold border-b border-[#242428] sticky top-0">
                       <tr>
                         <th className="py-2 px-3 text-center w-10">#</th>
                         <th className="py-2 px-3">Banco / Entidad</th>
@@ -918,7 +918,7 @@ export default function ComisionDirectivaPage() {
           {showDetalleBalance && (
             <div className="overflow-x-auto max-h-72 overflow-y-auto animate-in fade-in duration-200">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#18181B] text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
                   <tr>
                     <th className="py-2.5 px-3">#</th>
                     <th className="py-2.5 px-3">Fecha</th>
@@ -968,8 +968,8 @@ export default function ComisionDirectivaPage() {
         {/* =========================================================================
             SECCIÓN EXTRA: INFORMES DE TORNEOS, INTERCLUBES Y EVENTOS
             ========================================================================= */}
-        <section className="bg-[#141416] border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-[#18181B] border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
+          <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
                 <Trophy size={18} />
@@ -1044,8 +1044,8 @@ export default function ComisionDirectivaPage() {
         {/* =========================================================================
             SECCIÓN 2: ESCUELA DE TENIS (TOTALES POR GRUPO, RECAUDADO Y LISTADO LIMPIO)
             ========================================================================= */}
-        <section className="bg-[#141416] border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-[#18181B] border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
+          <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
                 <GraduationCap size={18} />
@@ -1072,7 +1072,7 @@ export default function ComisionDirectivaPage() {
           </div>
 
           {/* Visor Mes a Mes de Recaudación de Cuotas */}
-          <div className="p-4 bg-[#111113] border-b border-[#242428]">
+          <div className="p-4 bg-white border-b border-[#242428]">
             <div className="text-[11px] font-bold uppercase text-[#888] mb-2">
               Recaudación de Cuotas Escuela Mes por Mes ({anioActual}):
             </div>
@@ -1093,7 +1093,7 @@ export default function ComisionDirectivaPage() {
                         ? 'bg-emerald-500 text-black border-emerald-500 font-bold shadow-md'
                         : tieneRecaudacion
                         ? 'bg-[#18181A] border-emerald-500/30 text-white hover:border-emerald-500/60'
-                        : 'bg-[#141416] border-[#222226] text-[#666]'
+                        : 'bg-white border-[#222226] text-[#666]'
                     }`}
                   >
                     <div className="text-[10px] uppercase font-bold flex items-center justify-between">
@@ -1115,22 +1115,22 @@ export default function ComisionDirectivaPage() {
 
           {/* Resumen por Grupos y Recaudado del Mes */}
           <div className="p-4 grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#131315] border-b border-[#242428]">
-            <div className="bg-[#18181B] border border-emerald-500/30 p-3 rounded-xl">
+            <div className="bg-white border border-emerald-500/30 p-3 rounded-xl">
               <div className="text-[10px] text-emerald-400 font-bold uppercase">Total Inscriptos</div>
               <div className="text-xl font-black text-white">{data?.escuela?.totalAlumnos || 0} alumnos</div>
             </div>
 
-            <div className="bg-[#18181B] border border-[#28282E] p-3 rounded-xl">
+            <div className="bg-white border border-[#28282E] p-3 rounded-xl">
               <div className="text-[10px] text-emerald-400 font-bold uppercase">Escuelita</div>
               <div className="text-xl font-black text-white">{data?.escuela?.porGrupo?.Escuelita || 0} chicos</div>
             </div>
 
-            <div className="bg-[#18181B] border border-[#28282E] p-3 rounded-xl">
+            <div className="bg-white border border-[#28282E] p-3 rounded-xl">
               <div className="text-[10px] text-sky-400 font-bold uppercase">Minitenis</div>
               <div className="text-xl font-black text-white">{data?.escuela?.porGrupo?.Minitenis || 0} chicos</div>
             </div>
 
-            <div className="bg-[#18181B] border border-[#28282E] p-3 rounded-xl">
+            <div className="bg-white border border-[#28282E] p-3 rounded-xl">
               <div className="text-[10px] text-amber-400 font-bold uppercase">Grupo Entrenamiento</div>
               <div className="text-xl font-black text-white">{data?.escuela?.porGrupo?.['Grupo Entrenamiento'] || 0} juveniles</div>
             </div>
@@ -1178,14 +1178,14 @@ export default function ComisionDirectivaPage() {
                     placeholder="Buscar alumno..."
                     value={searchEscuela}
                     onChange={(e) => setSearchEscuela(e.target.value)}
-                    className="pl-7 h-7 text-xs bg-[#111113] border-[#25252A] text-white"
+                    className="pl-7 h-7 text-xs bg-white border-[#25252A] text-white"
                   />
                 </div>
               </div>
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-[#18181B] text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-4 w-16">#</th>
                       <th className="py-2.5 px-4">Nombre y Apellido del Alumno</th>
@@ -1228,8 +1228,8 @@ export default function ComisionDirectivaPage() {
         {/* =========================================================================
             SECCIÓN 3: CLASES PARTICULARES (VISOR MES POR MES Y ASISTENCIAS)
             ========================================================================= */}
-        <section className="bg-[#141416] border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-[#18181B] border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
+          <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
                 <Sparkles size={18} />
@@ -1256,7 +1256,7 @@ export default function ComisionDirectivaPage() {
           </div>
 
           {/* Visor Mes por Mes de Particulares */}
-          <div className="p-4 bg-[#111113] border-b border-[#242428]">
+          <div className="p-4 bg-white border-b border-[#242428]">
             <div className="text-[11px] font-bold uppercase text-[#888] mb-2">
               Cantidad de Alumnos Particulares por Mes ({anioActual}):
             </div>
@@ -1277,7 +1277,7 @@ export default function ComisionDirectivaPage() {
                         ? 'bg-purple-500 text-white border-purple-500 font-bold shadow-md'
                         : tieneAlumnos
                         ? 'bg-[#18181A] border-purple-500/30 text-white hover:border-purple-500/60'
-                        : 'bg-[#141416] border-[#222226] text-[#666]'
+                        : 'bg-white border-[#222226] text-[#666]'
                     }`}
                   >
                     <div className="text-[10px] uppercase font-bold">{nombreMes.slice(0, 3)}</div>
@@ -1322,14 +1322,14 @@ export default function ComisionDirectivaPage() {
                     placeholder="Buscar alumno..."
                     value={searchParticulares}
                     onChange={(e) => setSearchParticulares(e.target.value)}
-                    className="pl-7 h-7 text-xs bg-[#111113] border-[#25252A] text-white"
+                    className="pl-7 h-7 text-xs bg-white border-[#25252A] text-white"
                   />
                 </div>
               </div>
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-[#18181B] text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-4 w-16">#</th>
                       <th className="py-2.5 px-4">Alumno</th>
@@ -1374,8 +1374,8 @@ export default function ComisionDirectivaPage() {
         {/* =========================================================================
             SECCIÓN 4: CLASES PROFESOR (REGISTRADAS POR EL PROFESOR EN /PROFE)
             ========================================================================= */}
-        <section className="bg-[#141416] border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-[#18181B] border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
+          <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400">
                 <BookOpen size={18} />
@@ -1402,7 +1402,7 @@ export default function ComisionDirectivaPage() {
           </div>
 
           {/* Resumen */}
-          <div className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 bg-[#111113] border-b border-[#242428]">
+          <div className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 bg-white border-b border-[#242428]">
             <div className="bg-[#161619] border border-[#25252A] p-2.5 rounded-xl">
               <div className="text-[10px] text-[#888] font-bold uppercase">Total Clases Dadas</div>
               <div className="text-lg font-black text-white">{data?.clasesProfesor?.totalClases || 0}</div>
@@ -1453,14 +1453,14 @@ export default function ComisionDirectivaPage() {
                     placeholder="Buscar fecha u observación..."
                     value={searchProfesor}
                     onChange={(e) => setSearchProfesor(e.target.value)}
-                    className="pl-7 h-7 text-xs bg-[#111113] border-[#25252A] text-white"
+                    className="pl-7 h-7 text-xs bg-white border-[#25252A] text-white"
                   />
                 </div>
               </div>
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-[#18181B] text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-3">#</th>
                       <th className="py-2.5 px-3">Fecha</th>
@@ -1503,8 +1503,8 @@ export default function ComisionDirectivaPage() {
         {/* =========================================================================
             SECCIÓN 5: PADRÓN GENERAL DE SOCIOS (TODOS JUNTOS SIN CATEGORÍAS)
             ========================================================================= */}
-        <section className="bg-[#141416] border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-[#18181B] border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <section className="bg-white border border-[#242428] rounded-2xl overflow-hidden shadow-lg">
+          <div className="bg-white border-b border-[#242428] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
                 <Users size={18} />
@@ -1562,14 +1562,14 @@ export default function ComisionDirectivaPage() {
                     placeholder="Buscar por nombre o DNI..."
                     value={searchSocios}
                     onChange={(e) => setSearchSocios(e.target.value)}
-                    className="pl-7 h-7 text-xs bg-[#111113] border-[#25252A] text-white"
+                    className="pl-7 h-7 text-xs bg-white border-[#25252A] text-white"
                   />
                 </div>
               </div>
 
               <div className="overflow-x-auto max-h-72 overflow-y-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-[#18181B] text-[#888888] font-bold border-b border-[#242428] sticky top-0">
+                  <thead className="bg-white text-[#888888] font-bold border-b border-[#242428] sticky top-0">
                     <tr>
                       <th className="py-2.5 px-4 w-16">#</th>
                       <th className="py-2.5 px-4">DNI</th>

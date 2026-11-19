@@ -738,9 +738,9 @@ export default function SecretariaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-foreground p-3 sm:p-5 lg:p-6 space-y-6 max-w-[1550px] mx-auto">
+    <div className="min-h-screen bg-white text-foreground p-3 sm:p-5 lg:p-6 space-y-6 max-w-[1550px] mx-auto">
       {/* 1. HEADER PUESTO DE SECRETARÍA */}
-      <header className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-2xl p-4 sm:p-5 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <header className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-black text-2xl shadow-md">
             C
@@ -774,7 +774,7 @@ export default function SecretariaPage() {
             size="sm"
             onClick={fetchData}
             disabled={loading}
-            className="bg-[#242424] border-[#383838] text-white hover:bg-[#2F2F2F] h-9 text-xs gap-1.5"
+            className="bg-slate-50 border-slate-200 text-white hover:bg-[#2F2F2F] h-9 text-xs gap-1.5"
             title="Refrescar padrón y caja"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin text-amber-400' : ''}`} />
@@ -784,14 +784,14 @@ export default function SecretariaPage() {
       </header>
 
       {/* 2. PESTAÑAS PRINCIPALES DE NAVEGACIÓN */}
-      <div className="flex items-center gap-2 border-b border-[#2A2A2A] pb-1 overflow-x-auto">
+      <div className="flex items-center gap-2 border-b border-slate-200 pb-1 overflow-x-auto">
         <button
           type="button"
           onClick={() => setActiveTab('mostrador')}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all shrink-0 ${
             activeTab === 'mostrador'
               ? 'bg-amber-400 text-black shadow-md'
-              : 'bg-[#1C1C1C] text-[#AAAAAA] hover:text-white border border-[#2E2E2E]'
+              : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
           }`}
         >
           <Receipt className="h-4 w-4" />
@@ -809,7 +809,7 @@ export default function SecretariaPage() {
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all shrink-0 ${
             activeTab === 'deudores_luz'
               ? 'bg-amber-400 text-black shadow-md'
-              : 'bg-[#1C1C1C] text-[#AAAAAA] hover:text-white border border-[#2E2E2E]'
+              : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
           }`}
         >
           <Zap className="h-4 w-4 text-amber-500" />
@@ -831,7 +831,7 @@ export default function SecretariaPage() {
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all shrink-0 ${
             activeTab === 'padron_general'
               ? 'bg-amber-400 text-black shadow-md'
-              : 'bg-[#1C1C1C] text-[#AAAAAA] hover:text-white border border-[#2E2E2E]'
+              : 'bg-white text-[#AAAAAA] hover:text-white border border-slate-200'
           }`}
         >
           <Users className="h-4 w-4" />
@@ -883,7 +883,7 @@ export default function SecretariaPage() {
           {/* COLUMNA IZQUIERDA (7 cols): BUSCADOR Y FICHA MULTI-CONCEPTO */}
           <div className="lg:col-span-7 space-y-5">
             {/* BUSCADOR RÁPIDO */}
-            <Card className="bg-[#1C1C1C] border-[#2E2E2E]">
+            <Card className="bg-white border-slate-200">
               <CardHeader className="pb-3">
                 <CardTitle className="text-base font-bold flex items-center gap-2 text-white">
                   <Search className="h-4 w-4 text-amber-400" />
@@ -901,7 +901,7 @@ export default function SecretariaPage() {
                     placeholder="Ej: 28456789 o Pérez..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-9 h-12 text-sm bg-[#242424] border-[#383838] text-white placeholder:text-[#777777] focus:border-amber-400 rounded-xl"
+                    className="pl-10 pr-9 h-12 text-sm bg-slate-50 border-slate-200 text-white placeholder:text-[#777777] focus:border-amber-400 rounded-xl"
                     autoFocus
                   />
                   {searchTerm && (
@@ -916,7 +916,7 @@ export default function SecretariaPage() {
 
                 {/* RESULTADOS EN VIVO */}
                 {searchTerm.trim().length > 0 && (
-                  <div className="bg-[#242424] border border-[#383838] rounded-xl overflow-hidden divide-y divide-[#303030] max-h-72 overflow-y-auto shadow-2xl">
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden divide-y divide-[#303030] max-h-72 overflow-y-auto shadow-2xl">
                     {sociosFiltrados.length === 0 ? (
                       <div className="p-4 text-center text-xs text-[#888888]">
                         No se encontró ningún socio con &quot;{searchTerm}&quot;.
@@ -977,8 +977,8 @@ export default function SecretariaPage() {
 
             {/* FICHA ACTIVA DE COBRO 360° */}
             {socioSeleccionado ? (
-              <Card className="bg-[#1C1C1C] border-2 border-amber-400/50 rounded-2xl shadow-xl overflow-hidden animate-in fade-in duration-200">
-                <CardHeader className="bg-gradient-to-r from-amber-400/15 via-[#242424] to-[#1C1C1C] pb-4 border-b border-[#2E2E2E]">
+              <Card className="bg-white border-2 border-amber-400/50 rounded-2xl shadow-xl overflow-hidden animate-in fade-in duration-200">
+                <CardHeader className="bg-gradient-to-r from-amber-400/15 via-[#242424] to-[#1C1C1C] pb-4 border-b border-slate-200">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <span className="text-[10px] uppercase font-black text-amber-400 tracking-wider block">
@@ -1000,7 +1000,7 @@ export default function SecretariaPage() {
                       variant="ghost"
                       size="sm"
                       onClick={() => setSocioSeleccionado(null)}
-                      className="text-[#888888] hover:text-white hover:bg-[#2A2A2A] h-8 w-8 p-0"
+                      className="text-[#888888] hover:text-white hover:bg-slate-50 h-8 w-8 p-0"
                       title="Cancelar selección"
                     >
                       <X className="h-4 w-4" />
@@ -1010,7 +1010,7 @@ export default function SecretariaPage() {
 
                 <CardContent className="p-5 space-y-6">
                   {/* SECCIÓN A: CUOTAS SOCIALES */}
-                  <div className="bg-[#242424] border border-[#333333] rounded-xl p-4 space-y-3">
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
                         <CreditCard className="h-4 w-4 text-amber-400" />
@@ -1048,7 +1048,7 @@ export default function SecretariaPage() {
                               isSelected
                                 ? 'bg-amber-400 text-black border-amber-400 shadow-md scale-[1.01]'
                                 : esPendiente
-                                ? 'bg-[#1C1C1C] text-amber-300 border-amber-500/30 hover:border-amber-400/60'
+                                ? 'bg-white text-amber-300 border-amber-500/30 hover:border-amber-400/60'
                                 : 'bg-[#1E1E22] text-[#DDD] border-[#33333A] hover:border-amber-400/60'
                             }`}
                           >
@@ -1074,7 +1074,7 @@ export default function SecretariaPage() {
                   </div>
 
                   {/* SECCIÓN B: TURNOS CON LUZ (NOCTURNOS 2026) */}
-                  <div className="bg-[#242424] border border-[#333333] rounded-xl p-4 space-y-3">
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
                         <Zap className="h-4 w-4 text-amber-400" />
@@ -1094,7 +1094,7 @@ export default function SecretariaPage() {
                     </div>
 
                     {socioSeleccionado.luz.turnosPendientes.length === 0 ? (
-                      <div className="p-3 bg-[#1C1C1C] rounded-lg text-xs text-[#888888] flex items-center gap-2">
+                      <div className="p-3 bg-white rounded-lg text-xs text-[#888888] flex items-center gap-2">
                         <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                         <span>Este socio no tiene turnos con luz pendientes de cobro en el año.</span>
                       </div>
@@ -1114,7 +1114,7 @@ export default function SecretariaPage() {
                                 className={`w-full p-2.5 rounded-xl border text-left flex items-center justify-between transition-all ${
                                   isSelected
                                     ? 'bg-amber-400/15 border-amber-400 text-white shadow-sm'
-                                    : 'bg-[#1C1C1C] border-[#383838] text-[#BBBBBB] hover:bg-[#282828]'
+                                    : 'bg-white border-slate-200 text-[#BBBBBB] hover:bg-slate-100'
                                 }`}
                               >
                                 <div className="space-y-0.5">
@@ -1157,7 +1157,7 @@ export default function SecretariaPage() {
                   </div>
 
                   {/* SECCIÓN C: INVITADOS ESPECIALES (4 GRATIS AL AÑO) */}
-                  <div className="bg-[#242424] border border-[#333333] rounded-xl p-4 space-y-3">
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
                         <Users className="h-4 w-4 text-sky-400" />
@@ -1190,7 +1190,7 @@ export default function SecretariaPage() {
                           )}
                         </span>
                       </div>
-                      <div className="w-full bg-[#1A1A1A] h-2.5 rounded-full overflow-hidden border border-[#333]">
+                      <div className="w-full bg-white h-2.5 rounded-full overflow-hidden border border-[#333]">
                         <div
                           className={`h-full transition-all duration-300 ${
                             socioSeleccionado.invitados.totalInvitadosUsados <= 4
@@ -1231,7 +1231,7 @@ export default function SecretariaPage() {
                                       ? 'bg-emerald-500/10 border-emerald-500/30 text-[#888] cursor-default'
                                       : isSelected
                                       ? 'bg-red-500/20 border-red-400 text-white'
-                                      : 'bg-[#1C1C1C] border-[#383838] text-[#BBB] hover:border-red-400/50'
+                                      : 'bg-white border-slate-200 text-[#BBB] hover:border-red-400/50'
                                   }`}
                                 >
                                   <div>
@@ -1281,7 +1281,7 @@ export default function SecretariaPage() {
                             .map((d) => (
                               <div
                                 key={d.turnoId}
-                                className="w-full p-2.5 rounded-lg bg-[#181818] border border-[#2E2E2E] flex items-center justify-between text-xs"
+                                className="w-full p-2.5 rounded-lg bg-white border border-slate-200 flex items-center justify-between text-xs"
                               >
                                 <div>
                                   <span className="font-bold text-white block">
@@ -1299,7 +1299,7 @@ export default function SecretariaPage() {
                         </div>
                       )
                     ) : (
-                      <div className="p-3 bg-[#1C1C1C] rounded-lg text-xs text-[#888888] flex items-center gap-2">
+                      <div className="p-3 bg-white rounded-lg text-xs text-[#888888] flex items-center gap-2">
                         <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                         <span>Está dentro de su cupo gratuito anual. No debe cargos por invitados.</span>
                       </div>
@@ -1318,7 +1318,7 @@ export default function SecretariaPage() {
                         className={`p-3 rounded-xl border text-xs font-bold flex flex-col items-center gap-1.5 transition-all ${
                           metodoPago === 'efectivo'
                             ? 'bg-emerald-500 text-white border-emerald-400 shadow-lg scale-[1.02]'
-                            : 'bg-[#242424] text-[#CCCCCC] border-[#383838] hover:text-white hover:bg-[#2C2C2C]'
+                            : 'bg-slate-50 text-[#CCCCCC] border-slate-200 hover:text-white hover:bg-slate-50'
                         }`}
                       >
                         <Banknote className="h-5 w-5" />
@@ -1331,7 +1331,7 @@ export default function SecretariaPage() {
                         className={`p-3 rounded-xl border text-xs font-bold flex flex-col items-center gap-1.5 transition-all ${
                           metodoPago === 'transferencia'
                             ? 'bg-blue-600 text-white border-blue-400 shadow-lg scale-[1.02]'
-                            : 'bg-[#242424] text-[#CCCCCC] border-[#383838] hover:text-white hover:bg-[#2C2C2C]'
+                            : 'bg-slate-50 text-[#CCCCCC] border-slate-200 hover:text-white hover:bg-slate-50'
                         }`}
                       >
                         <CreditCard className="h-5 w-5" />
@@ -1344,7 +1344,7 @@ export default function SecretariaPage() {
                         className={`p-3 rounded-xl border text-xs font-bold flex flex-col items-center gap-1.5 transition-all ${
                           metodoPago === 'mercadopago'
                             ? 'bg-sky-500 text-white border-sky-300 shadow-lg scale-[1.02]'
-                            : 'bg-[#242424] text-[#CCCCCC] border-[#383838] hover:text-white hover:bg-[#2C2C2C]'
+                            : 'bg-slate-50 text-[#CCCCCC] border-slate-200 hover:text-white hover:bg-slate-50'
                         }`}
                       >
                         <QrCode className="h-5 w-5" />
@@ -1354,7 +1354,7 @@ export default function SecretariaPage() {
                   </div>
 
                   {/* SECCIÓN E: RESUMEN DE COBRO Y CONFIRMACIÓN */}
-                  <div className="bg-[#242424] border-2 border-amber-400/40 rounded-xl p-4 space-y-3">
+                  <div className="bg-slate-50 border-2 border-amber-400/40 rounded-xl p-4 space-y-3">
                     <div className="flex items-center justify-between text-xs text-[#AAAAAA] pb-2 border-b border-[#333]">
                       <span>Desglose de conceptos seleccionados:</span>
                       <span className="font-bold text-white">
@@ -1388,7 +1388,7 @@ export default function SecretariaPage() {
                 </CardContent>
               </Card>
             ) : (
-              <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-2xl p-10 text-center space-y-3">
+              <div className="bg-white border border-slate-200 rounded-2xl p-10 text-center space-y-3">
                 <div className="w-14 h-14 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center mx-auto">
                   <Receipt className="h-7 w-7" />
                 </div>
@@ -1403,7 +1403,7 @@ export default function SecretariaPage() {
           {/* COLUMNA DERECHA (5 cols): CIERRE DE CAJA Y RENDICIÓN */}
           <div className="lg:col-span-5 space-y-4">
             {/* SELECTOR DE PERÍODO / RENDICIÓN */}
-            <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3 space-y-2.5">
+            <div className="bg-white border border-slate-200 rounded-xl p-3 space-y-2.5">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-white flex items-center gap-1.5">
                   <Calendar className="h-3.5 w-3.5 text-amber-400" />
@@ -1425,7 +1425,7 @@ export default function SecretariaPage() {
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'hoy'
                       ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                   }`}
                 >
                   Hoy
@@ -1436,7 +1436,7 @@ export default function SecretariaPage() {
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'ayer'
                       ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                   }`}
                 >
                   Ayer
@@ -1447,7 +1447,7 @@ export default function SecretariaPage() {
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'mes'
                       ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                   }`}
                 >
                   Este Mes
@@ -1461,7 +1461,7 @@ export default function SecretariaPage() {
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'otro_mes'
                       ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                   }`}
                 >
                   Otro Mes
@@ -1475,7 +1475,7 @@ export default function SecretariaPage() {
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'anio'
                       ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                   }`}
                 >
                   Todo el Año
@@ -1486,7 +1486,7 @@ export default function SecretariaPage() {
                   className={`py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
                     modoPeriodoCaja === 'personalizado'
                       ? 'bg-amber-400 text-black shadow-sm'
-                      : 'bg-[#242424] text-[#AAAAAA] hover:text-white hover:bg-[#2C2C2C]'
+                      : 'bg-slate-50 text-[#AAAAAA] hover:text-white hover:bg-slate-50'
                   }`}
                 >
                   Fechas
@@ -1495,14 +1495,14 @@ export default function SecretariaPage() {
 
               {/* SELECTOR DE OTRO MES */}
               {modoPeriodoCaja === 'otro_mes' && (
-                <div className="pt-2 border-t border-[#2A2A2A] flex items-center gap-2">
+                <div className="pt-2 border-t border-slate-200 flex items-center gap-2">
                   <div className="flex-1">
                     <span className="text-[10px] text-[#888] block mb-0.5">Seleccionar Mes (YYYY-MM)</span>
                     <Input
                       type="month"
                       value={cajaMesSeleccionado || mesActual || '2026-03'}
                       onChange={(e) => setCajaMesSeleccionado(e.target.value)}
-                      className="h-8 text-xs bg-[#242424] border-[#383838] text-white p-1"
+                      className="h-8 text-xs bg-slate-50 border-slate-200 text-white p-1"
                     />
                   </div>
                   <Button
@@ -1517,7 +1517,7 @@ export default function SecretariaPage() {
 
               {/* SELECTOR DE TODO EL AÑO */}
               {modoPeriodoCaja === 'anio' && (
-                <div className="pt-2 border-t border-[#2A2A2A] flex items-center justify-between gap-2">
+                <div className="pt-2 border-t border-slate-200 flex items-center justify-between gap-2">
                   <span className="text-xs text-[#AAAAAA]">
                     Rendición anual completa del año <strong>{cajaAnioSeleccionado || '2026'}</strong>
                   </span>
@@ -1534,7 +1534,7 @@ export default function SecretariaPage() {
                         className={`h-7 px-2.5 text-xs font-bold ${
                           cajaAnioSeleccionado === yr
                             ? 'bg-amber-400 text-black'
-                            : 'bg-[#242424] border-[#383838] text-[#AAAAAA] hover:text-white'
+                            : 'bg-slate-50 border-slate-200 text-[#AAAAAA] hover:text-white'
                         }`}
                       >
                         {yr}
@@ -1546,14 +1546,14 @@ export default function SecretariaPage() {
 
               {/* SELECTOR DE FECHAS PERSONALIZADO */}
               {modoPeriodoCaja === 'personalizado' && (
-                <div className="pt-2 border-t border-[#2A2A2A] flex items-center gap-2">
+                <div className="pt-2 border-t border-slate-200 flex items-center gap-2">
                   <div className="flex-1">
                     <span className="text-[10px] text-[#888] block mb-0.5">Desde</span>
                     <Input
                       type="date"
                       value={cajaFechaDesde}
                       onChange={(e) => setCajaFechaDesde(e.target.value)}
-                      className="h-7 text-xs bg-[#242424] border-[#383838] text-white p-1"
+                      className="h-7 text-xs bg-slate-50 border-slate-200 text-white p-1"
                     />
                   </div>
                   <div className="flex-1">
@@ -1562,7 +1562,7 @@ export default function SecretariaPage() {
                       type="date"
                       value={cajaFechaHasta}
                       onChange={(e) => setCajaFechaHasta(e.target.value)}
-                      className="h-7 text-xs bg-[#242424] border-[#383838] text-white p-1"
+                      className="h-7 text-xs bg-slate-50 border-slate-200 text-white p-1"
                     />
                   </div>
                   <Button
@@ -1578,7 +1578,7 @@ export default function SecretariaPage() {
 
             {/* TARJETAS DE TOTALES DE CAJA */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+              <div className="bg-white border border-slate-200 rounded-xl p-3.5">
                 <span className="text-[10px] text-[#888888] font-bold uppercase tracking-wider block">
                   {modoPeriodoCaja === 'hoy'
                     ? 'Total Cobrado Hoy'
@@ -1600,7 +1600,7 @@ export default function SecretariaPage() {
                 </span>
               </div>
 
-              <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+              <div className="bg-white border border-slate-200 rounded-xl p-3.5">
                 <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block">
                   Efectivo en Mano
                 </span>
@@ -1610,7 +1610,7 @@ export default function SecretariaPage() {
                 <span className="text-[11px] text-[#AAAAAA] mt-0.5 block">Caja física</span>
               </div>
 
-              <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5 col-span-2 flex items-center justify-between">
+              <div className="bg-white border border-slate-200 rounded-xl p-3.5 col-span-2 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] text-blue-400 font-bold uppercase tracking-wider block">
                     Digital (Transferencia / MP)
@@ -1629,7 +1629,7 @@ export default function SecretariaPage() {
                   size="sm"
                   onClick={handleExportExcelCierre}
                   disabled={pagosHoy.length === 0}
-                  className="bg-[#242424] border-[#383838] text-white hover:bg-emerald-600 hover:text-white hover:border-emerald-500 text-xs h-8 gap-1.5 transition-colors shrink-0"
+                  className="bg-slate-50 border-slate-200 text-white hover:bg-emerald-600 hover:text-white hover:border-emerald-500 text-xs h-8 gap-1.5 transition-colors shrink-0"
                   title="Exportar planilla de rendición del período seleccionado"
                 >
                   <FileDown className="h-3.5 w-3.5" />
@@ -1639,7 +1639,7 @@ export default function SecretariaPage() {
             </div>
 
             {/* LISTADO DE COBROS REALIZADOS EN EL PERÍODO */}
-            <Card className="bg-[#1C1C1C] border-[#2E2E2E]">
+            <Card className="bg-white border-slate-200">
               <CardHeader className="pb-3 flex flex-row items-center justify-between space-y-0">
                 <div>
                   <CardTitle className="text-sm font-bold text-white flex items-center gap-1.5">
@@ -1669,8 +1669,8 @@ export default function SecretariaPage() {
               <CardContent className="p-0">
                 {loading || loadingCaja ? (
                   <div className="p-4 space-y-2">
-                    <div className="h-10 bg-[#242424] rounded-lg animate-pulse" />
-                    <div className="h-10 bg-[#242424] rounded-lg animate-pulse" />
+                    <div className="h-10 bg-slate-50 rounded-lg animate-pulse" />
+                    <div className="h-10 bg-slate-50 rounded-lg animate-pulse" />
                   </div>
                 ) : pagosHoy.length === 0 ? (
                   <div className="p-8 text-center text-xs text-[#777777] space-y-1">
@@ -1682,7 +1682,7 @@ export default function SecretariaPage() {
                     {pagosHoy.map((p) => (
                       <div
                         key={p.id}
-                        className="p-3 hover:bg-[#242424] transition-colors flex items-center justify-between gap-2"
+                        className="p-3 hover:bg-slate-50 transition-colors flex items-center justify-between gap-2"
                       >
                         <div className="space-y-0.5">
                           <div className="flex items-center gap-2">
@@ -1736,8 +1736,8 @@ export default function SecretariaPage() {
       {/* PESTAÑA 2: DEUDORES DE LUZ Y ADICIONALES (LISTADO RÁPIDO) */}
       {/* ===================================================================== */}
       {activeTab === 'deudores_luz' && (
-        <Card className="bg-[#1C1C1C] border-[#2E2E2E] shadow-xl">
-          <CardHeader className="pb-4 border-b border-[#2A2A2A]">
+        <Card className="bg-white border-slate-200 shadow-xl">
+          <CardHeader className="pb-4 border-b border-slate-200">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <CardTitle className="text-lg font-bold text-white flex items-center gap-2">
@@ -1756,7 +1756,7 @@ export default function SecretariaPage() {
                     placeholder="Filtrar por nombre o DNI..."
                     value={searchDeudoresLuz}
                     onChange={(e) => setSearchDeudoresLuz(e.target.value)}
-                    className="pl-9 h-9 text-xs bg-[#242424] border-[#383838] text-white"
+                    className="pl-9 h-9 text-xs bg-slate-50 border-slate-200 text-white"
                   />
                 </div>
 
@@ -1765,7 +1765,7 @@ export default function SecretariaPage() {
                   size="sm"
                   onClick={handleExportExcelDeudoresLuz}
                   disabled={sociosConDeudaAdicional.length === 0}
-                  className="bg-[#242424] border-[#383838] text-white hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
+                  className="bg-slate-50 border-slate-200 text-white hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
                 >
                   <FileSpreadsheet className="h-4 w-4" />
                   <span>Exportar Excel</span>
@@ -1784,8 +1784,8 @@ export default function SecretariaPage() {
             ) : (
               <div className="overflow-x-auto">
                 <Table>
-                  <TableHeader className="bg-[#181818]">
-                    <TableRow className="border-[#2A2A2A] hover:bg-transparent">
+                  <TableHeader className="bg-white">
+                    <TableRow className="border-slate-200 hover:bg-transparent">
                       <TableHead className="text-white text-xs font-bold">#</TableHead>
                       <TableHead className="text-white text-xs font-bold">Socio</TableHead>
                       <TableHead className="text-white text-xs font-bold">Documento</TableHead>
@@ -1802,7 +1802,7 @@ export default function SecretariaPage() {
                     {sociosDeudoresLuzFiltrados.map((s, idx) => {
                       const totalAdicional = s.luz.deudaLuz + s.invitados.deudaInvitados;
                       return (
-                        <TableRow key={s.id} className="border-[#2A2A2A] hover:bg-[#222222]">
+                        <TableRow key={s.id} className="border-slate-200 hover:bg-slate-50">
                           <TableCell className="text-xs text-[#777] font-mono">{idx + 1}</TableCell>
                           <TableCell className="text-xs font-bold text-white">
                             {s.nombreCompleto}
@@ -1871,7 +1871,7 @@ export default function SecretariaPage() {
         <div className="space-y-5">
           {/* TARJETAS KPI DE MOROSIDAD */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+            <div className="bg-white border border-slate-200 rounded-xl p-3.5">
               <span className="text-[10px] text-[#888888] font-bold uppercase tracking-wider block">
                 Total Padrón Activo
               </span>
@@ -1881,7 +1881,7 @@ export default function SecretariaPage() {
               <span className="text-[11px] text-[#888888]">Socios en sistema</span>
             </div>
 
-            <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+            <div className="bg-white border border-slate-200 rounded-xl p-3.5">
               <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block">
                 Socios Al Día
               </span>
@@ -1891,7 +1891,7 @@ export default function SecretariaPage() {
               <span className="text-[11px] text-[#888888]">Cuotas y conceptos al día</span>
             </div>
 
-            <div className="bg-[#1C1C1C] border border-[#2E2E2E] rounded-xl p-3.5">
+            <div className="bg-white border border-slate-200 rounded-xl p-3.5">
               <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider block">
                 Socios Con Deuda
               </span>
@@ -1905,8 +1905,8 @@ export default function SecretariaPage() {
           </div>
 
           {/* TABLA DEL PADRÓN CON FILTROS */}
-          <Card className="bg-[#1C1C1C] border-[#2E2E2E] shadow-xl">
-            <CardHeader className="pb-4 border-b border-[#2A2A2A]">
+          <Card className="bg-white border-slate-200 shadow-xl">
+            <CardHeader className="pb-4 border-b border-slate-200">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                 <div>
                   <CardTitle className="text-lg font-bold text-white flex items-center gap-2">
@@ -1920,7 +1920,7 @@ export default function SecretariaPage() {
 
                 <div className="flex items-center gap-3 flex-wrap">
                   {/* Selector de filtros */}
-                  <div className="flex items-center gap-1 bg-[#242424] p-1 rounded-xl border border-[#383838]">
+                  <div className="flex items-center gap-1 bg-slate-50 p-1 rounded-xl border border-slate-200">
                     <button
                       type="button"
                       onClick={() => setFiltroPadron('con_deuda')}
@@ -1962,7 +1962,7 @@ export default function SecretariaPage() {
                       placeholder="Buscar en padrón..."
                       value={searchPadron}
                       onChange={(e) => setSearchPadron(e.target.value)}
-                      className="pl-9 h-9 text-xs bg-[#242424] border-[#383838] text-white"
+                      className="pl-9 h-9 text-xs bg-slate-50 border-slate-200 text-white"
                     />
                   </div>
 
@@ -1970,7 +1970,7 @@ export default function SecretariaPage() {
                     variant="outline"
                     size="sm"
                     onClick={handleExportExcelPadron}
-                    className="bg-[#242424] border-[#383838] text-white hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
+                    className="bg-slate-50 border-slate-200 text-white hover:bg-emerald-600 hover:text-white h-9 text-xs gap-1.5 shrink-0"
                   >
                     <FileSpreadsheet className="h-4 w-4" />
                     <span>Exportar Padrón</span>
@@ -1982,8 +1982,8 @@ export default function SecretariaPage() {
             <CardContent className="p-0">
               <div className="overflow-x-auto">
                 <Table>
-                  <TableHeader className="bg-[#181818]">
-                    <TableRow className="border-[#2A2A2A] hover:bg-transparent">
+                  <TableHeader className="bg-white">
+                    <TableRow className="border-slate-200 hover:bg-transparent">
                       <TableHead className="text-white text-xs font-bold">#</TableHead>
                       <TableHead className="text-white text-xs font-bold">Socio</TableHead>
                       <TableHead className="text-white text-xs font-bold">Documento</TableHead>
@@ -1998,7 +1998,7 @@ export default function SecretariaPage() {
                   </TableHeader>
                   <TableBody className="divide-y divide-[#262626]">
                     {sociosPadronFiltrados.map((s, idx) => (
-                      <TableRow key={s.id} className="border-[#2A2A2A] hover:bg-[#222222]">
+                      <TableRow key={s.id} className="border-slate-200 hover:bg-slate-50">
                         <TableCell className="text-xs text-[#777] font-mono">{idx + 1}</TableCell>
                         <TableCell className="text-xs font-bold text-white">
                           {s.nombreCompleto}
